@@ -1,0 +1,22 @@
+01;62379;1;GEORGE BARKER & COMP;B02516---------;72781/01---------;210;100;65;T;EUR;False;;;14/07/2017;False;False;False;;False
+02;62378;2;GEORGE BARKER & COMP;B02515---------;72781/02---------;365;100;110;T;EUR;False;;f6         x2;14/07/2017;False;False;False;;True
+03;17957;10;CARRIER TRANSICOLD E;66394---------;72808/01---------;111;41;10;C;2V;False;;h int cm. 8x109x39  NON INCHIODARE COPER;14/07/2017;False;False;False;38X105       2    >7) 10X10    4     >3) 10X100    2   >5) 33X55      1   >DMS TAXXXX;False
+04;40307;2;CARRIER TRANSICOLD E;62890---------;72808/02---------;216;35;15;C;2V;False;;cassa comp  h15x216x35;14/07/2017;False;False;False;;True
+05;62377;2;CARRIER TRANSICOLD E;53699---------;72808/04---------;125;58;40;C;2V;False;;cassa comp. 125x58 h30;14/07/2017;False;False;False;;False
+06;62350;1;BAUDIMENT TECHNOLOGY;B03644---------;72819/01---------;185;80;30;G;2V;True;CA;f2     x2;14/07/2017;False;False;False;;False
+07;14371;2;CARRIER TRANSICOLD I;62890---------;72838/01---------;220;115;120;T;EUR;False;;n.f.7    x3;14/07/2017;False;False;False;60X110       21   X BICCIATO;False
+08;14399;2;CARRIER TRANSICOLD I;62891---------;72838/04---------;220;115;120;T;EUR;False;;nr.f.7      x3;14/07/2017;False;False;False;60X110     21  X BICCIATO;False
+09;61016;1;BLUE BOX GROUP S.R.L;B00155---------;72841/01---------;240;90;115;G;EUR;False;;;14/07/2017;False;False;False;;True
+10;59325;1;BLUE BOX GROUP S.R.L;B00156---------;72841/02---------;240;90;115;G;EUR;False;;;14/07/2017;False;False;False;;True
+11;51281;1;BLUE BOX GROUP S.R.L;86687---------;72841/03---------;280;60;132;G;2V;False;;;14/07/2017;False;False;False;;True
+12;62026;1;G.I.INDUSTRIAL HOLDI;B03355---------;72845/03---------;225;80;100;G;2V;False;;;14/07/2017;False;False;False;;True
+13;43723;1;UNIFLAIR S.P.A.;88625---------;72874/01---------;170;120;40;P;EUR;False;;;14/07/2017;False;False;False;;False
+14;53727;1;UNIFLAIR S.P.A.;76346---------;72884/02---------;175;95;55;T;EUR;False;;;14/07/2017;False;False;False;;False
+15;23666;1;ZANOTTI S.P.A.;72583---------;72886/03---------;170;115;95;T;EUR;False;;F. 5      X2;14/07/2017;False;False;False;;False
+16;49971;1;DAIKIN APPLIED EUROP;95189-94982;72911/04-72911/05;295;70;117;G;2V;False;;imballare a centro gabbia;14/07/2017;False;True;False;;True
+17;56604;1;DAIKIN APPLIED EUROP;87896-87897;72911/03-72911/06;295;70;117;G;2V;False;;;14/07/2017;False;False;True;;True
+18;46839;1;DAIKIN APPLIED EUROP;90775-90776;72911/01-72911/02;298;60;117;GDA;2V;False;;;14/07/2017;False;True;False;;True
+19;62376;1;MITSUBISHI ELECTRIC;B03672---------;72922/01---------;250;70;196;G;2V;False;;;14/07/2017;False;False;False;;True
+20;62219;1;G.I.INDUSTRIAL HOLDI;B03485---------;72945/02---------;175;60;75;G;2V;False;;;14/07/2017;False;False;False;;False
+21;46558;2;DAIKIN APPLIED EUROP;84648-84649;72911/09-72911/10;478;70;120;GDA;2V;False;;costruire come foto;07/07/2017;False;False;True;;True
+22;52868;1;DAIKIN APPLIED EUROP;97450-97451;72911/07-72911/08;305;70;119;GDA;2V;False;;;07/07/2017;False;False;True;;True

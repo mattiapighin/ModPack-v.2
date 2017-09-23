@@ -1,0 +1,140 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileLogPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\Modpack\Log.txt</Value>
+    </Setting>
+    <Setting Name="MaxLengthLog" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">1048576</Value>
+    </Setting>
+    <Setting Name="LogType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">normal</Value>
+    </Setting>
+    <Setting Name="ModPackDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\ModPack\ModPackDB.mdf;Integrated Security=True;Connect Timeout=30&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\ModPack\ModPackDB.mdf;Integrated Security=True;Connect Timeout=30</Value>
+    </Setting>
+    <Setting Name="FormatoStampa" Type="System.Drawing.Printing.PageSettings" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Etichette_DimensioneX" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">110</Value>
+    </Setting>
+    <Setting Name="Etichette_DimensioneY" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">69</Value>
+    </Setting>
+    <Setting Name="Etichette_MargineTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Etichette_MargineBottom" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Etichette_MargineLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Etichette_MargineRight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="Etichette_Stampante" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\10.0.0.5\TSC TTP-246M Pro</Value>
+    </Setting>
+    <Setting Name="CK_ConfermaEvaso" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OrdiniAperti_ColoraScaduti" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="OrdiniAperti_ColoraEvasi" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CheckInserimentoImballo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StampaBarcodeDistinte" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="StampaBarcodeSoloCodice" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DimensioneFontDistinta" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="NumeroRigheDistinta" Type="System.String" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="LimiteTavole8" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="XMLpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\ModPack\ModPackConfig.xml</Value>
+    </Setting>
+    <Setting Name="MAIL_username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NO_REPLY@bicciatoserafino.com</Value>
+    </Setting>
+    <Setting Name="MAIL_password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">estate-2016</Value>
+    </Setting>
+    <Setting Name="MAIL_server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.bicciatoserafino.com</Value>
+    </Setting>
+    <Setting Name="MAIL_port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="GiorniMantenimentoBackup" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="Root" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\ModPack\</Value>
+    </Setting>
+    <Setting Name="ExcelPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\Microsoft Office\Office12\Excel.exe</Value>
+    </Setting>
+    <Setting Name="ListaNuoviExcel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Developer" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Scarto" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MisurePari" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ArrL5" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FiltroColonneImballi" Type="System.String" Scope="User">
+      <Value Profile="(Default)">011111010100000011101</Value>
+    </Setting>
+    <Setting Name="ImballiNRecords" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="OrdiniNRecords" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Utente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Nuovo Utente</Value>
+    </Setting>
+    <Setting Name="NoteDinamico" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FiltroColonneOrdini" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0011011111111010010000000010</Value>
+    </Setting>
+    <Setting Name="TestoIconeMain" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DialogConfrontoIndici" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NumeroOrdineClipboard" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,39 @@
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe.config
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Main.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Resources.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Opzioni.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.TrustInfo.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\System.Net.Http.dll
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\System.Net.Http.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe.config
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\ModPack Rivestimenti.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\System.Net.Http.dll
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\bin\Debug\System.Net.Http.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Main.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Resources.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Opzioni.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.TrustInfo.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack Rivestimenti.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\Resources\Applicazioni Satellite\Rivestimenti\ModPack Rivestimenti\ModPack Rivestimenti\obj\Debug\ModPack_Rivestimenti.Form_Avviso.resources

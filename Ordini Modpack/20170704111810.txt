@@ -1,0 +1,13 @@
+01;62403;1;MITSUBISHI ELECTRIC;B03650---------;72852/01---------;180;105;85;G;EUR;True;CA;f8         x2;14/07/2017;False;False;False;;True
+02;60413;1;DAIKIN APPLIED EUROP;81201-81202;72983/07-72983/08;388;70;115;GDA;2V;False;;IMBALLARE  A CENTRO GABBIA;14/07/2017;False;False;True;;True
+03;59613;1;DAIKIN APPLIED EUROP;B01643-01644;72394/03-72394/04;565;70;115;GDA;2V;False;;;14/07/2017;False;False;True;;True
+04;49134;1;IRINOX SPA;94405---------;72625/01---------;340;50;70;P;2V;False;;;14/07/2017;False;False;False;;False
+05;62402;1;STULZ GMBH;B00883---------;72712/01---------;195;75;40;GST;EUR;True;CP;con cartonplast  pedana tavole a pieno;14/07/2017;True;False;False;;True
+06;58901;2;STULZ GMBH;B00883---------;72712/01---------;195;75;78;GST;EUR;True;CP;con cartonplast  pedana tavole a pieno;14/07/2017;True;False;False;;True
+07;49014;1;UNIFLAIR S.P.A.;90997---------;72737/01---------;330;179;60;G;2V;False;;base con morali;14/07/2017;False;False;True;;True
+08;56509;1;UNIFLAIR S.P.A.;90997---------;72737/01---------;330;179;75;G;EUR;False;;BASE CON MORALI;14/07/2017;False;False;True;FAESITE 179X100 3BASE CON MORALI;True
+09;62400;1;KELVIN S.R.L.;B01888---------;72858/01---------;190;65;40;T;2V;False;;;14/07/2017;False;False;False;;False
+10;57006;1;STULZ GMBH;95618---------;72744/01---------;190;110;60;GST;EUR;True;CP;f2   x3   ht  rivesti con cartonplast;14/07/2017;True;False;False;;True
+11;31327;5;THERMOBUS S.P.A.;78423---------;72769/01---------;185;80;125;T;2V;False;;F6;14/07/2017;False;False;False;;True
+12;62399;1;BAUDIMENT TECHNOLOGY;B03645---------;72819/02---------;190;40;45;T;2V;False;;;14/07/2017;False;False;False;;False
+13;46558;1;DAIKIN APPLIED EUROP;84648-84649;72869/01-72869/02;478;70;120;GDA;2V;False;;costruire come foto;07/07/2017;False;False;True;;True

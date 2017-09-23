@@ -1,0 +1,174 @@
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\bin\Debug\ModPack.exe
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\bin\Debug\ModPack.pdb
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\bin\Debug\ModPack.xml
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.Form1.resources
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.exe
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.xml
+C:\Users\mattia.pighin\AppData\Local\Temporary Projects\ModPack\obj\Debug\ModPack.pdb
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\bin\Debug\ModPack.exe
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\bin\Debug\ModPack.pdb
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\bin\Debug\ModPack.xml
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.Main.resources
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.exe
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.xml
+C:\Users\mattia.pighin\Desktop\ModPack\ModPack\ModPack\obj\Debug\ModPack.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Main.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.exe
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.pdb
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_OrdiniAperti.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.pdb
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.xml
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Main.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_OrdiniAperti.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.exe
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.xml
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.pdb
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.ScegliOrdine.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.ScegliOrdine.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaImballo.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\itextsharp.xml
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\itextsharp.xml
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaImballo.resources
+C:\Users\Mattia\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze_Email.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Memo.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Agenda.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.ResolveComReference.cache
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Tabelle.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.MsgMoraliFrescoHT.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ControlloOrdineInput.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Filtro.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Colonne.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Mail_ScegliDestinatari.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ListaElementi.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Crea_Manuale.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Listino.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Dialog_FiltraData.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.DLG_ConfrontaIndici.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_GestioneTipi.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.ErrorBox.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Frm_NoteImballo.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.FRM_SetupRivestimenti.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.FRM_TestConnessioni.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini_ScegliColonne.resources
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.TrustInfo.xml
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.application
+C:\Users\mattia.pighin\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.CoreCompileInputs.cache
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.vbproj.ResolveComReference.cache
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Colonne.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Filtro.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaImballo.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Agenda.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Memo.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.FRM_TestConnessioni.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Crea_Manuale.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.ErrorBox.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.DLG_ConfrontaIndici.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze_Email.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Tabelle.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_ControlloOrdineInput.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.ScegliOrdine.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Mail_ScegliDestinatari.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_Listino.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Main.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_OrdiniAperti.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Dialog_FiltraData.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_GestioneTipi.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_ListaElementi.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini_ScegliColonne.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.Frm_NoteImballo.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.FRM_SetupRivestimenti.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.MsgMoraliFrescoHT.resources
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.vbproj.CoreCompileInputs.cache
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.exe
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.xml
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.pdb
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.exe.manifest
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.application
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.exe
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.pdb
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\ModPack.xml
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\bin\Debug\itextsharp.xml
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.TrustInfo.xml
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.exe.manifest
+C:\Users\mpigh\Desktop\Modifica Modpack\ModPackGIT-master (1)\ModPackGIT-master\ModPack\ModPack\obj\Debug\ModPack.application
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe.config
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe.manifest
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.application
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.exe
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.pdb
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\ModPack.xml
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\bin\Debug\itextsharp.xml
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.ResolveComReference.cache
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Colonne.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Filtro.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaImballo.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Agenda.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Memo.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.FRM_TestConnessioni.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Crea_Manuale.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.ErrorBox.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.DLG_ConfrontaIndici.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Preferenze_Email.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Tabelle.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ControlloOrdineInput.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.ScegliOrdine.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Mail_ScegliDestinatari.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_Listino.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Main.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Resources.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_OrdiniAperti.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Dialog_FiltraData.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_GestioneTipi.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_ListaElementi.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Form_StoricoOrdini_ScegliColonne.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.Frm_NoteImballo.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.FRM_SetupRivestimenti.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.MsgMoraliFrescoHT.resources
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.GenerateResource.Cache
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.vbproj.CoreCompileInputs.cache
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.TrustInfo.xml
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.exe.manifest
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.application
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.exe
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.xml
+C:\Users\mpigh\Desktop\ModPackGIT\ModPack\ModPack\obj\Debug\ModPack.pdb

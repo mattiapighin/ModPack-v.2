@@ -1,0 +1,11 @@
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.exe.config
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.exe
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.pdb
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.xml
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.vbprojResolveAssemblyReference.cache
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.Form1.resources
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.Resources.resources
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.exe
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.xml
+C:\Users\mattia.pighin\Documents\DOCUMENTI\PLC2017\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.pdb

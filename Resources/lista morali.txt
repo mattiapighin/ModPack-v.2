@@ -1,0 +1,1 @@
+SELECT Distinta.X, Distinta.Y, Distinta.Z, SUM(Distinta.N * Ordini.QT) FROM Ordini LEFT JOIN Distinta ON Ordini.Imballo = Distinta.Imballo WHERE Ordini.Ordine = 'uno' AND Distinta.Tag = 'Mor' GROUP BY X, Y, Z

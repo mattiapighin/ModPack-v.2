@@ -74,6 +74,7 @@ Partial Class Form_Preferenze
         Me.Bt_TestConnessioni = New System.Windows.Forms.Button()
         Me.Bt_EliminaOrdine = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Bt_PuliziaOrdini = New System.Windows.Forms.Button()
         Me.BT_SetupRives = New System.Windows.Forms.Button()
         Me.Bt_Log = New System.Windows.Forms.Button()
         Me.Bt_GestioneTipi = New System.Windows.Forms.Button()
@@ -287,7 +288,7 @@ Partial Class Form_Preferenze
         'Bt_Salva
         '
         Me.Bt_Salva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bt_Salva.Location = New System.Drawing.Point(564, 649)
+        Me.Bt_Salva.Location = New System.Drawing.Point(564, 691)
         Me.Bt_Salva.Name = "Bt_Salva"
         Me.Bt_Salva.Size = New System.Drawing.Size(90, 38)
         Me.Bt_Salva.TabIndex = 12
@@ -328,7 +329,7 @@ Partial Class Form_Preferenze
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 135)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(402, 335)
+        Me.GroupBox1.Size = New System.Drawing.Size(402, 377)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Preferenze"
@@ -461,7 +462,7 @@ Partial Class Form_Preferenze
         Me.GroupBox2.Controls.Add(Me.Nu_RigheDistinta)
         Me.GroupBox2.Controls.Add(Me.Nu_FontDistinta)
         Me.GroupBox2.Controls.Add(Me.Ck_Barcode)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 476)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 518)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(402, 72)
         Me.GroupBox2.TabIndex = 15
@@ -557,7 +558,7 @@ Partial Class Form_Preferenze
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtScegliExcel)
         Me.GroupBox3.Controls.Add(Me.Bt_ScegliExcel)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 553)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 595)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(402, 89)
         Me.GroupBox3.TabIndex = 17
@@ -662,7 +663,7 @@ Partial Class Form_Preferenze
         'Bt_EliminaOrdine
         '
         Me.Bt_EliminaOrdine.Image = CType(resources.GetObject("Bt_EliminaOrdine.Image"), System.Drawing.Image)
-        Me.Bt_EliminaOrdine.Location = New System.Drawing.Point(6, 66)
+        Me.Bt_EliminaOrdine.Location = New System.Drawing.Point(6, 65)
         Me.Bt_EliminaOrdine.Name = "Bt_EliminaOrdine"
         Me.Bt_EliminaOrdine.Size = New System.Drawing.Size(217, 40)
         Me.Bt_EliminaOrdine.TabIndex = 27
@@ -674,6 +675,7 @@ Partial Class Form_Preferenze
         'GroupBox5
         '
         Me.GroupBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox5.Controls.Add(Me.Bt_PuliziaOrdini)
         Me.GroupBox5.Controls.Add(Me.BT_SetupRives)
         Me.GroupBox5.Controls.Add(Me.Bt_Log)
         Me.GroupBox5.Controls.Add(Me.Bt_GestioneTipi)
@@ -682,15 +684,27 @@ Partial Class Form_Preferenze
         Me.GroupBox5.Controls.Add(Me.Bt_TestConnessioni)
         Me.GroupBox5.Location = New System.Drawing.Point(425, 127)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(229, 299)
+        Me.GroupBox5.Size = New System.Drawing.Size(229, 345)
         Me.GroupBox5.TabIndex = 28
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Funzioni"
         '
+        'Bt_PuliziaOrdini
+        '
+        Me.Bt_PuliziaOrdini.Image = CType(resources.GetObject("Bt_PuliziaOrdini.Image"), System.Drawing.Image)
+        Me.Bt_PuliziaOrdini.Location = New System.Drawing.Point(6, 155)
+        Me.Bt_PuliziaOrdini.Name = "Bt_PuliziaOrdini"
+        Me.Bt_PuliziaOrdini.Size = New System.Drawing.Size(217, 40)
+        Me.Bt_PuliziaOrdini.TabIndex = 32
+        Me.Bt_PuliziaOrdini.Text = " Pulizia Ordini"
+        Me.Bt_PuliziaOrdini.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Bt_PuliziaOrdini.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Bt_PuliziaOrdini.UseVisualStyleBackColor = True
+        '
         'BT_SetupRives
         '
         Me.BT_SetupRives.Image = CType(resources.GetObject("BT_SetupRives.Image"), System.Drawing.Image)
-        Me.BT_SetupRives.Location = New System.Drawing.Point(6, 250)
+        Me.BT_SetupRives.Location = New System.Drawing.Point(7, 290)
         Me.BT_SetupRives.Name = "BT_SetupRives"
         Me.BT_SetupRives.Size = New System.Drawing.Size(217, 40)
         Me.BT_SetupRives.TabIndex = 31
@@ -702,7 +716,7 @@ Partial Class Form_Preferenze
         'Bt_Log
         '
         Me.Bt_Log.Image = CType(resources.GetObject("Bt_Log.Image"), System.Drawing.Image)
-        Me.Bt_Log.Location = New System.Drawing.Point(6, 203)
+        Me.Bt_Log.Location = New System.Drawing.Point(7, 245)
         Me.Bt_Log.Name = "Bt_Log"
         Me.Bt_Log.Size = New System.Drawing.Size(217, 40)
         Me.Bt_Log.TabIndex = 30
@@ -714,7 +728,7 @@ Partial Class Form_Preferenze
         'Bt_GestioneTipi
         '
         Me.Bt_GestioneTipi.Image = CType(resources.GetObject("Bt_GestioneTipi.Image"), System.Drawing.Image)
-        Me.Bt_GestioneTipi.Location = New System.Drawing.Point(6, 158)
+        Me.Bt_GestioneTipi.Location = New System.Drawing.Point(7, 200)
         Me.Bt_GestioneTipi.Name = "Bt_GestioneTipi"
         Me.Bt_GestioneTipi.Size = New System.Drawing.Size(217, 40)
         Me.Bt_GestioneTipi.TabIndex = 29
@@ -726,7 +740,7 @@ Partial Class Form_Preferenze
         'Bt_PulisciImballi
         '
         Me.Bt_PulisciImballi.Image = CType(resources.GetObject("Bt_PulisciImballi.Image"), System.Drawing.Image)
-        Me.Bt_PulisciImballi.Location = New System.Drawing.Point(6, 112)
+        Me.Bt_PulisciImballi.Location = New System.Drawing.Point(6, 110)
         Me.Bt_PulisciImballi.Name = "Bt_PulisciImballi"
         Me.Bt_PulisciImballi.Size = New System.Drawing.Size(217, 40)
         Me.Bt_PulisciImballi.TabIndex = 28
@@ -751,7 +765,7 @@ Partial Class Form_Preferenze
         Me.GroupBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox7.Controls.Add(Me.Label12)
         Me.GroupBox7.Controls.Add(Me.Txt_utente)
-        Me.GroupBox7.Location = New System.Drawing.Point(425, 429)
+        Me.GroupBox7.Location = New System.Drawing.Point(425, 486)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(229, 65)
         Me.GroupBox7.TabIndex = 30
@@ -790,9 +804,9 @@ Partial Class Form_Preferenze
         Me.Box_Developer.Controls.Add(Me.Bt_ResetSettings)
         Me.Box_Developer.Controls.Add(Me.Bt_InviaQuery)
         Me.Box_Developer.Controls.Add(Me.Bt_AzzeraDB)
-        Me.Box_Developer.Location = New System.Drawing.Point(425, 501)
+        Me.Box_Developer.Location = New System.Drawing.Point(425, 558)
         Me.Box_Developer.Name = "Box_Developer"
-        Me.Box_Developer.Size = New System.Drawing.Size(229, 142)
+        Me.Box_Developer.Size = New System.Drawing.Size(229, 126)
         Me.Box_Developer.TabIndex = 32
         Me.Box_Developer.TabStop = False
         Me.Box_Developer.Text = "Developer area"
@@ -822,7 +836,7 @@ Partial Class Form_Preferenze
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(671, 699)
+        Me.ClientSize = New System.Drawing.Size(671, 741)
         Me.Controls.Add(Me.Box_Developer)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox6)
@@ -928,4 +942,5 @@ Partial Class Form_Preferenze
     Friend WithEvents Bt_InviaQuery As Button
     Friend WithEvents Bt_ResetSettings As Button
     Friend WithEvents CK_DescrizioneClipboard As CheckBox
+    Friend WithEvents Bt_PuliziaOrdini As Button
 End Class

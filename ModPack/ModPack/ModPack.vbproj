@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -181,6 +181,12 @@
       <DependentUpon>DLG_ConfrontaIndici.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\DLG_ConfrontaIndici.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Form_PuliziaOrdini.Designer.vb">
+      <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Form_PuliziaOrdini.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Email\Form_Preferenze_Email.Designer.vb">
@@ -356,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DLG_ConfrontaIndici.resx">
       <DependentUpon>DLG_ConfrontaIndici.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Form_PuliziaOrdini.resx">
+      <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Email\Form_Preferenze_Email.resx">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>

@@ -4,30 +4,54 @@
         Public Function GetTipo(ByVal Tipo As String) As Tipo
             'Popola un oggetto TIPO con le sue proprietà in base alla stringa passata (es. G, P, GDA)
             Dim Oggetto As New Tipo
-            Dim Query As String = "SELECT * FROM Tipi WHERE Tipo = '" & Tipo & "'"
 
-            Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
-                Using CMD As New System.Data.SqlClient.SqlCommand(Query, Con)
+            Using TipiTable As New ModPackDBDataSetTableAdapters.TipiTableAdapter
+                Using DS As New ModPackDBDataSet.TipiDataTable
 
-                    Con.Open()
-                    Dim Reader As SqlClient.SqlDataReader = CMD.ExecuteReader()
+                    TipiTable.Fill(DS)
 
-                    If Reader.Read() Then
-                        Oggetto.Tipo = Reader.GetValue(1)
-                        If Not IsDBNull(Reader.GetValue(2)) Then Oggetto.Descrizione = Reader.GetValue(2) Else Oggetto.Descrizione = ""
-                        Oggetto.InterasseMax = Reader.GetValue(3)
-                        Oggetto.SpazioBTL = Reader.GetValue(4)
-                        Oggetto.SpazioBTT = Reader.GetValue(5)
-                        Oggetto.SpazioCTL = Reader.GetValue(6)
-                        Oggetto.SpazioFTL = Reader.GetValue(7)
-                        Oggetto.SpazioMT = Reader.GetValue(8)
-                        If Not IsDBNull(Reader.GetValue(9)) Then Oggetto.Info = Reader.GetValue(9) Else Oggetto.Info = ""
-                        Oggetto.PrezzoM3 = Reader.GetValue(10)
-                    End If
+                    Dim ROW As ModPackDBDataSet.TipiRow = DS.Where(Function(x) x.Tipo = Tipo).FirstOrDefault
+
+                    Oggetto.Tipo = ROW.Tipo
+                    If Not ROW.IsDescrizioneNull Then Oggetto.Descrizione = ROW.Descrizione
+                    Oggetto.InterasseMax = ROW.InterasseMax
+                    Oggetto.SpazioBTL = ROW.SpazioBTL
+                    Oggetto.SpazioBTT = ROW.SpazioBTT
+                    Oggetto.SpazioCTL = ROW.SpazioCTL
+                    Oggetto.SpazioFTL = ROW.SpazioFTL
+                    Oggetto.SpazioMT = ROW.SpazioMT
+                    If Not ROW.IsInfoNull Then Oggetto.Info = ROW.Info
+                    Oggetto.PrezzoM3 = ROW.PrezzoM3
 
 
                 End Using
             End Using
+
+
+            'Dim Query As String = "SELECT * FROM Tipi WHERE Tipo = '" & Tipo & "'"
+
+            'Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
+            '    Using CMD As New System.Data.SqlClient.SqlCommand(Query, Con)
+
+            '        Con.Open()
+            '        Dim Reader As SqlClient.SqlDataReader = CMD.ExecuteReader()
+
+            '        If Reader.Read() Then
+            '            Oggetto.Tipo = Reader.GetValue(1)
+            '            If Not IsDBNull(Reader.GetValue(2)) Then Oggetto.Descrizione = Reader.GetValue(2) Else Oggetto.Descrizione = ""
+            '            Oggetto.InterasseMax = Reader.GetValue(3)
+            '            Oggetto.SpazioBTL = Reader.GetValue(4)
+            '            Oggetto.SpazioBTT = Reader.GetValue(5)
+            '            Oggetto.SpazioCTL = Reader.GetValue(6)
+            '            Oggetto.SpazioFTL = Reader.GetValue(7)
+            '            Oggetto.SpazioMT = Reader.GetValue(8)
+            '            If Not IsDBNull(Reader.GetValue(9)) Then Oggetto.Info = Reader.GetValue(9) Else Oggetto.Info = ""
+            '            Oggetto.PrezzoM3 = Reader.GetValue(10)
+            '        End If
+
+
+            '    End Using
+            'End Using
             Return Oggetto
         End Function
 
@@ -150,12 +174,12 @@
 
 
 
-            For Each Row As ModPackDBDataSet.DistintaRow In TABLE.Rows
-                If Row.Imballo = Imballo Then
-                    If Row.Tag = "MOR" Then
-                        M3 = (Row.X * Row.Y * Row.Z) * Row.N
-                    End If
-                End If
+            For Each Row As ModPackDBDataSet.DistintaRow In TABLE.Where(Function(x) x.Imballo = Imballo And x.Tag = "MOR")
+                'If Row.Imballo = Imballo Then
+                'If Row.Tag = "MOR" Then
+                M3 = (Row.X * Row.Y * Row.Z) * Row.N
+                '    End If
+                'End If
             Next
 
             M3 = M3 * 10 ^ (-6)
@@ -173,13 +197,13 @@
 
 
 
-            For Each Row As ModPackDBDataSet.DistintaRow In TABLE.Rows
-                If Row.Imballo = Imballo Then
+            For Each Row As ModPackDBDataSet.DistintaRow In TABLE.Where(Function(x) x.Imballo = Imballo)
+                ' If Row.Imballo = Imballo Then
 
-                    Dim M3Riga As Single = (Row.X * Row.Y * Row.Z) * Row.N
+                Dim M3Riga As Single = (Row.X * Row.Y * Row.Z) * Row.N
                     M3 += M3Riga
 
-                End If
+                'End If
             Next
 
             M3 = M3 * 10 ^ (-6)
@@ -194,10 +218,10 @@
                 DA.Fill(TABLE)
             End Using
 
-            For Each Row As ModPackDBDataSet.ImballiRow In TABLE.Rows
-                If Row.Imballo = Imballo Then
+            For Each Row As ModPackDBDataSet.ImballiRow In TABLE.Where(Function(x) x.Imballo = Imballo)
+                'If Row.Imballo = Imballo Then
 
-                    Dim L As Integer = Row.L
+                Dim L As Integer = Row.L
                     Dim P As Integer = Row.P
                     Dim H As Integer = Row.H
 
@@ -205,7 +229,7 @@
                     M2 = ((L * P) + (L * H) + (P * H)) * 2
                     M2 = Math.Round(M2 * 10 ^ (-4), 2)
 
-                End If
+                'End If
             Next
 
 
@@ -226,34 +250,35 @@
             Dim TableImballi As New ModPackDBDataSet.ImballiDataTable
             Using DA As New ModPackDBDataSetTableAdapters.ImballiTableAdapter
                 DA.Fill(TableImballi)
+            End Using
 
-                For Each Row As ModPackDBDataSet.ImballiRow In TableImballi.Rows
-                    If Row.Imballo = Imballo Then
-                        Tipo = Row.Tipo
+            For Each Row As ModPackDBDataSet.ImballiRow In TableImballi.Where(Function(x) x.Imballo = Imballo)
+                    'If Row.Imballo = Imballo Then
+                    Tipo = Row.Tipo
                         M3 = Row.M3
                         M2 = Row.M2
                         HT = Row.HT
                         Riv = Row.Rivestimento
                         TipoRivestimento = Row.Tipo_Rivestimento
                         Exit For
-                    End If
+                    'End If
                 Next
-            End Using
 
-            Dim TableTipi As New ModPackDBDataSet.TipiDataTable
+
+                Dim TableTipi As New ModPackDBDataSet.TipiDataTable
             Using DA As New ModPackDBDataSetTableAdapters.TipiTableAdapter
                 DA.Fill(TableTipi)
 
-                For Each Row As ModPackDBDataSet.TipiRow In TableTipi.Rows
-                    If Row.Tipo = Tipo Then
+                For Each Row As ModPackDBDataSet.TipiRow In TableTipi.Where(Function(X) X.Tipo = Tipo)
+                    ' If Row.Tipo = Tipo Then
 
-                        If HT = True Then
+                    If HT = True Then
                             PrezzoMateriale = Row.PrezzoM3HT
                         Else
                             PrezzoMateriale = Row.PrezzoM3
                         End If
 
-                    End If
+                    'End If
                 Next
             End Using
 
@@ -262,10 +287,10 @@
                 Using DA As New ModPackDBDataSetTableAdapters.RivestimentiTableAdapter
                     DA.Fill(TableRivestimenti)
 
-                    For Each Row As ModPackDBDataSet.RivestimentiRow In TableRivestimenti.Rows
-                        If Row.Tipo_Rivestimento = TipoRivestimento Then
-                            PrezzoRivestimento = Row.Prezzo_m2
-                        End If
+                    For Each Row As ModPackDBDataSet.RivestimentiRow In TableRivestimenti.Where(Function(x) x.Tipo_Rivestimento = TipoRivestimento)
+                        'If Row.Tipo_Rivestimento = TipoRivestimento Then
+                        PrezzoRivestimento = Row.Prezzo_m2
+                        'End If
                     Next
                 End Using
             End If

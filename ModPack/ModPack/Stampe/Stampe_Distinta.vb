@@ -534,10 +534,10 @@
 
                 If My.Settings.StampaBarcodeSoloCodice = True Then
                     'Stampa l'indice della tabella ordini riferito all'imballo
-                    Codice = BarCode.Genera(SQL.GetID_RigaOrdine(riga), True, 50, 7)
+                    Codice = BarCode.Genera(SQL.GetID_RigaOrdine(riga), False, 50, 7)
                 Else
                     'Stampa il nome dell'imballo | quantità
-                    Codice = BarCode.Genera(riga.Imballo & "|" & riga.Qt, True, 50, 7)
+                    Codice = BarCode.Genera(riga.Imballo & "|" & riga.Qt, False, 50, 7)
                 End If
 
                 Dim P As New Point With {.X = RectBarcode.Right - (Codice.Width) - 20, .Y = RectBarcode.Y}

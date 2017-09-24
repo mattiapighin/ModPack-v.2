@@ -24,7 +24,7 @@ Public Class Main
     Dim RowOrdine As New List(Of RigaOrdine)
     Dim RowIndici As New List(Of Integer)
 
-    'VERSIONE 1.2 - Tutto caricamento ordine trasformato con lambda expressions
+    'VERSIONE 2.0 - Tutto caricamento ordine trasformato con lambda expressions
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
@@ -278,6 +278,7 @@ Public Class Main
                     Form_Imballi.Show()
                     Form_Imballi.ImballiBindingSource.Filter = "Imballo = '" & Imballo(0) & "'"
                 End If
+
             End If
         Catch ex As Exception
             Errore.Show("OrdiniTree_DoubleClick \ Main", ex.Message)
@@ -327,6 +328,10 @@ Public Class Main
 
     Private Sub TS_Listino_Click(sender As Object, e As EventArgs) Handles TS_Listino.Click
         Form_Listino.Show()
+    End Sub
+
+    Private Sub OrdiniTree_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles OrdiniTree.AfterSelect
+
     End Sub
 
 End Class

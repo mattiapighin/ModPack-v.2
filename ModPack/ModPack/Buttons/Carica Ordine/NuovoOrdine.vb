@@ -126,7 +126,7 @@
             Dim ListaRivestimenti As List(Of String) = Controlli.RiempiListaRivestimenti
 
 
-            Dim ts1 As New TimeSpan(Now.Ticks)
+
             If Not Label Is Nothing Then Label.Text = "Caricamento ordine"
             Dim NumeroOrdine As String = IO.Path.GetFileNameWithoutExtension(FileOrdine)
             LOG.Write("Presa in carico ordine " & NumeroOrdine)
@@ -175,28 +175,36 @@
                         If Controlli.CheckTipiRivestimenti(Riga_INPUT, ListaTipi, ListaRivestimenti) = True Then
                             'Controlli sulla riga input
 
-                            'Se è un pallet non tiene conto dell'altezza e delle diagonali
+                            'Se è un pallet non tiene conto di altezza, diagonali e rivestimento
                             If R(9) = "P" Or R(9) = "T" Then
                                 Riga_INPUT.H = 0
                                 Riga_INPUT.Diagonali = False
+                                Riga_INPUT.Rivestimento = False
+                                Riga_INPUT.TipoRivestimento = ""
+                            End If
+                            'Se è una cassa non tiene conto di diagonali e rivestimento
+                            If R(9) = "C" Then
+                                Riga_INPUT.Diagonali = False
+                                Riga_INPUT.Rivestimento = False
+                                Riga_INPUT.TipoRivestimento = ""
                             End If
 
                             If My.Settings.MisurePari = True Then
-                                'Se la misura è dispari aumenta 1
-                                If Riga_INPUT.L Mod 2 <> 0 Then Riga_INPUT.L += 1
-                                If Riga_INPUT.P Mod 2 <> 0 Then Riga_INPUT.P += 1
-                                If Riga_INPUT.H Mod 2 <> 0 Then Riga_INPUT.H += 1
-                                'Se attivato arrL5 la lunghezza viene arrotondata al 5 più vicino
-                                If My.Settings.ArrL5 = True Then Riga_INPUT.L = (Math.Round(Riga_INPUT.L / 5)) * 5
+                                    'Se la misura è dispari aumenta 1
+                                    If Riga_INPUT.L Mod 2 <> 0 Then Riga_INPUT.L += 1
+                                    If Riga_INPUT.P Mod 2 <> 0 Then Riga_INPUT.P += 1
+                                    If Riga_INPUT.H Mod 2 <> 0 Then Riga_INPUT.H += 1
+                                    'Se attivato arrL5 la lunghezza viene arrotondata al 5 più vicino
+                                    If My.Settings.ArrL5 = True Then Riga_INPUT.L = (Math.Round(Riga_INPUT.L / 5)) * 5
+                                End If
+
+                                '5 - Aggiunge l'oggetto appena creato alla lista "imballi da caricare"
+                                Lista.Add(Riga_INPUT)
+
                             End If
 
-                            '5 - Aggiunge l'oggetto appena creato alla lista "imballi da caricare"
-                            Lista.Add(Riga_INPUT)
 
-                        End If
-
-
-                    Else
+                        Else
                         Errore.Show("Controllo integrità ordine", "Attenzione, è stata trovata una riga vuota o non formattata correttamente:" & vbCrLf & "[" & Record & "]")
                     End If
 
@@ -216,6 +224,7 @@
             '################################# ELABORA LA LISTA APPENA CREATA ###############################
 
             Dim ProgC As String ' Crea una stringa sul file di log per seguire il percorso compiuto 
+            Dim ts1 As New TimeSpan(Now.Ticks)
 
             Try
                 If Not Label Is Nothing Then Label.Text = "Elaborazione Ordine"
@@ -226,7 +235,11 @@
 
                 OrdiniTable.Fill(DS.Ordini)
 
+
+
                 For Each PACK As RigaOrdineINPUT In Lista
+
+                    Dim ts3 As New TimeSpan(Now.Ticks)
 
                     ImballiTable.Fill(DS.Imballi)
                     IndiciTable.Fill(DS.Indici)
@@ -378,8 +391,12 @@
                         End If
                     End If
 
-                    ProgC += " Completed! (" & ImballoName & ")"
+                    Dim ts4 As New TimeSpan(Now.Ticks)
+                    ProgC += " Completed! (" & ImballoName & ") Time " & (ts4 - ts1).TotalSeconds.ToString
                     LOG.Write(ProgC)
+
+
+
                 Next
 
             Catch ex As Exception

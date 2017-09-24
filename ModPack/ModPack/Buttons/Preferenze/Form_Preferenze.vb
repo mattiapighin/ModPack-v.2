@@ -324,4 +324,8 @@
         End If
 
     End Sub
+
+    Private Sub Bt_PuliziaOrdini_Click(sender As Object, e As EventArgs) Handles Bt_PuliziaOrdini.Click
+        Form_PuliziaOrdini.ShowDialog()
+    End Sub
 End Class

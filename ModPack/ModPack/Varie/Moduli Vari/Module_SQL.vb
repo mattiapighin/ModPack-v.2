@@ -10,13 +10,26 @@ Namespace SQL
                 Using DS As New ModPackDBDataSet.OrdiniDataTable
                     Table.FillByNonEvaso(DS)
 
-                    For Each Row As ModPackDBDataSet.OrdiniRow In DS
+                    Dim ROW As ModPackDBDataSet.OrdiniRow = DS.Where(Function(X) X.Imballo = Riga.Imballo And
+                                      X.Codice = Riga.Codice And
+                                      X.Commessa = Riga.Commessa And
+                                      X.Qt = Riga.Qt And
+                                      X.L = Riga.L And
+                                      X.P = Riga.P And
+                                      X.H = Riga.H And
+                                      X.Indice = Riga.Indice And
+                                      X.Ordine = Riga.NumeroOrdine And
+                                      X.Data_Consegna = Riga.DataConsegna).FirstOrDefault
 
-                        If Riga.Imballo = Row.Imballo And Riga.Codice = Row.Codice And Riga.Commessa = Row.Commessa And Riga.Qt = Row.Qt And Riga.L = Row.L And Riga.P = Row.P And Riga.H = Row.H And Riga.NumeroOrdine = Row.Ordine And Riga.DataConsegna = Row.Data_Consegna Then
-                            ID = Row.Id
-                        End If
+                    If Not ROW Is Nothing Then Return ROW.Id
 
-                    Next
+                    'For Each Row As ModPackDBDataSet.OrdiniRow In DS
+
+                    '    If Riga.Imballo = Row.Imballo And Riga.Codice = Row.Codice And Riga.Commessa = Row.Commessa And Riga.Qt = Row.Qt And Riga.L = Row.L And Riga.P = Row.P And Riga.H = Row.H And Riga.NumeroOrdine = Row.Ordine And Riga.DataConsegna = Row.Data_Consegna Then
+                    '        ID = Row.Id
+                    '    End If
+
+                    'Next
 
                 End Using
 

@@ -211,6 +211,8 @@ Public Class Form_OrdiniAperti
 
         If Not DGW_OrdiniAperti.SelectedRows.Count = 0 Then
 
+
+
             Ordine = InputBox("Ordine:", "Stampa conferma d'ordine", DGW_OrdiniAperti.CurrentRow.Cells(0).Value)
 
             If ModPack.Ordine.OrdineEXIST(Ordine) = False Then
@@ -242,13 +244,19 @@ Public Class Form_OrdiniAperti
 
 
                 LOG.Write("Stampata conferma ordine " & Ordine)
-                Print_ConfermaOrdine.DefaultPageSettings = My.Settings.FormatoStampa
+
+
                 Print_ConfermaOrdine.PrinterSettings = DialogStampa.PrinterSettings
 
                 Print_ConfermaOrdine.DocumentName = "CO" & Ordine
+
+                Stampe.Set_Settings(Print_ConfermaOrdine, True)
+
                 Print_ConfermaOrdine.Print()
 
                 SSwrite("Conferma d'ordine stampata " & Ordine)
+
+
             End If
         Else
             MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
@@ -361,11 +369,14 @@ Public Class Form_OrdiniAperti
 
 
                     LOG.Write("Stampata checklist ordine " & Ordine)
-                    Print_CheckList.DefaultPageSettings = My.Settings.FormatoStampa
-                    Print_CheckList.PrinterSettings = DialogStampa.PrinterSettings
 
-                    Print_CheckList.DocumentName = "CKL" & Ordine
-                    Print_CheckList.Print()
+                Print_CheckList.PrinterSettings = DialogStampa.PrinterSettings
+
+                Print_CheckList.DocumentName = "CKL" & Ordine
+
+                Stampe.Set_Settings(Print_CheckList, False)
+
+                Print_CheckList.Print()
                 End If
             Else
             MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
@@ -413,7 +424,7 @@ Public Class Form_OrdiniAperti
 
                 If Not RowOrdine.Count = 0 Then
                     OrdineTable.Update(Ds)
-                    Print_Distinte.DefaultPageSettings = My.Settings.FormatoStampa
+                    Stampe.Set_Settings(Print_Distinte)
                     Dim L As New PrintPreviewDialog With {.Document = Print_Distinte, .TopMost = False, .WindowState = FormWindowState.Normal}
                     L.Show()
                 End If
@@ -455,19 +466,22 @@ Public Class Form_OrdiniAperti
         Stampe.CheckList(sender, e, Ordine, CheckListDS)
     End Sub
     Private Sub Print_Distinte_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Print_Distinte.PrintPage
-        Static PagineStampate = 0
-        Dim DistinteTotali As Integer = RowOrdine.Count - 1
+        Try
+            Static PagineStampate = 0
+            Dim DistinteTotali As Integer = RowOrdine.Count - 1
 
-        Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(PagineStampate))
+            Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(PagineStampate))
 
-        PagineStampate += 1
+            PagineStampate += 1
 
-        If PagineStampate <= DistinteTotali Then
-            e.HasMorePages = True
-        Else
-            e.HasMorePages = False
-            PagineStampate = 0
-        End If
+            If PagineStampate <= DistinteTotali Then
+                e.HasMorePages = True
+            Else
+                e.HasMorePages = False
+                PagineStampate = 0
+            End If
+        Catch
+        End Try
     End Sub
 
     Private Sub Print_QR_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Print_QR.PrintPage
@@ -568,7 +582,7 @@ Public Class Form_OrdiniAperti
 
                     If Not RowOrdine.Count = 0 Then
                         OrdineTable.Update(Ds)
-                        Print_Distinte.DefaultPageSettings = My.Settings.FormatoStampa
+                        Stampe.Set_Settings(Print_Distinte)
                         Dim L As New PrintPreviewDialog With {.Document = Print_Distinte, .TopMost = True, .WindowState = FormWindowState.Normal}
                         L.Show()
                     End If

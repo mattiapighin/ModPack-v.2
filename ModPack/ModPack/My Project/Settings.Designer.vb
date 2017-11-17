@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("normal")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("light")>  _
         Public Property LogType() As String
             Get
                 Return CType(Me("LogType"),String)
@@ -99,17 +99,6 @@ Namespace My
             Get
                 Return CType(Me("ModPackDBConnectionString"),String)
             End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property FormatoStampa() As Global.System.Drawing.Printing.PageSettings
-            Get
-                Return CType(Me("FormatoStampa"),Global.System.Drawing.Printing.PageSettings)
-            End Get
-            Set
-                Me("FormatoStampa") = value
-            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -565,6 +554,102 @@ Namespace My
             End Get
             Set
                 Me("NumeroOrdineClipboard") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("18.9")>  _
+        Public Property Stampa_MargineTop() As Single
+            Get
+                Return CType(Me("Stampa_MargineTop"),Single)
+            End Get
+            Set
+                Me("Stampa_MargineTop") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("37.8")>  _
+        Public Property Stampa_MargineBottom() As Single
+            Get
+                Return CType(Me("Stampa_MargineBottom"),Single)
+            End Get
+            Set
+                Me("Stampa_MargineBottom") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("18.9")>  _
+        Public Property Stampa_MargineLeft() As Single
+            Get
+                Return CType(Me("Stampa_MargineLeft"),Single)
+            End Get
+            Set
+                Me("Stampa_MargineLeft") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("37.8")>  _
+        Public Property Stampa_MargineRight() As Single
+            Get
+                Return CType(Me("Stampa_MargineRight"),Single)
+            End Get
+            Set
+                Me("Stampa_MargineRight") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Stampa_Color() As Boolean
+            Get
+                Return CType(Me("Stampa_Color"),Boolean)
+            End Get
+            Set
+                Me("Stampa_Color") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Stampa_LandScape() As Boolean
+            Get
+                Return CType(Me("Stampa_LandScape"),Boolean)
+            End Get
+            Set
+                Me("Stampa_LandScape") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property TreeView() As Boolean
+            Get
+                Return CType(Me("TreeView"),Boolean)
+            End Get
+            Set
+                Me("TreeView") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Log() As String
+            Get
+                Return CType(Me("Log"),String)
+            End Get
+            Set
+                Me("Log") = value
             End Set
         End Property
     End Class

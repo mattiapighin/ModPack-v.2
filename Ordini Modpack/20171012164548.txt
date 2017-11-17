@@ -1,0 +1,32 @@
+01;61721;1;UNIFLAIR S.P.A.;79167---------;73408/02---------;240;120;45;P;2V;False;;;27/10/2017;False;False;True;;False
+02;59630;1;KAMPMANN POLSKA SP.Z;99988---------;73454/01---------;570;92;74;G;2V;True;CA;f8          x6;27/10/2017;False;False;True;;False
+03;59629;1;KAMPMANN POLSKA SP.Z;99988---------;73454/01---------;570;92;74;G;2V;True;CA;f9          x6;27/10/2017;False;False;True;ATT BICCIATOLATO LUNGO RIVESTITO DIFAESITE;False
+04;51871;5;CARRIER TRANSICOLD I;83777---------;73947/13---------;160;70;115;T;EUR;False;;f6;27/10/2017;False;False;False;;True
+05;51871;5;CARRIER TRANSICOLD I;83777---------;74115/13---------;160;70;115;T;EUR;False;;f6;27/10/2017;False;False;False;;True
+06;58879;1;VERTIV SLOVAKIA, A.S;B00470---------;74300/02---------;210;80;70;T;EUR;False;CP;riparazioni  + commesse;27/10/2017;False;False;False;;True
+07;59036;3;VERTIV SLOVAKIA, A.S;B00470---------;74300/02---------;185;60;100;G;EUR;True;CA;;27/10/2017;False;False;False;FAESITE X BICC60X90     4;True
+08;63127;1;EBERSPAECHER SUETRAK;78983---------;74342/01---------;175;110;60;T;EUR;False;;f2    x5;27/10/2017;False;False;False;;True
+09;59633;1;KAMPMANN GMBH;99973---------;74362/01---------;170;120;95;T;EUR;False;;f 8      x7;27/10/2017;False;False;False;;True
+10;60743;1;BIDDLE BV;B00872---------;74391/01---------;265;115;50;T;EUR;False;;doppio ang. con 3 tav a lato e 4 davanti;27/10/2017;False;False;False;;False
+11;63126;1;KELVIN S.R.L.;B01888---------;74245/01---------;190;70;55;T;2V;False;;;27/10/2017;False;False;False;;False
+12;63125;1;BLUE BOX GROUP S.R.L;B04251---------;74311/02---------;225;60;116;G;EUR;False;;;27/10/2017;False;False;False;FAESITE X BICC60X110   2;True
+13;63124;1;MODINE CIS ITALY SRL;A00176---------;74499/01---------;235;62;110;G;EUR;False;;;27/10/2017;False;False;False;;True
+14;57289;3;NIBE AB;91363---------;74414/01---------;80;120;115;T;EUR;False;;F4   2X3   PLT 80X120  24 PZ. TAX;27/10/2017;True;False;False;;True
+15;63123;1;UNIFLAIR S.P.A.;89302---------;74420/01---------;220;120;40;P;2V;False;;specifica uniflair;27/10/2017;False;False;True;;False
+16;60025;1;RITTAL HOF GMBH & CO;96280---------;74424/01---------;200;75;105;G;EUR;True;CA;f4     x4;27/10/2017;False;False;False;;True
+17;63121;1;BLUE BOX GROUP S.R.L;B04250---------;74311/01---------;230;120;45;T;EUR;False;;;20/10/2017;False;False;False;;False
+18;57300;1;RITTAL HOF GMBH & CO;97104---------;74449/01---------;200;95;80;T;2V;False;;f5   x2;27/10/2017;False;False;False;;True
+19;57300;1;RITTAL HOF GMBH & CO;97104---------;74449/02---------;200;95;80;T;2V;False;;f5   x2;27/10/2017;False;False;False;;True
+20;57300;1;RITTAL HOF GMBH & CO;97104---------;74449/03---------;200;95;80;T;2V;False;;f5   x2;27/10/2017;False;False;False;;True
+21;63120;2;MODINE CIS ITALY SRL;A00271S001-00272S001;74451/01-74451/02;685;70;200;G;2V;False;;;27/10/2017;False;False;False;;True
+22;63119;1;MODINE CIS ITALY SRL;A00269S001-00270S001;74451/03-74451/04;650;70;200;G;2V;False;;base con morali;27/10/2017;False;False;True;;True
+23;60810;2;FLAEKT WOODS AB;97530---------;74468/01---------;160;90;65;G;2V;False;;;27/10/2017;False;False;False;;False
+24;60813;1;FLAEKT WOODS AB;B01127---------;74468/03---------;210;90;95;G;EUR;False;;;27/10/2017;False;False;False;;True
+25;60814;2;FLAEKT WOODS AB;B00403---------;74468/04---------;240;90;110;G;EUR;False;;;27/10/2017;False;False;False;;True
+26;50661;3;EURAPO S.R.L.;95744---------;74490/02---------;175;90;95;T;EUR;False;;f5    x2;27/10/2017;False;False;False;;False
+27;63118;4;VERTIV SLOVAKIA, A.S;B04299---------;74453/01---------;275;95;226;G;EUR;False;;;27/10/2017;False;False;True;;True
+28;49448;1;MITSUBISHI ELECTRIC;94731---------;74461/01---------;160;60;120;G;EUR;False;;;27/10/2017;False;False;False;DALL'ALTO INBASSOMICROLINE:000200040003;True
+29;49504;1;MITSUBISHI ELECTRIC;94207---------;74542/01---------;110;60;120;G;2V;False;;;27/10/2017;False;False;False;;True
+30;48374;6;NIBE AB;91626---------;74414/02---------;90;120;95;T;EUR;False;;f4  3x5  imb. max 60 pz  taxx;27/10/2017;True;False;False;;True
+31;60815;2;FLAEKT WOODS AB;B01128---------;74468/05---------;270;90;124;G;EUR;False;;;27/10/2017;False;False;False;;True
+32;62026;1;G.I.INDUSTRIAL HOLDI;B03355---------;74487/01---------;225;80;100;G;2V;False;;;27/10/2017;False;False;False;;True

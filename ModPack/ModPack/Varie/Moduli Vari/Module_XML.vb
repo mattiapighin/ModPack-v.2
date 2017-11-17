@@ -82,6 +82,10 @@
                     .WriteValue("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\ModPack\ModPackDB.mdf;Integrated Security=True;Connect Timeout=30")
                     .WriteEndElement()
 
+                    .WriteStartElement("Giorni_Memoria_LOG")
+                    .WriteValue("7")
+                    .WriteEndElement()
+
                     .WriteEndDocument()
                     .Close()
 

@@ -9,7 +9,7 @@
       <Value Profile="(Default)">1048576</Value>
     </Setting>
     <Setting Name="LogType" Type="System.String" Scope="User">
-      <Value Profile="(Default)">normal</Value>
+      <Value Profile="(Default)">light</Value>
     </Setting>
     <Setting Name="ModPackDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -18,9 +18,6 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\ModPack\ModPackDB.mdf;Integrated Security=True;Connect Timeout=30</Value>
-    </Setting>
-    <Setting Name="FormatoStampa" Type="System.Drawing.Printing.PageSettings" Scope="User">
-      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Etichette_DimensioneX" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">110</Value>
@@ -135,6 +132,30 @@
     </Setting>
     <Setting Name="NumeroOrdineClipboard" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Stampa_MargineTop" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">18.9</Value>
+    </Setting>
+    <Setting Name="Stampa_MargineBottom" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">37.8</Value>
+    </Setting>
+    <Setting Name="Stampa_MargineLeft" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">18.9</Value>
+    </Setting>
+    <Setting Name="Stampa_MargineRight" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">37.8</Value>
+    </Setting>
+    <Setting Name="Stampa_Color" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Stampa_LandScape" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TreeView" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Log" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -201,7 +201,7 @@
     End Sub
 
     Private Sub Bt_Stampa_Click(sender As Object, e As EventArgs) Handles Bt_Stampa.Click
-        PrintTabella.DefaultPageSettings = My.Settings.FormatoStampa
+        Stampe.Set_Settings(PrintTabella)
         Dim G As New PrintPreviewDialog With {.Document = PrintTabella}
         G.ShowDialog()
     End Sub

@@ -1,0 +1,15 @@
+01;61436;2;THERMOBUS S.P.A.;B02851---------;72769/02---------;230;85;120;T;2V;False;;F 5;14/07/2017;False;False;False;;True
+02;62391;1;THERMOBUS S.P.A.;94738---------;72769/03---------;175;110;120;T;EUR;False;;F 6        x8;14/07/2017;False;False;False;;True
+03;62390;1;THERMOBUS S.P.A.;94739---------;72769/04---------;175;110;120;T;EUR;False;;f6         x8;14/07/2017;False;False;False;;True
+04;62378;2;GEORGE BARKER & COMP;B02515---------;72772/03---------;365;100;110;T;EUR;False;;f6         x2;14/07/2017;False;False;False;;True
+05;62389;1;GEORGE BARKER & COMP;B02516---------;72772/04---------;210;100;65;T;EUR;False;;;14/07/2017;False;False;False;;False
+06;62388;1;GEORGE BARKER & COMP;B02279---------;72772/05---------;240;90;125;T;2V;False;;f7         x2;14/07/2017;False;False;False;;True
+07;62378;2;GEORGE BARKER & COMP;B02515---------;72772/06---------;365;100;110;T;EUR;False;;f6         x2;14/07/2017;False;False;False;;True
+08;62388;1;GEORGE BARKER & COMP;B02279---------;72772/07---------;240;90;125;T;2V;False;;f7         x2;14/07/2017;False;False;False;;True
+09;62378;2;GEORGE BARKER & COMP;B02515---------;72772/08---------;365;100;110;T;EUR;False;;f6         x2;14/07/2017;False;False;False;;True
+10;61515;1;FLAEKT WOODS AB;B00404---------;72774/01---------;130;88;90;G;2V;False;;F2   X 4;14/07/2017;False;False;False;;True
+11;60809;2;FLAEKT WOODS AB;B01124---------;72774/02---------;140;90;55;G;EUR;False;;x4;14/07/2017;False;False;False;;False
+12;60810;2;FLAEKT WOODS AB;97530---------;72774/03---------;160;90;65;G;2V;False;;;14/07/2017;False;False;False;;False
+13;60813;2;FLAEKT WOODS AB;B01127---------;72774/05---------;210;90;95;G;EUR;False;;;14/07/2017;False;False;False;;True
+14;60814;1;FLAEKT WOODS AB;B00403---------;72774/06---------;240;90;110;G;EUR;False;;;14/07/2017;False;False;False;;True
+15;60815;2;FLAEKT WOODS AB;B01128---------;72774/07---------;270;90;124;G;EUR;False;;;14/07/2017;False;False;False;;True

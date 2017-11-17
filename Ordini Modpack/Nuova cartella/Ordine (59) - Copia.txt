@@ -1,0 +1,31 @@
+01;50806;1;THERMOBUS S.P.A.;94794---------;74413/01---------;190;100;65;T;EUR;False;;f 4    x7;20/10/2017;False;False;False;;True
+02;51871;5;CARRIER TRANSICOLD I;83777---------;73817/11---------;160;70;115;T;EUR;False;;f6;20/10/2017;False;False;False;;True
+03;51871;6;CARRIER TRANSICOLD I;83777---------;74115/12---------;160;70;115;T;EUR;False;;f6;20/10/2017;False;False;False;;True
+04;59087;3;CARRIER TRANSICOLD I;B00448---------;74115/24---------;225;85;105;T;EUR;False;;;20/10/2017;False;False;False;;True
+05;63061;1;BLUE BOX GROUP S.R.L;B04202---------;74213/06---------;145;105;80;G;EUR;False;;;20/10/2017;False;False;False;;False
+06;63060;1;BLUE BOX GROUP S.R.L;B04203---------;74213/08---------;145;105;80;G;EUR;False;;;20/10/2017;False;False;False;;False
+07;63059;1;BLUE BOX GROUP S.R.L;B04217---------;74213/09---------;165;75;95;G;EUR;False;;;20/10/2017;False;False;False;;True
+08;63057;1;BLUE BOX GROUP S.R.L;B04216---------;74213/11---------;160;75;95;G;EUR;False;;;20/10/2017;False;False;False;;True
+09;63056;1;BLUE BOX GROUP S.R.L;B04215---------;74213/12---------;165;105;90;G;EUR;False;;;20/10/2017;False;False;False;FAESITE X BICC105X95       2;True
+10;38489;1;AIREDALE INTERNATION;86114---------;74253/01---------;360;80;112;G;2V;True;CA;;20/10/2017;False;False;False;FAESITE X BICC80X120      6;True
+11;46522;2;AIREDALE INTERNATION;92267---------;74253/02---------;200;70;94;G;EUR;False;;;20/10/2017;False;True;False;;True
+12;53784;17;NIBE AB;96271---------;74257/02---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;20/10/2017;True;False;False;;True
+13;63055;1;AIREDALE INTERNATION;B04055---------;74290/01---------;225;55;112;G;EUR;False;;;20/10/2017;False;False;False;;True
+14;51012;1;DENCOHAPPEL UK LTD;91144---------;74291/01-74291/02;225;50;107;G;2V;False;;;20/10/2017;False;False;False;;True
+15;58312;3;BIDDLE BV;B00714---------;74293/01---------;210;115;30;G;EUR;True;CA;x5;20/10/2017;False;False;False;;False
+16;59078;1;MITSUBISHI ELECTRIC;99227---------;74297/01---------;110;92;145;G;EUR;False;;;20/10/2017;False;False;False;;True
+17;59080;1;MITSUBISHI ELECTRIC;99692---------;74297/02---------;165;70;145;G;EUR;False;;;20/10/2017;False;False;False;;True
+18;59036;6;VERTIV SLOVAKIA, A.S;B00470---------;74300/01---------;185;60;100;G;EUR;True;CA;;20/10/2017;False;False;False;FAESITE X BICC60X90     4;True
+19;57312;3;BIDDLE BV;92125---------;74329/01---------;250;95;55;G;EUR;True;CA;;20/10/2017;False;False;False;;False
+20;57441;3;BIDDLE BV;91483---------;74329/02---------;200;120;50;G;EUR;True;CA;f2            x6;20/10/2017;False;False;False;;True
+21;63049;1;EXHAUSTO A/S;98075---------;74359/01---------;175;75;50;P;EUR;False;;;20/10/2017;False;False;False;;False
+22;63048;1;AIREDALE INTERNATION;B00364-00363;74366/02---------;200;60;110;G;EUR;False;;;20/10/2017;False;False;False;;True
+23;58906;1;MITSUBISHI ELECTRIC;99382---------;74374/01---------;100;72;105;G;EUR;False;;;20/10/2017;False;False;False;;True
+24;55805;1;MITSUBISHI ELECTRIC;99283---------;74419/01---------;110;70;145;G;EUR;False;;;20/10/2017;False;False;False;;True
+25;63047;1;AIREDALE INTERNATION;99478---------;74208/01---------;465;65;112;G;2V;False;;base con morali;20/10/2017;False;False;True;FAESITE X BICC65X230    4;True
+26;63046;1;CARRIER TRANSICOLD I;B01560---------;74219/06---------;230;115;120;T;2V;False;;f7         x3;20/10/2017;False;False;False;;True
+27;63045;1;CARRIER TRANSICOLD I;B01561---------;74219/07---------;230;115;122;T;EUR;False;;f7      x3;20/10/2017;False;False;False;;True
+28;63044;1;UNIFLAIR S.P.A.;B02274---------;74225/01---------;270;160;70;P;2V;False;;;20/10/2017;False;False;True;;False
+29;56069;1;AIREDALE INTERNATION;99478---------;74267/01---------;465;65;112;G;2V;False;;base con morali;20/10/2017;False;False;True;FAESITE X BICC65X230    4;True
+30;63043;1;G.I.INDUSTRIAL HOLDI;B03876---------;74305/02---------;205;55;120;T;2V;False;;;20/10/2017;False;False;False;;True
+31;58906;1;MITSUBISHI ELECTRIC;99382---------;74419/03---------;100;72;105;G;EUR;False;;;20/10/2017;False;False;False;;True

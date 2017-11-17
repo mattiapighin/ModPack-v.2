@@ -1,0 +1,14 @@
+01;60025;2;RITTAL HOF GMBH & CO;96280---------;72605/05---------;200;75;105;G;EUR;True;CA;f4     x4;04/08/2017;False;False;False;;True
+02;60743;1;BIDDLE BV;B00872---------;72732/01---------;265;115;50;T;EUR;False;;doppio ang. con 3 tav a lato e 4 davanti;04/08/2017;False;False;False;;False
+03;57289;3;NIBE AB;91363---------;72777/02---------;80;120;115;T;EUR;False;;F4   2X3   PLT 80X120  24 PZ. TAX;04/08/2017;True;False;False;;True
+04;53784;17;NIBE AB;96271---------;72777/03---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;04/08/2017;True;False;False;;True
+05;53062;2;STULZ GMBH;95043---------;72943/03---------;190;100;52;GST;EUR;True;CP;f2     x3   rivesti con cartonplast;04/08/2017;True;False;False;TAVOLE A PIENO           ENO CARTONPLASTSULLA BASEBICC: FAESITE100X85     2ASSEMBLA CON            VITI;True
+06;60025;1;RITTAL HOF GMBH & CO;96280---------;72964/03---------;200;75;105;G;EUR;True;CA;f4     x4;04/08/2017;False;False;False;;True
+07;60025;1;RITTAL HOF GMBH & CO;96280---------;72968/03---------;200;75;105;G;EUR;True;CA;f4     x4;04/08/2017;False;False;False;;True
+08;48374;3;NIBE AB;91626---------;73011/01---------;90;120;95;T;EUR;False;;f4  3x5  imb. max 60 pz  taxx;04/08/2017;True;False;False;;True
+09;51871;4;CARRIER TRANSICOLD I;83777---------;73062/12---------;160;70;115;T;EUR;False;;f6;04/08/2017;False;False;False;;True
+10;44328;3;UNIFLAIR S.P.A.;79165---------;73101/01---------;139;113;115;G;EUR;False;;ATT SERAFINO  TESTE E FIANCHI CONTRARI;04/08/2017;False;False;False;FRA LE BATTERIEUSA TAV GIA' PRONTE ... BICC;True
+11;58312;3;BIDDLE BV;B00714---------;73127/02---------;210;115;30;G;EUR;True;CA;x5;04/08/2017;False;False;False;;True
+12;62571;1;G.I.INDUSTRIAL HOLDI;B03486---------;73141/03---------;180;50;75;G;2V;False;;;04/08/2017;False;False;False;;False
+13;62570;1;BLUE BOX GROUP S.R.L;B00882---------;73166/01---------;285;60;105;G;2V;False;;blocca al centro;04/08/2017;False;False;False;;True
+14;19570;1;EBERSPAECHER SUETRAK;56286---------;73144/01---------;225;95;65;T;EUR;False;;nr.f.2;04/08/2017;False;False;False;46X65         6X BICCIATO;False

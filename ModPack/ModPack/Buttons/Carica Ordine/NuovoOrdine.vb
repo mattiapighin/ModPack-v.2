@@ -125,13 +125,11 @@
             Dim ListaTipi As List(Of String) = Controlli.RiempiListaTipi
             Dim ListaRivestimenti As List(Of String) = Controlli.RiempiListaRivestimenti
 
-
-
             If Not Label Is Nothing Then Label.Text = "Caricamento ordine"
             Dim NumeroOrdine As String = IO.Path.GetFileNameWithoutExtension(FileOrdine)
-            LOG.Write("Presa in carico ordine " & NumeroOrdine)
-            '1 - Controlla che l'ordine non sia già stato caricato (in base al nome del file)
+            LOG.Write("[[============ CARICAMENTO ORDINE " & NumeroOrdine & " ============]]")
 
+            '1 - Controlla che l'ordine non sia già stato caricato (in base al nome del file)
             Try
                 If Ordine.OrdineEXIST(IO.Path.GetFileNameWithoutExtension(FileOrdine)) = True Then
                     LOG.Write("Ordine " & NumeroOrdine & " già in carico")
@@ -190,21 +188,21 @@
                             End If
 
                             If My.Settings.MisurePari = True Then
-                                    'Se la misura è dispari aumenta 1
-                                    If Riga_INPUT.L Mod 2 <> 0 Then Riga_INPUT.L += 1
-                                    If Riga_INPUT.P Mod 2 <> 0 Then Riga_INPUT.P += 1
-                                    If Riga_INPUT.H Mod 2 <> 0 Then Riga_INPUT.H += 1
-                                    'Se attivato arrL5 la lunghezza viene arrotondata al 5 più vicino
-                                    If My.Settings.ArrL5 = True Then Riga_INPUT.L = (Math.Round(Riga_INPUT.L / 5)) * 5
-                                End If
-
-                                '5 - Aggiunge l'oggetto appena creato alla lista "imballi da caricare"
-                                Lista.Add(Riga_INPUT)
-
+                                'Se la misura è dispari aumenta 1
+                                If Riga_INPUT.L Mod 2 <> 0 Then Riga_INPUT.L += 1
+                                If Riga_INPUT.P Mod 2 <> 0 Then Riga_INPUT.P += 1
+                                If Riga_INPUT.H Mod 2 <> 0 Then Riga_INPUT.H += 1
+                                'Se attivato arrL5 la lunghezza viene arrotondata al 5 più vicino
+                                If My.Settings.ArrL5 = True Then Riga_INPUT.L = (Math.Round(Riga_INPUT.L / 5)) * 5
                             End If
 
+                            '5 - Aggiunge l'oggetto appena creato alla lista "imballi da caricare"
+                            Lista.Add(Riga_INPUT)
 
-                        Else
+                        End If
+
+
+                    Else
                         Errore.Show("Controllo integrità ordine", "Attenzione, è stata trovata una riga vuota o non formattata correttamente:" & vbCrLf & "[" & Record & "]")
                     End If
 
@@ -421,7 +419,7 @@
                 '8 - Se la lista dei nuovi imballi non è vuota permette di stamparla 
                 If ListaNuovi.Count > 0 Then
                     If MsgBox("Durante la presa in carico dell'ordine sono stati creati" & vbCrLf &
-                             ContaNuovi & " imballi nuovi. Vuoi stampare la lista? (Totale: " & ListaNuovi.Count & ")" & vbCrLf & "(La lista resterà in memoria fino alla chiusura dell'applicazione)", vbYesNo, "Imballi Nuovi") = MsgBoxResult.Yes Then
+                    ContaNuovi & " imballi nuovi. Vuoi stampare la lista? (Totale: " & ListaNuovi.Count & ")" & vbCrLf & "(La lista resterà in memoria fino alla chiusura dell'applicazione)", vbYesNo, "Imballi Nuovi") = MsgBoxResult.Yes Then
                         MostraNuovi()
                     End If
                 End If

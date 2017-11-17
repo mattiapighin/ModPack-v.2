@@ -1,0 +1,4 @@
+01;63361;1;STULZ GMBH;B04409---------;74869/01---------;265;145;35;GST;EUR;True;CP;;07/12/2017;True;False;True;;False
+02;63360;3;STULZ GMBH;B04409---------;74869/01---------;265;145;75;GST;EUR;True;CP;;07/12/2017;True;False;True;;False
+03;63359;1;STULZ GMBH;B04408---------;74868/01---------;230;145;80;GST;EUR;True;CP;;07/12/2017;False;False;True;;True
+04;63358;1;STULZ GMBH;B04408---------;74868/01---------;215;145;35;GST;EUR;True;CP;;07/12/2017;False;False;False;;False

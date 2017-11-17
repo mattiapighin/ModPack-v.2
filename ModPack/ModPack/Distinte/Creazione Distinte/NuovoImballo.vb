@@ -163,14 +163,27 @@
     Private Sub InsertImballo()
         Try
 
+
             If My.Settings.CheckInserimentoImballo = True Then
-                MsgBox("Inserimento imballo " & R_NomeImballo & vbCrLf &
-                       "L " & R_Lunghezza & " P " & R_Profondità & " H " & R_Altezza & vbCrLf &
-                       "Tipo: & " & R_Type & vbCrLf & "Zoccoli: " & R_Zoccoli & vbCrLf & "Rivestimento: " & R_Rivestimento & " " & R_TipoRivestimento & vbCrLf &
-                       "HT:" & R_HT & vbCrLf & "DT: " & R_DT & " BM: " & R_BM & vbCrLf &
-                       "Diagonali: " & R_Diagonali & " F° " & R_GradiF & " T° " & R_GradiT & vbCrLf &
-                       "Primo Morale: " & R_PrimoMOR & vbCrLf &
-                       "M3: " & R_M3 & " M2: " & R_M2 & " € " & R_Prezzo, vbOKOnly, R_NomeImballo)
+
+                Dim ImballoPax As New RigaImballi With {.Nome = R_NomeImballo,
+                                                        .L = R_Lunghezza,
+                                                        .P = R_Profondità,
+                                                        .H = R_Altezza,
+                                                        .TIpo = R_Type,
+                                                        .Zoccoli = R_Zoccoli,
+                                                        .Rivestimento = R_Rivestimento,
+                                                        .TipoRivestimento = R_TipoRivestimento,
+                                                        .HT = R_HT,
+                                                        .DT = R_DT,
+                                                        .BM = R_BM,
+                                                        .M3 = R_M3,
+                                                        .M2 = R_M2,
+                                                        .Prezzo = R_Prezzo}
+
+
+                NotificaInsImballo.MostraDialog(ImballoPax)
+
             End If
 
             Dim IMG As Byte() = Nothing
@@ -316,10 +329,9 @@
             Dim GRADIdiagT As Single = Imballo.Diagonali_gradi(SpazioFraMontantiT, H, Ltav)
             Dim NdiagT As Single = Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav)
 
-            'se spazio maggiore di x diagonali si
 
-            If Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav) Mod 2 <> 0 Then
-                NdiagT = 0
+            If NdiagT Mod 2 <> 0 Then
+                NdiagT += 1
             End If
 
             If GRADIdiagF < 0 Then GRADIdiagF = 0
@@ -350,7 +362,9 @@
 
             D.AddRange({TTL, TM})
 
-            If H >= 100 And NdiagT > 0 Then
+
+
+            If (H >= 100 Or R_Diagonali = True) And SpazioFraMontantiT > 40 Then
                 Dim TD As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = LdiagT, .N = NdiagT, .Tag = "TD", .Part = "T"}
                 D.Add(TD)
             End If
@@ -609,9 +623,10 @@
             Dim GRADIdiagT As Single = Imballo.Diagonali_gradi(SpazioFraMontantiT, H, Ltav)
             Dim NdiagT As Single = Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav)
 
-            If Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav) Mod 2 <> 0 Then
-                NdiagT = 0
+            If NdiagT Mod 2 <> 0 Then
+                NdiagT += 1
             End If
+
 
             If GRADIdiagF < 0 Then GRADIdiagF = 0
             If GRADIdiagT < 0 Then GRADIdiagT = 0
@@ -634,7 +649,7 @@
 
             D.AddRange({TTL, TM})
 
-            If NdiagT > 0 Then
+            If (H >= 100 Or R_Diagonali = True) And SpazioFraMontantiT > 40 Then
                 Dim TD As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = LdiagT, .N = NdiagT, .Tag = "TD", .Part = "T"}
                 D.Add(TD)
             End If
@@ -694,8 +709,8 @@
 
             If BM = True Then
                 BTL.Y = 5
-                MontanteSottoF += 4.5
-                MontanteSottoT += 4.5
+                MontanteSottoF = 4.5
+                MontanteSottoT = 4.5
             End If
 
             D.AddRange({TTT, ZOC, TTB, BTL})

@@ -159,6 +159,12 @@
     <Compile Include="Buttons\Preferenze\Form_Preferenze.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Buttons\Preferenze\FRM_FormatoStampa.Designer.vb">
+      <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\Preferenze\FRM_FormatoStampa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Buttons\Preferenze\FRM_TestConnessioni.Designer.vb">
       <DependentUpon>FRM_TestConnessioni.vb</DependentUpon>
     </Compile>
@@ -169,6 +175,12 @@
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
     </Compile>
     <Compile Include="Creazione Manuale Imballi\Form_Crea_Manuale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DLG_MostraLOG.Designer.vb">
+      <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DLG_MostraLOG.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\ErrorBox.Designer.vb">
@@ -187,6 +199,12 @@
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\Form_PuliziaOrdini.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.Designer.vb">
+      <DependentUpon>NotificaInsImballo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Email\Form_Preferenze_Email.Designer.vb">
@@ -351,11 +369,17 @@
     <EmbeddedResource Include="Buttons\Preferenze\Form_Preferenze.resx">
       <DependentUpon>Form_Preferenze.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Buttons\Preferenze\FRM_FormatoStampa.resx">
+      <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Buttons\Preferenze\FRM_TestConnessioni.resx">
       <DependentUpon>FRM_TestConnessioni.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Creazione Manuale Imballi\Form_Crea_Manuale.resx">
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DLG_MostraLOG.resx">
+      <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ErrorBox.resx">
       <DependentUpon>ErrorBox.vb</DependentUpon>
@@ -365,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Form_PuliziaOrdini.resx">
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Distinte\Creazione Distinte\NotificaInsImballo.resx">
+      <DependentUpon>NotificaInsImballo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Email\Form_Preferenze_Email.resx">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>

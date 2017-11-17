@@ -1,0 +1,6 @@
+01;62891;1;ARTIVA LTD;B04009---------;73739/01---------;250;70;90;P;EUR;False;;;29/09/2017;False;False;False;;False
+02;62890;1;UNIFLAIR S.P.A.;B03637---------;74017/02---------;190;160;125;G;EUR;False;;diagonali teste e fianchi;06/10/2017;False;False;True;;True
+03;62889;1;RHOSS S.P.A.;84341---------;74026/04---------;200;90;125;G;EUR;False;;;29/09/2017;False;False;False;FAESITE X BICC100X85       2;True
+04;62888;1;RHOSS S.P.A.;B03870---------;74026/08---------;190;125;35;P;2V;False;;;29/09/2017;False;False;False;;False
+05;62887;1;MITSUBISHI ELECTRIC;B04063---------;73945/01---------;220;85;195;G;2V;False;;;22/09/2017;False;False;True;;True
+06;62885;1;AIREDALE INTERNATION;B04056---------;73985/02---------;370;60;112;G;EUR;False;;blocca al centro;29/09/2017;False;False;False;;True

@@ -152,8 +152,16 @@ Public Class Form_Imballi
                 .Stampato = False
             End With
 
-            PrintImballo.DefaultPageSettings = My.Settings.FormatoStampa
+            With PrintImballo.DefaultPageSettings
+                .Margins.Top = My.Settings.Stampa_MargineTop
+                .Margins.Bottom = My.Settings.Stampa_MargineBottom
+                .Margins.Left = My.Settings.Stampa_MargineLeft
+                .Margins.Right = My.Settings.Stampa_MargineRight
+                .Color = My.Settings.Stampa_Color
+                .Landscape = My.Settings.Stampa_LandScape
+            End With
 
+            Stampe.Set_Settings(PrintImballo)
             Dim Preview As New PrintPreviewDialog With {.Document = PrintImballo, .StartPosition = FormStartPosition.CenterScreen, .TopMost = True, .WindowState = FormWindowState.Maximized}
             Preview.ShowDialog()
         End If

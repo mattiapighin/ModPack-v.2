@@ -1,0 +1,35 @@
+01;62994;1;STULZ GMBH;B04176---------;74124/02---------;195;100;95;GST;EUR;True;CP;gabbia tipo stulz   base piena;13/10/2017;False;False;False;;True
+02;62993;1;STULZ GMBH;B04175---------;74124/01---------;195;100;50;G;EUR;True;CP;gabbia tipo stulz  base piena;13/10/2017;False;False;False;;False
+03;62992;1;KAMPMANN GMBH;B04068---------;73943/02---------;275;90;115;T;EUR;False;;f10       x5;13/10/2017;False;False;False;;True
+04;52810;1;MITSUBISHI ELECTRIC;97344---------;74243/01---------;335;70;170;G;2V;False;;;06/10/2017;False;False;False;;True
+05;62991;1;RITTAL HOF GMBH & CO;97104---------;74281/01---------;200;55;35;T;2V;False;;;06/10/2017;False;False;False;;False
+06;51871;4;CARRIER TRANSICOLD I;83777---------;73715/17---------;160;70;115;T;EUR;False;;f6;13/10/2017;False;False;False;;True
+07;62989;4;CARRIER TRANSICOLD I;B00467---------;73920/01---------;170;115;75;G;EUR;False;;f2       x3;13/10/2017;False;False;False;COMPENSATI X BIC85X115       2;False
+08;62990;1;CARRIER TRANSICOLD I;B00467---------;73919/01---------;175;55;50;T;2V;False;;;13/10/2017;False;False;False;;False
+09;62990;1;CARRIER TRANSICOLD I;B00467---------;73920/02---------;175;55;50;T;2V;False;;;13/10/2017;False;False;False;;False
+10;62989;4;CARRIER TRANSICOLD I;B00467---------;73920/02---------;170;115;75;G;EUR;False;;f2       x3;13/10/2017;False;False;False;COMPENSATI X BIC85X115       2;False
+11;62988;1;CARRIER TRANSICOLD I;B04053---------;73950/01---------;175;95;55;P;EUR;False;;;13/10/2017;False;False;False;;False
+12;53784;17;NIBE AB;96271---------;73982/03---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;13/10/2017;True;False;False;;True
+13;23666;1;ZANOTTI S.P.A.;72583---------;74107/01---------;170;115;95;T;EUR;False;;F. 5      X2;13/10/2017;False;False;False;;False
+14;57309;1;BIDDLE BV;79384---------;74108/01---------;250;115;65;T;EUR;False;;f2  x 3;13/10/2017;False;False;False;;False
+15;59087;5;CARRIER TRANSICOLD I;B00448---------;74115/23---------;225;85;105;T;EUR;False;;;13/10/2017;False;False;False;;True
+16;31457;1;UNIFLAIR S.P.A.;54094---------;74121/01---------;190;60;112;P;2V;False;;;13/10/2017;False;False;False;;False
+17;16411;10;CARRIER TRANSICOLD E;66753---------;74126/01---------;94;31;55;C;2V;False;;H INT.45 X27X90  2 ZOCCOLI;13/10/2017;False;False;False;20X79    2      >18X42    1      >5) 18X30  1    >4) 18X37  1    >4) 45X85   2   >7) 18X55    1  >;False
+18;31564;20;CARRIER TRANSICOLD E;79760---------;74126/02---------;122;19;61;C;2V;False;;CASSA COMP H51 L122 P19  3 ZOCC;13/10/2017;False;False;False;X BICCIATOFORNIRE ACORREDOMORALE DA270X70X50  TAXX;False
+19;55130;25;CARRIER TRANSICOLD E;97284---------;74126/03---------;170;26;70;C;2V;False;;cassa comp. h60 L170 p26;13/10/2017;False;False;False;;False
+20;57914;1;AIREDALE INTERNATION;B00582---------;74143/01---------;220;95;45;T;EUR;False;;;13/10/2017;False;False;False;;False
+21;62986;1;DENCOHAPPEL UK LTD;98679---------;74144/01---------;210;50;130;G;2V;False;;;13/10/2017;False;False;False;FAESITE 72X100  2X BICC;True
+22;62985;1;UNIFLAIR S.P.A.;99113---------;74159/01---------;315;195;60;P;EUR;False;;;13/10/2017;False;False;True;;False
+23;62984;1;UNIFLAIR S.P.A.;B02646---------;74185/01---------;290;135;110;G;EUR;False;;diagonali frontali e laterali;13/10/2017;False;False;True;;True
+24;51871;5;CARRIER TRANSICOLD I;83777---------;74219/13---------;160;70;115;T;EUR;False;;f6;13/10/2017;False;False;False;;True
+25;8193;1;UNIFLAIR S.P.A.;56113---------;74163/01---------;105;122;125;G;EUR;False;;;13/10/2017;False;False;False;FAESITE 105X122  2BICCIATO;True
+26;47091;1;VERTIV S.R.L.;80204---------;74250/01---------;185;105;45;P;EUR;False;;;13/10/2017;False;False;False;;False
+27;51988;1;MITSUBISHI ELECTRIC;93514---------;74299/01---------;180;80;40;T;2V;False;;f 2;06/10/2017;False;False;False;;True
+28;51072;1;MITSUBISHI ELECTRIC;93514---------;74294/02---------;180;80;50;T;2V;False;;f3    con stecche interne;06/10/2017;False;False;False;;True
+29;62983;1;MITSUBISHI ELECTRIC;98088---------;74294/01---------;180;75;50;T;2V;False;;ATTENZIONE AL CORREDO;06/10/2017;False;False;False;;False
+30;58797;1;MITSUBISHI ELECTRIC;99227---------;74299/02---------;110;92;145;G;EUR;False;;;06/10/2017;False;False;False;;True
+31;59079;1;MITSUBISHI ELECTRIC;99584---------;74296/01---------;165;70;145;G;2V;False;;;13/10/2017;False;False;False;;True
+32;58184;1;MITSUBISHI ELECTRIC;99584---------;74294/03---------;165;92;145;G;2V;False;;;13/10/2017;False;False;False;;True
+33;62981;1;MITSUBISHI ELECTRIC;99584---------;74294/03---------;165;92;145;G;2V;False;;;13/10/2017;False;False;False;;True
+34;62030;1;G.I.INDUSTRIAL HOLDI;B03390---------;74178/02---------;315;55;100;G;EUR;False;;;13/10/2017;False;False;False;;True
+35;62980;1;UNIFLAIR S.P.A.;B04198---------;74173/01---------;190;115;55;P;2V;False;;;13/10/2017;False;False;False;;False

@@ -537,5 +537,14 @@
 
         End Sub
 
+        Public Sub Set_Settings(ByVal Document As Printing.PrintDocument, optional Colore As Boolean = false)
+            Document.DefaultPageSettings.Margins.Top = My.Settings.Stampa_MargineTop / 0.254
+            Document.DefaultPageSettings.Margins.Bottom = My.Settings.Stampa_MargineBottom / 0.254
+            Document.DefaultPageSettings.Margins.Left = My.Settings.Stampa_MargineLeft / 0.254
+            Document.DefaultPageSettings.Margins.Right = My.Settings.Stampa_MargineRight / 0.254
+            Document.DefaultPageSettings.Color = Colore
+            Document.DefaultPageSettings.Landscape = My.Settings.Stampa_LandScape
+        End Sub
+
     End Module
 End Namespace

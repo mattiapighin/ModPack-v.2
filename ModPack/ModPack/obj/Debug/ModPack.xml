@@ -107,6 +107,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ModPack.ModPackDBDataSet.LogDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ModPack.ModPackDBDataSet.RivestimentiRow">
 <summary>
 Represents strongly named DataRow class.
@@ -163,6 +168,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:ModPack.ModPackDBDataSet.Setup_RivestRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSet.LogRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -227,6 +237,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:ModPack.ModPackDBDataSet.LogRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:ModPack.ModPackDBDataSetTableAdapters.OrdiniTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -283,6 +298,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:ModPack.ModPackDBDataSetTableAdapters.Setup_RivestTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSetTableAdapters.LogTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

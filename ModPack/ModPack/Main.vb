@@ -24,7 +24,15 @@ Public Class Main
     Dim RowOrdine As New List(Of RigaOrdine)
     Dim RowIndici As New List(Of Integer)
 
-    'VERSIONE 2.0 - Tutto caricamento ordine trasformato con lambda expressions
+    'VERSIONE 2.0.1 
+    'CHANGELOG
+    ' - Fixato definitivamente perdita formato stampa (sperin)
+    ' - Migliorato responsiveness form opzioni
+    ' - Migliorato dialog inserimento nuovi articoli
+    ' - CheckBox 'Notifica spostamento indice' disabled
+    ' - Caricamento treeview ordini con lambda expressions e facoltativo (aggiunto pulsante REFRESH TREEVIEW a toolstrip TOOLS)
+    ' - Cambiata completamente gestione log. Ora tabella su DB
+    ' - Fix minori
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
@@ -98,24 +106,18 @@ Public Class Main
                 If Not String.IsNullOrEmpty(Utente) Then My.Settings.Utente = Utente
 
                 If MsgBox("Azzerare formato stampa?", vbYesNo, "Nuovo Utente") = MsgBoxResult.Yes Then
-
-                    My.Settings.FormatoStampa = New Printing.PageSettings
-
-                    With My.Settings.FormatoStampa
-
-                        .Landscape = False
-                        .Color = False
-                        .Margins.Top = 18.9
-                        .Margins.Bottom = 37.8
-                        .Margins.Left = 18.9
-                        .Margins.Right = 37.8
-
+                    With My.Settings
+                        .Stampa_MargineTop = 18.9
+                        .Stampa_MargineRight = 37.8
+                        .Stampa_MargineLeft = 18.9
+                        .Stampa_MargineBottom = 37.8
+                        .Stampa_Color = False
+                        .Stampa_LandScape = False
                     End With
                 End If
 
 
-                    With My.Settings
-
+                With My.Settings
                     .LogType = "normal"
                     .NumeroRigheDistinta = 15
                     .DimensioneFontDistinta = 12
@@ -147,7 +149,7 @@ Public Class Main
 
             XML.CreaXML()
 
-            LOG.Write("Inizio sessione " & System.Environment.UserName)
+            LOG.Write("Inizio sessione")
             CaricaMemo()
             SQL.PuliziaOrdini() 'Se attivo elimina tutti gli ordini prima di una certa data (default false)
             My.Settings.Scarto = SQL.GetPrezzoMateriale("SCART") 'salva in memoria la percentuale di scarto in modo da non dover fare la query ogni volta
@@ -201,15 +203,21 @@ Public Class Main
                 Using DS As New ModPackDBDataSet.OrdiniDataTable
                     Table.Fill(DS)
 
-                    Dim Ordini = From row In DS.AsEnumerable()
-                                 Select row.Field(Of String)("Ordine") Distinct
+                    'Estrapola tutti gli ordini presenti in archivio
+
+                    'Metodo1 
+                    'Dim Ordini = From row In DS.AsEnumerable() Select row.Field(Of String)("Ordine") Distinct
+                    'Metodo2
+                    Dim Ordini2 = DS.Where(Function(X) X.Evaso = False).Select(Function(X) X.Ordine).ToArray.Distinct
 
                     Dim I As Integer = 0
 
-                    For Each Ordine As String In Ordini
+                    For Each Ordine As String In Ordini2
 
                         Dim Evaso = True
-                        Dim row() As DataRow = DS.Select("Ordine = '" & Ordine & "'")
+                        'Dim row() As DataRow = DS.Select("Ordine = '" & Ordine & "'")
+                        Dim row() As DataRow = DS.Where(Function(X) X.Ordine = Ordine).ToArray
+
 
                         For K = 0 To row.Length - 1
                             'Se in tutto l'ordine c'è almeno un imballo inevaso prosegue
@@ -218,7 +226,7 @@ Public Class Main
 
                         If Evaso = False Then
                             'Se esiste un imballo inevaso carica il nodo Ordine
-                            OrdiniTree.Nodes.Add(Ordine)
+                            OrdiniTree.Nodes.Add("(" & row(0)(27) & ") - " & Ordine)
 
                             For K = 0 To row.Length - 1
                                 'E poi carica gli imballi inevasi
@@ -267,7 +275,9 @@ Public Class Main
     End Sub
 
     Private Sub Main_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        CaricaOrdiniAperti()
+        If My.Settings.TreeView = True Then
+            CaricaOrdiniAperti()
+        End If
     End Sub
     Private Sub OrdiniTree_DoubleClick(sender As Object, e As EventArgs) Handles OrdiniTree.DoubleClick
         Try
@@ -323,15 +333,26 @@ Public Class Main
     End Sub
 
     Private Sub Main_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        LOG.CheckSize()
+        LOG.Write("Fine sessione")
+        LOG.Clean()
     End Sub
 
     Private Sub TS_Listino_Click(sender As Object, e As EventArgs) Handles TS_Listino.Click
         Form_Listino.Show()
     End Sub
 
-    Private Sub OrdiniTree_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles OrdiniTree.AfterSelect
 
+    Private Sub OrdiniTree_KeyDown(sender As Object, e As KeyEventArgs) Handles OrdiniTree.KeyDown
+        If e.Control And e.KeyCode = Keys.C Then
+            Clipboard.SetText(OrdiniTree.SelectedNode.Text)
+        End If
     End Sub
 
+    Private Sub REFRESHTREEVIEWToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REFRESHTREEVIEWToolStripMenuItem.Click
+        CaricaOrdiniAperti()
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
+        LOG.Clean()
+    End Sub
 End Class

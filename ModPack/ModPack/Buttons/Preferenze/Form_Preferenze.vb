@@ -1,24 +1,7 @@
 ﻿Public Class Form_Preferenze
 
     Private Sub Bt_FormatoStampa_Click(sender As Object, e As EventArgs) Handles Bt_FormatoStampa.Click
-        Try
-            Dim PageFormat As New PageSetupDialog With {.Document = New Printing.PrintDocument, .EnableMetric = True, .PageSettings = My.Settings.FormatoStampa}
-
-            If PageFormat.ShowDialog = DialogResult.OK Then
-                My.Settings.FormatoStampa = PageFormat.PageSettings
-                My.Settings.Save()
-            End If
-
-        Catch ex As Exception
-            Errore.Show("Apertura formato stampa", ex.Message)
-            If MsgBox("Azzerare formato stampa?", vbYesNo, "Errore") = MsgBoxResult.Yes Then
-                Dim PageSetupDialog As New PageSetupDialog With {.Document = New Printing.PrintDocument, .EnableMetric = True}
-                If PageSetupDialog.ShowDialog = DialogResult.OK Then
-                    My.Settings.FormatoStampa = PageSetupDialog.PageSettings
-                End If
-            End If
-        End Try
-
+        FRM_FormatoStampa.ShowDialog()
     End Sub
     Private Sub CaricaSettingsEtichette()
         With My.Settings
@@ -49,10 +32,9 @@
         Ck_ColoraScaduti.Checked = My.Settings.OrdiniAperti_ColoraScaduti
         Ck_ColoraEvasi.Checked = My.Settings.OrdiniAperti_ColoraEvasi
         Ck_CheckCaricamento.Checked = My.Settings.CheckInserimentoImballo
-        'Ck_BiancoNero.Checked = My.Settings.FormatoStampa.Color
         CkNoteDinamico.Checked = My.Settings.NoteDinamico
         Ck_TextMain.Checked = My.Settings.TestoIconeMain
-        CkNotificaCambioIndice.Checked = My.Settings.DialogConfrontoIndici
+        Ck_TreeView.Checked = My.Settings.TreeView
         CK_DescrizioneClipboard.Checked = My.Settings.NumeroOrdineClipboard
     End Sub
     Private Sub SalvaSettingsCK()
@@ -60,10 +42,9 @@
         My.Settings.OrdiniAperti_ColoraScaduti = Ck_ColoraScaduti.Checked
         My.Settings.OrdiniAperti_ColoraEvasi = Ck_ColoraEvasi.Checked
         My.Settings.CheckInserimentoImballo = Ck_CheckCaricamento.Checked
-        ' My.Settings.FormatoStampa.Color = Ck_BiancoNero.Checked
         My.Settings.NoteDinamico = CkNoteDinamico.Checked
         My.Settings.TestoIconeMain = Ck_TextMain.Checked
-        My.Settings.DialogConfrontoIndici = CkNotificaCambioIndice.Checked
+        My.Settings.TreeView = Ck_TreeView.Checked
         My.Settings.NumeroOrdineClipboard = CK_DescrizioneClipboard.Checked
     End Sub
 
@@ -209,7 +190,7 @@
 
     Private Sub Bt_PulisciImballi_Click(sender As Object, e As EventArgs) Handles Bt_PulisciImballi.Click
 
-        If MsgBox("Questa funzione permette di eliminare dal database le righe imballi senza alcun indice associato." & vbCrLf & "Sei sicuro di voler continuare?", vbYesNo, "Pulizia imballi") = MsgBoxResult.Yes Then
+        If MsgBox("Questa funzione permette di eliminare dal database le righe imballi senza alcun indice associato." & vbCrLf & "Attenzione, potrebbero essere eliminati imballi ancora da produrre" & vbCrLf & "Sei sicuro di voler continuare?", vbYesNo, "Pulizia imballi") = MsgBoxResult.Yes Then
 
             Dim ListaImballi As New List(Of String)
             Dim ListaEliminare As New List(Of String)
@@ -255,7 +236,8 @@
     End Sub
 
     Private Sub Bt_Log_Click(sender As Object, e As EventArgs) Handles Bt_Log.Click
-        Process.Start(My.Settings.FileLogPath)
+        DLG_MostraLOG.ShowDialog()
+        'Process.Start(My.Settings.FileLogPath)
     End Sub
 
     Private Sub BT_SetupRives_Click(sender As Object, e As EventArgs) Handles BT_SetupRives.Click
@@ -268,15 +250,36 @@
             If MsgBox("Questa operazione azzera completamente tutti i dati caricati, continuare? (2)", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
                 If MsgBox("Questa operazione azzera completamente tutti i dati caricati, continuare? (1)", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
 
-                    SQL.Query("TRUNCATE TABLE Distinta")
-                    SQL.Query("TRUNCATE TABLE Imballi")
-                    SQL.Query("TRUNCATE TABLE Indici")
-                    SQL.Query("TRUNCATE TABLE Ordini")
-                    SQL.Query("TRUNCATE TABLE NoteImballi")
-                    SQL.Query("TRUNCATE TABLE Memo")
-                    IO.File.Delete(My.Settings.XMLpath)
-                    Debug.WriteLine("Truncato tutto")
-                    XML.CreaXML()
+                    If MsgBox("Troncare tabella DISTINTA?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Distinta")
+                    End If
+
+                    If MsgBox("Troncare tabella IMBALLI?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Imballi")
+                    End If
+
+                    If MsgBox("Troncare tabella INDICI?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Indici")
+                    End If
+
+                    If MsgBox("Troncare tabella ORDINI?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Ordini")
+                    End If
+
+                    If MsgBox("Troncare tabella NOTE IMBALLI?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE NoteImballi")
+                    End If
+
+                    If MsgBox("Troncare tabella MEMO?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Memo")
+                    End If
+
+                    If MsgBox("Ripristinare file XML?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        IO.File.Delete(My.Settings.XMLpath)
+                        XML.CreaXML()
+                    End If
+
+                    Debug.WriteLine("Operazione completata!")
 
                 End If
             End If
@@ -328,4 +331,5 @@
     Private Sub Bt_PuliziaOrdini_Click(sender As Object, e As EventArgs) Handles Bt_PuliziaOrdini.Click
         Form_PuliziaOrdini.ShowDialog()
     End Sub
+
 End Class

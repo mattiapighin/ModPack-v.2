@@ -1,0 +1,21 @@
+01;62812;1;LUVATA ITALY SRL -UN;A00265S001-00266S001;73997/01-73997/02;565;70;200;G;2V;False;;;29/09/2017;False;False;False;;True
+02;62811;1;UNIFLAIR S.P.A.;98247---------;74000/01---------;195;162;45;G;2V;False;;;29/09/2017;False;False;False;;False
+03;60025;2;RITTAL HOF GMBH & CO;96280---------;73609/03---------;200;75;105;G;EUR;True;CA;f4     x4;29/09/2017;False;False;False;;True
+04;60025;1;RITTAL HOF GMBH & CO;96280---------;73704/03---------;200;75;105;G;EUR;True;CA;f4     x4;29/09/2017;False;False;False;;True
+05;62378;1;EPTA GEORGE BARKER L;B02515---------;73762/02---------;365;85;110;G;EUR;True;CA;f6         x2;29/09/2017;False;False;True;;True
+06;14399;1;CARRIER TRANSICOLD I;62891---------;73817/05---------;220;115;120;T;EUR;False;;nr.f.7      x3;29/09/2017;False;False;False;60X110     21  X BICCIATO;False
+07;14371;1;CARRIER TRANSICOLD I;62890---------;73817/04---------;220;115;120;T;EUR;False;;n.f.7    x3;29/09/2017;False;False;False;60X110       21   X BICCIATO;False
+08;62388;3;EPTA GEORGE BARKER L;B02279---------;73869/02---------;235;85;105;G;EUR;True;CA;f7         x2;29/09/2017;False;False;False;;True
+09;62379;1;EPTA GEORGE BARKER L;B02516---------;73869/01---------;210;100;65;T;EUR;False;;;29/09/2017;False;False;False;;False
+10;37894;1;THERMOBUS S.P.A.;85853---------;73892/01---------;195;85;85;T;2V;False;;;29/09/2017;False;False;False;;False
+11;50807;1;THERMOBUS S.P.A.;94793---------;73892/03---------;190;100;65;T;EUR;False;;f4      x7;29/09/2017;False;False;False;FAESITE X BICCFAESITE 92X100 2;False
+12;50807;1;THERMOBUS S.P.A.;94793---------;73892/04---------;190;100;65;T;EUR;False;;f4      x7;29/09/2017;False;False;False;FAESITE X BICCFAESITE 92X100 2;False
+13;48495;1;AIREDALE INTERNATION;89543---------;73897/02---------;190;120;75;T;2V;False;;;29/09/2017;False;False;False;;False
+14;59048;1;AIREDALE INTERNATION;99144---------;73897/03---------;195;75;42;T;2V;False;;;29/09/2017;False;False;False;;False
+15;59078;1;MITSUBISHI ELECTRIC;99227---------;73821/01---------;110;92;145;G;EUR;False;;;22/09/2017;False;False;False;;True
+16;59078;1;MITSUBISHI ELECTRIC;99227---------;73813/02---------;110;92;145;G;EUR;False;;;22/09/2017;False;False;False;;True
+17;58513;1;MITSUBISHI ELECTRIC;99386---------;73928/01---------;75;110;105;G;EUR;False;;;29/09/2017;False;False;False;;True
+18;61515;1;FLAEKT WOODS AB;B00404---------;73825/01---------;130;88;90;G;2V;False;;F2   X 4;22/09/2017;False;False;False;;True
+19;51072;4;MITSUBISHI ELECTRIC;93514---------;73882/01---------;180;80;50;T;2V;False;;f3    con stecche interne;22/09/2017;False;False;False;;True
+20;62400;1;KELVIN S.R.L.;B01888---------;73712/02---------;190;65;40;T;2V;False;;;15/09/2017;False;False;False;;False
+21;62807;1;UNIFLAIR S.P.A.;B03630---------;73908/02---------;340;180;50;P;2V;False;;imballare con telarini;29/09/2017;False;False;True;;False

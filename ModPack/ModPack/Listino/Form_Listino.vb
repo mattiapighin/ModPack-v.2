@@ -43,7 +43,14 @@
                 Me.TipiTableAdapter.Update(Me.ModPackDBDataSet.Tipi)
                 LOG.Write("Modificato listino")
                 BloccaDGW()
-                MsgBox("Modifiche salvate!", vbOKOnly, "Salva")
+
+                My.Settings.Scarto = SQL.GetPrezzoMateriale("SCART")
+                My.Settings.Save()
+
+                If MsgBox("Modifiche salvate!" & vbCrLf & "E' consigliabile uscire e rientrare nell'applicazione. Uscire ora?", vbYesNo, "Salva") = MsgBoxResult.Yes Then
+                    Application.Exit()
+                End If
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try

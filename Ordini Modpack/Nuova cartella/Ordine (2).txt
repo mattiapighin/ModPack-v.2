@@ -1,0 +1,22 @@
+01;58427;6;EPTA S.P.A - U.L. CA;B00830---------;72580/01---------;170;115;110;T;EUR;False;;f5        x5;30/06/2017;False;False;False;;True
+02;58427;6;EPTA S.P.A - U.L. CA;B00830---------;72580/02---------;170;115;110;T;EUR;False;;f5        x5;30/06/2017;False;False;False;;True
+03;60834;1;LUVATA GUADALAJARA S;A00039S003---------;71290/01---------;575;70;225;G;2V;False;;base con morlai;30/06/2017;False;False;False;;True
+04;59087;6;CARRIER TRANSICOLD I;B00448---------;71965/24---------;225;85;105;T;EUR;False;;;30/06/2017;False;False;False;;True
+05;14371;1;CARRIER TRANSICOLD I;62890---------;71965/31---------;220;115;120;T;EUR;False;;n.f.7    x3;30/06/2017;False;False;False;60X110       21   X BICCIATO;False
+06;58879;1;VERTIV SLOVAKIA, A.S;B00470---------;72140/02---------;210;80;70;T;EUR;True;CP;riparazioni  + commesse;30/06/2017;False;False;False;;True
+07;53784;17;NIBE AB;96271---------;72233/06---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;30/06/2017;True;False;False;;True
+08;62245;1;MITSUBISHI ELECTRIC;B03523-03524;72457/01-72457/02;145;60;130;G;2V;False;;;30/06/2017;False;False;False;;True
+09;51871;5;CARRIER TRANSICOLD I;83777---------;72507/02---------;160;70;115;T;EUR;False;;f6;30/06/2017;False;False;False;;True
+10;14399;2;CARRIER TRANSICOLD I;62891---------;72507/06---------;220;115;120;T;EUR;False;;nr.f.7      x3;30/06/2017;False;False;False;60X110     21  X BICCIATO;False
+11;62244;1;LUVATA GUADALAJARA S;A00039---------;72528/01---------;570;70;220;G;2V;False;;;30/06/2017;False;True;False;;True
+12;61488;1;THERMOBUS S.P.A.;94738-94739;72537/01-72537/02;175;100;50;T;EUR;False;;f3          x8;30/06/2017;False;False;False;FAESITE X BICC85X100     4;False
+13;62243;1;LUVATA ITALY SRL -UN;A00111S003-00112S003;72558/01-72558/02;495;70;200;G;2V;False;;;30/06/2017;False;False;True;;True
+14;36034;1;UNIFLAIR S.P.A.;44381---------;72473/01---------;170;75;40;P;2V;False;;;30/06/2017;False;False;False;;False
+15;60810;2;FLAEKT WOODS AB;97530---------;72492/01---------;160;90;65;G;2V;False;;;30/06/2017;False;False;False;;False
+16;60814;2;FLAEKT WOODS AB;B00403---------;72492/03---------;240;90;110;G;EUR;False;;;30/06/2017;False;False;False;;True
+17;60812;2;FLAEKT WOODS AB;B01126---------;72492/02---------;190;90;90;G;EUR;False;;;30/06/2017;False;False;False;;False
+18;4029;1;THERMOBUS S.P.A.;43511---------;72537/03---------;210;115;85;T;EUR;False;;NR.F.2    x3;30/06/2017;False;False;False;;False
+19;62242;1;LUVATA GUADALAJARA S;9855S008---------;72604/01---------;370;70;225;G;2V;False;;base con morali;30/06/2017;False;False;True;;True
+20;60025;1;RITTAL HOF GMBH & CO;96280---------;72605/01---------;200;75;105;G;EUR;True;CA;f4     x4;30/06/2017;False;False;False;;True
+21;57851;1;EBERSPAECHER SUETRAK;99764---------;72363/01---------;195;98;73;G;EUR;False;;ANCHE TERMORETRAIBILE TAXX;30/06/2017;False;False;False;;True
+22;57850;1;EBERSPAECHER SUETRAK;99764---------;72363/01---------;195;98;110;G;EUR;False;;ANCHE TERMORETRAIBILE TAXX;30/06/2017;False;False;False;;True

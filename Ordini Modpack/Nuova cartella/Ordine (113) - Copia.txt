@@ -1,0 +1,20 @@
+01;62663;1;SCM FRIGO SPA;97809-97809;73533/01---------;450;70;210;G;2V;False;;;08/09/2017;False;False;False;;True
+02;60025;1;RITTAL HOF GMBH & CO;96280---------;72605/06---------;200;75;105;G;EUR;True;CA;f4     x4;08/09/2017;False;False;False;;True
+03;53784;17;NIBE AB;96271---------;72777/05---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;08/09/2017;True;False;False;;True
+04;59891;1;RITTAL HOF GMBH & CO;B01777---------;73484/01---------;180;60;45;G;2V;True;CA;;08/09/2017;False;False;False;;False
+05;59890;7;RITTAL HOF GMBH & CO;B01777---------;73484/01---------;185;116;55;G;EUR;True;CA;;08/09/2017;False;False;False;;False
+06;56386;1;SCM FRIGO SPA;99658---------;73193/01---------;320;65;220;G;2V;False;;BLOCCARE AL CENTRO;08/09/2017;False;False;False;;True
+07;14371;2;CARRIER TRANSICOLD I;62890---------;73222/02---------;220;115;120;T;EUR;False;;n.f.7    x3;08/09/2017;False;False;False;60X110       21   X BICCIATO;False
+08;14399;2;CARRIER TRANSICOLD I;62891---------;73222/03---------;220;115;120;T;EUR;False;;nr.f.7      x3;08/09/2017;False;False;False;60X110     21  X BICCIATO;False
+09;51871;5;CARRIER TRANSICOLD I;83777---------;73222/14---------;160;70;115;T;EUR;False;;f6;08/09/2017;False;False;False;;True
+10;62322;1;KAMPMANN GMBH;B03473---------;73334/01---------;215;95;110;T;EUR;False;;f  10        x5;08/09/2017;False;False;False;;True
+11;18748;1;GRAM COMMERCIAL A/S;64635---------;73366/01---------;140;95;92;G;EUR;True;CA;FILE4  X6   CATAFORESI;08/09/2017;False;False;False;;False
+12;59136;1;KAMPMANN GMBH;B01232---------;73416/01---------;555;55;23;G;2V;False;;f2       x5;08/09/2017;False;True;False;;False
+13;59121;1;SCM FRIGO SPA;B00793---------;73420/01---------;150;70;142;G;EUR;False;;;08/09/2017;False;False;False;;True
+14;62645;1;EPTA GEORGE BARKER L;B02908---------;73428/01---------;175;90;95;T;EUR;False;;f5        x2;08/09/2017;False;False;False;;True
+15;62389;1;EPTA GEORGE BARKER L;B02516---------;73428/02---------;205;85;110;G;EUR;True;CA;;08/09/2017;False;False;False;;True
+16;62378;4;EPTA GEORGE BARKER L;B02515---------;73428/04---------;365;85;110;G;EUR;True;CA;f6         x2;08/09/2017;False;False;True;;True
+17;62527;1;FLAEKT WOODS AB;B01124---------;73431/01---------;140;90;110;G;EUR;False;;F2      X4;08/09/2017;False;False;False;;True
+18;62388;3;EPTA GEORGE BARKER L;B02279---------;73428/03---------;235;85;105;G;EUR;True;CA;f7         x2;08/09/2017;False;False;False;;True
+19;51072;1;MITSUBISHI ELECTRIC;93514---------;73612/01---------;180;80;50;T;2V;False;;f3    con stecche interne;08/09/2017;False;False;False;;True
+20;57104;5;BIDDLE BV;88540---------;73625/01---------;275;115;85;T;2V;False;;f3    x4  incrociat 2 x dentro 2 x fuori;08/09/2017;False;False;False;;True

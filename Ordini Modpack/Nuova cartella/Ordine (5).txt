@@ -1,0 +1,26 @@
+01;45932;1;TRS TRANSPORTKOELING;90342---------;72248/03---------;175;120;87;T;EUR;False;;f5        x2;07/07/2017;False;False;False;;True
+02;51871;7;CARRIER TRANSICOLD I;83777---------;72384/04---------;160;70;115;T;EUR;False;;f6;07/07/2017;False;False;False;;True
+03;14399;1;CARRIER TRANSICOLD I;62891---------;72384/09---------;220;115;120;T;EUR;False;;nr.f.7      x3;07/07/2017;False;False;False;60X110     21  X BICCIATO;False
+04;59613;4;DAIKIN APPLIED EUROP;B01643-01644;72394/01-72394/02;565;70;115;GDA;2V;False;;;07/07/2017;False;False;True;;True
+05;58380;1;KAMPMANN GMBH;B00827---------;72466/01---------;250;95;115;T;EUR;False;;f10    x5;07/07/2017;False;False;False;;True
+06;14371;2;CARRIER TRANSICOLD I;62890---------;72507/05---------;220;115;120;T;EUR;False;;n.f.7    x3;07/07/2017;False;False;False;60X110       21   X BICCIATO;False
+07;53062;2;STULZ GMBH;95043---------;72520/01---------;190;100;52;GST;EUR;True;CP;f2     x3   rivesti con cartonplast;07/07/2017;True;False;False;TAVOLE A PIENO           ENO CARTONPLASTSULLA BASEBICC: FAESITE100X85     2ASSEMBLA CON            VITI;True
+08;59035;4;VERTIV SLOVAKIA, A.S;B00469---------;72546/01---------;185;60;65;G;EUR;True;CA;BARCODE;07/07/2017;False;False;False;FAESITE X BICC.60X90       2;False
+09;43586;1;THERMO FISHER SCIENT;89360---------;72564/01---------;130;70;81;G;EUR;True;CP;2 x 3       HT   HT     HT;07/07/2017;False;False;False;;True
+10;42796;3;THERMO FISHER SCIENT;89360---------;72564/01---------;130;115;81;G;EUR;True;CA;2 x 5       HT   HT     HT;07/07/2017;False;False;False;;True
+11;60025;2;RITTAL HOF GMBH & CO;96280---------;72593/01---------;200;75;105;G;EUR;True;CA;f4     x4;07/07/2017;False;False;False;;True
+12;29490;1;CARRIER TRANSICOLD E;77411---------;72611/01---------;100;25;50;C;2V;False;;CASSA COMP. H INT55 X 100X25;07/07/2017;False;False;False;;True
+13;34713;1;CARRIER TRANSICOLD E;80534---------;72611/02---------;82;48;20;C;2V;False;;H INT. H19 L80 P45  NO ZOCCOLI;07/07/2017;False;False;False;;False
+14;35013;3;CARRIER TRANSICOLD E;66044---------;72615/01---------;106;48;27;C;2V;False;;CASSA COMP. 15X106X48;07/07/2017;False;False;False;;False
+15;43300;5;CARRIER TRANSICOLD E;88665---------;72615/02---------;55;48;22;C;2V;False;;cassa comp.;07/07/2017;False;False;False;;False
+16;57312;1;BIDDLE BV;92125---------;72665/01---------;250;95;55;G;EUR;True;CA;;07/07/2017;False;False;False;;False
+17;57441;1;BIDDLE BV;91483---------;72665/02---------;200;120;60;G;EUR;True;CP;f2            x6;07/07/2017;False;False;False;;True
+18;54349;2;BIDDLE BV;88539---------;72665/03---------;186;125;100;T;EUR;False;;;07/07/2017;False;False;False;;True
+19;57104;2;BIDDLE BV;88540---------;72665/04---------;275;115;85;T;2V;False;;f3    x4  incrociat 2 x dentro 2 x fuori;07/07/2017;False;False;False;;True
+20;58770;1;BIDDLE BV;88544---------;72665/05---------;250;110;50;G;EUR;True;CP;;07/07/2017;False;False;False;;False
+21;56891;1;MITSUBISHI ELECTRIC;99951---------;72695/01---------;185;75;70;P;EUR;False;;;07/07/2017;False;False;False;;False
+22;62305;1;MITSUBISHI ELECTRIC;99951---------;72695/01---------;185;75;170;G;2V;False;;;07/07/2017;False;False;False;;True
+23;60743;1;BIDDLE BV;B00872---------;72732/04---------;265;115;50;T;EUR;False;;doppio ang. con 3 tav a lato e 4 davanti;07/07/2017;False;False;False;;False
+24;42350;1;CALOREX HEAT PUMPS L;73565---------;72752/01---------;200;50;103;G;2V;False;;;07/07/2017;False;False;False;;True
+25;42349;12;CALOREX HEAT PUMPS L;73565---------;72752/01---------;200;95;103;G;EUR;True;CA;;07/07/2017;False;False;False;FAESITE X BICC100X92         4SOTTO;True
+26;47045;1;DENCOHAPPEL UK LTD;92720---------;72762/05---------;290;110;107;P;2V;False;;;07/07/2017;False;False;True;;False

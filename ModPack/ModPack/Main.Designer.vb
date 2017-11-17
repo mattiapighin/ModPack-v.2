@@ -47,6 +47,7 @@ Partial Class Main
         Me.TS_ControlloOrdine = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_ListaElementi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Listino = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REFRESHTREEVIEWToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tabelle = New System.Windows.Forms.ToolStripButton()
         Me.Ts_Preferenze = New System.Windows.Forms.ToolStripButton()
         Me.TS_Memo = New System.Windows.Forms.ToolStripButton()
@@ -59,9 +60,9 @@ Partial Class Main
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStrip, Me.ProgressBar})
         Me.StatusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 521)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 460)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(764, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(839, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 7
         Me.StatusStrip1.Text = "StatusStrip1"
@@ -80,7 +81,7 @@ Partial Class Main
         '
         'Calendario
         '
-        Me.Calendario.Location = New System.Drawing.Point(11, 53)
+        Me.Calendario.Location = New System.Drawing.Point(3, 39)
         Me.Calendario.Name = "Calendario"
         Me.Calendario.ShowWeekNumbers = True
         Me.Calendario.TabIndex = 8
@@ -107,12 +108,12 @@ Partial Class Main
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGW_Memo.Location = New System.Drawing.Point(12, 227)
+        Me.DGW_Memo.Location = New System.Drawing.Point(3, 203)
         Me.DGW_Memo.Name = "DGW_Memo"
         Me.DGW_Memo.ReadOnly = True
         Me.DGW_Memo.RowHeadersVisible = False
         Me.DGW_Memo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DGW_Memo.Size = New System.Drawing.Size(248, 283)
+        Me.DGW_Memo.Size = New System.Drawing.Size(249, 254)
         Me.DGW_Memo.TabIndex = 11
         '
         'Memo
@@ -140,13 +141,13 @@ Partial Class Main
         Me.OrdiniTree.Indent = 30
         Me.OrdiniTree.ItemHeight = 20
         Me.OrdiniTree.LineColor = System.Drawing.Color.DarkGray
-        Me.OrdiniTree.Location = New System.Drawing.Point(272, 53)
+        Me.OrdiniTree.Location = New System.Drawing.Point(255, 39)
         Me.OrdiniTree.Name = "OrdiniTree"
         Me.OrdiniTree.SelectedImageIndex = 0
         Me.OrdiniTree.ShowLines = False
         Me.OrdiniTree.ShowPlusMinus = False
         Me.OrdiniTree.ShowRootLines = False
-        Me.OrdiniTree.Size = New System.Drawing.Size(480, 457)
+        Me.OrdiniTree.Size = New System.Drawing.Size(580, 418)
         Me.OrdiniTree.TabIndex = 12
         '
         'ImmaginiTree
@@ -164,11 +165,12 @@ Partial Class Main
         Me.ToolStrip1.AutoSize = False
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(10, 10)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Ordini, Me.TS_Imballi, Me.TS_Tools, Me.TS_Tabelle, Me.Ts_Preferenze, Me.TS_Memo})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.ToolStrip1.Size = New System.Drawing.Size(764, 44)
+        Me.ToolStrip1.Size = New System.Drawing.Size(839, 36)
         Me.ToolStrip1.TabIndex = 14
         Me.ToolStrip1.Text = "ToolStrip"
         '
@@ -179,7 +181,7 @@ Partial Class Main
         Me.TS_Ordini.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Ordini.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_Ordini.Name = "TS_Ordini"
-        Me.TS_Ordini.Size = New System.Drawing.Size(83, 41)
+        Me.TS_Ordini.Size = New System.Drawing.Size(83, 33)
         Me.TS_Ordini.Text = "ORDINI"
         '
         'TS_CaricaOrdine
@@ -207,29 +209,29 @@ Partial Class Main
         Me.TS_Imballi.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Imballi.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_Imballi.Name = "TS_Imballi"
-        Me.TS_Imballi.Size = New System.Drawing.Size(88, 41)
+        Me.TS_Imballi.Size = New System.Drawing.Size(88, 33)
         Me.TS_Imballi.Text = "IMBALLI"
         '
         'TS_Archivio
         '
         Me.TS_Archivio.Name = "TS_Archivio"
-        Me.TS_Archivio.Size = New System.Drawing.Size(128, 22)
+        Me.TS_Archivio.Size = New System.Drawing.Size(152, 22)
         Me.TS_Archivio.Text = "ARCHIVIO"
         '
         'TS_Crea
         '
         Me.TS_Crea.Name = "TS_Crea"
-        Me.TS_Crea.Size = New System.Drawing.Size(128, 22)
+        Me.TS_Crea.Size = New System.Drawing.Size(152, 22)
         Me.TS_Crea.Text = "CREA"
         '
         'TS_Tools
         '
-        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.TS_ListaElementi, Me.TS_Listino})
+        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.TS_ListaElementi, Me.TS_Listino, Me.REFRESHTREEVIEWToolStripMenuItem})
         Me.TS_Tools.Image = CType(resources.GetObject("TS_Tools.Image"), System.Drawing.Image)
         Me.TS_Tools.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Tools.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_Tools.Name = "TS_Tools"
-        Me.TS_Tools.Size = New System.Drawing.Size(80, 41)
+        Me.TS_Tools.Size = New System.Drawing.Size(80, 33)
         Me.TS_Tools.Text = "TOOLS"
         '
         'TS_ControlloOrdine
@@ -250,13 +252,19 @@ Partial Class Main
         Me.TS_Listino.Size = New System.Drawing.Size(189, 22)
         Me.TS_Listino.Text = "LISTINO"
         '
+        'REFRESHTREEVIEWToolStripMenuItem
+        '
+        Me.REFRESHTREEVIEWToolStripMenuItem.Name = "REFRESHTREEVIEWToolStripMenuItem"
+        Me.REFRESHTREEVIEWToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.REFRESHTREEVIEWToolStripMenuItem.Text = "REFRESH TREEVIEW"
+        '
         'TS_Tabelle
         '
         Me.TS_Tabelle.Image = CType(resources.GetObject("TS_Tabelle.Image"), System.Drawing.Image)
         Me.TS_Tabelle.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Tabelle.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_Tabelle.Name = "TS_Tabelle"
-        Me.TS_Tabelle.Size = New System.Drawing.Size(80, 41)
+        Me.TS_Tabelle.Size = New System.Drawing.Size(80, 33)
         Me.TS_Tabelle.Text = "TABELLE"
         '
         'Ts_Preferenze
@@ -266,7 +274,7 @@ Partial Class Main
         Me.Ts_Preferenze.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Ts_Preferenze.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Ts_Preferenze.Name = "Ts_Preferenze"
-        Me.Ts_Preferenze.Size = New System.Drawing.Size(82, 41)
+        Me.Ts_Preferenze.Size = New System.Drawing.Size(82, 33)
         Me.Ts_Preferenze.Text = "OPZIONI"
         Me.Ts_Preferenze.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
@@ -276,7 +284,7 @@ Partial Class Main
         Me.TS_Memo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Memo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TS_Memo.Name = "TS_Memo"
-        Me.TS_Memo.Size = New System.Drawing.Size(72, 41)
+        Me.TS_Memo.Size = New System.Drawing.Size(72, 33)
         Me.TS_Memo.Text = "MEMO"
         '
         'Main
@@ -284,18 +292,17 @@ Partial Class Main
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(764, 543)
+        Me.ClientSize = New System.Drawing.Size(839, 482)
         Me.Controls.Add(Me.OrdiniTree)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Calendario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.DGW_Memo)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(588, 521)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ModPack"
@@ -332,4 +339,5 @@ Partial Class Main
     Friend WithEvents TS_Crea As ToolStripMenuItem
     Friend WithEvents TS_Listino As ToolStripMenuItem
     Friend WithEvents ImmaginiTree As ImageList
+    Friend WithEvents REFRESHTREEVIEWToolStripMenuItem As ToolStripMenuItem
 End Class

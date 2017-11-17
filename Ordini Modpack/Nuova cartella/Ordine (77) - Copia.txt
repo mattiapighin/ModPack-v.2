@@ -1,0 +1,38 @@
+01;53784;8;NIBE AB;96271---------;73982/02---------;80;120;120;T;EUR;False;;f4          2x3        imballo ht;06/10/2017;True;False;False;;True
+02;59087;4;CARRIER TRANSICOLD I;B00448---------;73222/20---------;225;85;105;T;EUR;False;;;06/10/2017;False;False;False;;True
+03;51871;8;CARRIER TRANSICOLD I;83777---------;73715/16---------;160;70;115;T;EUR;False;;f6;06/10/2017;False;False;False;;True
+04;62378;2;EPTA GEORGE BARKER L;B02515---------;73869/03---------;365;85;110;G;EUR;True;CA;f6         x2;06/10/2017;False;False;True;;True
+05;62378;2;EPTA GEORGE BARKER L;B02515---------;73869/04---------;365;85;110;G;EUR;True;CA;f6         x2;06/10/2017;False;False;True;;True
+06;41445;1;AUTOCLIMA S.P.A.;88660---------;73873/01---------;205;75;50;T;2V;False;;;06/10/2017;False;True;False;;False
+07;62807;1;UNIFLAIR S.P.A.;B03630---------;73908/03---------;355;200;65;P;2V;False;;imballare con telarini;06/10/2017;False;False;True;;True
+08;62941;1;KAMPMANN GMBH;B04071---------;73951/01---------;270;65;50;T;EUR;False;;f3     x5;06/10/2017;False;False;False;;False
+09;59035;4;VERTIV SLOVAKIA, A.S;B00469---------;73958/05---------;185;60;65;G;EUR;True;CA;BARCODE;06/10/2017;False;False;False;FAESITE X BICC.60X90       2;False
+10;62939;1;VERTIV SLOVAKIA, A.S;B02783---------;73971/01---------;182;60;95;G;EUR;True;CA;;06/10/2017;False;False;False;;True
+11;62940;1;VERTIV SLOVAKIA, A.S;B02783---------;73971/01---------;182;60;75;G;EUR;True;CA;;06/10/2017;False;False;False;;True
+12;62938;2;AIREDALE INTERNATION;B04055---------;73985/01---------;225;80;112;G;EUR;False;;;06/10/2017;False;False;False;;True
+13;62937;1;AIREDALE INTERNATION;B04058---------;73985/04---------;230;60;120;G;2V;False;;;06/10/2017;False;False;False;;True
+14;57097;1;RITTAL HOF GMBH & CO;97104---------;73986/01---------;200;95;122;T;2V;False;;f9    x2;06/10/2017;False;False;False;;True
+15;62936;1;RITTAL HOF GMBH & CO;97104---------;73986/01---------;200;95;55;T;2V;False;;f3   x2;06/10/2017;False;False;False;;True
+16;62935;1;RITTAL HOF GMBH & CO;97104---------;73986/02---------;200;95;110;T;2V;False;;f7    x2;06/10/2017;False;False;False;;True
+17;59635;1;AUTOCLIMA S.P.A.;88756---------;73999/01---------;160;40;42;C;2V;False;;cassa compensato  h32 L160 p40;06/10/2017;False;False;False;;False
+18;62934;1;UNIFLAIR S.P.A.;B03637---------;74017/03---------;190;165;70;P;2V;False;;;06/10/2017;False;False;True;;True
+19;62933;1;BLUE BOX GROUP S.R.L;B04095---------;74033/01---------;285;70;155;G;2V;False;;;06/10/2017;False;False;False;;True
+20;62932;1;EBERSPAECHER SUETRAK;78984---------;74042/02---------;175;115;100;T;EUR;False;;f4   x6;06/10/2017;False;False;False;;True
+21;43419;1;EBERSPAECHER SUETRAK;78983---------;74042/01---------;175;115;60;T;EUR;False;;f2    x6;06/10/2017;False;False;False;;True
+22;58042;1;RITTAL HOF GMBH & CO;99089---------;74067/01---------;200;110;70;T;EUR;False;;;06/10/2017;False;False;False;;True
+23;59077;1;MITSUBISHI ELECTRIC;99440---------;74083/02---------;110;85;145;G;EUR;False;;;06/10/2017;False;False;False;;True
+24;56609;1;THERMOBUS S.P.A.;85853---------;74092/01---------;195;65;85;T;2V;False;;;06/10/2017;False;False;False;;False
+25;62931;1;FIVING, S.R.O.;B04042---------;73894/02---------;200;70;190;G;2V;False;;;06/10/2017;False;False;False;;True
+26;62930;1;AIREDALE INTERNATION;B04059---------;73985/05---------;230;115;45;P;EUR;False;;;06/10/2017;False;False;False;;False
+27;62929;1;AIREDALE INTERNATION;B04057---------;73985/03---------;360;70;112;G;EUR;False;;;06/10/2017;False;False;False;FAESITE X BICC70X150         4;True
+28;59176;3;TERMOTEK GMBH;95562---------;73840/01---------;195;110;100;G;EUR;False;;f5    x4     sfalsate;06/10/2017;False;False;False;;True
+29;62928;1;AIREDALE INTERNATION;99146---------;73801/03---------;160;90;120;G;2V;False;;;06/10/2017;False;False;False;FAESITE X BICC90X160        1;True
+30;51595;1;DENCOHAPPEL UK LTD;68585---------;74077/01---------;195;70;30;T;2V;False;;;06/10/2017;False;False;False;;False
+31;62927;1;SCM FRIGO SPA;97448-97449;74085/01-74085/02;320;70;210;G;2V;False;;base con morali;06/10/2017;False;False;False;;True
+32;62926;1;MITSUBISHI ELECTRIC;B03541---------;74102/01---------;185;70;60;T;2V;False;;;06/10/2017;False;False;False;;False
+33;60408;1;UAB SYSTEMAIR;B02145---------;74165/01---------;195;50;80;G;2V;False;;;06/10/2017;False;False;False;;True
+34;62925;1;LUVATA GUADALAJARA S;9944S002---------;74181/01---------;200;80;140;G;EUR;False;;;06/10/2017;False;False;False;;True
+35;62924;1;FIVING, S.R.O.;B04043---------;73894/01---------;210;150;35;P;EUR;False;;;06/10/2017;False;False;False;;False
+36;62923;1;MITSUBISHI ELECTRIC;99951---------;74194/01---------;185;75;90;G;2V;False;;f6;06/10/2017;False;False;False;;True
+37;62921;1;KELVIN S.R.L.;B04112---------;74060/01---------;200;70;85;T;EUR;False;;;06/10/2017;False;False;False;;False
+38;62920;1;MITSUBISHI ELECTRIC;97344---------;74228/01---------;335;80;170;G;2V;False;;;06/10/2017;False;False;False;;True

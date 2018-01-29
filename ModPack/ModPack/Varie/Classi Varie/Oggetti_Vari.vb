@@ -907,3 +907,25 @@ Public Class DestinatarioMail
         End Set
     End Property
 End Class
+
+Public Class Magazzino
+    Private _Codice As String
+    Public Property Codice() As String
+        Get
+            Return _Codice
+        End Get
+        Set(ByVal value As String)
+            _Codice = value
+        End Set
+    End Property
+
+    Private _Descrizione As String
+    Public Property Descrizione() As String
+        Get
+            Return _Descrizione
+        End Get
+        Set(ByVal value As String)
+            _Descrizione = value
+        End Set
+    End Property
+End Class

@@ -1,0 +1,49 @@
+01;63333;1;VERTIV SLOVAKIA, A.S;B04337---------;74599/01---------;280;80;226;G;EUR;False;;base con morali;24/11/2017;False;False;True;FAESITE 80X135  2DIAGONALIFRONTALI ELATERALIBASE CON MORALI;True
+02;63255;6;VERTIV SLOVAKIA, A.S;B04337---------;74599/01---------;280;90;226;G;EUR;False;;base con morali;24/11/2017;False;False;True;FAESITE 90X135  2DIAGONALIFRONTALI ELATERALIBASE CON MORALI;True
+03;59087;3;CARRIER TRANSICOLD I;B00448---------;74609/12---------;225;85;105;T;EUR;False;;;24/11/2017;False;False;False;;True
+04;63398;4;AIT-DEUTSCHLAND GMBH;88482---------;74669/01---------;215;76;106;G;EUR;False;;;24/11/2017;False;False;False;;False
+05;63398;4;AIT-DEUTSCHLAND GMBH;88482---------;74669/02---------;215;76;106;G;EUR;False;;;24/11/2017;False;False;False;;False
+06;55150;1;RITTAL HOF GMBH & CO;97104---------;74785/01---------;200;95;130;T;2V;False;;f10    x2;24/11/2017;False;False;False;;True
+07;45486;1;A GROUP S.P.A.;72177---------;74793/10---------;225;70;95;T;EUR;False;;F10;24/11/2017;False;False;False;;True
+08;63397;1;KELVIN S.R.L.;B01888-01888;74813/01-74813/02;190;70;60;T;2V;False;;;24/11/2017;False;False;False;;False
+09;63396;1;AIREDALE INTERNATION;B02693---------;75105/02---------;255;65;50;T;2V;False;;;24/11/2017;False;False;False;;False
+10;37739;1;AIREDALE INTERNATION;84197---------;75105/01---------;165;65;182;G;EUR;True;CA;LASCIA UN FIANCO LIBERO;24/11/2017;False;False;False;;True
+11;59217;1;AIREDALE INTERNATION;99085---------;75105/08---------;400;65;112;G;2V;False;;;24/11/2017;False;False;False;FAESITE 50X100   4;False
+12;63394;1;STULZ GMBH;B03385---------;74828/04---------;220;160;40;GST;EUR;True;CP;;24/11/2017;False;False;True;;False
+13;63393;1;STULZ GMBH;B03386---------;74828/03---------;220;160;40;GST;EUR;True;CP;;24/11/2017;False;False;True;;False
+14;63392;1;STULZ GMBH;B03384---------;74828/02---------;325;160;40;GST;EUR;False;;;24/11/2017;False;False;False;;False
+15;63391;1;STULZ GMBH;B03383---------;74828/01---------;335;160;40;GST;EUR;True;CP;;24/11/2017;False;False;True;;False
+16;63390;1;KAMPMANN POLSKA SP.Z;B01622---------;74847/01---------;435;67;35;G;2V;True;CA;f6    x10;24/11/2017;False;False;True;;False
+17;51799;1;STULZ GMBH;93549---------;74866/01---------;186;90;95;G;EUR;True;CP;GABBIA  HT  CON CARTONPLAST  F6 X2;24/11/2017;False;False;False;;True
+18;51738;2;STULZ GMBH;93610---------;74866/02---------;190;87;75;G;EUR;True;CP;cartonplast + ht  ht  ht --- h + 2 cm tx;24/11/2017;False;False;False;;False
+19;51739;2;STULZ GMBH;93585---------;74866/03---------;190;115;55;G;EUR;True;CP;rivesti di cartonplast;24/11/2017;False;False;False;FAESITE X BICC190X60       1;True
+20;52913;2;STULZ GMBH;96549---------;74866/04---------;110;97;90;GST;EUR;False;;f6      con cartonplast;24/11/2017;False;False;False;;False
+21;62942;1;UNIFLAIR S.P.A.;B03638---------;74870/01---------;220;170;60;P;2V;False;;base con morali 10x8;24/11/2017;False;False;True;;False
+22;57389;1;DENCOHAPPEL UK LTD;88016---------;74876/01---------;295;115;50;P;2V;False;;;24/11/2017;False;False;False;;False
+23;60815;2;FLAEKT WOODS AB;B01128---------;74884/06---------;270;90;124;G;EUR;False;;;24/11/2017;False;False;False;;True
+24;60814;1;FLAEKT WOODS AB;B00403---------;74884/05---------;240;90;110;G;EUR;False;;;24/11/2017;False;False;False;;True
+25;60813;1;FLAEKT WOODS AB;B01127---------;74884/04---------;210;90;95;G;EUR;False;;;24/11/2017;False;False;False;;True
+26;60812;1;FLAEKT WOODS AB;B01126---------;74884/03---------;190;90;90;G;EUR;False;;;24/11/2017;False;False;False;;False
+27;60810;2;FLAEKT WOODS AB;97530---------;74884/02---------;160;90;65;G;2V;False;;;24/11/2017;False;False;False;;False
+28;60877;1;FLAEKT WOODS AB;B00404---------;74884/01---------;130;82;45;G;EUR;False;;;24/11/2017;False;False;False;;False
+29;49784;1;UNIFLAIR S.P.A.;83709---------;74896/01---------;230;120;60;P;2V;False;;base con morali;24/11/2017;False;False;True;ATT  LE TAVOLE LATERALI DELLATO LUNGO A 20CM DAL BORDO;False
+30;55472;1;SCM FRIGO SPA;97273---------;74730/01---------;530;70;210;G;2V;False;;bloccare a centro gabbia;24/11/2017;False;False;True;BASE CON MORALITELAIO RINFORZATO;True
+31;54569;1;DAIKIN APPLIED EUROP;81205-81206;75099/03-75099/04;205;60;119;GDA;EUR;False;;costruire come da foto;24/11/2017;False;False;False;;True
+32;51450;1;DAIKIN APPLIED EUROP;81605-81606;75099/01-75099/02;210;60;120;GDA;EUR;False;;COSTRUIRE COME DA FOTO  mcquay;24/11/2017;False;False;False;;True
+33;63388;1;GLEN DIMPLEX DEUTSCH;B04419---------;74905/04---------;275;185;55;P;2V;False;;;24/11/2017;False;False;False;;False
+34;63387;1;GLEN DIMPLEX DEUTSCH;B04420---------;74905/03---------;210;185;50;P;2V;False;;;24/11/2017;False;False;False;;False
+35;63386;1;GLEN DIMPLEX DEUTSCH;B04421---------;74905/02---------;185;175;45;P;EUR;False;;;24/11/2017;False;False;False;;False
+36;48374;5;NIBE AB;91626---------;74908/01---------;90;120;95;T;EUR;False;;f4  3x5  imb. max 60 pz  taxx;24/11/2017;True;False;False;;True
+37;62571;1;G.I.INDUSTRIAL HOLDI;B03486---------;74909/02---------;170;80;75;T;2V;False;;;24/11/2017;False;False;False;;False
+38;62509;1;G.I.INDUSTRIAL HOLDI;B03485---------;74909/01---------;175;70;75;G;2V;False;;;24/11/2017;False;False;False;;False
+39;34653;1;CARRIER TRANSICOLD E;62891---------;74917/02---------;216;47;15;C;2V;False;;cassa compensato  216x47 h15;24/11/2017;False;False;False;;False
+40;61268;1;IRINOX SPA;B02749---------;74933/01---------;225;85;50;T;EUR;False;;;24/11/2017;False;False;False;;False
+41;37739;1;AIREDALE INTERNATION;84197---------;74934/01---------;165;65;182;G;EUR;True;CA;LASCIA UN FIANCO LIBERO;24/11/2017;False;False;False;;True
+42;54455;1;AIREDALE INTERNATION;84196-84195;74934/02-74934/03;150;110;167;G;EUR;True;CA;;24/11/2017;False;False;False;FAESITE X BICC150X110       2;True
+43;63385;1;EBERSPAECHER SUETRAK;64183---------;74952/02---------;190;150;60;T;EUR;False;;;24/11/2017;False;False;False;78X145        2;False
+44;63384;1;EBERSPAECHER SUETRAK;76509---------;74952/04---------;210;100;55;T;EUR;False;;f2       x3;24/11/2017;False;False;False;;False
+45;63383;1;EBERSPAECHER SUETRAK;68444---------;74952/05---------;265;25;35;P;2V;False;;;24/11/2017;False;False;False;;False
+46;54451;1;MITSUBISHI ELECTRIC;98409---------;75007/02---------;175;70;70;T;2V;False;;;24/11/2017;False;False;False;;False
+47;53469;1;MITSUBISHI ELECTRIC;94731---------;75009/01---------;160;120;80;T;EUR;False;;;24/11/2017;False;False;False;DALL' ALTO INBASSOMICROLINE:000200040003;False
+48;59080;1;MITSUBISHI ELECTRIC;99692---------;75033/01---------;165;70;145;G;EUR;False;;;24/11/2017;False;False;False;;True
+49;59239;2;MITSUBISHI ELECTRIC;93514---------;75033/02---------;180;80;60;T;2V;False;;f4    con stecche interne;24/11/2017;False;False;False;;True

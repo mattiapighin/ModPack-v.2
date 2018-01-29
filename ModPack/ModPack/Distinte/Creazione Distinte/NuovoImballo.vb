@@ -684,7 +684,6 @@
             Dim TIPO As Tipo = Imballo.GetTipo(Type)
 
             Dim Ltav As Integer = 10
-            'If L <= My.Settings.LimiteTavole8 Then Ltav = 8
 
             Dim MontanteSottoF As Single = 1.8
             Dim MontanteSottoT As Single = 1.8
@@ -744,16 +743,12 @@
 
             '############ FIANCATE ############
 
-            '-- TODO -- Diagonali e gradi diagonali
-
             Dim FTL As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = L + 4, .N = Imballo.NumeroTavole(H, TIPO.SpazioFTL, Ltav) * 2, .Tag = "FTL", .Part = "F"}
             Dim FM As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (H + MontanteSottoF), .N = NMorali * 2, .Tag = "FM", .Part = "F"}
             Dim FD As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = LdiagF, .N = NdiagF, .Tag = "FD", .Part = "F"}
             D.AddRange({FTL, FM, FD})
 
             '############ TESTE ############
-
-            '-- TODO -- Diagonali e gradi diagonali
 
             Dim TTL As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = P, .N = FTL.N, .Tag = "TTL", .Part = "T"}
             Dim TM As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = H + MontanteSottoT, .N = Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav) * 2, .Tag = "TM", .Part = "T"}
@@ -766,7 +761,8 @@
 
             Dim Prezzo_Materiale As Single = SQL.GetSQLValue("SELECT PrezzoM3HT FROM Tipi WHERE Tipo = '" & Type & "'")
             Dim Prezzo_Rivestimento As Single = SQL.GetSQLValue("SELECT Prezzo_m2 FROM Rivestimenti WHERE Tipo_Rivestimento = '" & R_TipoRivestimento & "'")
-            Dim Prezzo_Faesite As Single = SQL.GetSQLValue("SELECT Prezzo FROM Materiali WHERE Materiale = 'FAES'")
+            'Non serve più da quando tolta faesite dalle stulz
+            'Dim Prezzo_Faesite As Single = SQL.GetSQLValue("SELECT Prezzo FROM Materiali WHERE Materiale = 'FAES'")
 
             R_Zoccoli = "EUR"
             R_GradiF = GRADIdiagF

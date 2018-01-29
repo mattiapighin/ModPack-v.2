@@ -1,6 +1,8 @@
 ﻿Namespace Stampe
     Module Modulo_Stampe
 
+
+
         Public Sub ImmagineInRettangolo(Immagine As Image, Rettangolo As Rectangle, e As Printing.PrintPageEventArgs)
 
             Dim xml = XDocument.Load(My.Settings.XMLpath)
@@ -27,6 +29,17 @@
             End If
 
         End Sub
+        Public Function TestoInRettangolo(Testo As String, Rettangolo As Rectangle, e As Printing.PrintPageEventArgs) As Integer
+            Dim Dimensione As Integer = 30
+            Dim Larghezza As SizeF = e.Graphics.MeasureString(Testo, New Font("Calibri", Dimensione, FontStyle.Bold))
+
+            Do Until Larghezza.Width < Rettangolo.Width
+                Dimensione -= 1
+                Larghezza = e.Graphics.MeasureString(Testo, New Font("Calibri", Dimensione, FontStyle.Bold))
+            Loop
+
+            Return Dimensione
+        End Function
 
         Public FMT As New StringFormat With {.Alignment = StringAlignment.Center, .Trimming = StringTrimming.EllipsisCharacter, .LineAlignment = StringAlignment.Center}
 
@@ -202,9 +215,9 @@
             Dim RectTitolo As New Rectangle(RectLogo.Right, e.MarginBounds.Top, e.MarginBounds.Width - 350, 50)
             Dim RectData As New Rectangle(RectTitolo.Right, e.MarginBounds.Top, 150, 50)
 
+            Stampe.ImmagineInRettangolo(My.Resources.LogoBicc, RectLogo, e)
             e.Graphics.DrawRectangles(New Pen(Color.LightGray, 2), {RectLogo, RectTitolo, RectData})
 
-            Stampe.ImmagineInRettangolo(My.Resources.Logo, RectLogo, e)
             e.Graphics.DrawString("CONFERMA D'ORDINE", FontTitolo, Brushes.Gray, RectTitolo, FMT)
             e.Graphics.DrawString(Date.Today.Date, FontTitolo, Brushes.Gray, RectData, FMT)
 
@@ -218,8 +231,12 @@
             e.Graphics.FillRectangle(Brushes.LightBlue, RectTitoli)
             e.Graphics.DrawRectangle(New Pen(Color.LightGray, 2), RectTitoli)
 
-            Dim RectSotto As New Rectangle(e.MarginBounds.Left, e.MarginBounds.Bottom - 30, e.MarginBounds.Width, 30)
+            Dim RectSotto As New Rectangle(e.MarginBounds.Left, e.MarginBounds.Bottom - 30, e.MarginBounds.Width, 20)
+            Dim RectSottoDisc As New Rectangle(e.MarginBounds.Left, e.MarginBounds.Bottom - 8, e.MarginBounds.Width, 8)
             e.Graphics.DrawRectangle(New Pen(Color.LightGray, 2), RectSotto)
+
+
+            e.Graphics.DrawString(My.Settings.StringaDisclaimer, New Font("Calibri", 6), Brushes.Gray, RectSottoDisc, FMT)
 
             Dim RectTabella As New Rectangle(e.MarginBounds.Left, RectNumeroOrdine.Bottom + 30, e.MarginBounds.Width, e.MarginBounds.Height - 125 - 35)
             'e.Graphics.DrawRectangle(New Pen(Color.LightGray, 2), RectTabella)
@@ -243,7 +260,7 @@
             e.Graphics.DrawString("Qt", FontRighe, Brushes.Black, RectTitoloQt, FMT)
             e.Graphics.DrawString("Descrizione", FontRighe, Brushes.Black, RectTitoloDescrizione, FMT)
             e.Graphics.DrawString("Indice", FontRighe, Brushes.Black, RectTitoloIndice, FMT)
-            e.Graphics.DrawString("M³", FontRighe, Brushes.Black, RectTitoloM3, FMT)
+            e.Graphics.DrawString("M³ \ M²", FontRighe, Brushes.Black, RectTitoloM3, FMT)
             e.Graphics.DrawString("Data Consegna", FontRighe, Brushes.Black, RectTitoloConsegna, FMT)
             e.Graphics.DrawString("Prezzo", FontRighe, Brushes.Black, RectTitoloPrezzo, FMT)
             e.Graphics.DrawString("Totale", FontRighe, Brushes.Black, RectTitoloPrezzoTot, FMT)
@@ -300,15 +317,16 @@
                     Dim prezzo As Decimal = .Item(10)
                     Dim PrezzoTot As Decimal = prezzo * .Item(2)
 
-                    e.Graphics.DrawString(.Item(0), FontRighe, Brushes.Black, RectRiga, FMT)
-                    e.Graphics.DrawString(.Item(1), FontRighe, Brushes.Black, RectImballo, FMT)
-                    e.Graphics.DrawString(.Item(2), FontRighe, Brushes.Black, RectQt, FMT)
-                    e.Graphics.DrawString(Descrizione, FontRighe, Brushes.Black, RectDescrizione, FMT)
-                    e.Graphics.DrawString(.Item(7), FontRighe, Brushes.Black, RectIndice, FMT)
-                    e.Graphics.DrawString(.Item(8), FontRighe, Brushes.Black, RectM3, FMT)
-                    e.Graphics.DrawString(.Item(11), FontRighe, Brushes.Black, RectConsegna, FMT)
-                    e.Graphics.DrawString("€ " & prezzo.ToString("N2"), FontRighe, Brushes.Black, RectPrezzo, FMT)
-                    e.Graphics.DrawString("€ " & PrezzoTot.ToString("N2"), FontRighe, Brushes.Black, RectPrezzoTot, FMT)
+                    e.Graphics.DrawString(.Item(0), FontRighe, Brushes.Black, RectRiga, FMT)                                'RIGA
+                    e.Graphics.DrawString(.Item(1), FontRighe, Brushes.Black, RectImballo, FMT)                             'IMBALLO
+                    e.Graphics.DrawString(.Item(2), FontRighe, Brushes.Black, RectQt, FMT)                                  'QT
+                    e.Graphics.DrawString(Descrizione, FontRighe, Brushes.Black, RectDescrizione, FMT)                      'DESCRIZIONE
+                    e.Graphics.DrawString(.Item(7), FontRighe, Brushes.Black, RectIndice, FMT)                              'INDICE
+                    If String.IsNullOrEmpty(.Item(9)) Then e.Graphics.DrawString(.Item(8), FontRighe, Brushes.Black, RectM3, FMT) Else _
+                        e.Graphics.DrawString(.Item(8) & " \ " & Math.Round(.Item(14), 1), FontRighe, Brushes.Black, RectM3, FMT) 'M3\M2
+                    e.Graphics.DrawString(.Item(11), FontRighe, Brushes.Black, RectConsegna, FMT)                           'CONSEGNA
+                    e.Graphics.DrawString("€ " & prezzo.ToString("N2"), FontRighe, Brushes.Black, RectPrezzo, FMT)          'PREZZO
+                    e.Graphics.DrawString("€ " & PrezzoTot.ToString("N2"), FontRighe, Brushes.Black, RectPrezzoTot, FMT)    'PREZZOTOTALE
 
                     TotaleEuro += PrezzoTot
 
@@ -359,10 +377,10 @@
             Dim Riga4 As New Rectangle(e.MarginBounds.Left, Riga3.Bottom, e.MarginBounds.Width, e.MarginBounds.Height / 5)
             Dim Riga5 As New Rectangle(e.MarginBounds.Left, Riga4.Bottom, e.MarginBounds.Width, e.MarginBounds.Height / 5)
 
-            e.Graphics.DrawRectangle(Pens.Black, Riga1)
-            e.Graphics.DrawRectangle(Pens.Black, Riga2)
-            e.Graphics.DrawRectangle(Pens.Black, Riga3)
-            e.Graphics.DrawRectangle(Pens.Black, Riga4)
+            e.Graphics.DrawRectangle(Pens.LightGray, Riga1)
+            e.Graphics.DrawRectangle(Pens.LightGray, Riga2)
+            e.Graphics.DrawRectangle(Pens.LightGray, Riga3)
+            e.Graphics.DrawRectangle(Pens.LightGray, Riga4)
             ' e.Graphics.DrawRectangle(Pens.Black, Riga5)
 
 
@@ -370,7 +388,7 @@
             Dim RectLogo As New Rectangle(Riga1.Left, Riga1.Top, Riga1.Width / 3 * 2, Riga1.Height)
             Dim RectMagazzino As New Rectangle(RectLogo.Right, Riga1.Top, Riga1.Width / 3, Riga1.Height)
 
-            e.Graphics.DrawRectangle(Pens.Black, RectLogo)
+            e.Graphics.DrawRectangle(Pens.LightGray, RectLogo)
 
             '# RIGA 2   -   CLIENTE
             Dim RectCliente As New Rectangle(Riga2.Left, Riga2.Top, Riga2.Width, Riga2.Height)
@@ -379,13 +397,13 @@
             Dim RectD As New Rectangle(Riga3.Left, Riga3.Top, Riga3.Width / 4, Riga3.Height)
             Dim RectDisegno As New Rectangle(RectD.Right, Riga3.Top, Riga3.Width / 4 * 3, Riga3.Height)
 
-            e.Graphics.DrawRectangle(Pens.Black, RectD)
+            e.Graphics.DrawRectangle(Pens.LightGray, RectD)
 
             '# RIGA 4   -   COMMESSA
             Dim RectC As New Rectangle(Riga4.Left, Riga4.Top, Riga4.Width / 4, Riga4.Height)
             Dim RectCommessa As New Rectangle(RectC.Right, Riga4.Top, Riga4.Width / 4 * 3, Riga4.Height)
 
-            e.Graphics.DrawRectangle(Pens.Black, RectC)
+            e.Graphics.DrawRectangle(Pens.LightGray, RectC)
 
             '# RIGA 5   -   CODICE, QT, ORDINE
             Dim RectCodice As New Rectangle(Riga5.Left, Riga5.Top, Riga5.Width / 5 * 2, Riga5.Height)
@@ -393,8 +411,8 @@
             Dim RectOrdine As New Rectangle(RectQt.Right, Riga5.Top, Riga5.Width / 5 * 2, Riga5.Height)
 
             e.Graphics.FillRectangle(Brushes.LightGray, RectOrdine)
-            e.Graphics.DrawRectangle(Pens.Black, Riga5)
-            e.Graphics.DrawRectangle(Pens.Black, RectQt)
+            e.Graphics.DrawRectangle(Pens.LightGray, Riga5)
+            e.Graphics.DrawRectangle(Pens.LightGray, RectQt)
 
             ImmagineInRettangolo(My.Resources.Logo, RectLogo, e)
 
@@ -407,12 +425,12 @@
 
             ' ################################################################################################################
 
-            e.Graphics.DrawString("M" & Magazzino, FontBold, Brushes.Black, RectMagazzino, FMT)
+            e.Graphics.DrawString(Magazzino, New Font("Calibri", TestoInRettangolo(Magazzino, RectMagazzino, e), FontStyle.Bold), Brushes.Black, RectMagazzino, FMT)
             e.Graphics.DrawString(Cliente, Font, Brushes.Black, RectCliente, FMT)
             e.Graphics.DrawString("D", Font, Brushes.Black, RectD, FMT)
-            e.Graphics.DrawString(Disegno, Font, Brushes.Black, RectDisegno, FMT)
+            e.Graphics.DrawString(Disegno, New Font("Calibri", TestoInRettangolo(Disegno, RectDisegno, e), FontStyle.Regular), Brushes.Black, RectDisegno, FMT)
             e.Graphics.DrawString("C", Font, Brushes.Black, RectC, FMT)
-            e.Graphics.DrawString(Commessa, Font, Brushes.Black, RectCommessa, FMT)
+            e.Graphics.DrawString(Commessa, New Font("Calibri", TestoInRettangolo(Commessa, RectCommessa, e), FontStyle.Regular), Brushes.Black, RectCommessa, FMT)
             e.Graphics.DrawString(Imballo, FontBold, Brushes.Black, RectCodice, FMT)
             e.Graphics.DrawString(Quantita, FontBold, Brushes.Black, RectQt, FMT)
             e.Graphics.DrawString(Ordine, New Font("Calibri", 12, FontStyle.Bold), Brushes.Black, RectOrdine, FMT)

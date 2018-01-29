@@ -45,10 +45,13 @@ Partial Class DLG_MostraLOG
         Me.DGW_Log.AllowUserToResizeRows = False
         Me.DGW_Log.AutoGenerateColumns = False
         Me.DGW_Log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGW_Log.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DGW_Log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGW_Log.ColumnHeadersVisible = False
         Me.DGW_Log.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.DataDataGridViewTextBoxColumn, Me.OraDataGridViewTextBoxColumn, Me.UserDataGridViewTextBoxColumn, Me.MessageDataGridViewTextBoxColumn})
         Me.DGW_Log.DataSource = Me.LogBindingSource
         Me.DGW_Log.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGW_Log.GridColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DGW_Log.Location = New System.Drawing.Point(0, 0)
         Me.DGW_Log.Name = "DGW_Log"
         Me.DGW_Log.ReadOnly = True
@@ -72,7 +75,7 @@ Partial Class DLG_MostraLOG
         Me.DataDataGridViewTextBoxColumn.HeaderText = "Data"
         Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
         Me.DataDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DataDataGridViewTextBoxColumn.Width = 55
+        Me.DataDataGridViewTextBoxColumn.Width = 5
         '
         'OraDataGridViewTextBoxColumn
         '
@@ -80,7 +83,7 @@ Partial Class DLG_MostraLOG
         Me.OraDataGridViewTextBoxColumn.HeaderText = "Ora"
         Me.OraDataGridViewTextBoxColumn.Name = "OraDataGridViewTextBoxColumn"
         Me.OraDataGridViewTextBoxColumn.ReadOnly = True
-        Me.OraDataGridViewTextBoxColumn.Width = 49
+        Me.OraDataGridViewTextBoxColumn.Width = 5
         '
         'UserDataGridViewTextBoxColumn
         '
@@ -88,7 +91,7 @@ Partial Class DLG_MostraLOG
         Me.UserDataGridViewTextBoxColumn.HeaderText = "User"
         Me.UserDataGridViewTextBoxColumn.Name = "UserDataGridViewTextBoxColumn"
         Me.UserDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UserDataGridViewTextBoxColumn.Width = 54
+        Me.UserDataGridViewTextBoxColumn.Width = 5
         '
         'MessageDataGridViewTextBoxColumn
         '
@@ -96,7 +99,7 @@ Partial Class DLG_MostraLOG
         Me.MessageDataGridViewTextBoxColumn.HeaderText = "Message"
         Me.MessageDataGridViewTextBoxColumn.Name = "MessageDataGridViewTextBoxColumn"
         Me.MessageDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MessageDataGridViewTextBoxColumn.Width = 75
+        Me.MessageDataGridViewTextBoxColumn.Width = 5
         '
         'LogBindingSource
         '

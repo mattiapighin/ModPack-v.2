@@ -215,13 +215,13 @@ Partial Class Main
         'TS_Archivio
         '
         Me.TS_Archivio.Name = "TS_Archivio"
-        Me.TS_Archivio.Size = New System.Drawing.Size(152, 22)
+        Me.TS_Archivio.Size = New System.Drawing.Size(128, 22)
         Me.TS_Archivio.Text = "ARCHIVIO"
         '
         'TS_Crea
         '
         Me.TS_Crea.Name = "TS_Crea"
-        Me.TS_Crea.Size = New System.Drawing.Size(152, 22)
+        Me.TS_Crea.Size = New System.Drawing.Size(128, 22)
         Me.TS_Crea.Text = "CREA"
         '
         'TS_Tools

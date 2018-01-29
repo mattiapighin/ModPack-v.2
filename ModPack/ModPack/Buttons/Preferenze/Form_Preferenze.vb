@@ -332,4 +332,7 @@
         Form_PuliziaOrdini.ShowDialog()
     End Sub
 
+    Private Sub Bt_GestMagazzini_Click(sender As Object, e As EventArgs) Handles Bt_GestMagazzini.Click
+        FRM_GestioneMagazzini.ShowDialog()
+    End Sub
 End Class

@@ -652,6 +652,20 @@ Namespace My
                 Me("Log") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Questo documento è di proprietà di BICCIATO SERAFINO S.R.L. - Ogni forma di copia"& _ 
+            " e di diffusione con qualsiasi mezzo è vietata senza la relativa autorizzazione."& _ 
+            "")>  _
+        Public Property StringaDisclaimer() As String
+            Get
+                Return CType(Me("StringaDisclaimer"),String)
+            End Get
+            Set
+                Me("StringaDisclaimer") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -157,5 +157,8 @@
     <Setting Name="Log" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="StringaDisclaimer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Questo documento è di proprietà di BICCIATO SERAFINO S.R.L. - Ogni forma di copia e di diffusione con qualsiasi mezzo è vietata senza la relativa autorizzazione.</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

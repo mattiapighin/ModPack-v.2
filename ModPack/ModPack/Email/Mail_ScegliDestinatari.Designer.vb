@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Mail_ScegliDestinatari
     Inherits System.Windows.Forms.Form
 
     'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Mail_ScegliDestinatari
     'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
     'Può essere modificata in Progettazione Windows Form.  
     'Non modificarla mediante l'editor del codice.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -83,7 +83,7 @@ Partial Class Mail_ScegliDestinatari
         Me.DgwDestinatari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgwDestinatari.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NomeDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
         Me.DgwDestinatari.DataSource = Me.DestinatariEmailBindingSource
-        Me.DgwDestinatari.Location = New System.Drawing.Point(12, 12)
+        Me.DgwDestinatari.Location = New System.Drawing.Point(10, 12)
         Me.DgwDestinatari.Name = "DgwDestinatari"
         Me.DgwDestinatari.ReadOnly = True
         Me.DgwDestinatari.RowHeadersVisible = False
@@ -143,7 +143,7 @@ Partial Class Mail_ScegliDestinatari
         Me.MinimizeBox = False
         Me.Name = "Mail_ScegliDestinatari"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Destinatari"
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.DgwDestinatari, System.ComponentModel.ISupportInitialize).EndInit()

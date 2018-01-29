@@ -267,3 +267,5 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.pdb
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM_FormatoStampa.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.NotificaInsImballo.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG_MostraLOG.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM_GestioneMagazzini.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG_ScegliMagazzino.resources

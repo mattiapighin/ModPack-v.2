@@ -231,6 +231,9 @@
             e.Graphics.DrawString(Riga.NumeroOrdine & " (" & Riga.Riga & ")", FontN, Brushes.Black, RectOrdine, FMT)
             e.Graphics.DrawString(Riga.DataConsegna, FontN, Brushes.Black, RectConsegna, FMT)
 
+            'Funzione get magazzino
+            e.Graphics.DrawString(Riga.Magazzino, New Font("Calibri", 11, FontStyle.Bold), Brushes.Black, RectVuoto, FMT)
+
             'Intestazioni
             e.Graphics.DrawString("PZ", FT, Brushes.LightGray, RectQT)
             e.Graphics.DrawString("TIPO", FT, Brushes.LightGray, RectTIPO)
@@ -244,12 +247,21 @@
 
         End Sub
         Private Sub PieDiPagina(sender As Object, e As Printing.PrintPageEventArgs, riga As RigaOrdine)
-            Dim Riga1 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 45, e.MarginBounds.Width - 10, 20)
-            Dim Riga2 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 25, e.MarginBounds.Width - 10, 20)
-            e.Graphics.FillRectangle(Brushes.LightGray, Riga1)
-            e.Graphics.DrawRectangles(New Pen(Color.LightGray, 3), {Riga1, Riga2})
 
-            Dim FONT As New Font("Calibri", 10)
+            Dim Riga1 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 45, e.MarginBounds.Width - 10, 15)
+            Dim Riga2 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 30, e.MarginBounds.Width - 10, 15)
+            Dim RigaDisclaimer As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 15, e.MarginBounds.Width - 10, 15)
+
+            'Dim Riga1 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 45, e.MarginBounds.Width - 10, 20)
+            'Dim Riga2 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 25, e.MarginBounds.Width - 10, 20)
+
+            e.Graphics.DrawString(My.Settings.StringaDisclaimer, New Font("Calibri", 6), Brushes.Gray, RigaDisclaimer, FMT)
+
+            e.Graphics.FillRectangle(Brushes.LightGray, Riga1)
+            e.Graphics.DrawRectangles(New Pen(Color.LightGray, 1), {Riga1, Riga2})
+
+            Dim FONT As New Font("Calibri", 8)
+            Dim FONTG As New Font("Calibri", 8, FontStyle.Bold)
 
             Dim Q As Single = Riga1.Width / 12
 
@@ -279,21 +291,17 @@
 
             e.Graphics.DrawRectangles(Pens.LightGray, {RbL, RbP, RbH, RbZocc, RbDTBM, RsDiag, RbDiagF, RbDiagT, RbVuoto2, Rbm2})
 
-            e.Graphics.DrawString("L", FONT, Brushes.Black, RsL, FMT)
-            e.Graphics.DrawString("P", FONT, Brushes.Black, RsP, FMT)
-            e.Graphics.DrawString("H", FONT, Brushes.Black, RsH, FMT)
-            e.Graphics.DrawString("Zocc", FONT, Brushes.Black, RsZocc, FMT)
-            e.Graphics.DrawString("DT\BM", FONT, Brushes.Black, RsDTBM, FMT)
-            e.Graphics.DrawString("Diagonali", FONT, Brushes.Black, RsDiag, FMT)
-            e.Graphics.DrawString("Gradi F", FONT, Brushes.Black, RsDiagF, FMT)
-            e.Graphics.DrawString("Gradi T", FONT, Brushes.Black, RsDiagT, FMT)
+            e.Graphics.DrawString("L", FONTG, Brushes.Black, RsL, FMT)
+            e.Graphics.DrawString("P", FONTG, Brushes.Black, RsP, FMT)
+            e.Graphics.DrawString("H", FONTG, Brushes.Black, RsH, FMT)
+            e.Graphics.DrawString("Zocc", FONTG, Brushes.Black, RsZocc, FMT)
+            e.Graphics.DrawString("DT\BM", FONTG, Brushes.Black, RsDTBM, FMT)
+            e.Graphics.DrawString("Diagonali", FONTG, Brushes.Black, RsDiag, FMT)
+            e.Graphics.DrawString("Gradi F", FONTG, Brushes.Black, RsDiagF, FMT)
+            e.Graphics.DrawString("Gradi T", FONTG, Brushes.Black, RsDiagT, FMT)
 
-            e.Graphics.DrawString("m²", FONT, Brushes.Black, Rsm2, FMT)
-            e.Graphics.DrawString("m³", FONT, Brushes.Black, Rsm3, FMT)
-
-
-
-
+            e.Graphics.DrawString("m²", FONTG, Brushes.Black, Rsm2, FMT)
+            e.Graphics.DrawString("m³", FONTG, Brushes.Black, Rsm3, FMT)
 
             e.Graphics.DrawString(L, FONT, Brushes.Black, RbL, FMT)
             e.Graphics.DrawString(P, FONT, Brushes.Black, RbP, FMT)

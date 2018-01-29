@@ -24,15 +24,12 @@ Public Class Main
     Dim RowOrdine As New List(Of RigaOrdine)
     Dim RowIndici As New List(Of Integer)
 
-    'VERSIONE 2.0.1 
+    'VERSIONE 2.0.2 
     'CHANGELOG
-    ' - Fixato definitivamente perdita formato stampa (sperin)
-    ' - Migliorato responsiveness form opzioni
-    ' - Migliorato dialog inserimento nuovi articoli
-    ' - CheckBox 'Notifica spostamento indice' disabled
-    ' - Caricamento treeview ordini con lambda expressions e facoltativo (aggiunto pulsante REFRESH TREEVIEW a toolstrip TOOLS)
-    ' - Cambiata completamente gestione log. Ora tabella su DB
-    ' - Fix minori
+    ' - Aggiunto tabella magazzini (in previsione di amaro)
+    ' - Fix: Non si azzerava la lista dei bindelli da stampare dopo la prima stampa ( variabile etichettetotali cambiata da static a dim )
+    ' - Aggiunto creazione file CO per automatizzare ordini da Modine e invio diretto mail
+    ' - Aggiunto dicitura di proprietà sotto le stampe di CO e Distinta
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
@@ -352,7 +349,4 @@ Public Class Main
         CaricaOrdiniAperti()
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
-        LOG.Clean()
-    End Sub
 End Class

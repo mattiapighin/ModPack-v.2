@@ -5,7 +5,7 @@ Namespace Mail
 
         Public ListaDestinatari As New List(Of DestinatarioMail)
 
-        Public Sub Invia(ByVal OGGETTO As String, ByVal CORPO As String, Optional ByVal Allegati As List(Of String) = Nothing)
+        Public Sub Invia(ByVal OGGETTO As String, ByVal CORPO As String, Optional ByVal Allegati As List(Of String) = Nothing, Optional ConfermaLettura As Boolean = False)
 
             If Mail_ScegliDestinatari.ShowDialog() = DialogResult.OK Then
                 'Apre la finestra per scegliere i destinatari dell'email
@@ -41,6 +41,14 @@ Namespace Mail
 
                         mail.Subject = OGGETTO
                         mail.Body = CORPO
+
+                        If ConfermaLettura = True Then
+
+                            mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess
+                            mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure
+                            mail.Headers.Add("Disposition-Notification-To", "<imballaggi@bicciatoserafino.com>")
+                            mail.ReplyToList.Add("imballaggi@bicciatoserafino.com")
+                        End If
 
                         SmtpServer.Send(mail)
                         MsgBox("Email Inviata!", vbInformation, "Email")

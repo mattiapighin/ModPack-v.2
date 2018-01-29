@@ -502,7 +502,28 @@ Namespace SQL
             Return Fres
         End Function
 
+        Public Function GetMagazzini() As List(Of Magazzino)
 
+            Dim Lista As New List(Of Magazzino)
+
+            Using Table As New ModPackDBDataSetTableAdapters.MagazziniTableAdapter
+                Using DSet As New ModPackDBDataSet.MagazziniDataTable
+
+                    Table.Fill(DSet)
+
+                    For Each Row As ModPackDBDataSet.MagazziniRow In DSet
+
+                        Dim ItemDaAggiungere As New Magazzino With {.Codice = Row.Codice, .Descrizione = Row.Descrizione}
+                        Lista.Add(ItemDaAggiungere)
+
+                    Next
+
+                End Using
+            End Using
+
+            Return Lista
+
+        End Function
 
 
 

@@ -96,6 +96,7 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -163,6 +164,12 @@
       <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
     </Compile>
     <Compile Include="Buttons\Preferenze\FRM_FormatoStampa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buttons\Preferenze\FRM_GestioneMagazzini.Designer.vb">
+      <DependentUpon>FRM_GestioneMagazzini.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\Preferenze\FRM_GestioneMagazzini.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Buttons\Preferenze\FRM_TestConnessioni.Designer.vb">
@@ -299,6 +306,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Invio_Rivestimenti.vb" />
+    <Compile Include="Tools\Magazzino\DLG_ScegliMagazzino.Designer.vb">
+      <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Magazzino\DLG_ScegliMagazzino.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Varie\Classi Varie\NomeImballo.vb" />
     <Compile Include="Varie\Classi Varie\Oggetti_Vari.vb" />
     <Compile Include="Distinte\Creazione Distinte\NuovoImballo.vb" />
@@ -316,10 +329,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModPackDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Varie\Moduli Vari\Analisi.vb" />
     <Compile Include="Varie\Moduli Vari\ControlloMultiUtente.vb" />
     <Compile Include="Varie\Moduli Vari\Errore.vb" />
+    <Compile Include="Tools\Magazzino\ModuleMagazzino.vb" />
     <Compile Include="Varie\Moduli Vari\Module_Barcode.vb" />
     <Compile Include="Controlli\Module_Controlli.vb" />
+    <Compile Include="Varie\Moduli Vari\Module_GeneraFileCO.vb" />
     <Compile Include="Varie\Moduli Vari\Module_IMG.vb" />
     <Compile Include="Varie\Moduli Vari\Module_Log.vb" />
     <Compile Include="Varie\Moduli Vari\Module_PDF.vb" />
@@ -371,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Buttons\Preferenze\FRM_FormatoStampa.resx">
       <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buttons\Preferenze\FRM_GestioneMagazzini.resx">
+      <DependentUpon>FRM_GestioneMagazzini.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buttons\Preferenze\FRM_TestConnessioni.resx">
       <DependentUpon>FRM_TestConnessioni.vb</DependentUpon>
@@ -444,6 +463,9 @@
     <EmbeddedResource Include="Tools\FRM_SetupRivestimenti.resx">
       <DependentUpon>FRM_SetupRivestimenti.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Magazzino\DLG_ScegliMagazzino.resx">
+      <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Varie\MsgBox\MsgMoraliFrescoHT.resx">
       <DependentUpon>MsgMoraliFrescoHT.vb</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icoBig.ico" />
+    <None Include="Resources\LogoBicc.png" />
     <None Include="Resources\ROV.jpg" />
   </ItemGroup>
   <ItemGroup>

@@ -57,7 +57,7 @@
 
                     PrezzoTotale = (PrezzoRivestimento * M2) + (PrezzoMateriale * M3) + (PrezzoMateriale * Scarto(M3))
 
-                    LOG.Write("Materiale € " & (PrezzoMateriale * M3) & " - Rivestimento € " & (PrezzoRivestimento * M2) & " - Scarto € " & (PrezzoMateriale * Scarto(M3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1))
+                    LOG.Write("^ ^ ^ Materiale € " & (PrezzoMateriale * M3) & " - Rivestimento € " & (PrezzoRivestimento * M2) & " - Scarto € " & (PrezzoMateriale * Scarto(M3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1) & " ^ ^ ^")
 
                     TableTipi.Dispose()
                     TableRivestimenti.Dispose()
@@ -134,7 +134,7 @@
 
                     PrezzoTotale = (PrezzoMateriale * M3) + (PrezzoRivestimento * M2_CP) + (PrezzoFaesite * M2_FF) + (PrezzoMateriale * Scarto(M3))
 
-                    LOG.Write("Materiale € " & (PrezzoMateriale * M3) & " - Rivestimento € " & (PrezzoRivestimento * M2_CP) & " - Faesite € " & (PrezzoFaesite * M2_FF) & " - Scarto € " & (PrezzoMateriale * Scarto(M3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1))
+                    LOG.Write("^ ^ ^ Materiale € " & (PrezzoMateriale * M3) & " - Rivestimento € " & (PrezzoRivestimento * M2_CP) & " - Faesite € " & (PrezzoFaesite * M2_FF) & " - Scarto € " & (PrezzoMateriale * Scarto(M3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1) & " ^ ^ ^")
 
                     TableTipi.Dispose()
                     TableRivestimenti.Dispose()
@@ -192,7 +192,7 @@
 
 
                     PrezzoTotale = (PrezzoOSB9 * M2_09) + (PrezzoOSB12 * M2_12) + (PrezzoZoccoli * m3) + PrezzoCostruzione + (PrezzoZoccoli * Scarto(m3))
-                    LOG.Write("OSB € " & (PrezzoOSB9 * M2_09) + (PrezzoOSB12 * M2_12) & " - Zoccoli € " & (PrezzoZoccoli * m3) & " - Costruzione € " & PrezzoCostruzione & " - Scarto € " & (PrezzoZoccoli * Scarto(m3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1))
+                    LOG.Write("^ ^ ^ OSB € " & (PrezzoOSB9 * M2_09) + (PrezzoOSB12 * M2_12) & " - Zoccoli € " & (PrezzoZoccoli * m3) & " - Costruzione € " & PrezzoCostruzione & " - Scarto € " & (PrezzoZoccoli * Scarto(m3)) & " - TOTALE € " & Math.Round(PrezzoTotale, 1) & " ^ ^ ^")
 
                     MaterialiTable.Dispose()
                 TipiTable.Dispose()

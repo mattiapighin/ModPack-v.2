@@ -226,14 +226,28 @@
 
             Try
                 If Not Label Is Nothing Then Label.Text = "Elaborazione Ordine"
-                Dim Magazzino As String = InputBox("ORDINE: " & NumeroOrdine & vbCrLf & "Sono stati trovati " & Lista.Count & " imballi" & vbCrLf & "Selezionare magazzino:", "Carica ordine", "1")
+                'Dim Magazzino As String = InputBox("ORDINE: " & NumeroOrdine & vbCrLf & "Sono stati trovati " & Lista.Count & " imballi" & vbCrLf & "Selezionare magazzino:", "Carica ordine", "1")
+
+                Dim Magazzino As String
+
+                If Not Label Is Nothing Then Label.Text = "Scelta magazzino"
+
+                DLG_ScegliMagazzino.LblOrdine.Text = NumeroOrdine
+                DLG_ScegliMagazzino.LblRighe.Text = Lista.Count
+
+                If DLG_ScegliMagazzino.ShowDialog = DialogResult.OK Then
+
+                    Magazzino = DLG_ScegliMagazzino.Valore
+                Else
+                    Exit Sub
+                End If
                 If String.IsNullOrEmpty(Magazzino) Then Exit Sub
 
                 '6 - Legge la lista appena creata e controlla se esistono in memoria imballi corrispondenti
 
                 OrdiniTable.Fill(DS.Ordini)
 
-
+                If Not Label Is Nothing Then Label.Text = "Creazione Lista"
 
                 For Each PACK As RigaOrdineINPUT In Lista
 

@@ -45,9 +45,13 @@ Public Class Form_OrdiniAperti
 
     End Sub
     Private Sub Form_OrdiniAperti_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim ts1 As New TimeSpan(Now.Ticks)
         CaricaListaOrdiniAperti()
         CaricaTuttiNonEvasi()
         BloccaButtons()
+        Dim ts2 As New TimeSpan(Now.Ticks)
+        Analysis.AddValue(1, (ts2 - ts1).TotalSeconds.ToString)
+
     End Sub
     Private Sub DGW_OrdiniAperti_Click(sender As Object, e As EventArgs) Handles DGW_OrdiniAperti.Click
 
@@ -220,31 +224,26 @@ Public Class Form_OrdiniAperti
                 Exit Sub
             End If
 
+            ConfermaOrdineDS.Clear()
+            Dim Query As String = "SELECT Ordini.Riga, Ordini.Imballo, Ordini.Qt, Imballi.Tipo, Imballi.L, Imballi.P, Imballi.H, Ordini.indice, Imballi.m3, Imballi.Tipo_Rivestimento, Imballi.Prezzo, Ordini.Data_Consegna, Ordini.Codice, Ordini.Commessa, imballi.m2, Ordini.Ordine  FROM Ordini LEFT JOIN Imballi ON Ordini.Imballo = Imballi.Imballo WHERE Ordine = '" & Ordine & "'"
+            Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
+
+                Try
+                    Con.Open()
+                    Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
+                    adapter.Fill(ConfermaOrdineDS)
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+
+            End Using
+
             Dim DialogStampa As New PrintDialog
-
             If DialogStampa.ShowDialog = DialogResult.OK Then
-
 
                 'Ordine = DGW_OrdiniAperti.CurrentRow.Cells(0).Value
 
-
-                ConfermaOrdineDS.Clear()
-                Dim Query As String = "SELECT Ordini.Riga, Ordini.Imballo, Ordini.Qt, Imballi.Tipo, Imballi.L, Imballi.P, Imballi.H, Ordini.indice, Imballi.m3, Imballi.Tipo_Rivestimento, Imballi.Prezzo, Ordini.Data_Consegna, Ordini.Codice, Ordini.Commessa  FROM Ordini LEFT JOIN Imballi ON Ordini.Imballo = Imballi.Imballo WHERE Ordine = '" & Ordine & "'"
-                Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
-
-                    Try
-                        Con.Open()
-                        Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
-                        adapter.Fill(ConfermaOrdineDS)
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-
-                End Using
-
-
                 LOG.Write("Stampata conferma ordine " & Ordine)
-
 
                 Print_ConfermaOrdine.PrinterSettings = DialogStampa.PrinterSettings
 
@@ -256,8 +255,10 @@ Public Class Form_OrdiniAperti
 
                 SSwrite("Conferma d'ordine stampata " & Ordine)
 
-
             End If
+
+            Module_GeneraFileCO.Genera_File(ConfermaOrdineDS, Ordine)
+
         Else
             MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
         End If
@@ -303,33 +304,41 @@ Public Class Form_OrdiniAperti
 
                     LOG.Write("Stampata etichette " & Ordine)
                     Print_Etichette.DocumentName = "ET" & Ordine
-                    Print_Etichette.Print()
+                    'Print_Etichette.Print()
+
+                    Dim Preveiw As New PrintPreviewDialog With {.Document = Print_Etichette}
+                    Preveiw.ShowDialog()
 
                 End If
             Else
-                If MsgBox("Stampare etichetta per " & Dgw_Ordine.CurrentRow.Cells("Imballo").Value & "?", vbYesNo, "Etichette") = DialogResult.Yes Then
+                If Dgw_Ordine.SelectedRows.Count > 0 Then
+                    If MsgBox("Stampare etichetta per " & Dgw_Ordine.CurrentRow.Cells("Imballo").Value & "?", vbYesNo, "Etichette") = DialogResult.Yes Then
 
-                    EtichetteDS.Clear()
+                        EtichetteDS.Clear()
 
-                    Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
-                    Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
+                        Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
+                        Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
 
-                        Try
-                            Con.Open()
-                            Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
-                            adapter.Fill(EtichetteDS)
-                        Catch ex As Exception
-                            MsgBox(ex.ToString)
-                        End Try
-                    End Using
+                            Try
+                                Con.Open()
+                                Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
+                                adapter.Fill(EtichetteDS)
+                            Catch ex As Exception
+                                MsgBox(ex.ToString)
+                            End Try
+                        End Using
 
-                    LOG.Write("Stampata etichette " & Ordine)
-                    Print_Etichette.DocumentName = "ET" & Ordine
-                    Print_Etichette.Print()
+                        LOG.Write("Stampata etichette " & Ordine)
+                        Print_Etichette.DocumentName = "ET" & Ordine
+
+                        Dim Preveiw As New PrintPreviewDialog With {.Document = Print_Etichette}
+                        Preveiw.ShowDialog()
+                        'Print_Etichette.Print()
+                    End If
 
                 End If
-            End If
-        Else
+                End If
+                Else
             MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
 
         End If
@@ -385,6 +394,10 @@ Public Class Form_OrdiniAperti
     End Sub
 
     Private Sub Bt_Disegni_Click(sender As Object, e As EventArgs) Handles Bt_Disegni.Click
+
+        Dim ListaMagazzini As New List(Of Magazzino)
+        ListaMagazzini = SQL.GetMagazzini
+
         RowOrdine.Clear()
         Ordine = DGW_OrdiniAperti.CurrentRow.Cells(0).Value
 
@@ -400,7 +413,7 @@ Public Class Form_OrdiniAperti
                         If Row.Ordine = Ordine Then
                             Dim Riga As New RigaOrdine With {.NumeroOrdine = Row.Ordine, .Riga = Row.Riga, .Imballo = Row.Imballo, .Indice = Row.Indice, .Qt = Row.Qt, .Cliente = Row.Cliente, .Codice = Row.Codice, .Commessa = Row.Commessa,
                                 .L = Row.L, .P = Row.P, .H = Row.H, .Tipo = Row.Tipo, .Zoccoli = Row.Zoccoli, .Rivestimento = Row.Rivestimento, .TipoRivestimento = Row.Tipo_Rivestimento, .Note = Row.Note, .DataConsegna = Row.Data_Consegna,
-                                .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = Row.Magazzino, .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = False, .Produzione = False, .Stampato = False}
+                                .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = False, .Produzione = False, .Stampato = False}
                             RowOrdine.Add(Riga)
                             Row.Stampato = True
                         End If
@@ -445,27 +458,37 @@ Public Class Form_OrdiniAperti
         Stampe.ConfermaDOrdine(sender, e, Ordine, ConfermaOrdineDS)
     End Sub
     Private Sub Print_Etichette_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Print_Etichette.PrintPage
-        Static EtichetteStampate = 0
+        Try
 
-        Static EtichetteTotali As Integer = EtichetteDS.Tables(0).Rows.Count - 1
+            Dim ListaMagazzini As New List(Of Magazzino)
+            ListaMagazzini = SQL.GetMagazzini
+            Static EtichetteStampate = 0
+            Dim EtichetteTotali As Integer = EtichetteDS.Tables(0).Rows.Count - 1
 
-        With EtichetteDS.Tables(0).Rows(EtichetteStampate)
-            Stampe.Etichetta(sender, e, .Item(0), .Item(1), .Item(2), .Item(3), .Item(4), .Item(5), .Item(6))
-        End With
+            'MsgBox("ETICHETTE STAMPATE: " & EtichetteStampate & " ETICHETTE TOTALI: " & EtichetteTotali)
 
-        EtichetteStampate += 1
+            With EtichetteDS.Tables(0).Rows(EtichetteStampate)
+                Stampe.Etichetta(sender, e, ModMagazzino.GetDescrizione(.Item(0), ListaMagazzini), .Item(1), .Item(2), .Item(3), .Item(4), .Item(5), .Item(6))
+            End With
 
-        If EtichetteStampate <= EtichetteTotali Then
-            e.HasMorePages = True
-        Else
-            e.HasMorePages = False
-            EtichetteStampate = 0
-        End If
+            EtichetteStampate += 1
+
+            If EtichetteStampate <= EtichetteTotali Then
+                e.HasMorePages = True
+            Else
+                e.HasMorePages = False
+                EtichetteStampate = 0
+            End If
+
+        Catch ex As Exception
+            Errore.Show("Print etichette", ex.Message)
+        End Try
     End Sub
     Private Sub Print_CheckList_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Print_CheckList.PrintPage
         Stampe.CheckList(sender, e, Ordine, CheckListDS)
     End Sub
     Private Sub Print_Distinte_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Print_Distinte.PrintPage
+
         Try
             Static PagineStampate = 0
             Dim DistinteTotali As Integer = RowOrdine.Count - 1
@@ -480,7 +503,8 @@ Public Class Form_OrdiniAperti
                 e.HasMorePages = False
                 PagineStampate = 0
             End If
-        Catch
+        Catch ex As Exception
+            Errore.Show("Print distinte", ex.Message)
         End Try
     End Sub
 

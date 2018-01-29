@@ -37,6 +37,11 @@ ModPack
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:ModPack.My.Resources.Resources.LogoBicc">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ModPack.My.Resources.Resources.ROV">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -112,6 +117,16 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ModPack.ModPackDBDataSet.MagazziniDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSet.AnalysisDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ModPack.ModPackDBDataSet.RivestimentiRow">
 <summary>
 Represents strongly named DataRow class.
@@ -173,6 +188,16 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:ModPack.ModPackDBDataSet.LogRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSet.MagazziniRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSet.AnalysisRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -242,6 +267,16 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:ModPack.ModPackDBDataSet.MagazziniRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSet.AnalysisRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:ModPack.ModPackDBDataSetTableAdapters.OrdiniTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -303,6 +338,16 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:ModPack.ModPackDBDataSetTableAdapters.LogTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSetTableAdapters.MagazziniTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ModPack.ModPackDBDataSetTableAdapters.AnalysisTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

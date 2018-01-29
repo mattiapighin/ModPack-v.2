@@ -35,6 +35,7 @@ Partial Class Form_Tabelle
         Me.Bt_Esporta = New System.Windows.Forms.Button()
         Me.Tree = New System.Windows.Forms.TreeView()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Bt_Invia = New System.Windows.Forms.Button()
         Me.Bt_Info = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -45,6 +46,7 @@ Partial Class Form_Tabelle
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGW_Result
@@ -123,39 +125,39 @@ Partial Class Form_Tabelle
         '
         'Bt_Esegui
         '
-        Me.Bt_Esegui.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Esegui.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Bt_Esegui.FlatAppearance.BorderSize = 0
         Me.Bt_Esegui.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bt_Esegui.Image = CType(resources.GetObject("Bt_Esegui.Image"), System.Drawing.Image)
-        Me.Bt_Esegui.Location = New System.Drawing.Point(257, 569)
+        Me.Bt_Esegui.Location = New System.Drawing.Point(250, 3)
         Me.Bt_Esegui.Name = "Bt_Esegui"
-        Me.Bt_Esegui.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Esegui.Size = New System.Drawing.Size(40, 34)
         Me.Bt_Esegui.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.Bt_Esegui, "Esegui")
         Me.Bt_Esegui.UseVisualStyleBackColor = True
         '
         'Bt_Elimina
         '
-        Me.Bt_Elimina.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Elimina.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Bt_Elimina.FlatAppearance.BorderSize = 0
         Me.Bt_Elimina.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bt_Elimina.Image = CType(resources.GetObject("Bt_Elimina.Image"), System.Drawing.Image)
-        Me.Bt_Elimina.Location = New System.Drawing.Point(3, 569)
+        Me.Bt_Elimina.Location = New System.Drawing.Point(3, 3)
         Me.Bt_Elimina.Name = "Bt_Elimina"
-        Me.Bt_Elimina.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Elimina.Size = New System.Drawing.Size(35, 34)
         Me.Bt_Elimina.TabIndex = 6
         Me.ToolTip1.SetToolTip(Me.Bt_Elimina, "Elimina la query selezionata")
         Me.Bt_Elimina.UseVisualStyleBackColor = True
         '
         'Bt_Esporta
         '
-        Me.Bt_Esporta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Esporta.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Bt_Esporta.FlatAppearance.BorderSize = 0
         Me.Bt_Esporta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bt_Esporta.Image = CType(resources.GetObject("Bt_Esporta.Image"), System.Drawing.Image)
-        Me.Bt_Esporta.Location = New System.Drawing.Point(211, 569)
+        Me.Bt_Esporta.Location = New System.Drawing.Point(208, 3)
         Me.Bt_Esporta.Name = "Bt_Esporta"
-        Me.Bt_Esporta.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Esporta.Size = New System.Drawing.Size(35, 34)
         Me.Bt_Esporta.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.Bt_Esporta, "Esporta tabella")
         Me.Bt_Esporta.UseVisualStyleBackColor = True
@@ -179,14 +181,10 @@ Partial Class Form_Tabelle
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.GhostWhite
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Bt_Invia)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Bt_Info)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.DGW_Result)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Bt_Esporta)
         Me.SplitContainer1.Panel1.Controls.Add(Me.DGW_queries)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Bt_Elimina)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Bt_Esegui)
         '
         'SplitContainer1.Panel2
         '
@@ -196,28 +194,51 @@ Partial Class Form_Tabelle
         Me.SplitContainer1.SplitterDistance = 884
         Me.SplitContainer1.TabIndex = 9
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.ColumnCount = 7
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Elimina, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Invia, 4, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Esegui, 6, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Esporta, 5, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Info, 2, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 569)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(294, 40)
+        Me.TableLayoutPanel1.TabIndex = 10
+        '
         'Bt_Invia
         '
-        Me.Bt_Invia.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Invia.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Bt_Invia.FlatAppearance.BorderSize = 0
         Me.Bt_Invia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bt_Invia.Image = CType(resources.GetObject("Bt_Invia.Image"), System.Drawing.Image)
-        Me.Bt_Invia.Location = New System.Drawing.Point(165, 569)
+        Me.Bt_Invia.Location = New System.Drawing.Point(167, 3)
         Me.Bt_Invia.Name = "Bt_Invia"
-        Me.Bt_Invia.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Invia.Size = New System.Drawing.Size(35, 34)
         Me.Bt_Invia.TabIndex = 9
         Me.ToolTip1.SetToolTip(Me.Bt_Invia, "Invia tabella")
         Me.Bt_Invia.UseVisualStyleBackColor = True
         '
         'Bt_Info
         '
-        Me.Bt_Info.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Info.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Bt_Info.FlatAppearance.BorderSize = 0
         Me.Bt_Info.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bt_Info.Image = CType(resources.GetObject("Bt_Info.Image"), System.Drawing.Image)
-        Me.Bt_Info.Location = New System.Drawing.Point(119, 569)
+        Me.Bt_Info.Location = New System.Drawing.Point(85, 3)
         Me.Bt_Info.Name = "Bt_Info"
-        Me.Bt_Info.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Info.Size = New System.Drawing.Size(35, 34)
         Me.Bt_Info.TabIndex = 8
         Me.ToolTip1.SetToolTip(Me.Bt_Info, "Mostra database")
         Me.Bt_Info.UseVisualStyleBackColor = True
@@ -239,6 +260,7 @@ Partial Class Form_Tabelle
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -257,4 +279,5 @@ Partial Class Form_Tabelle
     Friend WithEvents Bt_Info As Button
     Friend WithEvents Bt_Invia As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

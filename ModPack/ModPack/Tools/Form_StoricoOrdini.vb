@@ -4,6 +4,7 @@ Public Class Form_StoricoOrdini
 
     Private Sub CaricaOrdini()
 
+        Dim ts1 As New TimeSpan(Now.Ticks)
         'Riempie la tabella OrdiniAperti con i numeri d'ordine di ordini con ancora righe non evase
         Using DS As New DataSet
 
@@ -32,7 +33,9 @@ Public Class Form_StoricoOrdini
         OrdiniBindingSource.Filter = "Ordine = 'XXXX'"
         FiltraColonne()
 
-
+        Dim ts2 As New TimeSpan(Now.Ticks)
+        Analysis.AddValue(3, (ts2 - ts1).TotalSeconds.ToString)
+        Analysis.AddValue(4, SQL.GetSQLValue("SELECT COUNT(*) FROM Ordini"))
 
     End Sub
     Private Sub FiltraColonne()

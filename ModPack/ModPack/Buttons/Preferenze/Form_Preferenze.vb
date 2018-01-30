@@ -274,6 +274,10 @@
                         SQL.Query("TRUNCATE TABLE Memo")
                     End If
 
+                    If MsgBox("Troncare tabella ANALYSIS?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
+                        SQL.Query("TRUNCATE TABLE Analysis")
+                    End If
+
                     If MsgBox("Ripristinare file XML?", vbYesNo, "Azzera") = MsgBoxResult.Yes Then
                         IO.File.Delete(My.Settings.XMLpath)
                         XML.CreaXML()

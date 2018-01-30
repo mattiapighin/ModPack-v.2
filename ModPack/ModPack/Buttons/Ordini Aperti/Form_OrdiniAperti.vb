@@ -12,6 +12,10 @@ Public Class Form_OrdiniAperti
     Dim Ordine As String
     Dim RowOrdine As New List(Of RigaOrdine)
 
+    Dim OrdiniTable As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
+    Dim DS As New ModPackDBDataSet
+
+
     Private Sub BloccaButtons()
         Bt_Etichette.Enabled = False
         Bt_ConfermaOrdine.Enabled = False
@@ -45,12 +49,15 @@ Public Class Form_OrdiniAperti
 
     End Sub
     Private Sub Form_OrdiniAperti_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim ts1 As New TimeSpan(Now.Ticks)
         CaricaListaOrdiniAperti()
-        CaricaTuttiNonEvasi()
+        'CaricaTuttiNonEvasi() rimosso perchè ora più performante
         BloccaButtons()
         Dim ts2 As New TimeSpan(Now.Ticks)
+
         Analysis.AddValue(1, (ts2 - ts1).TotalSeconds.ToString)
+        Analysis.AddValue(2, SQL.GetSQLValue("SELECT COUNT(*) FROM Ordini"))
 
     End Sub
     Private Sub DGW_OrdiniAperti_Click(sender As Object, e As EventArgs) Handles DGW_OrdiniAperti.Click
@@ -68,6 +75,7 @@ Public Class Form_OrdiniAperti
         If My.Settings.OrdiniAperti_ColoraScaduti = True Then ColoraDateConsegna()
     End Sub
     Private Sub CaricaListaOrdiniAperti()
+
         DGW_OrdiniAperti.DataSource = Nothing
         'Riempie la tabella OrdiniAperti con i numeri d'ordine di ordini con ancora righe non evase
         Dim DS As New DataSet
@@ -84,6 +92,7 @@ Public Class Form_OrdiniAperti
         End Using
 
         DGW_OrdiniAperti.DataSource = DS.Tables(0)
+
     End Sub
     Private Sub CaricaOrdineSelezionato(ByVal Ordine As String)
         'Riempie la DGW Ordine con le righe non evase dell'ordine selezionato nella DGW ordini aperti

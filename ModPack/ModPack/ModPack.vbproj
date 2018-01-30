@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>2.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -182,6 +182,12 @@
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
     </Compile>
     <Compile Include="Creazione Manuale Imballi\Form_Crea_Manuale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DLG_Analisi.Designer.vb">
+      <DependentUpon>DLG_Analisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DLG_Analisi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\DLG_MostraLOG.Designer.vb">
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Creazione Manuale Imballi\Form_Crea_Manuale.resx">
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DLG_Analisi.resx">
+      <DependentUpon>DLG_Analisi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DLG_MostraLOG.resx">
       <DependentUpon>DLG_MostraLOG.vb</DependentUpon>

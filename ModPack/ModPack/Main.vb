@@ -30,6 +30,8 @@ Public Class Main
     ' - Fix: Non si azzerava la lista dei bindelli da stampare dopo la prima stampa ( variabile etichettetotali cambiata da static a dim )
     ' - Aggiunto creazione file CO per automatizzare ordini da Modine e invio diretto mail
     ' - Aggiunto dicitura di proprietà sotto le stampe di CO e Distinta
+    ' - Form Ordini aperti più performante (tolto caricamento automatico tutti codici evasi)
+    ' - Aggiunto analisi prestazioni
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
@@ -199,7 +201,6 @@ Public Class Main
             Using Table As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
                 Using DS As New ModPackDBDataSet.OrdiniDataTable
                     Table.Fill(DS)
-
                     'Estrapola tutti gli ordini presenti in archivio
 
                     'Metodo1 
@@ -347,6 +348,10 @@ Public Class Main
 
     Private Sub REFRESHTREEVIEWToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REFRESHTREEVIEWToolStripMenuItem.Click
         CaricaOrdiniAperti()
+    End Sub
+
+    Private Sub ANALISIPRESTAZIONIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ANALISIPRESTAZIONIToolStripMenuItem.Click
+        DLG_Analisi.ShowDialog()
     End Sub
 
 End Class

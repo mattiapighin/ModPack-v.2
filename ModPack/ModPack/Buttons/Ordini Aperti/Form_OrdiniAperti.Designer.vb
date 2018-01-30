@@ -227,7 +227,7 @@ Partial Class Form_OrdiniAperti
         Me.Bt_SeeAll.Name = "Bt_SeeAll"
         Me.Bt_SeeAll.Size = New System.Drawing.Size(44, 45)
         Me.Bt_SeeAll.TabIndex = 8
-        Me.ToolTip.SetToolTip(Me.Bt_SeeAll, "Vedi tutti gli imballi da evadere")
+        Me.ToolTip.SetToolTip(Me.Bt_SeeAll, "Panoramica")
         Me.Bt_SeeAll.UseVisualStyleBackColor = True
         '
         'Bt_CheckList

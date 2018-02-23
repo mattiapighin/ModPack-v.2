@@ -224,8 +224,6 @@ Public Class Form_OrdiniAperti
 
         If Not DGW_OrdiniAperti.SelectedRows.Count = 0 Then
 
-
-
             Ordine = InputBox("Ordine:", "Stampa conferma d'ordine", DGW_OrdiniAperti.CurrentRow.Cells(0).Value)
 
             If ModPack.Ordine.OrdineEXIST(Ordine) = False Then
@@ -233,7 +231,9 @@ Public Class Form_OrdiniAperti
                 Exit Sub
             End If
 
+            'Genero Dataset
             ConfermaOrdineDS.Clear()
+
             Dim Query As String = "SELECT Ordini.Riga, Ordini.Imballo, Ordini.Qt, Imballi.Tipo, Imballi.L, Imballi.P, Imballi.H, Ordini.indice, Imballi.m3, Imballi.Tipo_Rivestimento, Imballi.Prezzo, Ordini.Data_Consegna, Ordini.Codice, Ordini.Commessa, imballi.m2, Ordini.Ordine  FROM Ordini LEFT JOIN Imballi ON Ordini.Imballo = Imballi.Imballo WHERE Ordine = '" & Ordine & "'"
             Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
 
@@ -247,29 +247,45 @@ Public Class Form_OrdiniAperti
 
             End Using
 
-            Dim DialogStampa As New PrintDialog
-            If DialogStampa.ShowDialog = DialogResult.OK Then
 
-                'Ordine = DGW_OrdiniAperti.CurrentRow.Cells(0).Value
+            If My.Settings.CO_Genera = True Then    'GENERO FILE CO PER AUTOMAZIONE
 
-                LOG.Write("Stampata conferma ordine " & Ordine)
+                Dim FileSalvato As String = ""
+                Module_GeneraFileCO.Genera_File(ConfermaOrdineDS, Ordine, FileSalvato)
 
-                Print_ConfermaOrdine.PrinterSettings = DialogStampa.PrinterSettings
-
-                Print_ConfermaOrdine.DocumentName = "CO" & Ordine
-
-                Stampe.Set_Settings(Print_ConfermaOrdine, True)
-
-                Print_ConfermaOrdine.Print()
-
-                SSwrite("Conferma d'ordine stampata " & Ordine)
+                If My.Settings.CO_Invia = True Then     'INVIO FILE CO PER AUTOMAZIONE VIA MAIL
+                    Dim ListaAllegati As New List(Of String)
+                    ListaAllegati.Add(FileSalvato)
+                    Mail.Invia("Invio CO " & Ordine, "Messaggio generato automaticamente", ListaAllegati, False)
+                End If
 
             End If
 
-            Module_GeneraFileCO.Genera_File(ConfermaOrdineDS, Ordine)
+
+            '---------STAMPA DELLA CONFERMA D'ORDINE-----------
+            If My.Settings.CO_Stampa = True Then
+
+                Clipboard.SetText(Ordine)
+
+                Dim DialogStampa As New PrintDialog
+                If DialogStampa.ShowDialog = DialogResult.OK Then
+
+                    'Ordine = DGW_OrdiniAperti.CurrentRow.Cells(0).Value
+
+                    LOG.Write("Stampata conferma ordine " & Ordine)
+                    Print_ConfermaOrdine.PrinterSettings = DialogStampa.PrinterSettings
+                    Print_ConfermaOrdine.DocumentName = "CO" & Ordine
+                    Stampe.Set_Settings(Print_ConfermaOrdine, True)
+                    Print_ConfermaOrdine.Print()
+                    SSwrite("Conferma d'ordine stampata " & Ordine)
+
+                End If
+
+            End If
+
 
         Else
-            MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
+                MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
         End If
 
     End Sub

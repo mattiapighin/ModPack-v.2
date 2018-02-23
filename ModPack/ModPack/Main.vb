@@ -106,10 +106,10 @@ Public Class Main
 
                 If MsgBox("Azzerare formato stampa?", vbYesNo, "Nuovo Utente") = MsgBoxResult.Yes Then
                     With My.Settings
-                        .Stampa_MargineTop = 18.9
-                        .Stampa_MargineRight = 37.8
-                        .Stampa_MargineLeft = 18.9
-                        .Stampa_MargineBottom = 37.8
+                        .Stampa_MargineTop = 5 '18.9
+                        .Stampa_MargineRight = 15 '37.8
+                        .Stampa_MargineLeft = 5 '18.9
+                        .Stampa_MargineBottom = 15 '37.8
                         .Stampa_Color = False
                         .Stampa_LandScape = False
                     End With

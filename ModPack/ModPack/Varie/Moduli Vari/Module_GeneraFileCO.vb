@@ -1,33 +1,42 @@
 ﻿Module Module_GeneraFileCO
 
-    Public Sub Genera_File(ByVal DS As DataSet, ByVal NomeFile As String)
+    Public Sub Genera_File(ByVal DS As DataSet, ByVal NomeFile As String, ByRef SaveFile As String)
 
         'Genera file conferma d'ordine per MODINE per automatizzare la creazione degli ordini
-        Dim SaveFile As String = ""
 
-        Genera_XML(DS, NomeFile, SaveFile)
+        Dim SFDialog As New SaveFileDialog With {.FileName = NomeFile, .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments, .Title = "Scegliere destinazione per file CO"}
 
-        'Lista dei files da allegare all'email
-        Dim ListaFiles As New List(Of String)
-        ListaFiles.Add(SaveFile) 'solo il file appena generato
 
-        If MsgBox("Vuoi selezionare il file PDF da allegare all'email?", vbYesNo, "Invio conferma d'ordine") = MsgBoxResult.Yes Then
-            'Se si stampa su pdf selezionare il file per allegare anche quello alla mail, altrimenti inviare solo il file txt
-            Dim OpenFile As New OpenFileDialog With {.Filter = "File PDF Conferma Ordine|*.pdf", .DefaultExt = "*.pdf", .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.Desktop}
-            If OpenFile.ShowDialog = DialogResult.OK Then
-                'Aggiunge il file pdf agli allegati
-                ListaFiles.Add(OpenFile.FileName)
-            End If
+
+
+
+        If SFDialog.ShowDialog = DialogResult.OK Then
+
+            SaveFile = SFDialog.FileName
+
+            Select Case My.Settings.CO_Tipo
+
+                Case "xml"
+                    SaveFile += ".xml"
+                    Genera_XML(DS, NomeFile, SaveFile)
+
+                Case "txt"
+                    SaveFile += ".txt"
+                    Genera_TXT(DS, NomeFile, SaveFile)
+
+                Case Else
+                    MsgBox("Controllare tipo CO inserito (in preferenze)")
+
+            End Select
+
+
 
         End If
 
-        Mail.Invia("Invio Conferma Ordine " & IO.Path.GetFileNameWithoutExtension(SaveFile), "ATTENZIONE: Questo è un messaggio generato automaticamente. Si prega pertanto di non rispondere alla casella mittente. Per eventuali comunicazioni contatta il numero di telefono 0432-823973 o l'indirizzo e-mail  imballaggi@bicciatoserafino.com.", ListaFiles, True)
-
     End Sub
 
-    Private Sub Genera_TXT(ByVal DS As DataSet, ByVal NomeFile As String, ByRef SaveFile As String)
+    Private Sub Genera_TXT(ByVal DS As DataSet, ByVal NomeFile As String, ByVal SaveFile As String)
 
-        SaveFile = My.Computer.FileSystem.SpecialDirectories.Temp & "\CO" & NomeFile & ".txt" 'percorso in cui verrà salvato il file
         Dim Righe As New List(Of String) 'Righe dell'ordine
 
         For Each Line As DataRow In DS.Tables(0).Rows
@@ -40,9 +49,7 @@
         IO.File.AppendAllLines(SaveFile, Righe)
     End Sub
 
-    Private Sub Genera_XML(ByVal DS As DataSet, ByVal NomeFile As String, ByRef SaveFile As String)
-
-        SaveFile = My.Computer.FileSystem.SpecialDirectories.Temp & "\CO" & NomeFile & ".xml"
+    Private Sub Genera_XML(ByVal DS As DataSet, ByVal NomeFile As String, ByVal SaveFile As String)
 
         Dim settings As New System.Xml.XmlWriterSettings() With {.Indent = True}
         Dim XmlWrt As System.Xml.XmlWriter = System.Xml.XmlWriter.Create(SaveFile, settings)
@@ -77,10 +84,12 @@
                 .WriteEndElement()
 
                 .WriteStartElement("DATA_CONSEGNA")
-                .WriteValue(Line.Item(11))
+                '.WriteValue(Line.Item(11).ToString)
+                .WriteValue(FormatDateTime(Line.Item(11), DateFormat.ShortDate))
                 .WriteEndElement()
 
                 .WriteEndElement()
+
             Next
 
             .WriteEndElement()

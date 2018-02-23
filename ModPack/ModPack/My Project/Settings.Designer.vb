@@ -559,7 +559,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("18.9")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
         Public Property Stampa_MargineTop() As Single
             Get
                 Return CType(Me("Stampa_MargineTop"),Single)
@@ -571,7 +571,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("37.8")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
         Public Property Stampa_MargineBottom() As Single
             Get
                 Return CType(Me("Stampa_MargineBottom"),Single)
@@ -583,7 +583,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("18.9")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5")>  _
         Public Property Stampa_MargineLeft() As Single
             Get
                 Return CType(Me("Stampa_MargineLeft"),Single)
@@ -595,7 +595,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("37.8")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
         Public Property Stampa_MargineRight() As Single
             Get
                 Return CType(Me("Stampa_MargineRight"),Single)
@@ -664,6 +664,54 @@ Namespace My
             End Get
             Set
                 Me("StringaDisclaimer") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property CO_Genera() As Boolean
+            Get
+                Return CType(Me("CO_Genera"),Boolean)
+            End Get
+            Set
+                Me("CO_Genera") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property CO_Invia() As Boolean
+            Get
+                Return CType(Me("CO_Invia"),Boolean)
+            End Get
+            Set
+                Me("CO_Invia") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property CO_Stampa() As Boolean
+            Get
+                Return CType(Me("CO_Stampa"),Boolean)
+            End Get
+            Set
+                Me("CO_Stampa") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("txt")>  _
+        Public Property CO_Tipo() As String
+            Get
+                Return CType(Me("CO_Tipo"),String)
+            End Get
+            Set
+                Me("CO_Tipo") = value
             End Set
         End Property
     End Class

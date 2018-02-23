@@ -36,6 +36,11 @@
         Ck_TextMain.Checked = My.Settings.TestoIconeMain
         Ck_TreeView.Checked = My.Settings.TreeView
         CK_DescrizioneClipboard.Checked = My.Settings.NumeroOrdineClipboard
+
+        Ck_CoGenera.Checked = My.Settings.CO_Genera
+        Ck_CoInvia.Checked = My.Settings.CO_Invia
+        Ck_CoStampa.Checked = My.Settings.CO_Stampa
+
     End Sub
     Private Sub SalvaSettingsCK()
         My.Settings.CK_ConfermaEvaso = Ck_Evaso.Checked
@@ -46,6 +51,10 @@
         My.Settings.TestoIconeMain = Ck_TextMain.Checked
         My.Settings.TreeView = Ck_TreeView.Checked
         My.Settings.NumeroOrdineClipboard = CK_DescrizioneClipboard.Checked
+
+        My.Settings.CO_Genera = Ck_CoGenera.Checked
+        My.Settings.CO_Invia = Ck_CoInvia.Checked
+        My.Settings.CO_Stampa = Ck_CoStampa.Checked
     End Sub
 
     Private Sub CaricaSettingsDistinta()
@@ -68,6 +77,7 @@
         RBexcel_nuovi.Checked = My.Settings.ListaNuoviExcel
         RBtext_nuovi.Checked = Not My.Settings.ListaNuoviExcel
         TxtScegliExcel.Text = My.Settings.ExcelPath
+        Txt_TipoCo.Text = My.Settings.CO_Tipo
     End Sub
     Private Sub SalvaRiferimenti()
         If Not String.IsNullOrEmpty(Txt_utente.Text) Then My.Settings.Utente = Txt_utente.Text
@@ -75,6 +85,7 @@
         My.Settings.ListaNuoviExcel = RBexcel_nuovi.Checked
         My.Settings.ListaNuoviExcel = Not RBtext_nuovi.Checked
         If Not String.IsNullOrEmpty(TxtScegliExcel.Text) Then My.Settings.ExcelPath = TxtScegliExcel.Text
+        If Not String.IsNullOrEmpty(Txt_TipoCo.Text) Then My.Settings.CO_Tipo = Txt_TipoCo.Text
     End Sub
 
 

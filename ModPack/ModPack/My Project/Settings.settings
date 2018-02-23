@@ -134,16 +134,16 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Stampa_MargineTop" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">18.9</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Stampa_MargineBottom" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">37.8</Value>
+      <Value Profile="(Default)">15</Value>
     </Setting>
     <Setting Name="Stampa_MargineLeft" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">18.9</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Stampa_MargineRight" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">37.8</Value>
+      <Value Profile="(Default)">15</Value>
     </Setting>
     <Setting Name="Stampa_Color" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -159,6 +159,18 @@
     </Setting>
     <Setting Name="StringaDisclaimer" Type="System.String" Scope="User">
       <Value Profile="(Default)">Questo documento è di proprietà di BICCIATO SERAFINO S.R.L. - Ogni forma di copia e di diffusione con qualsiasi mezzo è vietata senza la relativa autorizzazione.</Value>
+    </Setting>
+    <Setting Name="CO_Genera" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CO_Invia" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CO_Stampa" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CO_Tipo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -152,7 +152,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TreeView" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Log" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

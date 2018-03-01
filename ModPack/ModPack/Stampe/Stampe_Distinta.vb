@@ -385,6 +385,8 @@
                 If K.Part <> "B" And K.Part <> "C" And K.Part <> "F" And K.Part <> "T" And K.Part <> "K" Then ALTRO = True
             Next
 
+
+
             '############### BANCALE #################
             If BANCALE = True Then
                 e.Graphics.FillRectangle(Brushes.LightGray, Rect_Riga.X, Rect_Riga.Y + 3, Rect_Riga.Width - 3, Rect_Riga.Height - 6)
@@ -542,7 +544,7 @@
 
                 If My.Settings.StampaBarcodeSoloCodice = True Then
                     'Stampa l'indice della tabella ordini riferito all'imballo
-                    Codice = BarCode.Genera(SQL.GetID_RigaOrdine(riga), False, 50, 7)
+                    Codice = BarCode.Genera(riga.ID_RigaOrdine, True, 50, 7)
                 Else
                     'Stampa il nome dell'imballo | quantità
                     Codice = BarCode.Genera(riga.Imballo & "|" & riga.Qt, False, 50, 7)
@@ -635,6 +637,11 @@
                 e.Graphics.FillRectangle(Brushes.LightYellow, RectInfoTipo)
                 e.Graphics.DrawString(InfoTipo.ToUpper, New Font("Calibri", fnt.Size, FontStyle.Bold), Brushes.Black, RectInfoTipo, FMT)
             End If
+
+            '---WATERMARK---
+            'Dim watermark As Image = My.Resources.LogoBicc
+            'e.Graphics.DrawImage(watermark, (e.MarginBounds.Width \ 2) - (watermark.Width \ 2), (e.MarginBounds.Height \ 2) - (watermark.Height \ 2))
+            '---------------
 
         End Sub
         Private Sub StampaRiga(Sender As Object, e As Printing.PrintPageEventArgs, Riga As Rectangle, X As Decimal, Y As Decimal, Z As Decimal, N As Integer, Tag As String, QT As Integer)

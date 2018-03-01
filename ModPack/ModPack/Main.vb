@@ -24,14 +24,14 @@ Public Class Main
     Dim RowOrdine As New List(Of RigaOrdine)
     Dim RowIndici As New List(Of Integer)
 
-    'VERSIONE 2.0.2 
+    'VERSIONE 2.1.0 
     'CHANGELOG
-    ' - Aggiunto tabella magazzini (in previsione di amaro)
-    ' - Fix: Non si azzerava la lista dei bindelli da stampare dopo la prima stampa ( variabile etichettetotali cambiata da static a dim )
-    ' - Aggiunto creazione file CO per automatizzare ordini da Modine e invio diretto mail
-    ' - Aggiunto dicitura di proprietà sotto le stampe di CO e Distinta
-    ' - Form Ordini aperti più performante (tolto caricamento automatico tutti codici evasi)
-    ' - Aggiunto analisi prestazioni
+    ' - Aggiunto funzionalità "In produzione"
+    ' - Aggiustato le conferme d'ordine
+    ' - Aggiunto modulo "Modifica Ordine"
+    ' - TreeView e ordini aperti non più in real time
+    ' - DoppioClick su treeview mostra distinta relativa all'ordine selezionato
+
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
@@ -229,8 +229,10 @@ Public Class Main
                             For K = 0 To row.Length - 1
                                 'E poi carica gli imballi inevasi
                                 If row(K)(26) = False Then
-                                    OrdiniTree.Nodes(I).Nodes.Add(row(K)(3) & "  (" & row(K)(5) & ")" & "  (" & row(K)(7) & ")  (" & row(K)(8) & ")")
-                                    OrdiniTree.Nodes(I).Nodes(K).ForeColor = Color.Black
+                                    'OrdiniTree.Nodes(I).Nodes.Add(row(K)(3) & "  (" & row(K)(5) & ")" & "  (" & row(K)(7) & ")  (" & row(K)(8) & ")")
+                                    Dim Nodo As New TreeNode With {.Name = row(K)(0), .Text = row(K)(3) & "  (" & row(K)(5) & ")" & "  (" & row(K)(7) & ")  (" & row(K)(8) & ")", .ForeColor = Color.Black}
+                                    OrdiniTree.Nodes(I).Nodes.Add(Nodo)
+                                    'OrdiniTree.Nodes(I).Nodes(K).ForeColor = Color.Black
 
                                     If row(K)(24) = False Then
                                         'Se non è stampato icona "new"
@@ -252,8 +254,8 @@ Public Class Main
                                     End If
 
                                 Else
-                                    OrdiniTree.Nodes(I).Nodes.Add(row(K)(3) & "  (" & row(K)(5) & ")" & "  (" & row(K)(7) & ")  (" & row(K)(8) & ")")
-                                    OrdiniTree.Nodes(I).Nodes(K).ForeColor = Color.Green
+                                    Dim Nodo As New TreeNode With {.Name = row(K)(0), .Text = row(K)(3) & "  (" & row(K)(5) & ")" & "  (" & row(K)(7) & ")  (" & row(K)(8) & ")", .ForeColor = Color.Green}
+                                    OrdiniTree.Nodes(I).Nodes.Add(Nodo)
                                     'Se è evaso icona check
                                     OrdiniTree.Nodes(I).Nodes(K).ImageIndex = 3
                                     OrdiniTree.Nodes(I).Nodes(K).SelectedImageIndex = 3
@@ -273,24 +275,43 @@ Public Class Main
     End Sub
 
     Private Sub Main_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        If My.Settings.TreeView = True Then
-            CaricaOrdiniAperti()
-        End If
+        ' If My.Settings.TreeView = True Then
+        'CaricaOrdiniAperti()
+        'End If
     End Sub
     Private Sub OrdiniTree_DoubleClick(sender As Object, e As EventArgs) Handles OrdiniTree.DoubleClick
-        Try
-            If Not OrdiniTree.SelectedNode Is Nothing Then
-                Dim Imballo() As String = Split(OrdiniTree.SelectedNode.Text, "  ")
-                If Imballo.Length = 4 Then
-                    Form_Imballi.ImballiBindingSource.Filter = Nothing
-                    Form_Imballi.Show()
-                    Form_Imballi.ImballiBindingSource.Filter = "Imballo = '" & Imballo(0) & "'"
-                End If
+        If Not OrdiniTree.SelectedNode Is Nothing Then
+            Using DS As New ModPackDBDataSet.OrdiniDataTable
+                Using Table As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
 
-            End If
-        Catch ex As Exception
-            Errore.Show("OrdiniTree_DoubleClick \ Main", ex.Message)
-        End Try
+                    Table.Fill(DS)
+
+                    If Not String.IsNullOrEmpty(OrdiniTree.SelectedNode.Name) Then
+                        If DS.Any(Function(X) X.Id = OrdiniTree.SelectedNode.Name) Then
+
+                            RowOrdine.Clear()
+
+                            Dim ListaMagazzini As New List(Of Magazzino)
+                            ListaMagazzini = SQL.GetMagazzini
+
+
+                            Dim Row As ModPackDBDataSet.OrdiniRow = DS.Single(Function(x) x.Id = OrdiniTree.SelectedNode.Name)
+                            Dim Riga As New RigaOrdine With {.NumeroOrdine = Row.Ordine, .Riga = Row.Riga, .Imballo = Row.Imballo, .Indice = Row.Indice, .Qt = Row.Qt, .Cliente = Row.Cliente, .Codice = Row.Codice, .Commessa = Row.Commessa,
+                                           .L = Row.L, .P = Row.P, .H = Row.H, .Tipo = Row.Tipo, .Zoccoli = Row.Zoccoli, .Rivestimento = Row.Rivestimento, .TipoRivestimento = Row.Tipo_Rivestimento, .Note = Row.Note, .DataConsegna = Row.Data_Consegna,
+                                           .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = False, .Produzione = False, .Stampato = False, .ID_RigaOrdine = OrdiniTree.SelectedNode.Name}
+
+                            RowOrdine.Add(Riga)
+
+                            Stampe.Set_Settings(Print_Distinta)
+                            Dim L As New PrintPreviewDialog With {.Document = Print_Distinta, .TopMost = False, .WindowState = FormWindowState.Normal}
+                            L.Show()
+
+                        End If
+                    End If
+
+                End Using
+            End Using
+        End If
     End Sub
 
     '### TOOLSTRIP ###
@@ -346,12 +367,24 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub REFRESHTREEVIEWToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REFRESHTREEVIEWToolStripMenuItem.Click
+    Private Sub REFRESHTREEVIEWToolStripMenuItem_Click(sender As Object, e As EventArgs)
         CaricaOrdiniAperti()
     End Sub
 
-    Private Sub ANALISIPRESTAZIONIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ANALISIPRESTAZIONIToolStripMenuItem.Click
-        DLG_Analisi.ShowDialog()
+    Private Sub Print_Distinta_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles Print_Distinta.PrintPage
+        Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(0))
     End Sub
 
+    Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click
+        ToolTip.SetToolTip(BT_RefreshTree, "Ultimo aggiornamento: " & Date.Now.ToShortTimeString)
+        CaricaOrdiniAperti()
+    End Sub
+
+    Private Sub INIZIOPRODUZIONEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INIZIOPRODUZIONEToolStripMenuItem.Click
+        DLG_InProduzione.ShowDialog()
+    End Sub
+
+    Private Sub MODIFICAORDINEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICAORDINEToolStripMenuItem.Click
+        DLG_ModificaOrdine.ShowDialog()
+    End Sub
 End Class

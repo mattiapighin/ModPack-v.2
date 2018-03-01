@@ -90,6 +90,14 @@
 
 
     Private Sub Form_Preferenze_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
+            With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
+                Tx_Versione.Text = "V" & .Major & "." & .Minor & "." & .Build & "." & .Revision
+            End With
+        End If
+
+
         Try
             CaricaSettingsEtichette()
         Catch ex As Exception
@@ -349,5 +357,9 @@
 
     Private Sub Bt_GestMagazzini_Click(sender As Object, e As EventArgs) Handles Bt_GestMagazzini.Click
         FRM_GestioneMagazzini.ShowDialog()
+    End Sub
+
+    Private Sub Tx_Versione_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Tx_Versione.LinkClicked
+        DLG_Changelog.ShowDialog()
     End Sub
 End Class

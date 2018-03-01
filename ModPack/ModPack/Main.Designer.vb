@@ -43,15 +43,18 @@ Partial Class Main
         Me.TS_Imballi = New System.Windows.Forms.ToolStripDropDownButton()
         Me.TS_Archivio = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Crea = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INIZIOPRODUZIONEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tools = New System.Windows.Forms.ToolStripDropDownButton()
         Me.TS_ControlloOrdine = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_ListaElementi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Listino = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REFRESHTREEVIEWToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ANALISIPRESTAZIONIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tabelle = New System.Windows.Forms.ToolStripButton()
         Me.Ts_Preferenze = New System.Windows.Forms.ToolStripButton()
         Me.TS_Memo = New System.Windows.Forms.ToolStripButton()
+        Me.Print_Distinta = New System.Drawing.Printing.PrintDocument()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BT_RefreshTree = New System.Windows.Forms.Button()
+        Me.MODIFICAORDINEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.DGW_Memo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -205,7 +208,7 @@ Partial Class Main
         '
         'TS_Imballi
         '
-        Me.TS_Imballi.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Archivio, Me.TS_Crea})
+        Me.TS_Imballi.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Archivio, Me.TS_Crea, Me.INIZIOPRODUZIONEToolStripMenuItem})
         Me.TS_Imballi.Image = CType(resources.GetObject("TS_Imballi.Image"), System.Drawing.Image)
         Me.TS_Imballi.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Imballi.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -216,18 +219,24 @@ Partial Class Main
         'TS_Archivio
         '
         Me.TS_Archivio.Name = "TS_Archivio"
-        Me.TS_Archivio.Size = New System.Drawing.Size(152, 22)
+        Me.TS_Archivio.Size = New System.Drawing.Size(184, 22)
         Me.TS_Archivio.Text = "ARCHIVIO"
         '
         'TS_Crea
         '
         Me.TS_Crea.Name = "TS_Crea"
-        Me.TS_Crea.Size = New System.Drawing.Size(152, 22)
+        Me.TS_Crea.Size = New System.Drawing.Size(184, 22)
         Me.TS_Crea.Text = "CREA"
+        '
+        'INIZIOPRODUZIONEToolStripMenuItem
+        '
+        Me.INIZIOPRODUZIONEToolStripMenuItem.Name = "INIZIOPRODUZIONEToolStripMenuItem"
+        Me.INIZIOPRODUZIONEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.INIZIOPRODUZIONEToolStripMenuItem.Text = "INIZIO PRODUZIONE"
         '
         'TS_Tools
         '
-        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.TS_ListaElementi, Me.TS_Listino, Me.REFRESHTREEVIEWToolStripMenuItem, Me.ANALISIPRESTAZIONIToolStripMenuItem})
+        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.TS_ListaElementi, Me.TS_Listino, Me.MODIFICAORDINEToolStripMenuItem})
         Me.TS_Tools.Image = CType(resources.GetObject("TS_Tools.Image"), System.Drawing.Image)
         Me.TS_Tools.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Tools.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -238,32 +247,20 @@ Partial Class Main
         'TS_ControlloOrdine
         '
         Me.TS_ControlloOrdine.Name = "TS_ControlloOrdine"
-        Me.TS_ControlloOrdine.Size = New System.Drawing.Size(191, 22)
+        Me.TS_ControlloOrdine.Size = New System.Drawing.Size(189, 22)
         Me.TS_ControlloOrdine.Text = "CONTROLLO ORDINE"
         '
         'TS_ListaElementi
         '
         Me.TS_ListaElementi.Name = "TS_ListaElementi"
-        Me.TS_ListaElementi.Size = New System.Drawing.Size(191, 22)
+        Me.TS_ListaElementi.Size = New System.Drawing.Size(189, 22)
         Me.TS_ListaElementi.Text = "LISTA ELEMENTI"
         '
         'TS_Listino
         '
         Me.TS_Listino.Name = "TS_Listino"
-        Me.TS_Listino.Size = New System.Drawing.Size(191, 22)
+        Me.TS_Listino.Size = New System.Drawing.Size(189, 22)
         Me.TS_Listino.Text = "LISTINO"
-        '
-        'REFRESHTREEVIEWToolStripMenuItem
-        '
-        Me.REFRESHTREEVIEWToolStripMenuItem.Name = "REFRESHTREEVIEWToolStripMenuItem"
-        Me.REFRESHTREEVIEWToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.REFRESHTREEVIEWToolStripMenuItem.Text = "REFRESH TREEVIEW"
-        '
-        'ANALISIPRESTAZIONIToolStripMenuItem
-        '
-        Me.ANALISIPRESTAZIONIToolStripMenuItem.Name = "ANALISIPRESTAZIONIToolStripMenuItem"
-        Me.ANALISIPRESTAZIONIToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.ANALISIPRESTAZIONIToolStripMenuItem.Text = "ANALISI PRESTAZIONI"
         '
         'TS_Tabelle
         '
@@ -294,6 +291,29 @@ Partial Class Main
         Me.TS_Memo.Size = New System.Drawing.Size(72, 33)
         Me.TS_Memo.Text = "MEMO"
         '
+        'Print_Distinta
+        '
+        '
+        'BT_RefreshTree
+        '
+        Me.BT_RefreshTree.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BT_RefreshTree.BackColor = System.Drawing.Color.White
+        Me.BT_RefreshTree.BackgroundImage = CType(resources.GetObject("BT_RefreshTree.BackgroundImage"), System.Drawing.Image)
+        Me.BT_RefreshTree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BT_RefreshTree.FlatAppearance.BorderSize = 0
+        Me.BT_RefreshTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_RefreshTree.Location = New System.Drawing.Point(815, 41)
+        Me.BT_RefreshTree.Name = "BT_RefreshTree"
+        Me.BT_RefreshTree.Size = New System.Drawing.Size(18, 18)
+        Me.BT_RefreshTree.TabIndex = 15
+        Me.BT_RefreshTree.UseVisualStyleBackColor = False
+        '
+        'MODIFICAORDINEToolStripMenuItem
+        '
+        Me.MODIFICAORDINEToolStripMenuItem.Name = "MODIFICAORDINEToolStripMenuItem"
+        Me.MODIFICAORDINEToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.MODIFICAORDINEToolStripMenuItem.Text = "MODIFICA ORDINE"
+        '
         'Main
         '
         Me.AllowDrop = True
@@ -302,6 +322,7 @@ Partial Class Main
         Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(839, 482)
+        Me.Controls.Add(Me.BT_RefreshTree)
         Me.Controls.Add(Me.OrdiniTree)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Calendario)
@@ -346,6 +367,9 @@ Partial Class Main
     Friend WithEvents TS_Crea As ToolStripMenuItem
     Friend WithEvents TS_Listino As ToolStripMenuItem
     Friend WithEvents ImmaginiTree As ImageList
-    Friend WithEvents REFRESHTREEVIEWToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ANALISIPRESTAZIONIToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Print_Distinta As Printing.PrintDocument
+    Friend WithEvents BT_RefreshTree As Button
+    Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents INIZIOPRODUZIONEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MODIFICAORDINEToolStripMenuItem As ToolStripMenuItem
 End Class

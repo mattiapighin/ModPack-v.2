@@ -419,6 +419,17 @@ Public Class RigaOrdine
             _DataOrdine = value
         End Set
     End Property
+
+    Private _IDRigaOrdine As Integer
+    Public Property ID_RigaOrdine() As Integer
+        Get
+            Return _IDRigaOrdine
+        End Get
+        Set(ByVal value As Integer)
+            _IDRigaOrdine = value
+        End Set
+    End Property
+
 End Class
 
 Public Class RigaOrdineINPUT

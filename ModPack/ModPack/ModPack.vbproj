@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>2.0.2.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -154,6 +154,12 @@
     <Compile Include="Buttons\Memo\Form_Memo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Buttons\Preferenze\DLG_Changelog.Designer.vb">
+      <DependentUpon>DLG_Changelog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\Preferenze\DLG_Changelog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Buttons\Preferenze\Form_Preferenze.Designer.vb">
       <DependentUpon>Form_Preferenze.vb</DependentUpon>
     </Compile>
@@ -190,6 +196,12 @@
     <Compile Include="Dialogs\DLG_Analisi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\DLG_ModificaOrdine.Designer.vb">
+      <DependentUpon>DLG_ModificaOrdine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DLG_ModificaOrdine.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialogs\DLG_MostraLOG.Designer.vb">
       <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
     </Compile>
@@ -212,6 +224,12 @@
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\Form_PuliziaOrdini.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Segna_InProduzione\DLG_InProduzione.Designer.vb">
+      <DependentUpon>DLG_InProduzione.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Segna_InProduzione\DLG_InProduzione.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.Designer.vb">
@@ -388,6 +406,9 @@
     <EmbeddedResource Include="Buttons\Memo\Form_Memo.resx">
       <DependentUpon>Form_Memo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Buttons\Preferenze\DLG_Changelog.resx">
+      <DependentUpon>DLG_Changelog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Buttons\Preferenze\Form_Preferenze.resx">
       <DependentUpon>Form_Preferenze.vb</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +427,9 @@
     <EmbeddedResource Include="Dialogs\DLG_Analisi.resx">
       <DependentUpon>DLG_Analisi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DLG_ModificaOrdine.resx">
+      <DependentUpon>DLG_ModificaOrdine.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DLG_MostraLOG.resx">
       <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\Form_PuliziaOrdini.resx">
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Segna_InProduzione\DLG_InProduzione.resx">
+      <DependentUpon>DLG_InProduzione.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Distinte\Creazione Distinte\NotificaInsImballo.resx">
       <DependentUpon>NotificaInsImballo.vb</DependentUpon>

@@ -46,7 +46,14 @@ Public Class Form1
                     Dim zipPath As String = G.FileName
                     Dim extractPath As String = "Z:\ModPack"
 
-                    ZipFile.ExtractToDirectory(zipPath, extractPath)
+                    Try
+                        ZipFile.ExtractToDirectory(zipPath, extractPath)
+                        MsgBox("Ripristino completato", vbInformation, "Ripristina")
+                    Catch ex As Exception
+                        MsgBox("Qualcosa non ha funzionato" & vbCrLf & ex.Message, vbCritical, "Errore")
+                    End Try
+
+
                 End If
 
             End If

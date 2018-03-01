@@ -572,7 +572,7 @@
 
                 Case "EUR"
                     Dim TTB As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTB", .Part = "B"}
-                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = NMorali * 3, .Tag = "ZOC", .Part = "B"}
+                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z), .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTT", .Part = "B"}
                     D.AddRange({TTB, ZOC, TTT})
             End Select

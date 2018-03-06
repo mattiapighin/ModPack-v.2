@@ -681,8 +681,6 @@ Partial Class Form_Imballi
         'SplitSopra
         '
         Me.SplitSopra.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitSopra.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-        Me.SplitSopra.IsSplitterFixed = True
         Me.SplitSopra.Location = New System.Drawing.Point(0, 0)
         Me.SplitSopra.Name = "SplitSopra"
         '
@@ -695,7 +693,7 @@ Partial Class Form_Imballi
         Me.SplitSopra.Panel2.Controls.Add(Me.DgwDistinta)
         Me.SplitSopra.Panel2Collapsed = True
         Me.SplitSopra.Size = New System.Drawing.Size(935, 666)
-        Me.SplitSopra.SplitterDistance = 748
+        Me.SplitSopra.SplitterDistance = 745
         Me.SplitSopra.TabIndex = 4
         '
         'StatusStrip1
@@ -823,7 +821,7 @@ Partial Class Form_Imballi
         Me.SplitIntero.Panel2.Controls.Add(Me.SplitSotto)
         Me.SplitIntero.Panel2Collapsed = True
         Me.SplitIntero.Size = New System.Drawing.Size(935, 666)
-        Me.SplitIntero.SplitterDistance = 465
+        Me.SplitIntero.SplitterDistance = 464
         Me.SplitIntero.TabIndex = 5
         '
         'SplitSotto

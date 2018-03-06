@@ -23,8 +23,8 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStrip = New System.Windows.Forms.ToolStripStatusLabel()
@@ -42,19 +42,21 @@ Partial Class Main
         Me.TS_StoricoOrdini = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Imballi = New System.Windows.Forms.ToolStripDropDownButton()
         Me.TS_Archivio = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TS_Crea = New System.Windows.Forms.ToolStripMenuItem()
         Me.INIZIOPRODUZIONEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CREAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MANUALEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CREAZIONEAUTOMATICAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tools = New System.Windows.Forms.ToolStripDropDownButton()
         Me.TS_ControlloOrdine = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_ListaElementi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Listino = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MODIFICAORDINEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tabelle = New System.Windows.Forms.ToolStripButton()
         Me.Ts_Preferenze = New System.Windows.Forms.ToolStripButton()
         Me.TS_Memo = New System.Windows.Forms.ToolStripButton()
         Me.Print_Distinta = New System.Drawing.Printing.PrintDocument()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BT_RefreshTree = New System.Windows.Forms.Button()
-        Me.MODIFICAORDINEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.DGW_Memo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -94,8 +96,8 @@ Partial Class Main
         '
         Me.DGW_Memo.AllowUserToAddRows = False
         Me.DGW_Memo.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
-        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent
+        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGW_Memo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DGW_Memo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -104,14 +106,14 @@ Partial Class Main
         Me.DGW_Memo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGW_Memo.ColumnHeadersVisible = False
         Me.DGW_Memo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Memo})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGW_Memo.Location = New System.Drawing.Point(3, 203)
         Me.DGW_Memo.Name = "DGW_Memo"
         Me.DGW_Memo.ReadOnly = True
@@ -208,7 +210,7 @@ Partial Class Main
         '
         'TS_Imballi
         '
-        Me.TS_Imballi.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Archivio, Me.TS_Crea, Me.INIZIOPRODUZIONEToolStripMenuItem})
+        Me.TS_Imballi.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Archivio, Me.INIZIOPRODUZIONEToolStripMenuItem, Me.CREAToolStripMenuItem})
         Me.TS_Imballi.Image = CType(resources.GetObject("TS_Imballi.Image"), System.Drawing.Image)
         Me.TS_Imballi.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Imballi.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -222,17 +224,30 @@ Partial Class Main
         Me.TS_Archivio.Size = New System.Drawing.Size(184, 22)
         Me.TS_Archivio.Text = "ARCHIVIO"
         '
-        'TS_Crea
-        '
-        Me.TS_Crea.Name = "TS_Crea"
-        Me.TS_Crea.Size = New System.Drawing.Size(184, 22)
-        Me.TS_Crea.Text = "CREA"
-        '
         'INIZIOPRODUZIONEToolStripMenuItem
         '
         Me.INIZIOPRODUZIONEToolStripMenuItem.Name = "INIZIOPRODUZIONEToolStripMenuItem"
         Me.INIZIOPRODUZIONEToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.INIZIOPRODUZIONEToolStripMenuItem.Text = "INIZIO PRODUZIONE"
+        '
+        'CREAToolStripMenuItem
+        '
+        Me.CREAToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MANUALEToolStripMenuItem, Me.CREAZIONEAUTOMATICAToolStripMenuItem})
+        Me.CREAToolStripMenuItem.Name = "CREAToolStripMenuItem"
+        Me.CREAToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.CREAToolStripMenuItem.Text = "CREA"
+        '
+        'MANUALEToolStripMenuItem
+        '
+        Me.MANUALEToolStripMenuItem.Name = "MANUALEToolStripMenuItem"
+        Me.MANUALEToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.MANUALEToolStripMenuItem.Text = "CREAZIONE MANUALE"
+        '
+        'CREAZIONEAUTOMATICAToolStripMenuItem
+        '
+        Me.CREAZIONEAUTOMATICAToolStripMenuItem.Name = "CREAZIONEAUTOMATICAToolStripMenuItem"
+        Me.CREAZIONEAUTOMATICAToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.CREAZIONEAUTOMATICAToolStripMenuItem.Text = "CREAZIONE AUTOMATICA"
         '
         'TS_Tools
         '
@@ -261,6 +276,12 @@ Partial Class Main
         Me.TS_Listino.Name = "TS_Listino"
         Me.TS_Listino.Size = New System.Drawing.Size(189, 22)
         Me.TS_Listino.Text = "LISTINO"
+        '
+        'MODIFICAORDINEToolStripMenuItem
+        '
+        Me.MODIFICAORDINEToolStripMenuItem.Name = "MODIFICAORDINEToolStripMenuItem"
+        Me.MODIFICAORDINEToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.MODIFICAORDINEToolStripMenuItem.Text = "MODIFICA ORDINE"
         '
         'TS_Tabelle
         '
@@ -307,12 +328,6 @@ Partial Class Main
         Me.BT_RefreshTree.Size = New System.Drawing.Size(18, 18)
         Me.BT_RefreshTree.TabIndex = 15
         Me.BT_RefreshTree.UseVisualStyleBackColor = False
-        '
-        'MODIFICAORDINEToolStripMenuItem
-        '
-        Me.MODIFICAORDINEToolStripMenuItem.Name = "MODIFICAORDINEToolStripMenuItem"
-        Me.MODIFICAORDINEToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.MODIFICAORDINEToolStripMenuItem.Text = "MODIFICA ORDINE"
         '
         'Main
         '
@@ -364,7 +379,6 @@ Partial Class Main
     Friend WithEvents TS_ListaElementi As ToolStripMenuItem
     Friend WithEvents TS_Imballi As ToolStripDropDownButton
     Friend WithEvents TS_Archivio As ToolStripMenuItem
-    Friend WithEvents TS_Crea As ToolStripMenuItem
     Friend WithEvents TS_Listino As ToolStripMenuItem
     Friend WithEvents ImmaginiTree As ImageList
     Friend WithEvents Print_Distinta As Printing.PrintDocument
@@ -372,4 +386,7 @@ Partial Class Main
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents INIZIOPRODUZIONEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MODIFICAORDINEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CREAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MANUALEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CREAZIONEAUTOMATICAToolStripMenuItem As ToolStripMenuItem
 End Class

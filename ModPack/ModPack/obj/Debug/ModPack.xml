@@ -22,6 +22,11 @@ ModPack
   ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
 </summary>
 </member>
+<member name="P:ModPack.My.Resources.Resources.ChangeLog">
+<summary>
+  Cerca una stringa localizzata simile a .
+</summary>
+</member>
 <member name="P:ModPack.My.Resources.Resources.GDA">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.

@@ -307,7 +307,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("NO_REPLY@bicciatoserafino.com")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("no_reply@bicciatoserafino.com")>  _
         Public Property MAIL_username() As String
             Get
                 Return CType(Me("MAIL_username"),String)
@@ -319,7 +319,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("estate-2016")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("estate-2017")>  _
         Public Property MAIL_password() As String
             Get
                 Return CType(Me("MAIL_password"),String)
@@ -712,6 +712,18 @@ Namespace My
             End Get
             Set
                 Me("CO_Tipo") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property OrdiniAperti_ColoraProduzione() As Boolean
+            Get
+                Return CType(Me("OrdiniAperti_ColoraProduzione"),Boolean)
+            End Get
+            Set
+                Me("OrdiniAperti_ColoraProduzione") = value
             End Set
         End Property
     End Class

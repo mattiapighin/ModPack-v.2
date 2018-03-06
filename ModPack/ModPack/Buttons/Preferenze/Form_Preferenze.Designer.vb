@@ -131,7 +131,7 @@ Partial Class Form_Preferenze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bt_FormatoStampa.Location = New System.Drawing.Point(6, 20)
         Me.Bt_FormatoStampa.Name = "Bt_FormatoStampa"
-        Me.Bt_FormatoStampa.Size = New System.Drawing.Size(283, 23)
+        Me.Bt_FormatoStampa.Size = New System.Drawing.Size(282, 23)
         Me.Bt_FormatoStampa.TabIndex = 0
         Me.Bt_FormatoStampa.Text = "Formato Stampa"
         Me.Bt_FormatoStampa.UseVisualStyleBackColor = True
@@ -145,7 +145,7 @@ Partial Class Form_Preferenze
         Me.GB_etichette.Controls.Add(Me.Txt_NomeStampante)
         Me.GB_etichette.Location = New System.Drawing.Point(3, 3)
         Me.GB_etichette.Name = "GB_etichette"
-        Me.GB_etichette.Size = New System.Drawing.Size(444, 116)
+        Me.GB_etichette.Size = New System.Drawing.Size(442, 116)
         Me.GB_etichette.TabIndex = 1
         Me.GB_etichette.TabStop = False
         Me.GB_etichette.Text = "Etichette"
@@ -312,7 +312,7 @@ Partial Class Form_Preferenze
         'Bt_Salva
         '
         Me.Bt_Salva.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bt_Salva.Location = New System.Drawing.Point(627, 674)
+        Me.Bt_Salva.Location = New System.Drawing.Point(624, 675)
         Me.Bt_Salva.Name = "Bt_Salva"
         Me.Bt_Salva.Size = New System.Drawing.Size(150, 32)
         Me.Bt_Salva.TabIndex = 12
@@ -353,7 +353,7 @@ Partial Class Form_Preferenze
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 126)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(444, 299)
+        Me.GroupBox1.Size = New System.Drawing.Size(442, 300)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Preferenze"
@@ -384,7 +384,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(427, 236)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(425, 237)
         Me.TableLayoutPanel3.TabIndex = 31
         '
         'CK_DescrizioneClipboard
@@ -394,7 +394,7 @@ Partial Class Form_Preferenze
         Me.CK_DescrizioneClipboard.AutoSize = True
         Me.CK_DescrizioneClipboard.Location = New System.Drawing.Point(3, 206)
         Me.CK_DescrizioneClipboard.Name = "CK_DescrizioneClipboard"
-        Me.CK_DescrizioneClipboard.Size = New System.Drawing.Size(250, 27)
+        Me.CK_DescrizioneClipboard.Size = New System.Drawing.Size(250, 28)
         Me.CK_DescrizioneClipboard.TabIndex = 33
         Me.CK_DescrizioneClipboard.Text = "Aggiungi numero ordine alla descrizione copiata"
         Me.CK_DescrizioneClipboard.UseVisualStyleBackColor = True
@@ -481,9 +481,9 @@ Partial Class Form_Preferenze
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TableLayoutPanel6)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 431)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 432)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(444, 72)
+        Me.GroupBox2.Size = New System.Drawing.Size(442, 72)
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Distinte"
@@ -496,7 +496,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.76316!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.23684!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126.0!))
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_FontDistinta, 3, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.CkCodiceQT, 1, 1)
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_RigheDistinta, 3, 1)
@@ -509,21 +509,21 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel6.RowCount = 2
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(427, 48)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(425, 48)
         Me.TableLayoutPanel6.TabIndex = 8
         '
         'Nu_FontDistinta
         '
         Me.Nu_FontDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_FontDistinta.Location = New System.Drawing.Point(307, 3)
+        Me.Nu_FontDistinta.Location = New System.Drawing.Point(301, 3)
         Me.Nu_FontDistinta.Name = "Nu_FontDistinta"
-        Me.Nu_FontDistinta.Size = New System.Drawing.Size(117, 20)
+        Me.Nu_FontDistinta.Size = New System.Drawing.Size(121, 20)
         Me.Nu_FontDistinta.TabIndex = 2
         '
         'CkCodiceQT
         '
         Me.CkCodiceQT.AutoSize = True
-        Me.CkCodiceQT.Location = New System.Drawing.Point(94, 27)
+        Me.CkCodiceQT.Location = New System.Drawing.Point(91, 27)
         Me.CkCodiceQT.Name = "CkCodiceQT"
         Me.CkCodiceQT.Size = New System.Drawing.Size(77, 17)
         Me.CkCodiceQT.TabIndex = 7
@@ -534,9 +534,9 @@ Partial Class Form_Preferenze
         'Nu_RigheDistinta
         '
         Me.Nu_RigheDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(307, 27)
+        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(301, 27)
         Me.Nu_RigheDistinta.Name = "Nu_RigheDistinta"
-        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(117, 20)
+        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(121, 20)
         Me.Nu_RigheDistinta.TabIndex = 3
         '
         'CkBarcodeSoloCodice
@@ -555,7 +555,7 @@ Partial Class Form_Preferenze
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(236, 0)
+        Me.Label5.Location = New System.Drawing.Point(230, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 24)
         Me.Label5.TabIndex = 4
@@ -576,7 +576,7 @@ Partial Class Form_Preferenze
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(230, 29)
+        Me.Label8.Location = New System.Drawing.Point(224, 29)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 13)
         Me.Label8.TabIndex = 5
@@ -593,9 +593,9 @@ Partial Class Form_Preferenze
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtScegliExcel)
         Me.GroupBox3.Controls.Add(Me.Bt_ScegliExcel)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 509)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 510)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(444, 68)
+        Me.GroupBox3.Size = New System.Drawing.Size(442, 68)
         Me.GroupBox3.TabIndex = 17
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Riferimenti"
@@ -613,7 +613,7 @@ Partial Class Form_Preferenze
         '
         Me.RBexcel_nuovi.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RBexcel_nuovi.AutoSize = True
-        Me.RBexcel_nuovi.Location = New System.Drawing.Point(333, 16)
+        Me.RBexcel_nuovi.Location = New System.Drawing.Point(331, 16)
         Me.RBexcel_nuovi.Name = "RBexcel_nuovi"
         Me.RBexcel_nuovi.Size = New System.Drawing.Size(51, 17)
         Me.RBexcel_nuovi.TabIndex = 25
@@ -625,7 +625,7 @@ Partial Class Form_Preferenze
         '
         Me.RBtext_nuovi.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RBtext_nuovi.AutoSize = True
-        Me.RBtext_nuovi.Location = New System.Drawing.Point(390, 16)
+        Me.RBtext_nuovi.Location = New System.Drawing.Point(388, 16)
         Me.RBtext_nuovi.Name = "RBtext_nuovi"
         Me.RBtext_nuovi.Size = New System.Drawing.Size(46, 17)
         Me.RBtext_nuovi.TabIndex = 24
@@ -658,14 +658,14 @@ Partial Class Form_Preferenze
         Me.TxtScegliExcel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtScegliExcel.Location = New System.Drawing.Point(95, 37)
         Me.TxtScegliExcel.Name = "TxtScegliExcel"
-        Me.TxtScegliExcel.Size = New System.Drawing.Size(289, 23)
+        Me.TxtScegliExcel.Size = New System.Drawing.Size(287, 23)
         Me.TxtScegliExcel.TabIndex = 19
         Me.TxtScegliExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Bt_ScegliExcel
         '
         Me.Bt_ScegliExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bt_ScegliExcel.Location = New System.Drawing.Point(389, 37)
+        Me.Bt_ScegliExcel.Location = New System.Drawing.Point(387, 37)
         Me.Bt_ScegliExcel.Name = "Bt_ScegliExcel"
         Me.Bt_ScegliExcel.Size = New System.Drawing.Size(39, 23)
         Me.Bt_ScegliExcel.TabIndex = 18
@@ -679,7 +679,7 @@ Partial Class Form_Preferenze
         Me.GroupBox4.Controls.Add(Me.Bt_FormatoStampa)
         Me.GroupBox4.Location = New System.Drawing.Point(8, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(299, 54)
+        Me.GroupBox4.Size = New System.Drawing.Size(298, 54)
         Me.GroupBox4.TabIndex = 18
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Generali"
@@ -690,7 +690,7 @@ Partial Class Form_Preferenze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bt_SettingsEmail.Location = New System.Drawing.Point(6, 20)
         Me.Bt_SettingsEmail.Name = "Bt_SettingsEmail"
-        Me.Bt_SettingsEmail.Size = New System.Drawing.Size(283, 23)
+        Me.Bt_SettingsEmail.Size = New System.Drawing.Size(282, 23)
         Me.Bt_SettingsEmail.TabIndex = 19
         Me.Bt_SettingsEmail.Text = "Opzioni Email"
         Me.Bt_SettingsEmail.UseVisualStyleBackColor = True
@@ -703,7 +703,7 @@ Partial Class Form_Preferenze
         Me.GroupBox5.Controls.Add(Me.TableLayoutPanel4)
         Me.GroupBox5.Location = New System.Drawing.Point(6, 118)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(300, 329)
+        Me.GroupBox5.Size = New System.Drawing.Size(299, 330)
         Me.GroupBox5.TabIndex = 28
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Funzioni"
@@ -734,7 +734,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(287, 304)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(286, 305)
         Me.TableLayoutPanel4.TabIndex = 33
         '
         'Bt_GestMagazzini
@@ -745,7 +745,7 @@ Partial Class Form_Preferenze
         Me.Bt_GestMagazzini.Image = CType(resources.GetObject("Bt_GestMagazzini.Image"), System.Drawing.Image)
         Me.Bt_GestMagazzini.Location = New System.Drawing.Point(3, 269)
         Me.Bt_GestMagazzini.Name = "Bt_GestMagazzini"
-        Me.Bt_GestMagazzini.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_GestMagazzini.Size = New System.Drawing.Size(280, 33)
         Me.Bt_GestMagazzini.TabIndex = 33
         Me.Bt_GestMagazzini.Text = "   Gestione Magazzini"
         Me.Bt_GestMagazzini.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -760,7 +760,7 @@ Partial Class Form_Preferenze
         Me.Bt_TestConnessioni.Image = CType(resources.GetObject("Bt_TestConnessioni.Image"), System.Drawing.Image)
         Me.Bt_TestConnessioni.Location = New System.Drawing.Point(3, 3)
         Me.Bt_TestConnessioni.Name = "Bt_TestConnessioni"
-        Me.Bt_TestConnessioni.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_TestConnessioni.Size = New System.Drawing.Size(280, 32)
         Me.Bt_TestConnessioni.TabIndex = 20
         Me.Bt_TestConnessioni.Text = "   Test Connessioni"
         Me.Bt_TestConnessioni.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -775,7 +775,7 @@ Partial Class Form_Preferenze
         Me.BT_SetupRives.Image = CType(resources.GetObject("BT_SetupRives.Image"), System.Drawing.Image)
         Me.BT_SetupRives.Location = New System.Drawing.Point(3, 231)
         Me.BT_SetupRives.Name = "BT_SetupRives"
-        Me.BT_SetupRives.Size = New System.Drawing.Size(281, 32)
+        Me.BT_SetupRives.Size = New System.Drawing.Size(280, 32)
         Me.BT_SetupRives.TabIndex = 31
         Me.BT_SetupRives.Text = "   Setup Rivestimenti"
         Me.BT_SetupRives.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -790,7 +790,7 @@ Partial Class Form_Preferenze
         Me.Bt_PuliziaOrdini.Image = CType(resources.GetObject("Bt_PuliziaOrdini.Image"), System.Drawing.Image)
         Me.Bt_PuliziaOrdini.Location = New System.Drawing.Point(3, 117)
         Me.Bt_PuliziaOrdini.Name = "Bt_PuliziaOrdini"
-        Me.Bt_PuliziaOrdini.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_PuliziaOrdini.Size = New System.Drawing.Size(280, 32)
         Me.Bt_PuliziaOrdini.TabIndex = 32
         Me.Bt_PuliziaOrdini.Text = " Pulizia Ordini"
         Me.Bt_PuliziaOrdini.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -805,7 +805,7 @@ Partial Class Form_Preferenze
         Me.Bt_Log.Image = CType(resources.GetObject("Bt_Log.Image"), System.Drawing.Image)
         Me.Bt_Log.Location = New System.Drawing.Point(3, 193)
         Me.Bt_Log.Name = "Bt_Log"
-        Me.Bt_Log.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_Log.Size = New System.Drawing.Size(280, 32)
         Me.Bt_Log.TabIndex = 30
         Me.Bt_Log.Text = "   Apri file di LOG"
         Me.Bt_Log.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -820,7 +820,7 @@ Partial Class Form_Preferenze
         Me.Bt_EliminaOrdine.Image = CType(resources.GetObject("Bt_EliminaOrdine.Image"), System.Drawing.Image)
         Me.Bt_EliminaOrdine.Location = New System.Drawing.Point(3, 41)
         Me.Bt_EliminaOrdine.Name = "Bt_EliminaOrdine"
-        Me.Bt_EliminaOrdine.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_EliminaOrdine.Size = New System.Drawing.Size(280, 32)
         Me.Bt_EliminaOrdine.TabIndex = 27
         Me.Bt_EliminaOrdine.Text = "   Elimina Ordine"
         Me.Bt_EliminaOrdine.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -835,7 +835,7 @@ Partial Class Form_Preferenze
         Me.Bt_PulisciImballi.Image = CType(resources.GetObject("Bt_PulisciImballi.Image"), System.Drawing.Image)
         Me.Bt_PulisciImballi.Location = New System.Drawing.Point(3, 79)
         Me.Bt_PulisciImballi.Name = "Bt_PulisciImballi"
-        Me.Bt_PulisciImballi.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_PulisciImballi.Size = New System.Drawing.Size(280, 32)
         Me.Bt_PulisciImballi.TabIndex = 28
         Me.Bt_PulisciImballi.Text = "   Pulizia imballi"
         Me.Bt_PulisciImballi.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -850,7 +850,7 @@ Partial Class Form_Preferenze
         Me.Bt_GestioneTipi.Image = CType(resources.GetObject("Bt_GestioneTipi.Image"), System.Drawing.Image)
         Me.Bt_GestioneTipi.Location = New System.Drawing.Point(3, 155)
         Me.Bt_GestioneTipi.Name = "Bt_GestioneTipi"
-        Me.Bt_GestioneTipi.Size = New System.Drawing.Size(281, 32)
+        Me.Bt_GestioneTipi.Size = New System.Drawing.Size(280, 32)
         Me.Bt_GestioneTipi.TabIndex = 29
         Me.Bt_GestioneTipi.Text = "   Gestione Tipi"
         Me.Bt_GestioneTipi.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -864,7 +864,7 @@ Partial Class Form_Preferenze
         Me.GroupBox6.Controls.Add(Me.Bt_SettingsEmail)
         Me.GroupBox6.Location = New System.Drawing.Point(7, 61)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(299, 52)
+        Me.GroupBox6.Size = New System.Drawing.Size(298, 52)
         Me.GroupBox6.TabIndex = 29
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Email"
@@ -875,9 +875,9 @@ Partial Class Form_Preferenze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox7.Controls.Add(Me.Label12)
         Me.GroupBox7.Controls.Add(Me.Txt_utente)
-        Me.GroupBox7.Location = New System.Drawing.Point(7, 453)
+        Me.GroupBox7.Location = New System.Drawing.Point(7, 454)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(298, 65)
+        Me.GroupBox7.Size = New System.Drawing.Size(297, 65)
         Me.GroupBox7.TabIndex = 30
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Utente"
@@ -899,7 +899,7 @@ Partial Class Form_Preferenze
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Txt_utente.Location = New System.Drawing.Point(6, 36)
         Me.Txt_utente.Name = "Txt_utente"
-        Me.Txt_utente.Size = New System.Drawing.Size(279, 20)
+        Me.Txt_utente.Size = New System.Drawing.Size(278, 20)
         Me.Txt_utente.TabIndex = 0
         '
         'Bt_AzzeraDB
@@ -910,7 +910,7 @@ Partial Class Form_Preferenze
         Me.Bt_AzzeraDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bt_AzzeraDB.Location = New System.Drawing.Point(3, 3)
         Me.Bt_AzzeraDB.Name = "Bt_AzzeraDB"
-        Me.Bt_AzzeraDB.Size = New System.Drawing.Size(281, 27)
+        Me.Bt_AzzeraDB.Size = New System.Drawing.Size(280, 27)
         Me.Bt_AzzeraDB.TabIndex = 31
         Me.Bt_AzzeraDB.Text = "Azzera database"
         Me.Bt_AzzeraDB.UseVisualStyleBackColor = True
@@ -920,9 +920,9 @@ Partial Class Form_Preferenze
         Me.Box_Developer.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Box_Developer.Controls.Add(Me.TableLayoutPanel5)
-        Me.Box_Developer.Location = New System.Drawing.Point(6, 524)
+        Me.Box_Developer.Location = New System.Drawing.Point(6, 525)
         Me.Box_Developer.Name = "Box_Developer"
-        Me.Box_Developer.Size = New System.Drawing.Size(299, 126)
+        Me.Box_Developer.Size = New System.Drawing.Size(298, 126)
         Me.Box_Developer.TabIndex = 32
         Me.Box_Developer.TabStop = False
         Me.Box_Developer.Text = "Developer area"
@@ -942,7 +942,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(287, 100)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(286, 100)
         Me.TableLayoutPanel5.TabIndex = 8
         '
         'Bt_ResetSettings
@@ -953,7 +953,7 @@ Partial Class Form_Preferenze
         Me.Bt_ResetSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bt_ResetSettings.Location = New System.Drawing.Point(3, 69)
         Me.Bt_ResetSettings.Name = "Bt_ResetSettings"
-        Me.Bt_ResetSettings.Size = New System.Drawing.Size(281, 28)
+        Me.Bt_ResetSettings.Size = New System.Drawing.Size(280, 28)
         Me.Bt_ResetSettings.TabIndex = 32
         Me.Bt_ResetSettings.Text = "Reset Settings"
         Me.Bt_ResetSettings.UseVisualStyleBackColor = True
@@ -966,7 +966,7 @@ Partial Class Form_Preferenze
         Me.Bt_InviaQuery.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bt_InviaQuery.Location = New System.Drawing.Point(3, 36)
         Me.Bt_InviaQuery.Name = "Bt_InviaQuery"
-        Me.Bt_InviaQuery.Size = New System.Drawing.Size(281, 27)
+        Me.Bt_InviaQuery.Size = New System.Drawing.Size(280, 27)
         Me.Bt_InviaQuery.TabIndex = 32
         Me.Bt_InviaQuery.Text = "Invia Query"
         Me.Bt_InviaQuery.UseVisualStyleBackColor = True
@@ -994,8 +994,8 @@ Partial Class Form_Preferenze
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox5)
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox7)
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox6)
-        Me.SplitContainer1.Size = New System.Drawing.Size(764, 656)
-        Me.SplitContainer1.SplitterDistance = 450
+        Me.SplitContainer1.Size = New System.Drawing.Size(761, 657)
+        Me.SplitContainer1.SplitterDistance = 448
         Me.SplitContainer1.TabIndex = 33
         '
         'GroupBox9
@@ -1003,9 +1003,9 @@ Partial Class Form_Preferenze
         Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox9.Controls.Add(Me.TableLayoutPanel7)
-        Me.GroupBox9.Location = New System.Drawing.Point(3, 583)
+        Me.GroupBox9.Location = New System.Drawing.Point(3, 584)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(444, 67)
+        Me.GroupBox9.Size = New System.Drawing.Size(442, 67)
         Me.GroupBox9.TabIndex = 18
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Conferma D'Ordine"
@@ -1028,7 +1028,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel7.RowCount = 2
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(438, 48)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(436, 48)
         Me.TableLayoutPanel7.TabIndex = 0
         '
         'Ck_CoStampa
@@ -1074,7 +1074,7 @@ Partial Class Form_Preferenze
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(359, 5)
+        Me.Label13.Location = New System.Drawing.Point(358, 5)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(46, 13)
         Me.Label13.TabIndex = 3
@@ -1090,8 +1090,9 @@ Partial Class Form_Preferenze
         '
         'Tx_Versione
         '
+        Me.Tx_Versione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Tx_Versione.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Tx_Versione.Location = New System.Drawing.Point(12, 674)
+        Me.Tx_Versione.Location = New System.Drawing.Point(12, 675)
         Me.Tx_Versione.Name = "Tx_Versione"
         Me.Tx_Versione.Size = New System.Drawing.Size(100, 23)
         Me.Tx_Versione.TabIndex = 34
@@ -1102,7 +1103,7 @@ Partial Class Form_Preferenze
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(783, 710)
+        Me.ClientSize = New System.Drawing.Size(780, 711)
         Me.Controls.Add(Me.Tx_Versione)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Bt_Salva)

@@ -4,11 +4,7 @@
 
         'Genera file conferma d'ordine per MODINE per automatizzare la creazione degli ordini
 
-        Dim SFDialog As New SaveFileDialog With {.FileName = NomeFile, .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments, .Title = "Scegliere destinazione per file CO"}
-
-
-
-
+        Dim SFDialog As New SaveFileDialog With {.FileName = NomeFile, .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments, .Title = "Scegliere destinazione per file CO", .Filter = "Conferma D'Ordine|*.*"}
 
         If SFDialog.ShowDialog = DialogResult.OK Then
 
@@ -33,6 +29,24 @@
 
         End If
 
+    End Sub
+    Public Sub Genera_Temp(ByVal DS As DataSet, ByVal Nomefile As String, ByRef savefile As String)
+        savefile = My.Computer.FileSystem.SpecialDirectories.Temp & "\" & Nomefile
+
+        Select Case My.Settings.CO_Tipo
+
+            Case "xml"
+                savefile += ".xml"
+                Genera_XML(DS, Nomefile, savefile)
+
+            Case "txt"
+                savefile += ".txt"
+                Genera_TXT(DS, Nomefile, savefile)
+
+            Case Else
+                MsgBox("Controllare tipo CO inserito (in preferenze)")
+
+        End Select
     End Sub
 
     Private Sub Genera_TXT(ByVal DS As DataSet, ByVal NomeFile As String, ByVal SaveFile As String)

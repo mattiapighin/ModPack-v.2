@@ -61,6 +61,5 @@ Namespace Mail
             End If
         End Sub
 
-
     End Module
 End Namespace

@@ -71,10 +71,10 @@
       <Value Profile="(Default)">Z:\ModPack\ModPackConfig.xml</Value>
     </Setting>
     <Setting Name="MAIL_username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">NO_REPLY@bicciatoserafino.com</Value>
+      <Value Profile="(Default)">no_reply@bicciatoserafino.com</Value>
     </Setting>
     <Setting Name="MAIL_password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">estate-2016</Value>
+      <Value Profile="(Default)">estate-2017</Value>
     </Setting>
     <Setting Name="MAIL_server" Type="System.String" Scope="User">
       <Value Profile="(Default)">smtp.bicciatoserafino.com</Value>
@@ -171,6 +171,9 @@
     </Setting>
     <Setting Name="CO_Tipo" Type="System.String" Scope="User">
       <Value Profile="(Default)">txt</Value>
+    </Setting>
+    <Setting Name="OrdiniAperti_ColoraProduzione" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

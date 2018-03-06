@@ -24,74 +24,12 @@ Public Class Main
     Dim RowOrdine As New List(Of RigaOrdine)
     Dim RowIndici As New List(Of Integer)
 
-    'VERSIONE 2.1.0 
-    'CHANGELOG
-    ' - Aggiunto funzionalità "In produzione"
-    ' - Aggiustato le conferme d'ordine
-    ' - Aggiunto modulo "Modifica Ordine"
-    ' - TreeView e ordini aperti non più in real time
-    ' - DoppioClick su treeview mostra distinta relativa all'ordine selezionato
-
-
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OperazioniPreliminari()
     End Sub
-
-    Private Sub Mostra_Nascondi_Testo()
-        If My.Settings.TestoIconeMain = False Then
-            TS_Ordini.DisplayStyle = ToolStripItemDisplayStyle.Image
-            TS_Imballi.DisplayStyle = ToolStripItemDisplayStyle.Image
-            TS_Tools.DisplayStyle = ToolStripItemDisplayStyle.Image
-            TS_Tabelle.DisplayStyle = ToolStripItemDisplayStyle.Image
-            TS_Memo.DisplayStyle = ToolStripItemDisplayStyle.Image
-            Ts_Preferenze.DisplayStyle = ToolStripItemDisplayStyle.Image
-        Else
-            TS_Ordini.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-            TS_Imballi.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-            TS_Tools.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-            TS_Tabelle.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-            TS_Memo.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-            Ts_Preferenze.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
-        End If
-    End Sub
-
-    Public Sub CaricaMemo()
-        Try
-            Using MemoTable As New ModPackDBDataSetTableAdapters.MemoTableAdapter
-                Using MemoDT As New ModPackDBDataSet.MemoDataTable
-                    MemoTable.Fill(MemoDT)
-
-                    ListaMemo.Clear()
-
-                    For Each Row As ModPackDBDataSet.MemoRow In MemoDT.Rows
-                        Dim Riga As New Memo
-                        If Not Row.IsDataNull Then Riga.Data = Row.Data
-                        If Not Row.IsMemoNull Then Riga.Memo = Row.Memo
-                        If Not Row.IsImballoNull Then Riga.Imballo = Row.Imballo
-                        ListaMemo.Add(Riga)
-                    Next
-
-                End Using
-            End Using
-
-        Catch ex As Exception
-            Errore.Show("CaricaMemo \ Main", ex.Message)
-        End Try
-
-        MostraMemo()
-
-
-    End Sub
-    Private Sub MostraMemo()
-        Try
-            DGW_Memo.Rows.Clear()
-            For Each Row As Memo In (From Riga In ListaMemo Where Riga.Data = Calendario.SelectionStart)
-                DGW_Memo.Rows.Add(Row.Memo)
-            Next
-
-        Catch ex As Exception
-            Errore.Show("MostraMemo \ Main", ex.Message)
-        End Try
+    Private Sub Main_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        LOG.Write("Fine sessione")
+        LOG.Clean()
     End Sub
     Private Sub OperazioniPreliminari()
         Try
@@ -147,7 +85,6 @@ Public Class Main
 
 
             XML.CreaXML()
-
             LOG.Write("Inizio sessione")
             CaricaMemo()
             SQL.PuliziaOrdini() 'Se attivo elimina tutti gli ordini prima di una certa data (default false)
@@ -159,14 +96,71 @@ Public Class Main
         End Try
 
     End Sub
+    Private Sub Mostra_Nascondi_Testo()
+        If My.Settings.TestoIconeMain = False Then
+            TS_Ordini.DisplayStyle = ToolStripItemDisplayStyle.Image
+            TS_Imballi.DisplayStyle = ToolStripItemDisplayStyle.Image
+            TS_Tools.DisplayStyle = ToolStripItemDisplayStyle.Image
+            TS_Tabelle.DisplayStyle = ToolStripItemDisplayStyle.Image
+            TS_Memo.DisplayStyle = ToolStripItemDisplayStyle.Image
+            Ts_Preferenze.DisplayStyle = ToolStripItemDisplayStyle.Image
+        Else
+            TS_Ordini.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+            TS_Imballi.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+            TS_Tools.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+            TS_Tabelle.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+            TS_Memo.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+            Ts_Preferenze.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+        End If
+    End Sub
 
+    '### CALENDARIO E MEMO ###
     Private Sub Calendario_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Calendario.DateChanged
         MostraMemo()
     End Sub
     Private Sub DGW_Memo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGW_Memo.CellContentClick
         DGW_Memo.ClearSelection()
     End Sub
+    Public Sub CaricaMemo()
+        Try
+            Using MemoTable As New ModPackDBDataSetTableAdapters.MemoTableAdapter
+                Using MemoDT As New ModPackDBDataSet.MemoDataTable
+                    MemoTable.Fill(MemoDT)
 
+                    ListaMemo.Clear()
+
+                    For Each Row As ModPackDBDataSet.MemoRow In MemoDT.Rows
+                        Dim Riga As New Memo
+                        If Not Row.IsDataNull Then Riga.Data = Row.Data
+                        If Not Row.IsMemoNull Then Riga.Memo = Row.Memo
+                        If Not Row.IsImballoNull Then Riga.Imballo = Row.Imballo
+                        ListaMemo.Add(Riga)
+                    Next
+
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Errore.Show("CaricaMemo \ Main", ex.Message)
+        End Try
+
+        MostraMemo()
+
+
+    End Sub
+    Private Sub MostraMemo()
+        Try
+            DGW_Memo.Rows.Clear()
+            For Each Row As Memo In (From Riga In ListaMemo Where Riga.Data = Calendario.SelectionStart)
+                DGW_Memo.Rows.Add(Row.Memo)
+            Next
+
+        Catch ex As Exception
+            Errore.Show("MostraMemo \ Main", ex.Message)
+        End Try
+    End Sub
+
+    '### DRAG & DROP ###
     Private Sub Main_DragEnter(sender As Object, e As DragEventArgs) Handles Me.DragEnter
         Try
             If e.Data.GetDataPresent(DataFormats.FileDrop) Then
@@ -195,6 +189,54 @@ Public Class Main
         End Try
     End Sub
 
+    '### TOOLSTRIP ###
+    Private Sub TS_CaricaOrdine_Click(sender As Object, e As EventArgs) Handles TS_CaricaOrdine.Click
+        ToolStrip.Text = "Selezione file ordine"
+        ProgressBar.Visible = True
+        'Ordine.CaricaOrdine(ProgressBar, ToolStrip, Notify)
+        Ordine.CaricaFileOrdine(ProgressBar, ToolStrip, Notify)
+        ToolStrip.Text = ""
+        ProgressBar.Visible = False
+    End Sub
+    Private Sub TS_OrdiniAperti_Click(sender As Object, e As EventArgs) Handles TS_OrdiniAperti.Click
+        Form_OrdiniAperti.Show()
+    End Sub
+    Private Sub TS_StoricoOrdini_Click(sender As Object, e As EventArgs) Handles TS_StoricoOrdini.Click
+        Form_StoricoOrdini.Show()
+    End Sub
+    Private Sub TS_Archivio_Click(sender As Object, e As EventArgs) Handles TS_Archivio.Click
+        Form_Imballi.Show()
+    End Sub
+    Private Sub TS_Tabelle_Click(sender As Object, e As EventArgs) Handles TS_Tabelle.Click
+        Form_Tabelle.Show()
+    End Sub
+    Private Sub TS_Memo_Click(sender As Object, e As EventArgs) Handles TS_Memo.Click
+        Form_Memo.Show()
+    End Sub
+    Private Sub Ts_Preferenze_Click(sender As Object, e As EventArgs) Handles Ts_Preferenze.Click
+        Form_Preferenze.ShowDialog()
+    End Sub
+    Private Sub TS_ControlloOrdine_Click(sender As Object, e As EventArgs) Handles TS_ControlloOrdine.Click
+        Form_ControlloOrdineInput.Show()
+    End Sub
+    Private Sub TS_ListaElementi_Click(sender As Object, e As EventArgs) Handles TS_ListaElementi.Click
+        Form_ListaElementi.Show()
+    End Sub
+    Private Sub INIZIOPRODUZIONEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INIZIOPRODUZIONEToolStripMenuItem.Click
+        DLG_InProduzione.ShowDialog()
+    End Sub
+    Private Sub MODIFICAORDINEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICAORDINEToolStripMenuItem.Click
+        DLG_ModificaOrdine.ShowDialog()
+    End Sub
+    Private Sub TS_Listino_Click(sender As Object, e As EventArgs) Handles TS_Listino.Click
+        Form_Listino.Show()
+    End Sub
+
+    '### TREEVIEW ###
+    Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click
+        ToolTip.SetToolTip(BT_RefreshTree, "Ultimo aggiornamento: " & Date.Now.ToShortTimeString)
+        CaricaOrdiniAperti()
+    End Sub
     Private Sub CaricaOrdiniAperti()
         OrdiniTree.Nodes.Clear()
         Try
@@ -273,11 +315,13 @@ Public Class Main
         End Try
 
     End Sub
-
-    Private Sub Main_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        ' If My.Settings.TreeView = True Then
-        'CaricaOrdiniAperti()
-        'End If
+    Private Sub OrdiniTree_KeyDown(sender As Object, e As KeyEventArgs) Handles OrdiniTree.KeyDown
+        If e.Control And e.KeyCode = Keys.C Then
+            Clipboard.SetText(OrdiniTree.SelectedNode.Text)
+        End If
+    End Sub
+    Private Sub Print_Distinta_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles Print_Distinta.PrintPage
+        Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(0))
     End Sub
     Private Sub OrdiniTree_DoubleClick(sender As Object, e As EventArgs) Handles OrdiniTree.DoubleClick
         If Not OrdiniTree.SelectedNode Is Nothing Then
@@ -314,77 +358,11 @@ Public Class Main
         End If
     End Sub
 
-    '### TOOLSTRIP ###
-    Private Sub TS_CaricaOrdine_Click(sender As Object, e As EventArgs) Handles TS_CaricaOrdine.Click
-        ToolStrip.Text = "Selezione file ordine"
-        ProgressBar.Visible = True
-        'Ordine.CaricaOrdine(ProgressBar, ToolStrip, Notify)
-        Ordine.CaricaFileOrdine(ProgressBar, ToolStrip, Notify)
-        ToolStrip.Text = ""
-        ProgressBar.Visible = False
+    Private Sub MANUALEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MANUALEToolStripMenuItem.Click
+        Form_Crea_Manuale.ShowDialog()
     End Sub
-    Private Sub TS_OrdiniAperti_Click(sender As Object, e As EventArgs) Handles TS_OrdiniAperti.Click
-        Form_OrdiniAperti.Show()
-    End Sub
-    Private Sub TS_StoricoOrdini_Click(sender As Object, e As EventArgs) Handles TS_StoricoOrdini.Click
-        Form_StoricoOrdini.Show()
-    End Sub
-    Private Sub TS_Archivio_Click(sender As Object, e As EventArgs) Handles TS_Archivio.Click
-        Form_Imballi.Show()
-    End Sub
-    Private Sub TS_Crea_Click(sender As Object, e As EventArgs) Handles TS_Crea.Click
-        Form_Crea_Manuale.Show()
-    End Sub
-    Private Sub TS_Tabelle_Click(sender As Object, e As EventArgs) Handles TS_Tabelle.Click
-        Form_Tabelle.Show()
-    End Sub
-    Private Sub TS_Memo_Click(sender As Object, e As EventArgs) Handles TS_Memo.Click
-        Form_Memo.Show()
-    End Sub
-    Private Sub Ts_Preferenze_Click(sender As Object, e As EventArgs) Handles Ts_Preferenze.Click
-        Form_Preferenze.ShowDialog()
-    End Sub
-    Private Sub TS_ControlloOrdine_Click(sender As Object, e As EventArgs) Handles TS_ControlloOrdine.Click
-        Form_ControlloOrdineInput.Show()
-    End Sub
-    Private Sub TS_ListaElementi_Click(sender As Object, e As EventArgs) Handles TS_ListaElementi.Click
-        Form_ListaElementi.Show()
+    Private Sub CREAZIONEAUTOMATICAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CREAZIONEAUTOMATICAToolStripMenuItem.Click
+        FRM_NuovoImballoPlus.ShowDialog()
     End Sub
 
-    Private Sub Main_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        LOG.Write("Fine sessione")
-        LOG.Clean()
-    End Sub
-
-    Private Sub TS_Listino_Click(sender As Object, e As EventArgs) Handles TS_Listino.Click
-        Form_Listino.Show()
-    End Sub
-
-
-    Private Sub OrdiniTree_KeyDown(sender As Object, e As KeyEventArgs) Handles OrdiniTree.KeyDown
-        If e.Control And e.KeyCode = Keys.C Then
-            Clipboard.SetText(OrdiniTree.SelectedNode.Text)
-        End If
-    End Sub
-
-    Private Sub REFRESHTREEVIEWToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        CaricaOrdiniAperti()
-    End Sub
-
-    Private Sub Print_Distinta_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles Print_Distinta.PrintPage
-        Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(0))
-    End Sub
-
-    Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click
-        ToolTip.SetToolTip(BT_RefreshTree, "Ultimo aggiornamento: " & Date.Now.ToShortTimeString)
-        CaricaOrdiniAperti()
-    End Sub
-
-    Private Sub INIZIOPRODUZIONEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INIZIOPRODUZIONEToolStripMenuItem.Click
-        DLG_InProduzione.ShowDialog()
-    End Sub
-
-    Private Sub MODIFICAORDINEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICAORDINEToolStripMenuItem.Click
-        DLG_ModificaOrdine.ShowDialog()
-    End Sub
 End Class

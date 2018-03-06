@@ -61,6 +61,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Cerca una stringa localizzata simile a .
+        '''</summary>
+        Friend ReadOnly Property ChangeLog() As String
+            Get
+                Return ResourceManager.GetString("ChangeLog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property GDA() As System.Drawing.Bitmap

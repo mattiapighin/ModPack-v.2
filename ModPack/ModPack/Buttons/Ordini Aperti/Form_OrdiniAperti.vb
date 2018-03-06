@@ -24,6 +24,7 @@ Public Class Form_OrdiniAperti
         Bt_ListaRivestimenti.Enabled = False
         Bt_QrCodes.Enabled = False
         Bt_Evaso.Enabled = False
+        Bt_InProduzione.Enabled = False
     End Sub
     Private Sub SbloccaButtons()
         Bt_Etichette.Enabled = True
@@ -33,6 +34,7 @@ Public Class Form_OrdiniAperti
         Bt_ListaRivestimenti.Enabled = True
         Bt_QrCodes.Enabled = True
         Bt_Evaso.Enabled = True
+        Bt_InProduzione.Enabled = True
     End Sub
 
     '### Qui avvengono le operazioni più importanti ###
@@ -73,6 +75,7 @@ Public Class Form_OrdiniAperti
     Private Sub Dgw_Ordine_Sorted(sender As Object, e As EventArgs) Handles Dgw_Ordine.Sorted
         If My.Settings.OrdiniAperti_ColoraEvasi = True Then ColoraEvasi()
         If My.Settings.OrdiniAperti_ColoraScaduti = True Then ColoraDateConsegna()
+        If My.Settings.OrdiniAperti_ColoraProduzione = True Then ColoraProduzione()
     End Sub
     Private Sub CaricaListaOrdiniAperti()
 
@@ -105,8 +108,6 @@ Public Class Form_OrdiniAperti
         'Query con in produzione
         Query = "SELECT Ordini.Id, Ordini.Riga, Ordini.Imballo, Ordini.Tipo, Ordini.Qt, Ordini.Cliente, Ordini.Codice, Ordini.Commessa, Ordini.L, Ordini.P, Ordini.H, Ordini.indice, Ordini.Data_Consegna AS Consegna, Imballi.Prezzo, (Imballi.Prezzo * Ordini.Qt) AS Totale, Ordini.Stampato, Ordini.Produzione AS 'In Produzione', Ordini.Evaso, Ordini.Data_Ordine AS 'Data Ordine' FROM Ordini LEFT JOIN Imballi ON Ordini.Imballo = Imballi.Imballo WHERE Ordine = '" & Ordine & "'"
 
-
-
         Using Con As New SqlConnection(My.Settings.ModPackDBConnectionString)
             Try
                 Con.Open()
@@ -118,8 +119,11 @@ Public Class Form_OrdiniAperti
         End Using
 
         Dgw_Ordine.DataSource = DS.Tables(0)
+
+        ColoraProduzione()
         ColoraDateConsegna()
         ColoraEvasi()
+
         Dgw_Ordine.Columns(0).Visible = False
         SbloccaButtons()
     End Sub
@@ -176,6 +180,17 @@ Public Class Form_OrdiniAperti
             Next
         End If
     End Sub
+    Private Sub ColoraProduzione()
+        If My.Settings.OrdiniAperti_ColoraProduzione = True Then
+            For Each Row As DataGridViewRow In Dgw_Ordine.Rows
+                Select Case Row.Cells("In Produzione").Value
+                    Case True
+                        Row.DefaultCellStyle.ForeColor = Color.SandyBrown
+                End Select
+            Next
+        End If
+    End Sub
+
 
     Private Function CopiaDescrizione(row As DataGridViewRow) As String
         Dim Descrizione As String = "D " & row.Cells(6).Value & " C " & row.Cells(7).Value
@@ -192,7 +207,22 @@ Public Class Form_OrdiniAperti
 
         Return Descrizione
     End Function
-
+    Private Sub Bt_InProduzione_Click(sender As Object, e As EventArgs) Handles Bt_InProduzione.Click
+        If Not (Control.ModifierKeys = Keys.Control) Then
+            For Each Row As DataGridViewRow In Dgw_Ordine.SelectedRows
+                SQL.Query("UPDATE Ordini SET Produzione = 'True' WHERE Id = " & Row.Cells("Id").Value)
+                LOG.Write("Imballo " & Row.Cells("Imballo").Value & "in produzione")
+                Row.Cells("In Produzione").Value = True
+            Next
+        Else
+            For Each Row As DataGridViewRow In Dgw_Ordine.SelectedRows
+                SQL.Query("UPDATE Ordini SET Produzione = 'False' WHERE Id = " & Row.Cells("Id").Value)
+                LOG.Write("Imballo " & Row.Cells("Imballo").Value & " non più in produzione")
+                Row.Cells("In Produzione").Value = False
+            Next
+        End If
+        ColoraProduzione()
+    End Sub
     Private Sub Bt_Evaso_Click(sender As Object, e As EventArgs) Handles Bt_Evaso.Click
         If Not (Control.ModifierKeys = Keys.Control) Then
             For Each Row As DataGridViewRow In Dgw_Ordine.SelectedRows
@@ -257,14 +287,17 @@ Public Class Form_OrdiniAperti
                 Dim FileSalvato As String = ""
                 Module_GeneraFileCO.Genera_File(ConfermaOrdineDS, Ordine, FileSalvato)
 
-                If My.Settings.CO_Invia = True Then     'INVIO FILE CO PER AUTOMAZIONE VIA MAIL
-                    Dim ListaAllegati As New List(Of String)
-                    ListaAllegati.Add(FileSalvato)
-                    Mail.Invia("Invio CO " & Ordine, "Messaggio generato automaticamente", ListaAllegati, False)
-                End If
-
             End If
 
+            If My.Settings.CO_Invia = True Then     'GENERO FILE CO PER INVIO VIA MAIL (CARTELLA TEMP)
+
+                Dim filesalvato As String = ""
+                Dim ListaAllegati As New List(Of String)
+                Module_GeneraFileCO.Genera_Temp(ConfermaOrdineDS, Ordine, filesalvato)
+                ListaAllegati.Add(filesalvato)
+                Mail.Invia("Invio CO " & Ordine & " - (" & System.Environment.UserName & ")", "Questo messaggio viene generato automaticamente, si prega di non rispondere a questo indirizzo" & vbCrLf & vbCrLf & "Per informazioni scrivere a imballaggi@bicciatoserafino.com", ListaAllegati, False)
+
+            End If
 
             '---------STAMPA DELLA CONFERMA D'ORDINE-----------
             If My.Settings.CO_Stampa = True Then
@@ -341,32 +374,41 @@ Public Class Form_OrdiniAperti
                 End If
             Else
                 If Dgw_Ordine.SelectedRows.Count > 0 Then
-                    If MsgBox("Stampare etichetta per " & Dgw_Ordine.CurrentRow.Cells("Imballo").Value & "?", vbYesNo, "Etichette") = DialogResult.Yes Then
 
-                        EtichetteDS.Clear()
+                    Try
 
-                        Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
-                        Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
+                        If MsgBox("Stampare etichetta per " & Dgw_Ordine.CurrentRow.Cells("Imballo").Value & "?", vbYesNo, "Etichette") = DialogResult.Yes Then
 
-                            Try
-                                Con.Open()
-                                Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
-                                adapter.Fill(EtichetteDS)
-                            Catch ex As Exception
-                                MsgBox(ex.ToString)
-                            End Try
-                        End Using
+                            EtichetteDS.Clear()
 
-                        LOG.Write("Stampata etichette " & Ordine)
-                        Print_Etichette.DocumentName = "ET" & Ordine
+                            Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
+                            Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
 
-                        Dim Preveiw As New PrintPreviewDialog With {.Document = Print_Etichette}
-                        Preveiw.ShowDialog()
-                        'Print_Etichette.Print()
-                    End If
+                                Try
+                                    Con.Open()
+                                    Dim adapter As New System.Data.SqlClient.SqlDataAdapter(Query, Con)
+                                    adapter.Fill(EtichetteDS)
+                                Catch ex As Exception
+                                    MsgBox(ex.ToString)
+                                End Try
+                            End Using
 
+                            LOG.Write("Stampata etichette " & Ordine)
+                            Print_Etichette.DocumentName = "ET" & Ordine
+
+                            Dim Preveiw As New PrintPreviewDialog With {.Document = Print_Etichette}
+                            Preveiw.ShowDialog()
+                            'Print_Etichette.Print()
+
+
+
+                        End If
+
+                    Catch ex As Exception
+
+                    End Try
                 End If
-                End If
+            End If
                 Else
             MsgBox("Selezionare prima un'ordine nella lista di sinistra", vbInformation, "Attenzione")
 
@@ -650,4 +692,6 @@ Public Class Form_OrdiniAperti
     Private Sub Dgw_Ordine_MouseEnter(sender As Object, e As EventArgs) Handles Dgw_Ordine.MouseEnter
         SSwrite("")
     End Sub
+
+
 End Class

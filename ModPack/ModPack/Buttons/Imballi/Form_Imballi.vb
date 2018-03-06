@@ -34,9 +34,11 @@ Public Class Form_Imballi
     End Sub
 
     Private Sub Bt_Modifica_Click(sender As Object, e As EventArgs) Handles Bt_Modifica.Click
-        Form_ModificaImballo.Show()
-        Form_ModificaImballo.CbImballo.Text = DgwImballi.CurrentRow.Cells(1).Value
-        Form_ModificaImballo.CaricaCodiceNoEdit()
+        If DgwImballi.Rows.Count > 1 Then
+            Form_ModificaImballo.Show()
+            Form_ModificaImballo.CbImballo.Text = DgwImballi.CurrentRow.Cells(1).Value
+            Form_ModificaImballo.CaricaCodiceNoEdit()
+        End If
     End Sub
 
     Private Sub Bt_Refresh_Click(sender As Object, e As EventArgs) Handles Bt_Refresh.Click

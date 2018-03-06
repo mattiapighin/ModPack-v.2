@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
+    <ApplicationVersion>2.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -238,6 +238,12 @@
     <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.Designer.vb">
+      <DependentUpon>FRM_NuovoImballoPlus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Email\Form_Preferenze_Email.Designer.vb">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>
     </Compile>
@@ -448,6 +454,9 @@
     <EmbeddedResource Include="Distinte\Creazione Distinte\NotificaInsImballo.resx">
       <DependentUpon>NotificaInsImballo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.resx">
+      <DependentUpon>FRM_NuovoImballoPlus.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Email\Form_Preferenze_Email.resx">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>
     </EmbeddedResource>
@@ -542,6 +551,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icoBig.ico" />
+    <None Include="Resources\ChangeLog.txt" />
     <None Include="Resources\LogoBicc.png" />
     <None Include="Resources\ROV.jpg" />
   </ItemGroup>

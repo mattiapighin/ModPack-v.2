@@ -156,56 +156,123 @@
         End If
     End Sub
 
-    Private Sub Bt_EliminaOrdine_Click(sender As Object, e As EventArgs) Handles Bt_EliminaOrdine.Click
+    Private Sub Bt_EliminaOrdine_Click(sender As Object, e As EventArgs)
         Dim Ordine As String = ""
         Dim OrdineControllo As String = ""
 
         If MsgBox("Attenzione: L'ordine selezionato verrà eliminato definitivamente dal database" & vbCrLf & "Sei sicuro di voler continuare?", vbYesNo, "Elimina Ordine") = MsgBoxResult.Yes Then
 
-            Ordine = InputBox("Inserisci ordine da eliminare", "Elimina Ordine", "")
-            OrdineControllo = InputBox("Inserisci nuovamente ordine da eliminare", "Elimina Ordine", "")
+            Try
 
-            If Not Ordine = OrdineControllo Then
-                MsgBox("I due numeri di ordine inseriti non corrispondono", MsgBoxStyle.Critical, "Elimina Ordine")
-                Exit Sub
-            End If
 
-            If MsgBox("Vuoi eliminare anche gli indici degli imballi contenuti nell'ordine?", vbYesNo, "Elimina Ordine") = MsgBoxResult.No Then
-                SQL.Query("DELETE FROM Ordini WHERE Ordine = '" & Ordine & "'")
-                LOG.Write("Eliminato ordine " & Ordine)
-                MsgBox("Eliminazione completata!", vbInformation, "Elimina Ordine")
-            Else
 
-                Dim ListaIndici As New List(Of Integer)
+                Ordine = InputBox("Inserisci ordine da eliminare", "Elimina Ordine", "")
+                OrdineControllo = InputBox("Inserisci nuovamente ordine da eliminare", "Elimina Ordine", "")
 
-                Using Table As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
-                    Using DS As New ModPackDBDataSet.OrdiniDataTable
-                        Table.Fill(DS)
+                If Ordine = "" Then Exit Sub
 
-                        Dim Rows() As DataRow = DS.Select("Ordine = '" & Ordine & "'")
+                If Not Ordine = OrdineControllo Then
+                    MsgBox("I due numeri di ordine inseriti non corrispondono", MsgBoxStyle.Critical, "Elimina Ordine")
+                    Exit Sub
+                End If
 
-                        For Each R As DataRow In Rows
-                            ListaIndici.Add(R(4))
-                        Next
+                If MsgBox("Vuoi eliminare anche gli indici degli imballi contenuti nell'ordine?", vbYesNo, "Elimina Ordine") = MsgBoxResult.No Then
+                    SQL.Query("DELETE FROM Ordini WHERE Ordine = '" & Ordine & "'")
+                    LOG.Write("Eliminato ordine " & Ordine)
 
+                Else
+
+                    Dim ListaIndici As New List(Of Integer)
+                    'Crea lista con gli ID degli indici da eliminare
+                    Using Table As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
+                        Using DS As New ModPackDBDataSet.OrdiniDataTable
+                            Table.Fill(DS)
+
+                            ListaIndici = DS.Where(Function(X) X.Ordine = Ordine).Select(Function(y) y.Indice).ToList
+
+
+                        End Using
                     End Using
-                End Using
 
-                '-------
+                    '-------
 
-                For Each Indice As Integer In ListaIndici
-                    SQL.Query("DELETE FROM Indici WHERE Indice = '" & Indice & "'")
-                    LOG.Write("Eliminato indice " & Indice)
-                Next
+                    For Each Indice As Integer In ListaIndici
+                        SQL.Query("DELETE FROM Indici WHERE Indice = '" & Indice & "'")
+                        LOG.Write("Eliminato indice " & Indice)
+                    Next
 
-                SQL.Query("DELETE FROM Ordini WHERE Ordine = '" & Ordine & "'")
-                LOG.Write("Eliminato ordine " & Ordine)
+                    SQL.Query("DELETE FROM Ordini WHERE Ordine = '" & Ordine & "'")
+                    LOG.Write("Eliminato ordine " & Ordine)
+
+
+                End If
 
                 MsgBox("Eliminazione completata!", vbInformation, "Elimina Ordine")
 
-            End If
+            Catch ex As Exception
+
+            End Try
+
         End If
     End Sub
+
+    Private Sub EliminaOrdine2(sender As Object, e As EventArgs) Handles Bt_EliminaOrdine.Click
+        Using DS As New ModPackDBDataSet
+            Using TableOrdini As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
+                Using TableIndici As New ModPackDBDataSetTableAdapters.IndiciTableAdapter
+
+                    TableOrdini.Fill(DS.Ordini)
+                    TableIndici.Fill(DS.Indici)
+
+line1:
+                    'Controllo che esista l'ordine
+                    Dim Ordine As String = InputBox("Ordine da eliminare:", "Elimina ordine", "")
+
+                    If Ordine.Length > 0 Then
+                        If DS.Ordini.Any(Function(X) X.Ordine = Ordine) = True Then
+line2:
+                            'Controllo sul numero inserito per conferma
+                            Dim OrdineControllo As String = InputBox("Inserisci nuovamente l'ordine da eliminare:", "Elimina ordine", "")
+                            If OrdineControllo.Length > 0 Then
+                                If OrdineControllo = Ordine Then
+
+                                    'Elimino tutte le righe contenenti quell'ordine
+                                    SQL.Query("DELETE FROM Ordini WHERE Ordine = '" & Ordine & "'")
+                                    LOG.Write("Eliminato dalla tabella Ordini l'ordine " & Ordine)
+
+                                    If MsgBox("Eliminare anche tutti gli indici inseriti insieme all'ordine?", vbYesNo, "Elimina indici") = MsgBoxResult.Yes Then
+
+                                        'Creo lista degli indici da eliminare
+                                        Dim ListaIndici_Ordine As New List(Of Integer)
+                                        ListaIndici_Ordine = DS.Ordini.Where(Function(X) X.Ordine = Ordine).Select(Function(y) y.Indice).ToList
+
+                                        For Each Indice As Integer In ListaIndici_Ordine
+                                            SQL.Query("DELETE FROM Indici WHERE Indice = '" & Indice & "'")
+                                            LOG.Write("Eliminato dalla tabella Indici l'indice " & Indice)
+                                        Next
+
+                                    End If
+
+                                Else
+                                    MsgBox("I numeri d'ordine non corrispondono", vbCritical, "Elimina ordine")
+                                    GoTo line2
+                                End If
+                            End If
+                        Else
+
+                            MsgBox("Non è stato trovato alcun ordine con quel numero", vbCritical, "Elimina ordine")
+                            GoTo line1
+                        End If
+                    End If
+
+
+                End Using
+            End Using
+        End Using
+
+
+    End Sub
+
 
     Private Sub Bt_PulisciImballi_Click(sender As Object, e As EventArgs) Handles Bt_PulisciImballi.Click
 

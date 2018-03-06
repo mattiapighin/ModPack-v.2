@@ -1,0 +1,11 @@
+   VERSIONE 2.1.1
+ 
+   Aggiunto modulo creazione imballo plus
+   Modificato invio file conferma d'ordine, ora si può inviare anche senza salvare
+   Aggiunto possibilità di segnare un imballo come evaso dalla finestra Ordini Aperti
+   Modificato modalità di eliminazione ordine e indici (ora con lambda expressions)
+   BUGFIX - Label Versione in preferenze ora responsive
+   BUGFIX - Non crasha più quando si cerca di stampare un bindello senza averlo selezionato
+   BUGFIX - Panel distinta in form archivio non più fixed
+   BUGFIX - Modifica imballo non crasha più se non ci sono imballi nella DG
+   BUGFIX - MostraLog non crasha più se non viene selezionato un numero di righe da mostrare

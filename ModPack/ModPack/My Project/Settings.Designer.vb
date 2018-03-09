@@ -726,6 +726,18 @@ Namespace My
                 Me("OrdiniAperti_ColoraProduzione") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("pop3.bicciatoserafino.com")>  _
+        Public Property MAIL_Pop3Server() As String
+            Get
+                Return CType(Me("MAIL_Pop3Server"),String)
+            End Get
+            Set
+                Me("MAIL_Pop3Server") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

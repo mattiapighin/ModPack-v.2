@@ -1,5 +1,8 @@
+   VERSIONE 2.1.2
+   Aggiunta funzione ricalcolo automatico tutti i prezzi
+   Bugfix minori
+
    VERSIONE 2.1.1
- 
    Aggiunto modulo creazione imballo plus
    Modificato invio file conferma d'ordine, ora si può inviare anche senza salvare
    Aggiunto possibilità di segnare un imballo come evaso dalla finestra Ordini Aperti
@@ -9,3 +12,4 @@
    BUGFIX - Panel distinta in form archivio non più fixed
    BUGFIX - Modifica imballo non crasha più se non ci sono imballi nella DG
    BUGFIX - MostraLog non crasha più se non viene selezionato un numero di righe da mostrare
+  

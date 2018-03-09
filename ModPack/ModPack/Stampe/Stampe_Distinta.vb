@@ -299,7 +299,7 @@
             e.Graphics.DrawString("Diagonali", FONTG, Brushes.Black, RsDiag, FMT)
             e.Graphics.DrawString("Gradi F", FONTG, Brushes.Black, RsDiagF, FMT)
             e.Graphics.DrawString("Gradi T", FONTG, Brushes.Black, RsDiagT, FMT)
-
+            e.Graphics.DrawString("Caricato", FONTG, Brushes.Black, RsVuoto2, FMT)
             e.Graphics.DrawString("m²", FONTG, Brushes.Black, Rsm2, FMT)
             e.Graphics.DrawString("m³", FONTG, Brushes.Black, Rsm3, FMT)
 
@@ -636,6 +636,13 @@
                 Dim RectInfoTipo As New Rectangle(RectRivestimento.Left, RectRivestimento.Bottom + 15, RectRivestimento.Width, 100)
                 e.Graphics.FillRectangle(Brushes.LightYellow, RectInfoTipo)
                 e.Graphics.DrawString(InfoTipo.ToUpper, New Font("Calibri", fnt.Size, FontStyle.Bold), Brushes.Black, RectInfoTipo, FMT)
+            End If
+
+            '######## AVVISO IMBALLO EVASO ########
+            If riga.Evaso = True Then
+                Dim FontEvaso As New Font("Calibri", 24, FontStyle.Bold)
+                Dim Point As New PointF((e.MarginBounds.Width \ 2) - (e.Graphics.MeasureString("IMBALLO EVASO", FontEvaso).Width / 2), (e.MarginBounds.Height \ 2) - (e.Graphics.MeasureString("IMBALLO EVASO", FontEvaso).Height / 2))
+                e.Graphics.DrawString("IMBALLO EVASO", FontEvaso, Brushes.Black, Point)
             End If
 
             '---WATERMARK---

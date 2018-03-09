@@ -484,7 +484,7 @@ Public Class Form_OrdiniAperti
                         If Row.Ordine = Ordine Then
                             Dim Riga As New RigaOrdine With {.NumeroOrdine = Row.Ordine, .Riga = Row.Riga, .Imballo = Row.Imballo, .Indice = Row.Indice, .Qt = Row.Qt, .Cliente = Row.Cliente, .Codice = Row.Codice, .Commessa = Row.Commessa,
                                 .L = Row.L, .P = Row.P, .H = Row.H, .Tipo = Row.Tipo, .Zoccoli = Row.Zoccoli, .Rivestimento = Row.Rivestimento, .TipoRivestimento = Row.Tipo_Rivestimento, .Note = Row.Note, .DataConsegna = Row.Data_Consegna,
-                                .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = False, .Produzione = False, .Stampato = False, .ID_RigaOrdine = Row.Id}
+                                .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = Row.Evaso, .Produzione = False, .Stampato = False, .ID_RigaOrdine = Row.Id}
                             RowOrdine.Add(Riga)
                             Row.Stampato = True
                         End If
@@ -497,7 +497,7 @@ Public Class Form_OrdiniAperti
                             If Row.Ordine = Ordine And Row.Id = RigaSelezionata.Cells(0).Value Then
                                 Dim Riga As New RigaOrdine With {.NumeroOrdine = Row.Ordine, .Riga = Row.Riga, .Imballo = Row.Imballo, .Indice = Row.Indice, .Qt = Row.Qt, .Cliente = Row.Cliente, .Codice = Row.Codice, .Commessa = Row.Commessa,
                                     .L = Row.L, .P = Row.P, .H = Row.H, .Tipo = Row.Tipo, .Zoccoli = Row.Zoccoli, .Rivestimento = Row.Rivestimento, .TipoRivestimento = Row.Tipo_Rivestimento, .Note = Row.Note, .DataConsegna = Row.Data_Consegna,
-                                    .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = False, .Produzione = False, .Stampato = False, .ID_RigaOrdine = Row.Id}
+                                    .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = Row.Evaso, .Produzione = False, .Stampato = False, .ID_RigaOrdine = Row.Id}
                                 RowOrdine.Add(Riga)
                                 Row.Stampato = True
                             End If

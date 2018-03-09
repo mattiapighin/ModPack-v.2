@@ -63,7 +63,9 @@ Public Class Form_Tabelle
     End Sub
 
     Private Sub Bt_Test_Click(sender As Object, e As EventArgs) Handles Bt_Test.Click
-        FillDGW(TxtQuery.Text, DGW_Result)
+        If Not String.IsNullOrEmpty(TxtQuery.Text) Then
+            FillDGW(TxtQuery.Text, DGW_Result)
+        End If
     End Sub
 
     Private Sub Form_Stampe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -73,37 +75,38 @@ Public Class Form_Tabelle
     End Sub
 
     Private Sub Bt_Salva_Click(sender As Object, e As EventArgs) Handles Bt_Salva.Click
-        Try
-            If Not TxtQuery.Text.Contains("DELETE") Or TxtQuery.Text.Contains("TRUNCATE") Then
-                Dim Nome As String = InputBox("Nome della Query", "Query", TxtQuery.Text)
+        If Not String.IsNullOrEmpty(TxtQuery.Text) Then
+            Try
+                If Not TxtQuery.Text.Contains("DELETE") Or TxtQuery.Text.Contains("TRUNCATE") Then
+                    Dim Nome As String = InputBox("Nome della Query", "Query", TxtQuery.Text)
 
-                If Not String.IsNullOrEmpty(Nome) Then
-                    If Not Nome.Length > 50 Then
+                    If Not String.IsNullOrEmpty(Nome) Then
+                        If Not Nome.Length > 50 Then
 
 
-                        Using Table As New ModPackDBDataSetTableAdapters.QueriesTableAdapter
-                            Using DS As New ModPackDBDataSet.QueriesDataTable
-                                Table.Insert(Nome, TxtQuery.Text)
-                                Table.Update(DS)
+                            Using Table As New ModPackDBDataSetTableAdapters.QueriesTableAdapter
+                                Using DS As New ModPackDBDataSet.QueriesDataTable
+                                    Table.Insert(Nome, TxtQuery.Text)
+                                    Table.Update(DS)
+                                End Using
                             End Using
-                        End Using
-                        MsgBox("Query Salvata!", vbInformation, "Salva")
-                        SQL.FillDGW_SQL("SELECT Nome FROM Queries", DGW_queries)
-                    Else
-                        MsgBox("Il nome della query non può superare i 50 Caratteri", vbCritical, "Query")
+                            MsgBox("Query Salvata!", vbInformation, "Salva")
+                            SQL.FillDGW_SQL("SELECT Nome FROM Queries", DGW_queries)
+                        Else
+                            MsgBox("Il nome della query non può superare i 50 Caratteri", vbCritical, "Query")
+                        End If
+
+
+
                     End If
 
-
-
+                Else
+                    MsgBox("Non è possibile utilizzare i comandi DELETE e TRUNCATE da questa finestra", vbCritical, "Query")
                 End If
-
-            Else
-                MsgBox("Non è possibile utilizzare i comandi DELETE e TRUNCATE da questa finestra", vbCritical, "Query")
-            End If
-        Catch EX As Exception
-            Errore.Show("Salva Query / Tabelle", EX.Message)
-        End Try
-
+            Catch EX As Exception
+                Errore.Show("Salva Query / Tabelle", EX.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub Bt_Esegui_Click(sender As Object, e As EventArgs) Handles Bt_Esegui.Click

@@ -60,9 +60,15 @@ Partial Class Form_Listino
         Me.RivestimentiTableAdapter = New ModPack.ModPackDBDataSetTableAdapters.RivestimentiTableAdapter()
         Me.MaterialiTableAdapter = New ModPack.ModPackDBDataSetTableAdapters.MaterialiTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Bt_Salva = New System.Windows.Forms.Button()
-        Me.Bt_Annulla = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.BT_Edit = New System.Windows.Forms.Button()
+        Me.Bt_Salva = New System.Windows.Forms.Button()
+        Me.BT_Ricalcola = New System.Windows.Forms.Button()
+        Me.Bt_Annulla = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Label_Info = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ProgressBar = New System.Windows.Forms.ToolStripProgressBar()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGW_Tipi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TipiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +80,8 @@ Partial Class Form_Listino
         CType(Me.DGW_Materiali, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MaterialiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -360,52 +368,117 @@ Partial Class Form_Listino
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel1.Controls.Add(Me.Bt_Salva)
-        Me.Panel1.Controls.Add(Me.Bt_Annulla)
-        Me.Panel1.Controls.Add(Me.BT_Edit)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Location = New System.Drawing.Point(559, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(50, 537)
         Me.Panel1.TabIndex = 3
         '
-        'Bt_Salva
+        'TableLayoutPanel1
         '
-        Me.Bt_Salva.FlatAppearance.BorderSize = 0
-        Me.Bt_Salva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bt_Salva.Image = CType(resources.GetObject("Bt_Salva.Image"), System.Drawing.Image)
-        Me.Bt_Salva.Location = New System.Drawing.Point(5, 491)
-        Me.Bt_Salva.Name = "Bt_Salva"
-        Me.Bt_Salva.Size = New System.Drawing.Size(40, 40)
-        Me.Bt_Salva.TabIndex = 1
-        Me.Bt_Salva.UseVisualStyleBackColor = True
-        '
-        'Bt_Annulla
-        '
-        Me.Bt_Annulla.FlatAppearance.BorderSize = 0
-        Me.Bt_Annulla.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bt_Annulla.Image = CType(resources.GetObject("Bt_Annulla.Image"), System.Drawing.Image)
-        Me.Bt_Annulla.Location = New System.Drawing.Point(5, 445)
-        Me.Bt_Annulla.Name = "Bt_Annulla"
-        Me.Bt_Annulla.Size = New System.Drawing.Size(40, 40)
-        Me.Bt_Annulla.TabIndex = 2
-        Me.Bt_Annulla.UseVisualStyleBackColor = True
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.BT_Edit, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Salva, 0, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.BT_Ricalcola, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Annulla, 0, 9)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 11
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(50, 537)
+        Me.TableLayoutPanel1.TabIndex = 4
         '
         'BT_Edit
         '
+        Me.BT_Edit.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BT_Edit.FlatAppearance.BorderSize = 0
         Me.BT_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_Edit.Image = CType(resources.GetObject("BT_Edit.Image"), System.Drawing.Image)
-        Me.BT_Edit.Location = New System.Drawing.Point(5, 3)
+        Me.BT_Edit.Location = New System.Drawing.Point(5, 4)
         Me.BT_Edit.Name = "BT_Edit"
         Me.BT_Edit.Size = New System.Drawing.Size(40, 40)
         Me.BT_Edit.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.BT_Edit, "Modifica Listino")
         Me.BT_Edit.UseVisualStyleBackColor = True
+        '
+        'Bt_Salva
+        '
+        Me.Bt_Salva.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Bt_Salva.FlatAppearance.BorderSize = 0
+        Me.Bt_Salva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bt_Salva.Image = CType(resources.GetObject("Bt_Salva.Image"), System.Drawing.Image)
+        Me.Bt_Salva.Location = New System.Drawing.Point(5, 488)
+        Me.Bt_Salva.Name = "Bt_Salva"
+        Me.Bt_Salva.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Salva.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.Bt_Salva, "Salva Modifiche")
+        Me.Bt_Salva.UseVisualStyleBackColor = True
+        '
+        'BT_Ricalcola
+        '
+        Me.BT_Ricalcola.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BT_Ricalcola.FlatAppearance.BorderSize = 0
+        Me.BT_Ricalcola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_Ricalcola.Image = CType(resources.GetObject("BT_Ricalcola.Image"), System.Drawing.Image)
+        Me.BT_Ricalcola.Location = New System.Drawing.Point(5, 52)
+        Me.BT_Ricalcola.Name = "BT_Ricalcola"
+        Me.BT_Ricalcola.Size = New System.Drawing.Size(40, 40)
+        Me.BT_Ricalcola.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.BT_Ricalcola, "Ricarica Prezzi")
+        Me.BT_Ricalcola.UseVisualStyleBackColor = True
+        '
+        'Bt_Annulla
+        '
+        Me.Bt_Annulla.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Bt_Annulla.FlatAppearance.BorderSize = 0
+        Me.Bt_Annulla.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bt_Annulla.Image = CType(resources.GetObject("Bt_Annulla.Image"), System.Drawing.Image)
+        Me.Bt_Annulla.Location = New System.Drawing.Point(5, 436)
+        Me.Bt_Annulla.Name = "Bt_Annulla"
+        Me.Bt_Annulla.Size = New System.Drawing.Size(40, 40)
+        Me.Bt_Annulla.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.Bt_Annulla, "Annulla")
+        Me.Bt_Annulla.UseVisualStyleBackColor = True
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Label_Info, Me.ProgressBar})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 555)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(613, 22)
+        Me.StatusStrip1.TabIndex = 4
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'Label_Info
+        '
+        Me.Label_Info.Name = "Label_Info"
+        Me.Label_Info.Size = New System.Drawing.Size(0, 17)
+        '
+        'ProgressBar
+        '
+        Me.ProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ProgressBar.Name = "ProgressBar"
+        Me.ProgressBar.Size = New System.Drawing.Size(100, 16)
+        Me.ProgressBar.Visible = False
         '
         'Form_Listino
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 561)
+        Me.ClientSize = New System.Drawing.Size(613, 577)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -426,7 +499,11 @@ Partial Class Form_Listino
         CType(Me.DGW_Materiali, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MaterialiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -469,4 +546,10 @@ Partial Class Form_Listino
     Friend WithEvents PrezzoM3DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrezzoM3HTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FresataMoraliDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents BT_Ricalcola As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Label_Info As ToolStripStatusLabel
+    Friend WithEvents ProgressBar As ToolStripProgressBar
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

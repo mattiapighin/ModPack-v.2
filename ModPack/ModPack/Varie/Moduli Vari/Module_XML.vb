@@ -26,7 +26,7 @@
                     'Conteggio dei codici salvati
                     .WriteComment("Ultimo codice salvato (inizia a codificare da +1)")
                     .WriteStartElement("CodeCount")
-                    .WriteValue("0")
+                    .WriteValue("19")
                     .WriteEndElement()
 
                     'Tipo di scala Immagine
@@ -71,7 +71,7 @@
 
                     .WriteStartElement("Diagonali")
                     .WriteStartElement("Max_Gradi")
-                    .WriteValue("45")
+                    .WriteValue("50")
                     .WriteEndElement()
                     .WriteStartElement("Inverti")
                     .WriteValue("True")

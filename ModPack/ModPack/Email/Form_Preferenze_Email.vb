@@ -9,7 +9,7 @@ Public Class Form_Preferenze_Email
         Txt_Mail_Password.Text = My.Settings.MAIL_password
         Txt_Mail_PortaSMTP.Text = My.Settings.MAIL_port
         Txt_Mail_ServerSMTP.Text = My.Settings.MAIL_server
-
+        Tx_Pop3.Text = My.Settings.MAIL_Pop3Server
 
     End Sub
     Private Sub Bt_Salva_Click(sender As Object, e As EventArgs) Handles Bt_Salva.Click
@@ -17,6 +17,7 @@ Public Class Form_Preferenze_Email
         My.Settings.MAIL_password = Txt_Mail_Password.Text
         My.Settings.MAIL_port = Txt_Mail_PortaSMTP.Text
         My.Settings.MAIL_server = Txt_Mail_ServerSMTP.Text
+        My.Settings.MAIL_Pop3Server = Tx_Pop3.Text
 
         My.Settings.Save()
         MsgBox("Impostazioni aggiornate!", vbInformation, "Opzioni email")

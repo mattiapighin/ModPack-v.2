@@ -24,6 +24,7 @@ Partial Class Form_Preferenze_Email
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Txt_Mail_Password = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Txt_Mail_Username = New System.Windows.Forms.TextBox()
@@ -42,13 +43,16 @@ Partial Class Form_Preferenze_Email
         Me.Bt_Salva = New System.Windows.Forms.Button()
         Me.Bt_TestMail = New System.Windows.Forms.Button()
         Me.DestinatariEmailTableAdapter = New ModPack.ModPackDBDataSetTableAdapters.DestinatariEmailTableAdapter()
-        Me.Txt_Mail_Password = New System.Windows.Forms.MaskedTextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Tx_Pop3 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGWDestinatari, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DestinatariEmailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ModPackDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -63,6 +67,14 @@ Partial Class Form_Preferenze_Email
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Credenziali"
+        '
+        'Txt_Mail_Password
+        '
+        Me.Txt_Mail_Password.Location = New System.Drawing.Point(65, 44)
+        Me.Txt_Mail_Password.Name = "Txt_Mail_Password"
+        Me.Txt_Mail_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txt_Mail_Password.Size = New System.Drawing.Size(243, 20)
+        Me.Txt_Mail_Password.TabIndex = 5
         '
         'Label2
         '
@@ -137,7 +149,7 @@ Partial Class Form_Preferenze_Email
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.DGWDestinatari)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 146)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 210)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(314, 130)
         Me.GroupBox3.TabIndex = 2
@@ -194,7 +206,7 @@ Partial Class Form_Preferenze_Email
         '
         'Bt_Salva
         '
-        Me.Bt_Salva.Location = New System.Drawing.Point(250, 282)
+        Me.Bt_Salva.Location = New System.Drawing.Point(250, 346)
         Me.Bt_Salva.Name = "Bt_Salva"
         Me.Bt_Salva.Size = New System.Drawing.Size(75, 23)
         Me.Bt_Salva.TabIndex = 3
@@ -203,7 +215,7 @@ Partial Class Form_Preferenze_Email
         '
         'Bt_TestMail
         '
-        Me.Bt_TestMail.Location = New System.Drawing.Point(11, 282)
+        Me.Bt_TestMail.Location = New System.Drawing.Point(11, 346)
         Me.Bt_TestMail.Name = "Bt_TestMail"
         Me.Bt_TestMail.Size = New System.Drawing.Size(75, 23)
         Me.Bt_TestMail.TabIndex = 4
@@ -214,19 +226,39 @@ Partial Class Form_Preferenze_Email
         '
         Me.DestinatariEmailTableAdapter.ClearBeforeFill = True
         '
-        'Txt_Mail_Password
+        'GroupBox4
         '
-        Me.Txt_Mail_Password.Location = New System.Drawing.Point(65, 44)
-        Me.Txt_Mail_Password.Name = "Txt_Mail_Password"
-        Me.Txt_Mail_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_Mail_Password.Size = New System.Drawing.Size(243, 20)
-        Me.Txt_Mail_Password.TabIndex = 5
+        Me.GroupBox4.Controls.Add(Me.Tx_Pop3)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 146)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(314, 49)
+        Me.GroupBox4.TabIndex = 5
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Pop3"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(21, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Server"
+        '
+        'Tx_Pop3
+        '
+        Me.Tx_Pop3.Location = New System.Drawing.Point(65, 18)
+        Me.Tx_Pop3.Name = "Tx_Pop3"
+        Me.Tx_Pop3.Size = New System.Drawing.Size(243, 20)
+        Me.Tx_Pop3.TabIndex = 1
         '
         'Form_Preferenze_Email
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(337, 314)
+        Me.ClientSize = New System.Drawing.Size(337, 396)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Bt_TestMail)
         Me.Controls.Add(Me.Bt_Salva)
         Me.Controls.Add(Me.GroupBox3)
@@ -243,6 +275,8 @@ Partial Class Form_Preferenze_Email
         CType(Me.DGWDestinatari, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DestinatariEmailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ModPackDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -267,4 +301,7 @@ Partial Class Form_Preferenze_Email
     Friend WithEvents NomeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Txt_Mail_Password As MaskedTextBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Tx_Pop3 As TextBox
+    Friend WithEvents Label5 As Label
 End Class

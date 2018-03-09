@@ -175,5 +175,8 @@
     <Setting Name="OrdiniAperti_ColoraProduzione" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="MAIL_Pop3Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pop3.bicciatoserafino.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

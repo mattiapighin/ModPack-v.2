@@ -496,7 +496,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.76316!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.23684!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127.0!))
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_FontDistinta, 3, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.CkCodiceQT, 1, 1)
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_RigheDistinta, 3, 1)
@@ -515,9 +515,9 @@ Partial Class Form_Preferenze
         'Nu_FontDistinta
         '
         Me.Nu_FontDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_FontDistinta.Location = New System.Drawing.Point(301, 3)
+        Me.Nu_FontDistinta.Location = New System.Drawing.Point(300, 3)
         Me.Nu_FontDistinta.Name = "Nu_FontDistinta"
-        Me.Nu_FontDistinta.Size = New System.Drawing.Size(121, 20)
+        Me.Nu_FontDistinta.Size = New System.Drawing.Size(122, 20)
         Me.Nu_FontDistinta.TabIndex = 2
         '
         'CkCodiceQT
@@ -534,9 +534,9 @@ Partial Class Form_Preferenze
         'Nu_RigheDistinta
         '
         Me.Nu_RigheDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(301, 27)
+        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(300, 27)
         Me.Nu_RigheDistinta.Name = "Nu_RigheDistinta"
-        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(121, 20)
+        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(122, 20)
         Me.Nu_RigheDistinta.TabIndex = 3
         '
         'CkBarcodeSoloCodice
@@ -555,7 +555,7 @@ Partial Class Form_Preferenze
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(230, 0)
+        Me.Label5.Location = New System.Drawing.Point(229, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 24)
         Me.Label5.TabIndex = 4
@@ -576,7 +576,7 @@ Partial Class Form_Preferenze
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(224, 29)
+        Me.Label8.Location = New System.Drawing.Point(223, 29)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 13)
         Me.Label8.TabIndex = 5

@@ -172,7 +172,13 @@
                 Loop
                 '
                 Dim Font As New Font("Calibri", FontHeight)
-                e.Graphics.DrawString(DGW_Result.Rows(RigheStampate).Cells(K).Value, Font, Brushes.Black, R, FMT)
+
+                Dim Valore As String = DGW_Result.Rows(RigheStampate).Cells(K).Value
+                If Valore = "True" Then Valore = "HT"
+                If Valore = "False" Then Valore = ""
+                e.Graphics.DrawString(Valore, Font, Brushes.Black, R, FMT)
+
+
                 PosX += Lcell
             Next
             PosX = RectTabella.Left

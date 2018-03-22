@@ -248,7 +248,6 @@
         Return M2
     End Function
 
-
     '############################# CREAZIONE DISTINTE #############################
     Private Function Crea_G(L, P, H, Type, Zoccoli, DT, BM, Diagonali, HT) As List(Of Riga_Distinta)
 
@@ -279,8 +278,14 @@
 
                 Case "EUR"
                     Dim TTB As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTB", .Part = "B"}
-                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = NMorali * 3, .Tag = "ZOC", .Part = "B"}
+                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z) * NMorali, .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTT", .Part = "B"}
+
+                    If BM = True Then
+                        TTB.Y = 2.2
+                        TTT.Y = 2.2
+                    End If
+
                     D.AddRange({TTB, ZOC, TTT})
             End Select
 
@@ -293,6 +298,7 @@
             End If
 
             If BM = True Then
+                BTL.X = 10
                 BTL.Y = 5
                 MontanteSottoF = 5
                 MontanteSottoT = 5
@@ -337,11 +343,6 @@
             If GRADIdiagF < 0 Then GRADIdiagF = 0
             If GRADIdiagT < 0 Then GRADIdiagT = 0
 
-            If Diagonali = False Then
-                GRADIdiagT = 0
-                GRADIdiagF = 0
-            End If
-
 
             '############ FIANCATE ############
 
@@ -361,7 +362,6 @@
             Dim TM As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = H, .N = Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav) * 2, .Tag = "TM", .Part = "T"}
 
             D.AddRange({TTL, TM})
-
 
 
             If (H >= 100 Or R_Diagonali = True) And SpazioFraMontantiT > 40 Then
@@ -416,8 +416,14 @@
 
                 Case "EUR"
                     Dim TTB As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "TTB", .Part = "B"}
-                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = NMorali * 3, .Tag = "ZOC", .Part = "B"}
+                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z) * NMorali, .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "TTT", .Part = "B"}
+
+                    If BM = True Then
+                        TTB.Y = 2.2
+                        TTT.Y = 2.2
+                    End If
+
                     D.AddRange({TTB, ZOC, TTT})
             End Select
 
@@ -428,6 +434,7 @@
             End If
 
             If BM = True Then
+                BTL.X = 10
                 BTL.Y = 5
             End If
 
@@ -439,7 +446,7 @@
             Dim TavoleTraIMorali As Integer = (Imballo.NumeroTavoleSopra(InterasseMorali, InterasseMaxTavoleTraIMorali)) * (NMorali - 1)
 
 
-            Dim BTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali + TavoleTraIMorali + 2, .Tag = "BTT", .Part = "B"}
+            Dim BTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "BTT", .Part = "B"}
             D.Add(BTT)
 
 
@@ -572,8 +579,14 @@
 
                 Case "EUR"
                     Dim TTB As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTB", .Part = "B"}
-                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z), .Tag = "ZOC", .Part = "B"}
+                    Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z) * NMorali, .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTT", .Part = "B"}
+
+                    If BM = True Then
+                        TTB.Y = 2.2
+                        TTT.Y = 2.2
+                    End If
+
                     D.AddRange({TTB, ZOC, TTT})
             End Select
 
@@ -586,6 +599,7 @@
             End If
 
             If BM = True Then
+                BTL.X = 10
                 BTL.Y = 5
                 MontanteSottoF += 2
                 MontanteSottoT += 2

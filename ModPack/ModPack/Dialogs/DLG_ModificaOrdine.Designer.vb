@@ -27,10 +27,6 @@ Partial Class DLG_ModificaOrdine
         Me.Bt_CaricaOrdine = New System.Windows.Forms.Button()
         Me.Tx_PathOrdine = New System.Windows.Forms.TextBox()
         Me.DG_Ordine = New System.Windows.Forms.DataGridView()
-        Me.Bt_Salva = New System.Windows.Forms.Button()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.PB_Avanzamento = New System.Windows.Forms.ToolStripProgressBar()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Riga = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Indice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Qt = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,6 +47,11 @@ Partial Class DLG_ModificaOrdine
         Me.BM = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Note2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Diagonali = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Bt_Salva = New System.Windows.Forms.Button()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.PB_Avanzamento = New System.Windows.Forms.ToolStripProgressBar()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Bt_Cancella = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DG_Ordine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -95,47 +96,6 @@ Partial Class DLG_ModificaOrdine
         Me.DG_Ordine.Name = "DG_Ordine"
         Me.DG_Ordine.Size = New System.Drawing.Size(700, 208)
         Me.DG_Ordine.TabIndex = 1
-        '
-        'Bt_Salva
-        '
-        Me.Bt_Salva.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Bt_Salva.BackgroundImage = CType(resources.GetObject("Bt_Salva.BackgroundImage"), System.Drawing.Image)
-        Me.Bt_Salva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Bt_Salva.FlatAppearance.BorderSize = 0
-        Me.Bt_Salva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Bt_Salva.Location = New System.Drawing.Point(74, 5)
-        Me.Bt_Salva.Name = "Bt_Salva"
-        Me.Bt_Salva.Size = New System.Drawing.Size(35, 35)
-        Me.Bt_Salva.TabIndex = 2
-        Me.Bt_Salva.UseVisualStyleBackColor = True
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PB_Avanzamento})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 292)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(724, 23)
-        Me.StatusStrip1.TabIndex = 3
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'PB_Avanzamento
-        '
-        Me.PB_Avanzamento.Name = "PB_Avanzamento"
-        Me.PB_Avanzamento.Size = New System.Drawing.Size(120, 17)
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Salva, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(590, 18)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(122, 46)
-        Me.TableLayoutPanel1.TabIndex = 4
         '
         'Riga
         '
@@ -248,8 +208,64 @@ Partial Class DLG_ModificaOrdine
         Me.Diagonali.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Diagonali.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
+        'Bt_Salva
+        '
+        Me.Bt_Salva.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Bt_Salva.BackgroundImage = CType(resources.GetObject("Bt_Salva.BackgroundImage"), System.Drawing.Image)
+        Me.Bt_Salva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Bt_Salva.FlatAppearance.BorderSize = 0
+        Me.Bt_Salva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bt_Salva.Location = New System.Drawing.Point(74, 5)
+        Me.Bt_Salva.Name = "Bt_Salva"
+        Me.Bt_Salva.Size = New System.Drawing.Size(35, 35)
+        Me.Bt_Salva.TabIndex = 2
+        Me.Bt_Salva.UseVisualStyleBackColor = True
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PB_Avanzamento})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 292)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(724, 23)
+        Me.StatusStrip1.TabIndex = 3
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'PB_Avanzamento
+        '
+        Me.PB_Avanzamento.Name = "PB_Avanzamento"
+        Me.PB_Avanzamento.Size = New System.Drawing.Size(120, 17)
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Cancella, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Bt_Salva, 1, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(590, 18)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(122, 46)
+        Me.TableLayoutPanel1.TabIndex = 4
+        '
+        'Bt_Cancella
+        '
+        Me.Bt_Cancella.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Bt_Cancella.BackgroundImage = CType(resources.GetObject("Bt_Cancella.BackgroundImage"), System.Drawing.Image)
+        Me.Bt_Cancella.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Bt_Cancella.FlatAppearance.BorderSize = 0
+        Me.Bt_Cancella.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bt_Cancella.Location = New System.Drawing.Point(13, 5)
+        Me.Bt_Cancella.Name = "Bt_Cancella"
+        Me.Bt_Cancella.Size = New System.Drawing.Size(35, 35)
+        Me.Bt_Cancella.TabIndex = 3
+        Me.Bt_Cancella.UseVisualStyleBackColor = True
+        '
         'DLG_ModificaOrdine
         '
+        Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(724, 315)
@@ -300,4 +316,5 @@ Partial Class DLG_ModificaOrdine
     Friend WithEvents BM As DataGridViewCheckBoxColumn
     Friend WithEvents Note2 As DataGridViewTextBoxColumn
     Friend WithEvents Diagonali As DataGridViewCheckBoxColumn
+    Friend WithEvents Bt_Cancella As Button
 End Class

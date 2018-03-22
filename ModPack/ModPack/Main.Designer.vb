@@ -51,6 +51,7 @@ Partial Class Main
         Me.MODIFICAORDINEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_ListaElementi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Listino = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MODIFICACODICEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tabelle = New System.Windows.Forms.ToolStripButton()
         Me.Ts_Preferenze = New System.Windows.Forms.ToolStripButton()
         Me.TS_Memo = New System.Windows.Forms.ToolStripButton()
@@ -251,7 +252,7 @@ Partial Class Main
         '
         'TS_Tools
         '
-        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.MODIFICAORDINEToolStripMenuItem, Me.TS_ListaElementi, Me.TS_Listino})
+        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.MODIFICAORDINEToolStripMenuItem, Me.TS_ListaElementi, Me.TS_Listino, Me.MODIFICACODICEToolStripMenuItem})
         Me.TS_Tools.Image = CType(resources.GetObject("TS_Tools.Image"), System.Drawing.Image)
         Me.TS_Tools.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Tools.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -282,6 +283,12 @@ Partial Class Main
         Me.TS_Listino.Name = "TS_Listino"
         Me.TS_Listino.Size = New System.Drawing.Size(189, 22)
         Me.TS_Listino.Text = "LISTINO"
+        '
+        'MODIFICACODICEToolStripMenuItem
+        '
+        Me.MODIFICACODICEToolStripMenuItem.Name = "MODIFICACODICEToolStripMenuItem"
+        Me.MODIFICACODICEToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.MODIFICACODICEToolStripMenuItem.Text = "MODIFICA CODICE"
         '
         'TS_Tabelle
         '
@@ -389,4 +396,5 @@ Partial Class Main
     Friend WithEvents CREAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MANUALEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CREAZIONEAUTOMATICAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MODIFICACODICEToolStripMenuItem As ToolStripMenuItem
 End Class

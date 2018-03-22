@@ -161,7 +161,7 @@
       <Value Profile="(Default)">Questo documento è di proprietà di BICCIATO SERAFINO S.R.L. - Ogni forma di copia e di diffusione con qualsiasi mezzo è vietata senza la relativa autorizzazione.</Value>
     </Setting>
     <Setting Name="CO_Genera" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="CO_Invia" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -170,7 +170,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CO_Tipo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">txt</Value>
+      <Value Profile="(Default)">xml</Value>
     </Setting>
     <Setting Name="OrdiniAperti_ColoraProduzione" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

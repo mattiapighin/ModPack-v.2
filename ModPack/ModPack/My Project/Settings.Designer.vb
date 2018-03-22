@@ -669,7 +669,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property CO_Genera() As Boolean
             Get
                 Return CType(Me("CO_Genera"),Boolean)
@@ -705,7 +705,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("txt")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("xml")>  _
         Public Property CO_Tipo() As String
             Get
                 Return CType(Me("CO_Tipo"),String)

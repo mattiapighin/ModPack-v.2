@@ -180,6 +180,7 @@
         Private Sub Intestazione(sender As Object, e As Printing.PrintPageEventArgs, Riga As RigaOrdine)
 
             Dim FontRiga1 As New Font("Calibri", 16, FontStyle.Bold)
+            Dim FontRiga1Big As New Font("Calibri", 20, FontStyle.Bold)
             Dim FontN As New Font("Calibri", 10)
             Dim FT As New Font("Calibri", 6)
 
@@ -218,8 +219,8 @@
 
             Stampe.ImmagineInRettangolo(My.Resources.Logo, RectLogo, e)
             e.Graphics.DrawString(Riga.Imballo, FontRiga1, Brushes.Black, RectImballo, FMT)
-            e.Graphics.DrawString(Riga.Qt, FontRiga1, Brushes.Black, RectQT, FMT)
-            If Riga.HT = True Then e.Graphics.DrawString("HT", FontRiga1, Brushes.Black, RectHT, FMT)
+            e.Graphics.DrawString("PZ " & Riga.Qt, FontRiga1Big, Brushes.Black, RectQT, FMT)
+            If Riga.HT = True Then e.Graphics.DrawString("HT", FontRiga1Big, Brushes.Black, RectHT, FMT)
             e.Graphics.DrawString(Riga.Tipo, FontRiga1, Brushes.Black, RectTIPO, FMT)
 
             e.Graphics.DrawString(Riga.Cliente, FontN, Brushes.Black, RectCliente, FMT)
@@ -656,7 +657,7 @@
             Dim Format As StringFormat = New StringFormat(StringFormatFlags.LineLimit) With {.LineAlignment = StringAlignment.Center, .Alignment = StringAlignment.Center, .Trimming = StringTrimming.EllipsisCharacter}
 
             Dim FNT As New Font("Calibri", My.Settings.DimensioneFontDistinta)
-            Dim FNTbold As New Font("Calibri", My.Settings.DimensioneFontDistinta, FontStyle.Bold)
+            Dim FNTbold As New Font("Calibri", My.Settings.DimensioneFontDistinta + 2, FontStyle.Bold)
             Dim FNT1 As New Font("Calibri", My.Settings.DimensioneFontDistinta - 2)
             Dim FNT_Tag As New Font("Calibri", 8, FontStyle.Italic)
             Dim FNT_TagBold As New Font("Calibri", 10, FontStyle.Underline Xor FontStyle.Bold)
@@ -701,8 +702,23 @@
 
             If QT > 1 Then e.Graphics.DrawString("[" & N * QT & "]", FNT1, Brushes.Gray, R_Ntot, Format)
 
-            If Tag = "FD" Or Tag = "TD" Then FNT_Tag = FNT_TagBold
-            e.Graphics.DrawString(Tag, FNT_Tag, Brushes.Gray, R_Tag, Format)
+            '####### TAG ########
+            'If Tag = "FD" Or Tag = "TD" Then FNT_Tag = FNT_TagBold
+            'e.Graphics.DrawString(Tag, FNT_Tag, Brushes.Gray, R_Tag, Format)
+
+            'Dim FormatDiago As StringFormat = New StringFormat(StringFormatFlags.NoClip) With {.LineAlignment = StringAlignment.Near, .Alignment = StringAlignment.Center, .Trimming = StringTrimming.None, .FormatFlags = StringFormatFlags.NoWrap}
+
+
+            If Tag = "FD" Then
+                FNT_Tag = FNT_TagBold
+                e.Graphics.DrawString("Diag. " & DiagF & "°", FNT_Tag, Brushes.Gray, R_Tag.X, R_Tag.Y)
+            End If
+
+            If Tag = "TD" Then
+                FNT_Tag = FNT_TagBold
+                e.Graphics.DrawString("Diag. " & DiagT & "°", FNT_Tag, Brushes.Gray, R_Tag.X, R_Tag.Y)
+            End If
+            '###################
 
         End Sub
         Private Sub Riempi_QuoteMorali(sender As Object, e As Printing.PrintPageEventArgs, Rect As Rectangle, PrimoMorale As Integer, Nmorali As Integer, LunghezzaTavola As Integer)

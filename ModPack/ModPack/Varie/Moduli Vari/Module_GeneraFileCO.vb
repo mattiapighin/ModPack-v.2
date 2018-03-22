@@ -1,4 +1,6 @@
-﻿Module Module_GeneraFileCO
+﻿Imports Newtonsoft.Json
+
+Module Module_GeneraFileCO
 
     Public Sub Genera_File(ByVal DS As DataSet, ByVal NomeFile As String, ByRef SaveFile As String)
 
@@ -64,53 +66,7 @@
     End Sub
 
     Private Sub Genera_XML(ByVal DS As DataSet, ByVal NomeFile As String, ByVal SaveFile As String)
-
-        Dim settings As New System.Xml.XmlWriterSettings() With {.Indent = True}
-        Dim XmlWrt As System.Xml.XmlWriter = System.Xml.XmlWriter.Create(SaveFile, settings)
-
-        NomeFile = "CO" & NomeFile
-
-        With XmlWrt
-
-            .WriteStartDocument()
-            .WriteComment("CONFERMA D'ORDINE - " & Date.Today.Date)
-            .WriteStartElement(NomeFile.ToString)
-
-            For Each Line As DataRow In DS.Tables(0).Rows
-
-                .WriteStartElement("CODICE")
-                .WriteValue(Line.Item(1))
-
-                .WriteStartElement("DISEGNO")
-                .WriteValue(Line.Item(12))
-                .WriteEndElement()
-
-                .WriteStartElement("COMMESSA")
-                .WriteValue(Line.Item(13))
-                .WriteEndElement()
-
-                .WriteStartElement("QT")
-                .WriteValue(Line.Item(2))
-                .WriteEndElement()
-
-                .WriteStartElement("PREZZO")
-                .WriteValue(Line.Item(10))
-                .WriteEndElement()
-
-                .WriteStartElement("DATA_CONSEGNA")
-                '.WriteValue(Line.Item(11).ToString)
-                .WriteValue(FormatDateTime(Line.Item(11), DateFormat.ShortDate))
-                .WriteEndElement()
-
-                .WriteEndElement()
-
-            Next
-
-            .WriteEndElement()
-            .Close()
-
-        End With
-
-
+        DS.Tables(0).WriteXml(SaveFile)
     End Sub
+
 End Module

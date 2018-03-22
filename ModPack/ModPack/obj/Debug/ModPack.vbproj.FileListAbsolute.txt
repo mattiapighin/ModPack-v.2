@@ -274,3 +274,6 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG_ModificaOrdine.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG_Changelog.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM_NuovoImballoPlus.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaCodice.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\Newtonsoft.Json.xml

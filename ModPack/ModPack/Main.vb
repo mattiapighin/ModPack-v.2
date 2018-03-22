@@ -90,6 +90,7 @@ Public Class Main
             LOG.Write("Inizio sessione")
             CaricaMemo()
             SQL.PuliziaOrdini() 'Se attivo elimina tutti gli ordini prima di una certa data (default false)
+
             My.Settings.Scarto = SQL.GetPrezzoMateriale("SCART") 'salva in memoria la percentuale di scarto in modo da non dover fare la query ogni volta
             My.Settings.Save()
 
@@ -233,6 +234,9 @@ Public Class Main
     Private Sub TS_Listino_Click(sender As Object, e As EventArgs) Handles TS_Listino.Click
         Form_Listino.Show()
     End Sub
+    Private Sub MODIFICACODICEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICACODICEToolStripMenuItem.Click
+        Form_ModificaCodice.ShowDialog()
+    End Sub
 
     '### TREEVIEW ###
     Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click
@@ -367,5 +371,6 @@ Public Class Main
     Private Sub CREAZIONEAUTOMATICAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CREAZIONEAUTOMATICAToolStripMenuItem.Click
         FRM_NuovoImballoPlus.ShowDialog()
     End Sub
+
 
 End Class

@@ -122,7 +122,7 @@
             Errore.Show("Caricamento riferimenti", ex.Message)
         End Try
 
-        Box_Developer.Enabled = My.Settings.Developer
+        Box_Developer.Visible = My.Settings.Developer
 
     End Sub
     Private Sub Bt_Salva_Click(sender As Object, e As EventArgs) Handles Bt_Salva.Click
@@ -399,7 +399,7 @@ line2:
         If e.Control And e.Alt And e.KeyCode = Keys.F10 Then
             My.Settings.Developer = Not My.Settings.Developer
             My.Settings.Save()
-            Box_Developer.Enabled = My.Settings.Developer
+            Box_Developer.Visible = My.Settings.Developer
             If My.Settings.Developer = True Then
                 MsgBox("Opzioni sviluppatore attivate!", vbInformation, "Developer")
             Else

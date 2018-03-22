@@ -100,7 +100,6 @@ Public Class DLG_ModificaOrdine
     Private Sub DG_Ordine_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DG_Ordine.CellEndEdit
         Modificato = True
     End Sub
-
     Private Sub DLG_ModificaOrdine_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Tx_PathOrdine.Text = ""
         Bt_Salva.Enabled = False
@@ -119,4 +118,53 @@ Public Class DLG_ModificaOrdine
         End If
     End Sub
 
+    Private Sub DLG_ModificaOrdine_DragEnter(sender As Object, e As DragEventArgs) Handles Me.DragEnter
+        Try
+            If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+                e.Effect = DragDropEffects.All
+            End If
+
+        Catch ex As Exception
+            Errore.Show("Drag&Drop \ Main", ex.Message)
+        End Try
+    End Sub
+    Private Sub DLG_ModificaOrdine_DragDrop(sender As Object, e As DragEventArgs) Handles Me.DragDrop
+        Try
+
+            MsgBox("ATTENZIONE: Le modifiche apportate non formattate correttamente potrebbero rendere l'ordine inutilizzabile")
+
+            Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+
+            For Each FileOrdine In files
+
+                If MsgBox("Modificare ordine '" & IO.Path.GetFileNameWithoutExtension(FileOrdine) & "' ?", vbYesNo, "Modificare ordine") = MsgBoxResult.Yes Then
+
+                    Tx_PathOrdine.Text = FileOrdine
+
+
+                    For Each Row As String In IO.File.ReadAllLines(FileOrdine)
+
+                        Dim Riga() As String = Split(Row, ";")
+                        DG_Ordine.Rows.Add(Riga)
+                        DG_Ordine.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
+                    Next
+
+                    Bt_Salva.Enabled = True
+
+                End If
+            Next
+
+
+        Catch ex As Exception
+            Errore.Show("Drag&Drop \ Main", ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Bt_Cancella_Click(sender As Object, e As EventArgs) Handles Bt_Cancella.Click
+        If MsgBox("Annullare tutte le modifiche?", vbYesNo, "Annulla") = MsgBoxResult.Yes Then
+            DG_Ordine.Rows.Clear()
+            Tx_PathOrdine.Clear()
+        End If
+    End Sub
 End Class

@@ -368,6 +368,7 @@
         End Sub
         Public Sub Etichetta(sender As Object, e As Printing.PrintPageEventArgs, Magazzino As String, Cliente As String, Disegno As String, Commessa As String, Imballo As String, Quantita As String, Ordine As String)
             Dim Font As New Font("Calibri", 20, FontStyle.Regular)
+            Dim FontCliente As New Font("Calibri", 23, FontStyle.Bold)
             Dim FontBold As New Font("Calibri", 20, FontStyle.Bold)
             Dim Piccolo As New Font("Calibri", 6, FontStyle.Regular)
 
@@ -426,7 +427,7 @@
             ' ################################################################################################################
 
             e.Graphics.DrawString(Magazzino, New Font("Calibri", TestoInRettangolo(Magazzino, RectMagazzino, e), FontStyle.Bold), Brushes.Black, RectMagazzino, FMT)
-            e.Graphics.DrawString(Cliente, Font, Brushes.Black, RectCliente, FMT)
+            e.Graphics.DrawString(Cliente, FontCliente, Brushes.Black, RectCliente, FMT)
             e.Graphics.DrawString("D", Font, Brushes.Black, RectD, FMT)
             e.Graphics.DrawString(Disegno, New Font("Calibri", TestoInRettangolo(Disegno, RectDisegno, e), FontStyle.Regular), Brushes.Black, RectDisegno, FMT)
             e.Graphics.DrawString("C", Font, Brushes.Black, RectC, FMT)

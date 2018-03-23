@@ -30,7 +30,6 @@ Public Class Form1
 
 
     End Sub
-
     Private Sub Bt_Ripristina_Click(sender As Object, e As EventArgs) Handles Bt_Ripristina.Click
 
         Dim G As New OpenFileDialog With {.Filter = "ModPack Backup|*.zip", .Title = "Rpristina backup"}

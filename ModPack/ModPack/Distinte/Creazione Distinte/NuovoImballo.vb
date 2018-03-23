@@ -281,11 +281,6 @@
                     Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z) * NMorali, .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P + 4), .N = NMorali, .Tag = "TTT", .Part = "B"}
 
-                    If BM = True Then
-                        TTB.Y = 2.2
-                        TTT.Y = 2.2
-                    End If
-
                     D.AddRange({TTB, ZOC, TTT})
             End Select
 
@@ -293,15 +288,15 @@
 
             If DT = True Then
                 BTL.N *= 2
-                MontanteSottoF = 5
-                MontanteSottoT = 5
+                MontanteSottoF = -5
+                MontanteSottoT = -5
             End If
 
             If BM = True Then
                 BTL.X = 10
                 BTL.Y = 5
-                MontanteSottoF = 5
-                MontanteSottoT = 5
+                MontanteSottoF = -5
+                MontanteSottoT = -5
             End If
 
             D.Add(BTL)
@@ -419,11 +414,6 @@
                     Dim ZOC As New Riga_Distinta With {.X = 10, .Y = 8, .Z = 10, .N = Imballo.CalcoloZoccoli(TTB.Z) * NMorali, .Tag = "ZOC", .Part = "B"}
                     Dim TTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "TTT", .Part = "B"}
 
-                    If BM = True Then
-                        TTB.Y = 2.2
-                        TTT.Y = 2.2
-                    End If
-
                     D.AddRange({TTB, ZOC, TTT})
             End Select
 
@@ -446,14 +436,14 @@
             Dim TavoleTraIMorali As Integer = (Imballo.NumeroTavoleSopra(InterasseMorali, InterasseMaxTavoleTraIMorali)) * (NMorali - 1)
 
 
-            Dim BTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "BTT", .Part = "B"}
+            Dim BTT As New Riga_Distinta With {.X = 8, .Y = 1.8, .Z = (P), .N = NMorali, .Tag = "BTT", .Part = "B"}
             D.Add(BTT)
 
 
             '############ COPERCHIO ############
 
             Dim CTL As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = L, .N = Imballo.NumeroTavole(P + 4, TIPO.SpazioCTL, Ltav), .Tag = "CTL", .Part = "C"}
-            Dim CTT As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = P, .N = NMorali, .Tag = "CTT", .Part = "C"}
+            Dim CTT As New Riga_Distinta With {.X = 8, .Y = 1.8, .Z = P, .N = NMorali, .Tag = "CTT", .Part = "C"}
 
             D.AddRange({CTL, CTT})
 
@@ -561,7 +551,7 @@
             Dim TIPO As Tipo = Imballo.GetTipo(Type)
 
             Dim Ltav As Integer = 10
-            If L <= My.Settings.LimiteTavole8 Then Ltav = 8
+            'If L <= My.Settings.LimiteTavole8 Then Ltav = 8
 
             Dim MontanteSottoF As Integer = 11
             Dim MontanteSottoT As Integer = 4

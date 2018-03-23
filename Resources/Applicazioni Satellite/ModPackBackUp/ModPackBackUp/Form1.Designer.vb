@@ -32,9 +32,9 @@ Partial Class Form1
         '
         'Bt_Folder
         '
-        Me.Bt_Folder.Location = New System.Drawing.Point(448, 22)
+        Me.Bt_Folder.Location = New System.Drawing.Point(351, 22)
         Me.Bt_Folder.Name = "Bt_Folder"
-        Me.Bt_Folder.Size = New System.Drawing.Size(75, 20)
+        Me.Bt_Folder.Size = New System.Drawing.Size(35, 20)
         Me.Bt_Folder.TabIndex = 0
         Me.Bt_Folder.Text = "..."
         Me.Bt_Folder.UseVisualStyleBackColor = True
@@ -45,7 +45,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Bt_Folder)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(529, 57)
+        Me.GroupBox1.Size = New System.Drawing.Size(389, 57)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Directory BackUp"
@@ -54,12 +54,12 @@ Partial Class Form1
         '
         Me.Txt_Folder.Location = New System.Drawing.Point(6, 22)
         Me.Txt_Folder.Name = "Txt_Folder"
-        Me.Txt_Folder.Size = New System.Drawing.Size(436, 20)
+        Me.Txt_Folder.Size = New System.Drawing.Size(339, 20)
         Me.Txt_Folder.TabIndex = 1
         '
         'Bt_Crea
         '
-        Me.Bt_Crea.Location = New System.Drawing.Point(408, 99)
+        Me.Bt_Crea.Location = New System.Drawing.Point(268, 75)
         Me.Bt_Crea.Name = "Bt_Crea"
         Me.Bt_Crea.Size = New System.Drawing.Size(133, 23)
         Me.Bt_Crea.TabIndex = 2
@@ -68,7 +68,7 @@ Partial Class Form1
         '
         'Bt_Ripristina
         '
-        Me.Bt_Ripristina.Location = New System.Drawing.Point(12, 99)
+        Me.Bt_Ripristina.Location = New System.Drawing.Point(12, 75)
         Me.Bt_Ripristina.Name = "Bt_Ripristina"
         Me.Bt_Ripristina.Size = New System.Drawing.Size(133, 23)
         Me.Bt_Ripristina.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SeaShell
-        Me.ClientSize = New System.Drawing.Size(553, 134)
+        Me.ClientSize = New System.Drawing.Size(413, 106)
         Me.Controls.Add(Me.Bt_Ripristina)
         Me.Controls.Add(Me.Bt_Crea)
         Me.Controls.Add(Me.GroupBox1)

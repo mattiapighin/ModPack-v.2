@@ -366,7 +366,7 @@
             End If
 
         End Sub
-        Public Sub Etichetta(sender As Object, e As Printing.PrintPageEventArgs, Magazzino As String, Cliente As String, Disegno As String, Commessa As String, Imballo As String, Quantita As String, Ordine As String)
+        Public Sub Etichetta(sender As Object, e As Printing.PrintPageEventArgs, Magazzino As String, Cliente As String, Disegno As String, Commessa As String, Imballo As String, Quantita As String, Ordine As String, Consegna As Date)
             Dim Font As New Font("Calibri", 20, FontStyle.Regular)
             Dim FontCliente As New Font("Calibri", 23, FontStyle.Bold)
             Dim FontBold As New Font("Calibri", 20, FontStyle.Bold)
@@ -415,7 +415,12 @@
             e.Graphics.DrawRectangle(Pens.LightGray, Riga5)
             e.Graphics.DrawRectangle(Pens.LightGray, RectQt)
 
-            ImmagineInRettangolo(My.Resources.Logo, RectLogo, e)
+
+            'ImmagineInRettangolo(My.Resources.Logo, RectLogo, e)
+            Dim DataConsegna As Date = Consegna
+            Dim Week As Integer = DatePart(DateInterval.WeekOfYear, DataConsegna, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
+
+            e.Graphics.DrawString("SETT. " & Week, New Font("Calibri", 28, FontStyle.Bold), Brushes.Black, RectLogo, FMT)
 
             ' ################################################################################################################
 

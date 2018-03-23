@@ -195,7 +195,7 @@ Public Class Form_OrdiniAperti
     Private Function CopiaDescrizione(row As DataGridViewRow) As String
         Dim Descrizione As String = "D " & row.Cells(6).Value & " C " & row.Cells(7).Value
         If DGW_OrdiniAperti.SelectedCells.Count > 0 Then
-            If My.Settings.NumeroOrdineClipboard = True Then Descrizione += " (Ordine: " & DGW_OrdiniAperti.CurrentCell.Value & ")"
+            If My.Settings.NumeroOrdineClipboard = True Then Descrizione += " (Conferma " & DGW_OrdiniAperti.CurrentCell.Value & ")"
         End If
 
         SSwrite(Descrizione & " evaso!")
@@ -352,7 +352,7 @@ Public Class Form_OrdiniAperti
                 If MsgBox("Stampare etichette per l'ordine " & Ordine & "?", vbYesNo, "Etichette") = DialogResult.Yes Then
 
                     EtichetteDS.Clear()
-                    Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Ordine = '" & Ordine & "'"
+                    Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine, Data_Consegna FROM Ordini WHERE Ordine = '" & Ordine & "'"
                     Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
                         'Riempie Dataset con i dati necessari
                         Try
@@ -381,7 +381,7 @@ Public Class Form_OrdiniAperti
 
                             EtichetteDS.Clear()
 
-                            Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
+                            Dim Query As String = "SELECT Magazzino, Cliente, Codice, Commessa, Imballo, Qt, Ordine, Data_Consegna FROM Ordini WHERE Id = '" & Dgw_Ordine.CurrentRow.Cells("Id").Value & "'"
                             Using Con As New System.Data.SqlClient.SqlConnection(My.Settings.ModPackDBConnectionString)
 
                                 Try
@@ -539,7 +539,7 @@ Public Class Form_OrdiniAperti
             'MsgBox("ETICHETTE STAMPATE: " & EtichetteStampate & " ETICHETTE TOTALI: " & EtichetteTotali)
 
             With EtichetteDS.Tables(0).Rows(EtichetteStampate)
-                Stampe.Etichetta(sender, e, ModMagazzino.GetDescrizione(.Item(0), ListaMagazzini), .Item(1), .Item(2), .Item(3), .Item(4), .Item(5), .Item(6))
+                Stampe.Etichetta(sender, e, ModMagazzino.GetDescrizione(.Item(0), ListaMagazzini), .Item(1), .Item(2), .Item(3), .Item(4), .Item(5), .Item(6), .Item(7))
             End With
 
             EtichetteStampate += 1

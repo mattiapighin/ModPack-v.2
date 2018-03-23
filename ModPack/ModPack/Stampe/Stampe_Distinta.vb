@@ -387,6 +387,12 @@
             Next
 
 
+            'TIPO BANCALE IN GRANDE
+            If Not String.IsNullOrEmpty(riga.Zoccoli) Then
+                Dim RettangoloZocc As New Rectangle(398, 140, 60, 40)
+                e.Graphics.DrawRectangle(New Pen(Color.Black, 3), RettangoloZocc)
+                e.Graphics.DrawString(riga.Zoccoli, New Font("Calibri", 18, FontStyle.Bold), Brushes.Black, RettangoloZocc, FMT)
+            End If
 
             '############### BANCALE #################
             If BANCALE = True Then
@@ -397,7 +403,6 @@
 
                 Xmor = LST(0).X
                 Ymor = LST(0).Y
-
 
                 For Each K As RowDistinta In (From row In LST Where row.Part = "B")
                     If Not K.N = 0 Then
@@ -484,12 +489,15 @@
                 Next
             End If
             '############### QUOTE MORALI ################# 
+
             Dim Quote_Morali As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 80, e.MarginBounds.Width - 10, 30)
 
-            e.Graphics.DrawString("QUOTE MORALI", New Font("Calibri", 8), Brushes.Gray, Quote_Morali)
-            e.Graphics.DrawRectangle(Pens.LightGray, Quote_Morali)
-            Riempi_QuoteMorali(sender, e, Quote_Morali, PrimoMorale, NMOR, LunBTL)
 
+            If Not riga.Tipo = "GST" Then
+                e.Graphics.DrawString("QUOTE MORALI", New Font("Calibri", 8), Brushes.Gray, Quote_Morali)
+                e.Graphics.DrawRectangle(Pens.LightGray, Quote_Morali)
+                Riempi_QuoteMorali(sender, e, Quote_Morali, PrimoMorale, NMOR, LunBTL)
+            End If
 
             '############## FOTO ##########################
             Dim RectIMG As New Rectangle(e.MarginBounds.Right - 305, e.MarginBounds.Top + 175, 300, 300)
@@ -651,6 +659,33 @@
             'e.Graphics.DrawImage(watermark, (e.MarginBounds.Width \ 2) - (watermark.Width \ 2), (e.MarginBounds.Height \ 2) - (watermark.Height \ 2))
             '---------------
 
+            '############ DISEGNO MONTANTI ############
+            Try
+                Select Case riga.Tipo
+                    Case "G"
+                        'Disegno Montanti Fiancate
+                        DisegnoMontanteG(RectMonF.X + 2, RectMonF.Y + 25, sender, e, H, SottoMF, SopraMF, 4, riga.Imballo)
+                        'Disegno Montanti Teste
+                        DisegnoMontanteG(RectMonT.X + 2, RectMonT.Y + 25, sender, e, H, SottoMT, SopraMT, 4, riga.Imballo)
+                    Case "GST"
+                        'Disegno Montanti Fiancate
+                        DisegnoMontanteG(RectMonF.X + 2, RectMonF.Y + 25, sender, e, H, SottoMF, SopraMF, 4, riga.Imballo)
+                        'Disegno Montanti Teste
+                        DisegnoMontanteG(RectMonT.X + 2, RectMonT.Y + 25, sender, e, H, SottoMT, SopraMT, 4, riga.Imballo)
+                        'Disegno Bancali Stulz
+                        DisegnaStulz(sender, e, Quote_Morali, PrimoMorale, NMOR, LunBTL)
+                    Case "GDA"
+                        'Disegno Montanti Fiancate
+                        DisegnoMontanteGDA(RectMonF.X + 2, RectMonF.Y + 25, sender, e, H, SottoMT, SopraMT, 4, riga.Imballo)
+                        'Disegno Montanti Teste
+                        DisegnoMontanteG(RectMonT.X + 2, RectMonT.Y + 25, sender, e, H, SottoMT, SopraMT, 4, riga.Imballo)
+                End Select
+
+            Catch ex As Exception
+                LOG.Write("Errore disegno montanti " & riga.Imballo)
+            End Try
+
+
         End Sub
         Private Sub StampaRiga(Sender As Object, e As Printing.PrintPageEventArgs, Riga As Rectangle, X As Decimal, Y As Decimal, Z As Decimal, N As Integer, Tag As String, QT As Integer)
 
@@ -723,7 +758,7 @@
         End Sub
         Private Sub Riempi_QuoteMorali(sender As Object, e As Printing.PrintPageEventArgs, Rect As Rectangle, PrimoMorale As Integer, Nmorali As Integer, LunghezzaTavola As Integer)
 
-            Dim FONT As New Font("Helvetica", My.Settings.DimensioneFontDistinta - 4, FontStyle.Bold)
+            Dim FONT As New Font("Helvetica", My.Settings.DimensioneFontDistinta - 2, FontStyle.Bold)
 
             Dim Format As StringFormat = New StringFormat(StringFormatFlags.LineLimit) With {.LineAlignment = StringAlignment.Center, .Alignment = StringAlignment.Center, .Trimming = StringTrimming.EllipsisCharacter}
 
@@ -823,6 +858,134 @@
                 End If
             Next
 
+        End Sub
+
+        '###################### DISEGNO MONTANTI ############################
+
+        Private Sub DisegnoMontanteG(X As Integer, Y As Integer, sender As Object, e As Printing.PrintPageEventArgs, Montante As Single, Sotto As Single, Sopra As Single, Tavole As Integer, Imballo As String)
+            'Montante
+            TavolaChiara(e, X + 4, Y, 4, 150)
+            Dim TavoleL As Integer = SQL.GetSQLValue("SELECT N FROM Distinta WHERE imballo = '" & Imballo & "' AND Tag = 'TTL'") / 2
+
+            TavolaScura(e, X, Y + Scala(Sopra), 4, Scala(10)) 'Prima tavola in alto
+            TavolaScura(e, X, Y + Scala(H - Sotto - 10), 4, Scala(10)) 'Prima tavola in basso
+
+            'altre tavole
+            Dim Spazio As Single = Scala((H - 10 - Sotto) / (TavoleL - 1))
+            Dim YTAV As Single = Spazio
+
+            For K = 3 To TavoleL
+                TavolaScura(e, X, (Y + Scala(5) + YTAV), 4, Scala(10))
+                YTAV += Spazio
+            Next
+
+
+        End Sub
+        Private Sub DisegnoMontanteGDA(X As Integer, Y As Integer, sender As Object, e As Printing.PrintPageEventArgs, Montante As Single, Sotto As Single, Sopra As Single, Tavole As Integer, Imballo As String)
+            'Montante
+            TavolaChiara(e, X + 4, Y, 4, 150)
+            Dim TavoleL As Integer = (SQL.GetSQLValue("SELECT N FROM Distinta WHERE imballo = '" & Imballo & "' AND Tag = 'FTL'") / 2) - 2
+
+            TavolaScura(e, X, Y + Scala(Sopra), 4, Scala(10)) 'Prima tavola in alto
+
+            TavolaScura(e, X, Y + Scala(H - Sotto - 10), 4, Scala(10)) 'Prima tavola in basso
+            TavolaScura(e, X, Y + Scala(H - Sotto - 10) - Scala(10), 4, Scala(10)) 'SECONDA tavola in basso
+            TavolaScura(e, X, Y + Scala(H - Sotto - 10) - Scala(20), 4, Scala(10)) 'terza tavola in basso
+
+            'altre tavole
+            Dim Spazio As Single = Scala((H - 30) / (TavoleL - 1))
+            Dim YTAV As Single = Spazio
+
+            For K = 3 To TavoleL
+                TavolaScura(e, X, (Y + Scala(5) + YTAV), 4, Scala(10))
+                YTAV += Spazio
+            Next
+
+
+        End Sub
+
+        Private Function Scala(Valore) As Single
+            Dim Scalato As Single = (150 * Valore) / H
+            Debug.WriteLine("Tavola scalata " & Valore & " > " & Scalato)
+
+            Return Scalato
+        End Function
+
+        Private Sub TavolaScura(e As Printing.PrintPageEventArgs, X As Integer, Y As Integer, Width As Integer, Height As Integer)
+            e.Graphics.FillRectangle(Brushes.RosyBrown, X, Y, Width, Height)
+            e.Graphics.DrawRectangle(Pens.Black, X, Y, Width, Height)
+        End Sub
+        Private Sub TavolaChiara(e As Printing.PrintPageEventArgs, X As Integer, Y As Integer, Width As Integer, Height As Integer)
+            e.Graphics.FillRectangle(Brushes.SandyBrown, X, Y, Width, Height)
+            e.Graphics.DrawRectangle(Pens.Black, X, Y, Width, Height)
+        End Sub
+
+        '#################### DISEGNO STULZ #################################
+
+        Private Sub DisegnaStulz(sender As Object, e As Printing.PrintPageEventArgs, Rect As Rectangle, PrimoMorale As Integer, Nmorali As Integer, LunghezzaTavola As Integer)
+
+            Dim FONT As New Font("Helvetica", My.Settings.DimensioneFontDistinta - 3, FontStyle.Bold)
+
+            Dim Format As StringFormat = New StringFormat(StringFormatFlags.LineLimit) With {.LineAlignment = StringAlignment.Center, .Alignment = StringAlignment.Center, .Trimming = StringTrimming.EllipsisCharacter}
+
+            Dim X As Integer = Rect.Left + 150
+            Dim Y As Integer = Rect.Right - 150
+
+            Zoccolo(e, X, Rect.Bottom - 5) ' Zoccolo a SX
+            TavolaChiara(e, X, Rect.Bottom - 5, Rect.Width - 300, 5) 'Tavola sotto
+            Zoccolo(e, Y - 15, Rect.Bottom - 5) ' Zoccolo a DX
+            TavolaChiara(e, X + 5, Rect.Bottom - 30, Rect.Width - 310, 5) 'Tavola sotto
+
+            e.Graphics.DrawString("2", FONT, Brushes.Black, X - 10, Rect.Bottom - 30)
+            e.Graphics.DrawString("2", FONT, Brushes.Black, Y + 3, Rect.Bottom - 30)
+
+            Dim Quota As Integer = PrimoMorale
+            'Dim Interasse As Integer = ((LunghezzaTavola) / (Nmorali - 1)) + 4
+
+            Dim Interasse As Integer = ((LunghezzaTavola + 4 - 10) / (Nmorali - 1))
+
+            Dim Rwidth As Single = (Rect.Width - 300) \ (Nmorali - 1)
+            Dim sX As Single = X
+            Dim dX As Single = Y
+
+            Dim RettangoloSX As New Rectangle(sX, Rect.Y, Rwidth, Rect.Height)
+            Dim RettangoloDX As New Rectangle(dX, Rect.Y, Rwidth, Rect.Height)
+
+            sX += Rwidth
+            dX -= Rwidth
+
+            Quota = 5
+
+            For k = 2 To Math.Truncate(Nmorali / 2)
+
+                Quota += Interasse
+
+                RettangoloSX.X = sX
+                RettangoloDX.X = dX
+
+                Zoccolo(e, sX, Rect.Bottom - 5)
+                Zoccolo(e, dX - 15, Rect.Bottom - 5)
+
+                e.Graphics.DrawString(Quota, FONT, Brushes.Black, sX - 15, Rect.Bottom - 15, FMT)
+                e.Graphics.DrawString(Quota, FONT, Brushes.Black, dX + 15, Rect.Bottom - 15, FMT)
+
+                sX += Rwidth
+                dX -= Rwidth
+
+            Next
+
+            If Nmorali Mod 2 > 0 Then
+                'Zoccolo Centrale
+                Dim Centro As Single = Rect.X + (Rect.Width / 2)
+                e.Graphics.DrawString((LunghezzaTavola + 4) / 2, FONT, Brushes.Black, Centro - 25, Rect.Bottom - 20)
+                Zoccolo(e, Centro - 7.5, Rect.Bottom - 5)
+            End If
+
+
+        End Sub
+        Private Sub Zoccolo(e As Printing.PrintPageEventArgs, X As Integer, Y As Integer)
+            TavolaChiara(e, X, Y - 20, 15, 8)
+            TavolaScura(e, X, Y - 15, 15, 15)
         End Sub
 
     End Module

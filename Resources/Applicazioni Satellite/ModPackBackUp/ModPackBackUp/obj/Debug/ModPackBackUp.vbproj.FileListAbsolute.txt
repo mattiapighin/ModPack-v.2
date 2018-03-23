@@ -20,3 +20,7 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModP
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.Form1.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.Resources.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.vbproj.GenerateResource.Cache
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\bin\Debug\ModPackBackUp.application
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\Resources\Applicazioni Satellite\ModPackBackUp\ModPackBackUp\obj\Debug\ModPackBackUp.application

@@ -237,6 +237,12 @@ Public Class Main
     Private Sub MODIFICACODICEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICACODICEToolStripMenuItem.Click
         Form_ModificaCodice.ShowDialog()
     End Sub
+    Private Sub TS_ListaDiagonali_Click(sender As Object, e As EventArgs) Handles TS_ListaDiagonali.Click
+        LST_Diagonali.ShowDialog()
+    End Sub
+    Private Sub TS_ListaMorali_Click(sender As Object, e As EventArgs) Handles TS_ListaMorali.Click
+        LST_Morali.ShowDialog()
+    End Sub
 
     '### TREEVIEW ###
     Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click

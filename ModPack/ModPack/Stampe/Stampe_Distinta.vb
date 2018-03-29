@@ -977,8 +977,8 @@
             If Nmorali Mod 2 > 0 Then
                 'Zoccolo Centrale
                 Dim Centro As Single = Rect.X + (Rect.Width / 2)
-                e.Graphics.DrawString((LunghezzaTavola + 4) / 2, FONT, Brushes.Black, Centro - 25, Rect.Bottom - 20)
                 Zoccolo(e, Centro - 7.5, Rect.Bottom - 5)
+                e.Graphics.DrawString((LunghezzaTavola + 4) / 2, FONT, Brushes.Black, Centro - 25, Rect.Bottom - 20)
             End If
 
 

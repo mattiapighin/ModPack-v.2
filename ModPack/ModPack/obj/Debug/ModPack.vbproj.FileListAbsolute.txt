@@ -224,8 +224,6 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.app
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.exe
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.pdb
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.xml
-C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\itextsharp.xml
-C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.vbproj.ResolveComReference.cache
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Colonne.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.Form_Imballi_Filtro.resources
@@ -277,3 +275,6 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.Form_ModificaCodice.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.LST_Diagonali.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.LST_Morali.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.vbprojResolveAssemblyReference.cache

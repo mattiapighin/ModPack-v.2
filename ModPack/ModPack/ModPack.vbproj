@@ -348,6 +348,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Invio_Rivestimenti.vb" />
+    <Compile Include="Tools\ListeElementi\LST_Diagonali.Designer.vb">
+      <DependentUpon>LST_Diagonali.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ListeElementi\LST_Diagonali.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ListeElementi\LST_Morali.Designer.vb">
+      <DependentUpon>LST_Morali.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ListeElementi\LST_Morali.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tools\Magazzino\DLG_ScegliMagazzino.Designer.vb">
       <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
     </Compile>
@@ -523,6 +535,12 @@
     <EmbeddedResource Include="Tools\FRM_SetupRivestimenti.resx">
       <DependentUpon>FRM_SetupRivestimenti.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ListeElementi\LST_Diagonali.resx">
+      <DependentUpon>LST_Diagonali.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ListeElementi\LST_Morali.resx">
+      <DependentUpon>LST_Morali.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Magazzino\DLG_ScegliMagazzino.resx">
       <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
     </EmbeddedResource>
@@ -612,5 +630,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

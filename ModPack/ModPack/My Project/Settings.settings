@@ -178,5 +178,11 @@
     <Setting Name="MAIL_Pop3Server" Type="System.String" Scope="User">
       <Value Profile="(Default)">pop3.bicciatoserafino.com</Value>
     </Setting>
+    <Setting Name="LSTEL_Nordini" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="LSTEL_NoEvasi" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

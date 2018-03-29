@@ -23,8 +23,8 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStrip = New System.Windows.Forms.ToolStripStatusLabel()
@@ -52,6 +52,8 @@ Partial Class Main
         Me.TS_ListaElementi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Listino = New System.Windows.Forms.ToolStripMenuItem()
         Me.MODIFICACODICEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TS_ListaDiagonali = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TS_ListaMorali = New System.Windows.Forms.ToolStripMenuItem()
         Me.TS_Tabelle = New System.Windows.Forms.ToolStripButton()
         Me.Ts_Preferenze = New System.Windows.Forms.ToolStripButton()
         Me.TS_Memo = New System.Windows.Forms.ToolStripButton()
@@ -97,8 +99,8 @@ Partial Class Main
         '
         Me.DGW_Memo.AllowUserToAddRows = False
         Me.DGW_Memo.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
-        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent
+        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DGW_Memo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DGW_Memo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -107,14 +109,14 @@ Partial Class Main
         Me.DGW_Memo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGW_Memo.ColumnHeadersVisible = False
         Me.DGW_Memo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Memo})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle6
         Me.DGW_Memo.Location = New System.Drawing.Point(3, 203)
         Me.DGW_Memo.Name = "DGW_Memo"
         Me.DGW_Memo.ReadOnly = True
@@ -252,7 +254,7 @@ Partial Class Main
         '
         'TS_Tools
         '
-        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.MODIFICAORDINEToolStripMenuItem, Me.TS_ListaElementi, Me.TS_Listino, Me.MODIFICACODICEToolStripMenuItem})
+        Me.TS_Tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_ControlloOrdine, Me.MODIFICAORDINEToolStripMenuItem, Me.TS_ListaElementi, Me.TS_Listino, Me.MODIFICACODICEToolStripMenuItem, Me.TS_ListaDiagonali, Me.TS_ListaMorali})
         Me.TS_Tools.Image = CType(resources.GetObject("TS_Tools.Image"), System.Drawing.Image)
         Me.TS_Tools.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TS_Tools.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -263,8 +265,9 @@ Partial Class Main
         'TS_ControlloOrdine
         '
         Me.TS_ControlloOrdine.Name = "TS_ControlloOrdine"
-        Me.TS_ControlloOrdine.Size = New System.Drawing.Size(189, 22)
-        Me.TS_ControlloOrdine.Text = "CONTROLLO ORDINE"
+        Me.TS_ControlloOrdine.Size = New System.Drawing.Size(243, 22)
+        Me.TS_ControlloOrdine.Text = "CONTROLLO ORDINE_Nascosto"
+        Me.TS_ControlloOrdine.Visible = False
         '
         'MODIFICAORDINEToolStripMenuItem
         '
@@ -275,8 +278,9 @@ Partial Class Main
         'TS_ListaElementi
         '
         Me.TS_ListaElementi.Name = "TS_ListaElementi"
-        Me.TS_ListaElementi.Size = New System.Drawing.Size(189, 22)
-        Me.TS_ListaElementi.Text = "LISTA ELEMENTI"
+        Me.TS_ListaElementi.Size = New System.Drawing.Size(214, 22)
+        Me.TS_ListaElementi.Text = "LISTA ELEMENTI_Nascosto"
+        Me.TS_ListaElementi.Visible = False
         '
         'TS_Listino
         '
@@ -289,6 +293,18 @@ Partial Class Main
         Me.MODIFICACODICEToolStripMenuItem.Name = "MODIFICACODICEToolStripMenuItem"
         Me.MODIFICACODICEToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.MODIFICACODICEToolStripMenuItem.Text = "MODIFICA CODICE"
+        '
+        'TS_ListaDiagonali
+        '
+        Me.TS_ListaDiagonali.Name = "TS_ListaDiagonali"
+        Me.TS_ListaDiagonali.Size = New System.Drawing.Size(189, 22)
+        Me.TS_ListaDiagonali.Text = "LISTA DIAGONALI"
+        '
+        'TS_ListaMorali
+        '
+        Me.TS_ListaMorali.Name = "TS_ListaMorali"
+        Me.TS_ListaMorali.Size = New System.Drawing.Size(189, 22)
+        Me.TS_ListaMorali.Text = "LISTA MORALI"
         '
         'TS_Tabelle
         '
@@ -397,4 +413,6 @@ Partial Class Main
     Friend WithEvents MANUALEToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CREAZIONEAUTOMATICAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MODIFICACODICEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TS_ListaDiagonali As ToolStripMenuItem
+    Friend WithEvents TS_ListaMorali As ToolStripMenuItem
 End Class

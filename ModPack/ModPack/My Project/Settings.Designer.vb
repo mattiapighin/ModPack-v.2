@@ -738,6 +738,30 @@ Namespace My
                 Me("MAIL_Pop3Server") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
+        Public Property LSTEL_Nordini() As Integer
+            Get
+                Return CType(Me("LSTEL_Nordini"),Integer)
+            End Get
+            Set
+                Me("LSTEL_Nordini") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property LSTEL_NoEvasi() As Boolean
+            Get
+                Return CType(Me("LSTEL_NoEvasi"),Boolean)
+            End Get
+            Set
+                Me("LSTEL_NoEvasi") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

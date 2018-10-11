@@ -25,8 +25,12 @@ Public Class Main
     Dim RowIndici As New List(Of Integer)
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         OperazioniPreliminari()
         CaricaOrdiniAperti()
+
+        'DEVELOPER
+
 
     End Sub
     Private Sub Main_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -193,6 +197,7 @@ Public Class Main
     End Sub
 
     '### TOOLSTRIP ###
+    '   // Ordine \\
     Private Sub TS_CaricaOrdine_Click(sender As Object, e As EventArgs) Handles TS_CaricaOrdine.Click
         ToolStrip.Text = "Selezione file ordine"
         ProgressBar.Visible = True
@@ -202,31 +207,29 @@ Public Class Main
         ProgressBar.Visible = False
     End Sub
     Private Sub TS_OrdiniAperti_Click(sender As Object, e As EventArgs) Handles TS_OrdiniAperti.Click
-        Form_OrdiniAperti.Show()
+        FRM_OrdiniApertiV2.Show()
     End Sub
     Private Sub TS_StoricoOrdini_Click(sender As Object, e As EventArgs) Handles TS_StoricoOrdini.Click
         Form_StoricoOrdini.Show()
     End Sub
+
+    '   // Imballi \\
     Private Sub TS_Archivio_Click(sender As Object, e As EventArgs) Handles TS_Archivio.Click
-        Form_Imballi.Show()
-    End Sub
-    Private Sub TS_Tabelle_Click(sender As Object, e As EventArgs) Handles TS_Tabelle.Click
-        Form_Tabelle.Show()
-    End Sub
-    Private Sub TS_Memo_Click(sender As Object, e As EventArgs) Handles TS_Memo.Click
-        Form_Memo.Show()
-    End Sub
-    Private Sub Ts_Preferenze_Click(sender As Object, e As EventArgs) Handles Ts_Preferenze.Click
-        Form_Preferenze.ShowDialog()
-    End Sub
-    Private Sub TS_ControlloOrdine_Click(sender As Object, e As EventArgs) Handles TS_ControlloOrdine.Click
-        Form_ControlloOrdineInput.Show()
-    End Sub
-    Private Sub TS_ListaElementi_Click(sender As Object, e As EventArgs) Handles TS_ListaElementi.Click
-        Form_ListaElementi.Show()
+        'Form_Imballi.Show()
+        FRM_Archivio_V2.Show()
     End Sub
     Private Sub INIZIOPRODUZIONEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INIZIOPRODUZIONEToolStripMenuItem.Click
         DLG_InProduzione.ShowDialog()
+    End Sub
+    Private Sub MANUALEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MANUALEToolStripMenuItem.Click
+        Form_Crea_Manuale.ShowDialog()
+    End Sub
+    Private Sub CREAZIONEAUTOMATICAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CREAZIONEAUTOMATICAToolStripMenuItem.Click
+        FRM_NuovoImballoPlus.ShowDialog()
+    End Sub
+    '   // Tools \\
+    Private Sub TS_ControlloOrdine_Click(sender As Object, e As EventArgs) Handles TS_ControlloOrdine.Click
+        Form_ControlloOrdineInput.Show()
     End Sub
     Private Sub MODIFICAORDINEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MODIFICAORDINEToolStripMenuItem.Click
         DLG_ModificaOrdine.ShowDialog()
@@ -242,6 +245,22 @@ Public Class Main
     End Sub
     Private Sub TS_ListaMorali_Click(sender As Object, e As EventArgs) Handles TS_ListaMorali.Click
         LST_Morali.ShowDialog()
+    End Sub
+    '   // Tabelle \\
+    Private Sub TS_Tabelle_Click(sender As Object, e As EventArgs) Handles TS_Tabelle.Click
+        Form_Tabelle.Show()
+    End Sub
+    '   // Memo
+    Private Sub TS_Memo_Click(sender As Object, e As EventArgs) Handles TS_Memo.Click
+        Form_Memo.Show()
+    End Sub
+    '   // Stampe \\
+    Private Sub STAMPABINDELLOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles STAMPABINDELLOToolStripMenuItem.Click
+        FRM_StampaBindello.Show()
+    End Sub
+    '   // Preferenze \\
+    Private Sub Ts_Preferenze_Click(sender As Object, e As EventArgs) Handles Ts_Preferenze.Click
+        Form_Preferenze.ShowDialog()
     End Sub
 
     '### TREEVIEW ###
@@ -371,12 +390,22 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub MANUALEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MANUALEToolStripMenuItem.Click
-        Form_Crea_Manuale.ShowDialog()
-    End Sub
-    Private Sub CREAZIONEAUTOMATICAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CREAZIONEAUTOMATICAToolStripMenuItem.Click
-        FRM_NuovoImballoPlus.ShowDialog()
+
+    Private Sub STAMPACOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles STAMPACOToolStripMenuItem.Click
+        If DLG_ScegliOrdine.ShowDialog = DialogResult.OK Then
+            ConfermaOrdine.Stampa(DLG_ScegliOrdine.OrdineScelto, True)
+        End If
     End Sub
 
+    Private Sub TS_Imballi_Click(sender As Object, e As EventArgs) Handles TS_Imballi.Click
 
+    End Sub
+
+    Private Sub LISTAIMBALLINUOVIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LISTAIMBALLINUOVIToolStripMenuItem.Click
+        Ordine.MostraNuovi()
+    End Sub
+
+    Private Sub ASSOCIACOORDINEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ASSOCIACOORDINEToolStripMenuItem.Click
+        FRM_Associa.ShowDialog()
+    End Sub
 End Class

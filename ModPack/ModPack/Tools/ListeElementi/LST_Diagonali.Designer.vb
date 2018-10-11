@@ -39,17 +39,21 @@ Partial Class LST_Diagonali
         Me.QtDiagT = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrintDiagonali = New System.Drawing.Printing.PrintDocument()
         Me.CB_OrdiniAperti = New System.Windows.Forms.ComboBox()
-        Me.Bt_Ok = New System.Windows.Forms.Button()
+        Me.Bt_Ok_ORDINE = New System.Windows.Forms.Button()
         Me.Bt_Stampa = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Bt_Pulisci = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.LabelOrdini = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CB_Settimane = New System.Windows.Forms.ComboBox()
+        Me.Bt_Ok_WK = New System.Windows.Forms.Button()
         CType(Me.DGW_Diagonali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGW_Diagonali
@@ -77,7 +81,7 @@ Partial Class LST_Diagonali
         Me.DGW_Diagonali.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGW_Diagonali.Location = New System.Drawing.Point(12, 67)
         Me.DGW_Diagonali.Name = "DGW_Diagonali"
-        Me.DGW_Diagonali.Size = New System.Drawing.Size(1171, 291)
+        Me.DGW_Diagonali.Size = New System.Drawing.Size(1171, 348)
         Me.DGW_Diagonali.TabIndex = 0
         '
         'Imballo
@@ -151,18 +155,18 @@ Partial Class LST_Diagonali
         Me.CB_OrdiniAperti.FormattingEnabled = True
         Me.CB_OrdiniAperti.Location = New System.Drawing.Point(6, 19)
         Me.CB_OrdiniAperti.Name = "CB_OrdiniAperti"
-        Me.CB_OrdiniAperti.Size = New System.Drawing.Size(955, 21)
+        Me.CB_OrdiniAperti.Size = New System.Drawing.Size(269, 21)
         Me.CB_OrdiniAperti.TabIndex = 1
         '
-        'Bt_Ok
+        'Bt_Ok_ORDINE
         '
-        Me.Bt_Ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bt_Ok.Location = New System.Drawing.Point(967, 19)
-        Me.Bt_Ok.Name = "Bt_Ok"
-        Me.Bt_Ok.Size = New System.Drawing.Size(75, 21)
-        Me.Bt_Ok.TabIndex = 2
-        Me.Bt_Ok.Text = "OK"
-        Me.Bt_Ok.UseVisualStyleBackColor = True
+        Me.Bt_Ok_ORDINE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Ok_ORDINE.Location = New System.Drawing.Point(281, 19)
+        Me.Bt_Ok_ORDINE.Name = "Bt_Ok_ORDINE"
+        Me.Bt_Ok_ORDINE.Size = New System.Drawing.Size(75, 21)
+        Me.Bt_Ok_ORDINE.TabIndex = 2
+        Me.Bt_Ok_ORDINE.Text = "OK"
+        Me.Bt_Ok_ORDINE.UseVisualStyleBackColor = True
         '
         'Bt_Stampa
         '
@@ -179,13 +183,11 @@ Partial Class LST_Diagonali
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.CB_OrdiniAperti)
-        Me.GroupBox1.Controls.Add(Me.Bt_Ok)
+        Me.GroupBox1.Controls.Add(Me.Bt_Ok_ORDINE)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1048, 49)
+        Me.GroupBox1.Size = New System.Drawing.Size(362, 49)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ordine"
@@ -221,7 +223,7 @@ Partial Class LST_Diagonali
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LabelOrdini})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 373)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 430)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1195, 22)
         Me.StatusStrip1.TabIndex = 6
@@ -233,12 +235,44 @@ Partial Class LST_Diagonali
         Me.LabelOrdini.Size = New System.Drawing.Size(120, 17)
         Me.LabelOrdini.Text = "ToolStripStatusLabel1"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.CB_Settimane)
+        Me.GroupBox2.Controls.Add(Me.Bt_Ok_WK)
+        Me.GroupBox2.Location = New System.Drawing.Point(380, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(362, 49)
+        Me.GroupBox2.TabIndex = 7
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Settimana"
+        '
+        'CB_Settimane
+        '
+        Me.CB_Settimane.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CB_Settimane.FormattingEnabled = True
+        Me.CB_Settimane.Location = New System.Drawing.Point(6, 19)
+        Me.CB_Settimane.Name = "CB_Settimane"
+        Me.CB_Settimane.Size = New System.Drawing.Size(269, 21)
+        Me.CB_Settimane.TabIndex = 1
+        '
+        'Bt_Ok_WK
+        '
+        Me.Bt_Ok_WK.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Ok_WK.Location = New System.Drawing.Point(281, 19)
+        Me.Bt_Ok_WK.Name = "Bt_Ok_WK"
+        Me.Bt_Ok_WK.Size = New System.Drawing.Size(75, 21)
+        Me.Bt_Ok_WK.TabIndex = 2
+        Me.Bt_Ok_WK.Text = "OK"
+        Me.Bt_Ok_WK.UseVisualStyleBackColor = True
+        '
         'LST_Diagonali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1195, 395)
+        Me.ClientSize = New System.Drawing.Size(1195, 452)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.GroupBox1)
@@ -252,6 +286,7 @@ Partial Class LST_Diagonali
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,7 +295,7 @@ Partial Class LST_Diagonali
     Friend WithEvents DGW_Diagonali As DataGridView
     Friend WithEvents PrintDiagonali As Printing.PrintDocument
     Friend WithEvents CB_OrdiniAperti As ComboBox
-    Friend WithEvents Bt_Ok As Button
+    Friend WithEvents Bt_Ok_ORDINE As Button
     Friend WithEvents Bt_Stampa As Button
     Friend WithEvents Imballo As DataGridViewTextBoxColumn
     Friend WithEvents HT As DataGridViewCheckBoxColumn
@@ -278,4 +313,7 @@ Partial Class LST_Diagonali
     Friend WithEvents Bt_Pulisci As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents LabelOrdini As ToolStripStatusLabel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents CB_Settimane As ComboBox
+    Friend WithEvents Bt_Ok_WK As Button
 End Class

@@ -94,7 +94,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Z:\ModPack\ModPackDB.mdf;Inte"& _ 
-            "grated Security=True;Connect Timeout=30")>  _
+            "grated Security=True;Connect Timeout=30;MultipleActiveResultSets=True")>  _
         Public ReadOnly Property ModPackDBConnectionString() As String
             Get
                 Return CType(Me("ModPackDBConnectionString"),String)
@@ -760,6 +760,66 @@ Namespace My
             End Get
             Set
                 Me("LSTEL_NoEvasi") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property New_AnteprimeStampa() As Boolean
+            Get
+                Return CType(Me("New_AnteprimeStampa"),Boolean)
+            End Get
+            Set
+                Me("New_AnteprimeStampa") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 14.25pt")>  _
+        Public Property Archivio_Font() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("Archivio_Font"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("Archivio_Font") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("100")>  _
+        Public Property Archivio_V2_NRecord() As Integer
+            Get
+                Return CType(Me("Archivio_V2_NRecord"),Integer)
+            End Get
+            Set
+                Me("Archivio_V2_NRecord") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Archivio_V2_MostraInfo() As Boolean
+            Get
+                Return CType(Me("Archivio_V2_MostraInfo"),Boolean)
+            End Get
+            Set
+                Me("Archivio_V2_MostraInfo") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property RivestimentiSettimana() As Boolean
+            Get
+                Return CType(Me("RivestimentiSettimana"),Boolean)
+            End Get
+            Set
+                Me("RivestimentiSettimana") = value
             End Set
         End Property
     End Class

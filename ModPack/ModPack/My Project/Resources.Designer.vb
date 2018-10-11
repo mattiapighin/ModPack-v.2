@@ -61,7 +61,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Cerca una stringa localizzata simile a .
+        '''  Cerca una stringa localizzata simile a    VERSIONE 2.1.3
+        '''   Modificato calcolo BTT Pallet
+        '''   Ingrandito scritta cliente sul bindello
+        '''   
+        '''   
+        '''   VERSIONE 2.1.2
+        '''   Aggiunta funzione ricalcolo automatico tutti i prezzi
+        '''   Bugfix minori
+        '''
+        '''   VERSIONE 2.1.1
+        '''   Aggiunto modulo creazione imballo plus
+        '''   Modificato invio file conferma d&apos;ordine, ora si può inviare anche senza salvare
+        '''   Aggiunto possibilità di segnare un imballo come evaso dalla finestra Ordini Aperti
+        '''   Modificato modalità di eliminazione ordine e indici (ora con lambda expr [stringa troncata]&quot;;.
         '''</summary>
         Friend ReadOnly Property ChangeLog() As String
             Get
@@ -115,6 +128,36 @@ Namespace My.Resources
         Friend ReadOnly Property ROV() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ROV", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Status_Done() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Status_Done", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Status_Wait() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Status_Wait", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Status_Working() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Status_Working", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

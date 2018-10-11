@@ -14,19 +14,20 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\mattia.pighin\Desktop\Rella\</PublishUrl>
+    <PublishUrl>C:\Users\mattia.pighin\Desktop\Rella18\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>2.1.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -75,7 +76,7 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>0516FE0D2FA9CFA33CB5E91C66B3461F80EFCA0A</ManifestCertificateThumbprint>
@@ -124,197 +125,251 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Buttons\Imballi\Form_Imballi_Colonne.Designer.vb">
+    <Compile Include="Imballi\ModificaImballo\Form_ModificaImballo_CosaModificareDialog.Designer.vb">
+      <DependentUpon>Form_ModificaImballo_CosaModificareDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Imballi\ModificaImballo\Form_ModificaImballo_CosaModificareDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imballi\FRM_InfoImballo.Designer.vb">
+      <DependentUpon>FRM_InfoImballo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Imballi\FRM_InfoImballo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Imballi\Archivio\Archivio_Filtro.Designer.vb">
+      <DependentUpon>Archivio_Filtro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Imballi\Archivio\Archivio_Filtro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Imballi\Archivio\FRM_Archivio_V2.Designer.vb">
+      <DependentUpon>FRM_Archivio_V2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Imballi\Archivio\FRM_Archivio_V2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.Designer.vb">
       <DependentUpon>Form_Imballi_Colonne.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_Imballi_Colonne.vb">
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_Imballi_Filtro.Designer.vb">
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.Designer.vb">
       <DependentUpon>Form_Imballi_Filtro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_Imballi_Filtro.vb">
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_Imballi.Designer.vb">
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi.Designer.vb">
       <DependentUpon>Form_Imballi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_Imballi.vb">
+    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_ModificaImballo.Designer.vb">
+    <Compile Include="Imballi\ModificaImballo\Form_ModificaImballo.Designer.vb">
       <DependentUpon>Form_ModificaImballo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Imballi\Form_ModificaImballo.vb">
+    <Compile Include="Imballi\ModificaImballo\Form_ModificaImballo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Memo\Form_Agenda.Designer.vb">
+    <Compile Include="Main\Memo\Form_Agenda.Designer.vb">
       <DependentUpon>Form_Agenda.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Memo\Form_Agenda.vb">
+    <Compile Include="Main\Memo\Form_Agenda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Memo\Form_Memo.Designer.vb">
+    <Compile Include="Main\Memo\Form_Memo.Designer.vb">
       <DependentUpon>Form_Memo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Memo\Form_Memo.vb">
+    <Compile Include="Main\Memo\Form_Memo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Preferenze\DLG_Changelog.Designer.vb">
+    <Compile Include="Main\Ordini\FRM_Associa.Designer.vb">
+      <DependentUpon>FRM_Associa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Ordini\FRM_Associa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Ordini\OrdiniAperti\FRM_OrdiniApertiV2.Designer.vb">
+      <DependentUpon>FRM_OrdiniApertiV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Ordini\OrdiniAperti\FRM_OrdiniApertiV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preferenze\DLG_Changelog.Designer.vb">
       <DependentUpon>DLG_Changelog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Preferenze\DLG_Changelog.vb">
+    <Compile Include="Preferenze\DLG_Changelog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Preferenze\Form_Preferenze.Designer.vb">
+    <Compile Include="Preferenze\Form_Preferenze.Designer.vb">
       <DependentUpon>Form_Preferenze.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Preferenze\Form_Preferenze.vb">
+    <Compile Include="Preferenze\Form_Preferenze.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_FormatoStampa.Designer.vb">
+    <Compile Include="Preferenze\FRM_FormatoStampa.Designer.vb">
       <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_FormatoStampa.vb">
+    <Compile Include="Preferenze\FRM_FormatoStampa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_GestioneMagazzini.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_GestioneMagazzini.Designer.vb">
       <DependentUpon>FRM_GestioneMagazzini.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_GestioneMagazzini.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_GestioneMagazzini.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_TestConnessioni.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_TestConnessioni.Designer.vb">
       <DependentUpon>FRM_TestConnessioni.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Preferenze\FRM_TestConnessioni.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_TestConnessioni.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creazione Manuale Imballi\Form_Crea_Manuale.Designer.vb">
+    <Compile Include="Main\Imballi\Creazione Imballi\Form_Crea_Manuale.Designer.vb">
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
     </Compile>
-    <Compile Include="Creazione Manuale Imballi\Form_Crea_Manuale.vb">
+    <Compile Include="Main\Imballi\Creazione Imballi\Form_Crea_Manuale.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\DLG_Analisi.Designer.vb">
+    <Compile Include="Varie\Dialogs\DLG_ProgressBar.Designer.vb">
+      <DependentUpon>DLG_ProgressBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_ProgressBar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_ScegliSettimana.Designer.vb">
+      <DependentUpon>DLG_ScegliSettimana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_ScegliSettimana.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_ScegliOrdine.Designer.vb">
+      <DependentUpon>DLG_ScegliOrdine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_ScegliOrdine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varie\Dialogs\DLG_Analisi.Designer.vb">
       <DependentUpon>DLG_Analisi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DLG_Analisi.vb">
+    <Compile Include="Varie\Dialogs\DLG_Analisi.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\DLG_ModificaOrdine.Designer.vb">
+    <Compile Include="Tools\DLG_ModificaOrdine.Designer.vb">
       <DependentUpon>DLG_ModificaOrdine.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DLG_ModificaOrdine.vb">
+    <Compile Include="Tools\DLG_ModificaOrdine.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\DLG_MostraLOG.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\DLG_MostraLOG.Designer.vb">
       <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DLG_MostraLOG.vb">
+    <Compile Include="Preferenze\Funzioni\DLG_MostraLOG.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\ErrorBox.Designer.vb">
+    <Compile Include="Varie\Dialogs\ErrorBox.Designer.vb">
       <DependentUpon>ErrorBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ErrorBox.vb">
+    <Compile Include="Varie\Dialogs\ErrorBox.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\DLG_ConfrontaIndici.Designer.vb">
+    <Compile Include="Varie\Dialogs\DLG_ConfrontaIndici.Designer.vb">
       <DependentUpon>DLG_ConfrontaIndici.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DLG_ConfrontaIndici.vb">
+    <Compile Include="Varie\Dialogs\DLG_ConfrontaIndici.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\Form_PuliziaOrdini.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\Form_PuliziaOrdini.Designer.vb">
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Form_PuliziaOrdini.vb">
+    <Compile Include="Preferenze\Funzioni\Form_PuliziaOrdini.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\Segna_InProduzione\DLG_InProduzione.Designer.vb">
+    <Compile Include="Main\Imballi\Segna_InProduzione\DLG_InProduzione.Designer.vb">
       <DependentUpon>DLG_InProduzione.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Segna_InProduzione\DLG_InProduzione.vb">
+    <Compile Include="Main\Imballi\Segna_InProduzione\DLG_InProduzione.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.Designer.vb">
+    <Compile Include="Imballi\Distinte\Creazione Distinte\NotificaInsImballo.Designer.vb">
       <DependentUpon>NotificaInsImballo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Distinte\Creazione Distinte\NotificaInsImballo.vb">
+    <Compile Include="Imballi\Distinte\Creazione Distinte\NotificaInsImballo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.Designer.vb">
+    <Compile Include="Main\Imballi\Creazione Imballi\FRM_NuovoImballoPlus.Designer.vb">
       <DependentUpon>FRM_NuovoImballoPlus.vb</DependentUpon>
     </Compile>
-    <Compile Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.vb">
+    <Compile Include="Main\Imballi\Creazione Imballi\FRM_NuovoImballoPlus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Email\Form_Preferenze_Email.Designer.vb">
+    <Compile Include="Preferenze\Form_Preferenze_Email.Designer.vb">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>
     </Compile>
-    <Compile Include="Email\Form_Preferenze_Email.vb">
+    <Compile Include="Preferenze\Form_Preferenze_Email.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Buttons\Tabelle\Form_Tabelle.Designer.vb">
+    <Compile Include="Main\Tabelle\Form_Tabelle.Designer.vb">
       <DependentUpon>Form_Tabelle.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Tabelle\Form_Tabelle.vb">
+    <Compile Include="Main\Tabelle\Form_Tabelle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controlli\Form_ControlloOrdineInput.Designer.vb">
+    <Compile Include="Tools\Form_ControlloOrdineInput.Designer.vb">
       <DependentUpon>Form_ControlloOrdineInput.vb</DependentUpon>
     </Compile>
-    <Compile Include="Controlli\Form_ControlloOrdineInput.vb">
+    <Compile Include="Tools\Form_ControlloOrdineInput.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\ScegliOrdine.Designer.vb">
-      <DependentUpon>ScegliOrdine.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ScegliOrdine.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Distinte\Module_Prezzi.vb" />
-    <Compile Include="Email\Mail_ScegliDestinatari.Designer.vb">
+    <Compile Include="Imballi\Prezzi\Module_Prezzi.vb" />
+    <Compile Include="Varie\Email\Mail_ScegliDestinatari.Designer.vb">
       <DependentUpon>Mail_ScegliDestinatari.vb</DependentUpon>
     </Compile>
-    <Compile Include="Email\Mail_ScegliDestinatari.vb">
+    <Compile Include="Varie\Email\Mail_ScegliDestinatari.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Email\Mail.vb" />
-    <Compile Include="Listino\Form_Listino.Designer.vb">
+    <Compile Include="Varie\Email\Mail.vb" />
+    <Compile Include="Tools\Listino\Form_Listino.Designer.vb">
       <DependentUpon>Form_Listino.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listino\Form_Listino.vb">
+    <Compile Include="Tools\Listino\Form_Listino.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModPackDBDataSet.vb">
       <DependentUpon>ModPackDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Ordini Aperti\Form_OrdiniAperti.Designer.vb">
+    <Compile Include="Trash\OLD_Ordini Aperti\Form_OrdiniAperti.Designer.vb">
       <DependentUpon>Form_OrdiniAperti.vb</DependentUpon>
     </Compile>
-    <Compile Include="Buttons\Ordini Aperti\Form_OrdiniAperti.vb">
+    <Compile Include="Trash\OLD_Ordini Aperti\Form_OrdiniAperti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sezionatrice\MDL_Sezionatrice.vb" />
+    <Compile Include="Stampe\Form Stampe\FRM_StampaBindello.Designer.vb">
+      <DependentUpon>FRM_StampaBindello.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stampe\Form Stampe\FRM_StampaBindello.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stampe\Modulo_Stampe.vb" />
+    <Compile Include="Stampe\Nuovi Moduli Stampe\MDL_FunzioniStampa.vb" />
+    <Compile Include="Stampe\Nuovi Moduli Stampe\MDL_Stampe_Bindello.vb" />
+    <Compile Include="Stampe\Nuovi Moduli Stampe\MDL_Stampe_CheckList.vb" />
+    <Compile Include="Stampe\Nuovi Moduli Stampe\MDL_Stampe_ConfermaOrdine.vb" />
+    <Compile Include="Stampe\Nuovi Moduli Stampe\MDL_Stampe_Distinta.vb" />
     <Compile Include="Stampe\Stampe_Distinta.vb" />
-    <Compile Include="Tools\Dialog_FiltraData.Designer.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Dialog_FiltraData.Designer.vb">
       <DependentUpon>Dialog_FiltraData.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Dialog_FiltraData.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Dialog_FiltraData.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Form_GestioneTipi.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\Form_GestioneTipi.Designer.vb">
       <DependentUpon>Form_GestioneTipi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Form_GestioneTipi.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tools\Form_ListaElementi.Designer.vb">
-      <DependentUpon>Form_ListaElementi.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Tools\Form_ListaElementi.vb">
+    <Compile Include="Preferenze\Funzioni\Form_GestioneTipi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Form_ModificaCodice.Designer.vb">
@@ -323,31 +378,31 @@
     <Compile Include="Tools\Form_ModificaCodice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Form_StoricoOrdini.Designer.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini.Designer.vb">
       <DependentUpon>Form_StoricoOrdini.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Form_StoricoOrdini.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Form_StoricoOrdini_ScegliColonne.Designer.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini_ScegliColonne.Designer.vb">
       <DependentUpon>Form_StoricoOrdini_ScegliColonne.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Form_StoricoOrdini_ScegliColonne.vb">
+    <Compile Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini_ScegliColonne.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Frm_NoteImballo.Designer.vb">
+    <Compile Include="Varie\Frm_NoteImballo.Designer.vb">
       <DependentUpon>Frm_NoteImballo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Frm_NoteImballo.vb">
+    <Compile Include="Varie\Frm_NoteImballo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\FRM_SetupRivestimenti.Designer.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_SetupRivestimenti.Designer.vb">
       <DependentUpon>FRM_SetupRivestimenti.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\FRM_SetupRivestimenti.vb">
+    <Compile Include="Preferenze\Funzioni\FRM_SetupRivestimenti.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Invio_Rivestimenti.vb" />
+    <Compile Include="Sezionatrice\Invio_Rivestimenti.vb" />
     <Compile Include="Tools\ListeElementi\LST_Diagonali.Designer.vb">
       <DependentUpon>LST_Diagonali.vb</DependentUpon>
     </Compile>
@@ -360,17 +415,18 @@
     <Compile Include="Tools\ListeElementi\LST_Morali.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\Magazzino\DLG_ScegliMagazzino.Designer.vb">
+    <Compile Include="Varie\FunzioniVarie.vb" />
+    <Compile Include="Varie\Magazzini\DLG_ScegliMagazzino.Designer.vb">
       <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Magazzino\DLG_ScegliMagazzino.vb">
+    <Compile Include="Varie\Magazzini\DLG_ScegliMagazzino.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Varie\Classi Varie\NomeImballo.vb" />
+    <Compile Include="Imballi\NomeImballo.vb" />
     <Compile Include="Varie\Classi Varie\Oggetti_Vari.vb" />
-    <Compile Include="Distinte\Creazione Distinte\NuovoImballo.vb" />
-    <Compile Include="Buttons\Carica Ordine\NuovoOrdine.vb" />
-    <Compile Include="Distinte\Funzioni_Distinte.vb" />
+    <Compile Include="Imballi\Distinte\Creazione Distinte\NuovoImballo.vb" />
+    <Compile Include="Main\Ordini\Carica Ordine\NuovoOrdine.vb" />
+    <Compile Include="Imballi\Distinte\Funzioni_Distinte.vb" />
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -386,9 +442,9 @@
     <Compile Include="Varie\Moduli Vari\Analisi.vb" />
     <Compile Include="Varie\Moduli Vari\ControlloMultiUtente.vb" />
     <Compile Include="Varie\Moduli Vari\Errore.vb" />
-    <Compile Include="Tools\Magazzino\ModuleMagazzino.vb" />
+    <Compile Include="Varie\Magazzini\ModuleMagazzino.vb" />
     <Compile Include="Varie\Moduli Vari\Module_Barcode.vb" />
-    <Compile Include="Controlli\Module_Controlli.vb" />
+    <Compile Include="Varie\Controlli\Module_Controlli.vb" />
     <Compile Include="Varie\Moduli Vari\Module_GeneraFileCO.vb" />
     <Compile Include="Varie\Moduli Vari\Module_IMG.vb" />
     <Compile Include="Varie\Moduli Vari\Module_Log.vb" />
@@ -410,93 +466,111 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Varie\Moduli Vari\Module_XML.vb" />
-    <Compile Include="Varie\MsgBox\MsgMoraliFrescoHT.Designer.vb">
-      <DependentUpon>MsgMoraliFrescoHT.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Varie\MsgBox\MsgMoraliFrescoHT.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Buttons\Imballi\Form_Imballi_Colonne.resx">
+    <EmbeddedResource Include="Imballi\ModificaImballo\Form_ModificaImballo_CosaModificareDialog.resx">
+      <DependentUpon>Form_ModificaImballo_CosaModificareDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imballi\FRM_InfoImballo.resx">
+      <DependentUpon>FRM_InfoImballo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Imballi\Archivio\Archivio_Filtro.resx">
+      <DependentUpon>Archivio_Filtro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Imballi\Archivio\FRM_Archivio_V2.resx">
+      <DependentUpon>FRM_Archivio_V2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.resx">
       <DependentUpon>Form_Imballi_Colonne.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Imballi\Form_Imballi_Filtro.resx">
+    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.resx">
       <DependentUpon>Form_Imballi_Filtro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Imballi\Form_Imballi.resx">
+    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi.resx">
       <DependentUpon>Form_Imballi.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Imballi\Form_ModificaImballo.resx">
+    <EmbeddedResource Include="Imballi\ModificaImballo\Form_ModificaImballo.resx">
       <DependentUpon>Form_ModificaImballo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Memo\Form_Agenda.resx">
+    <EmbeddedResource Include="Main\Memo\Form_Agenda.resx">
       <DependentUpon>Form_Agenda.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Memo\Form_Memo.resx">
+    <EmbeddedResource Include="Main\Memo\Form_Memo.resx">
       <DependentUpon>Form_Memo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Preferenze\DLG_Changelog.resx">
+    <EmbeddedResource Include="Main\Ordini\FRM_Associa.resx">
+      <DependentUpon>FRM_Associa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Ordini\OrdiniAperti\FRM_OrdiniApertiV2.resx">
+      <DependentUpon>FRM_OrdiniApertiV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preferenze\DLG_Changelog.resx">
       <DependentUpon>DLG_Changelog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Preferenze\Form_Preferenze.resx">
+    <EmbeddedResource Include="Preferenze\Form_Preferenze.resx">
       <DependentUpon>Form_Preferenze.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Preferenze\FRM_FormatoStampa.resx">
+    <EmbeddedResource Include="Preferenze\FRM_FormatoStampa.resx">
       <DependentUpon>FRM_FormatoStampa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Preferenze\FRM_GestioneMagazzini.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\FRM_GestioneMagazzini.resx">
       <DependentUpon>FRM_GestioneMagazzini.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Preferenze\FRM_TestConnessioni.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\FRM_TestConnessioni.resx">
       <DependentUpon>FRM_TestConnessioni.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creazione Manuale Imballi\Form_Crea_Manuale.resx">
+    <EmbeddedResource Include="Main\Imballi\Creazione Imballi\Form_Crea_Manuale.resx">
       <DependentUpon>Form_Crea_Manuale.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DLG_Analisi.resx">
+    <EmbeddedResource Include="Varie\Dialogs\DLG_Analisi.resx">
       <DependentUpon>DLG_Analisi.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DLG_ModificaOrdine.resx">
+    <EmbeddedResource Include="Tools\DLG_ModificaOrdine.resx">
       <DependentUpon>DLG_ModificaOrdine.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DLG_MostraLOG.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\DLG_MostraLOG.resx">
       <DependentUpon>DLG_MostraLOG.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ErrorBox.resx">
+    <EmbeddedResource Include="Varie\Dialogs\DLG_ProgressBar.resx">
+      <DependentUpon>DLG_ProgressBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varie\Dialogs\DLG_ScegliOrdine.resx">
+      <DependentUpon>DLG_ScegliOrdine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varie\Dialogs\DLG_ScegliSettimana.resx">
+      <DependentUpon>DLG_ScegliSettimana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varie\Dialogs\ErrorBox.resx">
       <DependentUpon>ErrorBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DLG_ConfrontaIndici.resx">
+    <EmbeddedResource Include="Varie\Dialogs\DLG_ConfrontaIndici.resx">
       <DependentUpon>DLG_ConfrontaIndici.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Form_PuliziaOrdini.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\Form_PuliziaOrdini.resx">
       <DependentUpon>Form_PuliziaOrdini.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Segna_InProduzione\DLG_InProduzione.resx">
+    <EmbeddedResource Include="Main\Imballi\Segna_InProduzione\DLG_InProduzione.resx">
       <DependentUpon>DLG_InProduzione.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Distinte\Creazione Distinte\NotificaInsImballo.resx">
+    <EmbeddedResource Include="Imballi\Distinte\Creazione Distinte\NotificaInsImballo.resx">
       <DependentUpon>NotificaInsImballo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creazione Manuale Imballi\FRM_NuovoImballoPlus.resx">
+    <EmbeddedResource Include="Main\Imballi\Creazione Imballi\FRM_NuovoImballoPlus.resx">
       <DependentUpon>FRM_NuovoImballoPlus.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Email\Form_Preferenze_Email.resx">
+    <EmbeddedResource Include="Preferenze\Form_Preferenze_Email.resx">
       <DependentUpon>Form_Preferenze_Email.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Tabelle\Form_Tabelle.resx">
+    <EmbeddedResource Include="Main\Tabelle\Form_Tabelle.resx">
       <DependentUpon>Form_Tabelle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controlli\Form_ControlloOrdineInput.resx">
+    <EmbeddedResource Include="Tools\Form_ControlloOrdineInput.resx">
       <DependentUpon>Form_ControlloOrdineInput.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ScegliOrdine.resx">
-      <DependentUpon>ScegliOrdine.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Email\Mail_ScegliDestinatari.resx">
+    <EmbeddedResource Include="Varie\Email\Mail_ScegliDestinatari.resx">
       <DependentUpon>Mail_ScegliDestinatari.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listino\Form_Listino.resx">
+    <EmbeddedResource Include="Tools\Listino\Form_Listino.resx">
       <DependentUpon>Form_Listino.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
@@ -508,31 +582,31 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Buttons\Ordini Aperti\Form_OrdiniAperti.resx">
+    <EmbeddedResource Include="Trash\OLD_Ordini Aperti\Form_OrdiniAperti.resx">
       <DependentUpon>Form_OrdiniAperti.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Dialog_FiltraData.resx">
+    <EmbeddedResource Include="Stampe\Form Stampe\FRM_StampaBindello.resx">
+      <DependentUpon>FRM_StampaBindello.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Ordini\Storico Ordini\Dialog_FiltraData.resx">
       <DependentUpon>Dialog_FiltraData.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Form_GestioneTipi.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\Form_GestioneTipi.resx">
       <DependentUpon>Form_GestioneTipi.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Form_ListaElementi.resx">
-      <DependentUpon>Form_ListaElementi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Form_ModificaCodice.resx">
       <DependentUpon>Form_ModificaCodice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Form_StoricoOrdini.resx">
+    <EmbeddedResource Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini.resx">
       <DependentUpon>Form_StoricoOrdini.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Form_StoricoOrdini_ScegliColonne.resx">
+    <EmbeddedResource Include="Main\Ordini\Storico Ordini\Form_StoricoOrdini_ScegliColonne.resx">
       <DependentUpon>Form_StoricoOrdini_ScegliColonne.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Frm_NoteImballo.resx">
+    <EmbeddedResource Include="Varie\Frm_NoteImballo.resx">
       <DependentUpon>Frm_NoteImballo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\FRM_SetupRivestimenti.resx">
+    <EmbeddedResource Include="Preferenze\Funzioni\FRM_SetupRivestimenti.resx">
       <DependentUpon>FRM_SetupRivestimenti.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\ListeElementi\LST_Diagonali.resx">
@@ -541,11 +615,8 @@
     <EmbeddedResource Include="Tools\ListeElementi\LST_Morali.resx">
       <DependentUpon>LST_Morali.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\Magazzino\DLG_ScegliMagazzino.resx">
+    <EmbeddedResource Include="Varie\Magazzini\DLG_ScegliMagazzino.resx">
       <DependentUpon>DLG_ScegliMagazzino.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Varie\MsgBox\MsgMoraliFrescoHT.resx">
-      <DependentUpon>MsgMoraliFrescoHT.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -585,6 +656,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icoBig.ico" />
+    <None Include="Resources\Status_Working.png" />
+    <None Include="Resources\Status_Wait.png" />
+    <None Include="Resources\Status_Done.png" />
     <None Include="Resources\ChangeLog.txt" />
     <None Include="Resources\LogoBicc.png" />
     <None Include="Resources\ROV.jpg" />

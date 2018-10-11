@@ -26,18 +26,36 @@
 
     End Structure
 
-    Private Sub GetOrdiniAperti()
-        'Riempie la CB_OrdiniAperti con i numeri d'ordine che hanno almeno una riga non evasa
-        Dim OrdiniAperti As New List(Of String)
-        OrdiniAperti = DS.Ordini.Where(Function(X) X.Evaso = False).Select(Function(y) y.Ordine).Distinct.ToList
-        CB_OrdiniAperti.DataSource = OrdiniAperti
+    Private Sub FRM_ListaDiagonali_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Riempie Dataset
+        TableOrdini.Fill(DS.Ordini)
+        TableImballi.Fill(DS.Imballi)
+        TableDistinta.Fill(DS.Distinta)
+
+        TableImballi.Dispose()
+        TableOrdini.Dispose()
+        TableDistinta.Dispose()
+
+        Pulisci()
+        GetOrdiniAperti()
+        GetSettimane()
 
     End Sub
-    Private Sub FillDGW(ORDINE)
+
+
+    Private Sub GetOrdiniAperti()
+        'Riempie la CB_OrdiniAperti con i numeri d'ordine che hanno almeno una riga non evasa
+        'Dim OrdiniAperti As New List(Of String)
+        'OrdiniAperti = DS.Ordini.Where(Function(X) X.Evaso = False).Select(Function(y) y.Ordine).Distinct.ToList
+        'CB_OrdiniAperti.DataSource = OrdiniAperti
+
+        CB_OrdiniAperti.DataSource = DS.Ordini.Where(Function(X) X.Evaso = False).Select(Function(y) y.Ordine).Distinct.ToList
+    End Sub
+    Private Sub FillDGW_ORDINE(ORDINE)
 
         ListaOrdini.Add(ORDINE)
 
-        For Each ROW As ModPackDBDataSet.OrdiniRow In DS.Ordini.Where(Function(X) X.Ordine = ORDINE).ToList
+        For Each ROW As ModPackDBDataSet.OrdiniRow In DS.Ordini.Where(Function(X) X.Ordine = ORDINE).Where(Function(Y) Y.Evaso = False).ToList
 
             Dim RigaImballo As ModPackDBDataSet.ImballiRow = DS.Imballi.Where(Function(X) X.Imballo = ROW.Imballo).First
             Dim RigaDiagFiancate As ModPackDBDataSet.DistintaRow = DS.Distinta.Where(Function(X) X.Imballo = ROW.Imballo).Where(Function(y) y.Tag = "FD").FirstOrDefault
@@ -78,32 +96,75 @@
             If Row.Cells("HT").Value = True Then Row.DefaultCellStyle.ForeColor = Color.Red
         Next
 
+        DGW_Diagonali.Sort(DGW_Diagonali.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+
     End Sub
+
+    Private Sub GetSettimane()
+        CB_Settimane.DataSource = DS.Ordini.Where(Function(X) X.Evaso = False).Select(Function(y) FunzioniVarie.Get_WK(y.Data_Consegna)).Distinct.ToList
+    End Sub
+    Private Sub FillDGW_WK(WK)
+
+        ListaOrdini.Add("SETT. " & WK)
+
+        For Each ROW As ModPackDBDataSet.OrdiniRow In DS.Ordini.Where(Function(X) FunzioniVarie.Get_WK(X.Data_Consegna) = WK).Where(Function(Y) Y.Evaso = False).ToList
+
+            Dim RigaImballo As ModPackDBDataSet.ImballiRow = DS.Imballi.Where(Function(X) X.Imballo = ROW.Imballo).First
+            Dim RigaDiagFiancate As ModPackDBDataSet.DistintaRow = DS.Distinta.Where(Function(X) X.Imballo = ROW.Imballo).Where(Function(y) y.Tag = "FD").FirstOrDefault
+            Dim RigaDiagTeste As ModPackDBDataSet.DistintaRow = DS.Distinta.Where(Function(X) X.Imballo = ROW.Imballo).Where(Function(y) y.Tag = "TD").FirstOrDefault
+
+            Dim IMBA As New Diagonale With {
+                .Imballo = ROW.Imballo,
+                .QT = ROW.Qt,
+                .DiagFianco = 0, .DiagFiancoQT = 0, .GradiFianco = 0,
+                .DiagTesta = 0, .DiagTestaQT = 0, .GradiTesta = 0,
+                .HT = ROW.HT}
+
+            If RigaDiagFiancate IsNot Nothing Or RigaDiagTeste IsNot Nothing Then
+                'Se esiste almeno una diagonale tra fiancate e teste inserisce riga
+
+                If Not RigaDiagFiancate Is Nothing Then
+                    'Carica dati diagonale fiancata
+                    IMBA.TavFianco = Int(RigaDiagFiancate.X) & " x " & RigaDiagFiancate.Y
+                    IMBA.DiagFianco = RigaDiagFiancate.Z
+                    IMBA.DiagFiancoQT = RigaDiagFiancate.N
+                    IMBA.GradiFianco = RigaImballo.Gradi_F & "°"
+                End If
+
+                If Not RigaDiagTeste Is Nothing Then
+                    'Carica dati diagonale testa
+                    IMBA.TavTesta = Int(RigaDiagTeste.X) & " x " & RigaDiagTeste.Y
+                    IMBA.DiagTesta = RigaDiagTeste.Z
+                    IMBA.DiagTestaQT = RigaDiagTeste.N
+                    IMBA.GradiTesta = RigaImballo.Gradi_T & "°"
+                End If
+
+                'Crea riga su datagrid
+                DGW_Diagonali.Rows.Add({IMBA.Imballo, IMBA.HT, IMBA.QT, IMBA.TavFianco, IMBA.DiagFianco, IMBA.GradiFianco, IMBA.DiagFiancoQT * IMBA.QT, IMBA.TavTesta, IMBA.DiagTesta, IMBA.GradiTesta, IMBA.DiagTestaQT * IMBA.QT})
+            End If
+        Next
+
+        For Each Row As DataGridViewRow In DGW_Diagonali.Rows
+            If Row.Cells("HT").Value = True Then Row.DefaultCellStyle.ForeColor = Color.Red
+        Next
+
+        DGW_Diagonali.Sort(DGW_Diagonali.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+
+    End Sub
+
+
     Private Sub Pulisci()
         ListaOrdini.Clear()
         DGW_Diagonali.Rows.Clear()
         LabelOrdini.Text = ""
     End Sub
 
-    Private Sub FRM_ListaDiagonali_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Riempie Dataset
-        TableOrdini.Fill(DS.Ordini)
-        TableImballi.Fill(DS.Imballi)
-        TableDistinta.Fill(DS.Distinta)
 
-        TableImballi.Dispose()
-        TableOrdini.Dispose()
-        TableDistinta.Dispose()
 
-        Pulisci()
-        GetOrdiniAperti()
-
-    End Sub
-
-    Private Sub BT_Ok_Click(sender As Object, e As EventArgs) Handles BT_Ok.Click
+    Private Sub BT_Ok_Click(sender As Object, e As EventArgs) Handles Bt_Ok_ORDINE.Click
 
         If DGW_Diagonali.Rows.Count = 1 OrElse MsgBox("Aggiungere l'ordine alla lista già creata?", vbYesNo, "Aggiungi") = MsgBoxResult.Yes Then
-            FillDGW(CB_OrdiniAperti.Text)
+            FillDGW_ORDINE(CB_OrdiniAperti.Text)
         End If
 
         LabelOrdini.Text = ""
@@ -114,6 +175,15 @@
         Next
 
     End Sub
+
+    Private Sub Bt_Ok_WK_Click(sender As Object, e As EventArgs) Handles Bt_Ok_WK.Click
+
+        Pulisci()
+
+        FillDGW_WK(CB_Settimane.Text)
+
+    End Sub
+
 
     Private Sub Bt_Stampa_Click(sender As Object, e As EventArgs) Handles Bt_Stampa.Click
 
@@ -151,7 +221,7 @@
             If Not K = ListaOrdini.Count - 1 Then StringaOrdini += " - "
         Next
 
-        e.Graphics.DrawString(StringaOrdini, New Font("Calibri", 10), Brushes.Black, RectOrdini, FMT)
+        e.Graphics.DrawString(StringaOrdini, New Font("Calibri", 18), Brushes.Black, RectOrdini, FMT)
         '###################################
 
         '############### TABELLA ###########
@@ -239,10 +309,16 @@
             Punto.Y = RectTabella.Y
         Else
             e.HasMorePages = False
+            PagineStampate = 0
             RigheStampate = 1
         End If
 
 
     End Sub
+
+    Private Sub Bt_Pulisci_Click(sender As Object, e As EventArgs) Handles Bt_Pulisci.Click
+        DGW_Diagonali.Rows.Clear()
+    End Sub
+
 
 End Class

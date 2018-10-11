@@ -30,6 +30,15 @@
         CB_OrdiniAperti.DataSource = OrdiniAperti
 
     End Sub
+    Private Sub GetSettimane()
+        'Riempie la CB_OrdiniAperti con i numeri d'ordine che hanno almeno una riga non evasa
+        Dim SettAperte As New List(Of Integer)
+        SettAperte = DS.Ordini.Where(Function(X) X.Evaso = False).Select(Function(y) FunzioniVarie.Get_WK(y.Data_Consegna)).Distinct.ToList
+        CB_Settimana.DataSource = SettAperte
+
+    End Sub
+
+
     Private Sub FillDGW(ORDINE)
 
         ListaOrdini.Add(ORDINE)
@@ -53,6 +62,29 @@
         Next
 
     End Sub
+    Private Sub FillDGWxSettimana(SETTIMANA)
+
+
+        For Each ROW As ModPackDBDataSet.OrdiniRow In DS.Ordini.Where(Function(X) FunzioniVarie.Get_WK(X.Data_Consegna) = SETTIMANA).ToList
+
+            Dim RigaImballo As ModPackDBDataSet.ImballiRow = DS.Imballi.Where(Function(X) X.Imballo = ROW.Imballo).First
+            Dim RigaMorale As ModPackDBDataSet.DistintaRow = DS.Distinta.Where(Function(X) X.Imballo = ROW.Imballo).Where(Function(y) y.Tag = "MOR").FirstOrDefault
+            Dim RigaTipo As ModPackDBDataSet.TipiRow = DS.Tipi.Where(Function(X) X.Tipo = RigaImballo.Tipo).First
+
+            If RigaMorale IsNot Nothing Then
+                Dim Morale As New Morali With {.Imballo = ROW.Imballo, .Fresata = RigaTipo.FresataMorali, .HT = ROW.HT, .LunghezzaMorale = RigaMorale.Z, .QT = ROW.Qt, .QTMorali = ROW.Qt * RigaMorale.N, .TipoMorale = RigaMorale.X & " x " & RigaMorale.Y}
+                ListaMorali.Add(Morale)
+                DGW_Morali.Rows.Add({Morale.Imballo, Morale.HT, Morale.QT, Morale.TipoMorale, Morale.LunghezzaMorale, Morale.QTMorali, Morale.Fresata})
+            End If
+
+        Next
+
+        For Each Row As DataGridViewRow In DGW_Morali.Rows
+            If Row.Cells("HT").Value = True Then Row.DefaultCellStyle.ForeColor = Color.Red
+        Next
+
+    End Sub
+
     Private Sub Pulisci()
         ListaOrdini.Clear()
         DGW_Morali.Rows.Clear()
@@ -73,6 +105,7 @@
 
         Pulisci()
         GetOrdiniAperti()
+        GetSettimane()
 
     End Sub
 
@@ -208,10 +241,22 @@
             Punto.Y = RectTabella.Y
         Else
             e.HasMorePages = False
+            PagineStampate = 0
             RigheStampate = 1
         End If
 
 
     End Sub
 
+    Private Sub Bt_Pulisci_Click(sender As Object, e As EventArgs) Handles Bt_Pulisci.Click
+        DGW_Morali.Rows.Clear()
+    End Sub
+
+    Private Sub Bt_Ok_Settimana_Click(sender As Object, e As EventArgs) Handles Bt_Ok_Settimana.Click
+        ListaOrdini.Clear()
+        DGW_Morali.Rows.Clear()
+
+        ListaOrdini.Add("SETT. " & CB_Settimana.Text)
+        FillDGWxSettimana(CB_Settimana.Text)
+    End Sub
 End Class

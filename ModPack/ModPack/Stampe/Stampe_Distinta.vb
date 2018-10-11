@@ -230,7 +230,10 @@
             DescrizioneRivestimento = SQL.GetSQLValue("SELECT Descrizione FROM Rivestimenti WHERE Tipo_Rivestimento = '" & Riga.TipoRivestimento & "'")
             e.Graphics.DrawString(DescrizioneRivestimento, FontN, Brushes.Black, RectRivestimento, FMT)
             e.Graphics.DrawString(Riga.NumeroOrdine & " (" & Riga.Riga & ")", FontN, Brushes.Black, RectOrdine, FMT)
-            e.Graphics.DrawString(Riga.DataConsegna, FontN, Brushes.Black, RectConsegna, FMT)
+
+            'e.Graphics.DrawString(Riga.DataConsegna, FontN, Brushes.Black, RectConsegna, FMT)
+            Dim WK As Integer = DatePart(DateInterval.WeekOfYear, Riga.DataConsegna, FirstDayOfWeek.Monday, FirstWeekOfYear.FirstFourDays)
+            e.Graphics.DrawString("SETT. " & WK, FontN, Brushes.Black, RectConsegna, FMT)
 
             'Funzione get magazzino
             e.Graphics.DrawString(Riga.Magazzino, New Font("Calibri", 11, FontStyle.Bold), Brushes.Black, RectVuoto, FMT)
@@ -257,7 +260,6 @@
             'Dim Riga2 As New Rectangle(e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 25, e.MarginBounds.Width - 10, 20)
 
             e.Graphics.DrawString(My.Settings.StringaDisclaimer, New Font("Calibri", 6), Brushes.Gray, RigaDisclaimer, FMT)
-
             e.Graphics.FillRectangle(Brushes.LightGray, Riga1)
             e.Graphics.DrawRectangles(New Pen(Color.LightGray, 1), {Riga1, Riga2})
 
@@ -277,6 +279,9 @@
             Dim RsVuoto2 As New Rectangle(RsDiagT.Right, Riga1.Top, Q * 2, Riga1.Height)
             Dim Rsm2 As New Rectangle(RsVuoto2.Right, Riga1.Top, Q, Riga1.Height)
             Dim Rsm3 As New Rectangle(Rsm2.Right, Riga1.Top, Q, Riga1.Height)
+
+
+
 
             Dim RbL As New Rectangle(Riga2.Left, Riga2.Top, Q, Riga2.Height)
             Dim RbP As New Rectangle(RbL.Right, Riga2.Top, Q, Riga2.Height)
@@ -756,6 +761,7 @@
             '###################
 
         End Sub
+
         Private Sub Riempi_QuoteMorali(sender As Object, e As Printing.PrintPageEventArgs, Rect As Rectangle, PrimoMorale As Integer, Nmorali As Integer, LunghezzaTavola As Integer)
 
             Dim FONT As New Font("Helvetica", My.Settings.DimensioneFontDistinta - 2, FontStyle.Bold)
@@ -775,6 +781,8 @@
 
             sX += Rwidth
             dX -= Rwidth
+
+
 
             For k = 1 To Math.Truncate(Nmorali / 2)
 
@@ -804,6 +812,15 @@
                 e.Graphics.DrawString(LunghezzaTavola / 2, FONT, Brushes.Black, Rect, FMT)
             End If
 
+            'Quota tavola
+            Dim PuntoQuotaCentrale As New Point(Rect.Left + (Rect.Width / 2) + (Rwidth \ 3), Rect.Y - 4) 'Centro del rettangolo
+            Dim SizeRect As New Size(e.Graphics.MeasureString(LunghezzaTavola, FONT).Width, e.Graphics.MeasureString(LunghezzaTavola, FONT).Height)
+
+            Dim RettangoloQuotaTavola As New Rectangle(Convert.ToSingle(PuntoQuotaCentrale.X - (SizeRect.Width / 2)), Convert.ToSingle(PuntoQuotaCentrale.Y - (SizeRect.Height / 2)), SizeRect.Width, SizeRect.Height)
+
+            e.Graphics.FillRectangle(Brushes.White, RettangoloQuotaTavola)
+            e.Graphics.DrawRectangle(Pens.Black, RettangoloQuotaTavola)
+            e.Graphics.DrawString(LunghezzaTavola, FONT, Brushes.Black, PuntoQuotaCentrale, FMT)
 
         End Sub
 
@@ -835,28 +852,65 @@
             QT3Riv = 0
             QT4Riv = 0
 
-            Dim TIPO As String = riga.Tipo
+            Dim Row As ModPackDBDataSet.Setup_RivestRow = SetupRiv.Where(Function(X) X.Tipo = riga.Tipo).FirstOrDefault
 
+            Select Case riga.Tipo
+                Case "GST"
 
-            For Each row As ModPackDBDataSet.Setup_RivestRow In SetupRiv
-                If row.Tipo = TIPO Then
+                    Stringa1Riv = ""
+                    QT1Riv = 0
 
-                    Stringa1Riv = riga.L + row._BX_ & " x " & riga.P + row._BY_
-                    QT1Riv = 1
-
-                    Stringa2Riv = riga.L + row._CX_ & " x " & riga.P + row._CY_
+                    Stringa2Riv = riga.L + Row._CX_ & " x " & riga.P + Row._CY_
                     QT2Riv = 1
 
-                    Stringa3Riv = riga.L + row._FX_ & " x " & riga.H + row._FY_
+                    Stringa3Riv = riga.L + Row._FX_ & " x " & riga.H + Row._FY_
                     QT3Riv = 2
 
-                    Stringa4Riv = riga.P + row._TX_ & " x " & riga.H + row._TY_
+                    Stringa4Riv = riga.P + Row._TX_ & " x " & riga.H + Row._TY_
                     QT4Riv = 2
 
-                    If Not row.IsNoteNull Then stringa5riv = row.Note
+                    If Not Row.IsNoteNull Then stringa5riv = Row.Note
 
-                End If
-            Next
+                Case Else
+
+                    Stringa1Riv = riga.L + Row._BX_ & " x " & riga.P + Row._BY_
+                    QT1Riv = 1
+
+                    Stringa2Riv = riga.L + Row._CX_ & " x " & riga.P + Row._CY_
+                    QT2Riv = 1
+
+                    Stringa3Riv = riga.L + Row._FX_ & " x " & riga.H + Row._FY_
+                    QT3Riv = 2
+
+                    Stringa4Riv = riga.P + Row._TX_ & " x " & riga.H + Row._TY_
+                    QT4Riv = 2
+
+                    If Not Row.IsNoteNull Then stringa5riv = Row.Note
+
+            End Select
+
+
+            ' Dim TIPO As String = riga.Tipo
+
+            'For Each row As ModPackDBDataSet.Setup_RivestRow In SetupRiv
+            '    If row.Tipo = TIPO Then
+
+            'Stringa1Riv = riga.L + row._BX_ & " x " & riga.P + row._BY_
+            'QT1Riv = 1
+
+            'Stringa2Riv = riga.L + row._CX_ & " x " & riga.P + row._CY_
+            'QT2Riv = 1
+
+            'Stringa3Riv = riga.L + row._FX_ & " x " & riga.H + row._FY_
+            'QT3Riv = 2
+
+            'Stringa4Riv = riga.P + row._TX_ & " x " & riga.H + row._TY_
+            'QT4Riv = 2
+
+            'If Not row.IsNoteNull Then stringa5riv = row.Note
+
+            'End If
+            'Next
 
         End Sub
 
@@ -942,7 +996,7 @@
             Dim Quota As Integer = PrimoMorale
             'Dim Interasse As Integer = ((LunghezzaTavola) / (Nmorali - 1)) + 4
 
-            Dim Interasse As Integer = ((LunghezzaTavola + 4 - 10) / (Nmorali - 1))
+            Dim Interasse As Decimal = ((LunghezzaTavola + 4 - 10) / (Nmorali - 1))
 
             Dim Rwidth As Single = (Rect.Width - 300) \ (Nmorali - 1)
             Dim sX As Single = X
@@ -981,6 +1035,8 @@
                 e.Graphics.DrawString((LunghezzaTavola + 4) / 2, FONT, Brushes.Black, Centro - 25, Rect.Bottom - 20)
             End If
 
+            e.Graphics.DrawString(LunghezzaTavola, FONT, Brushes.Black, e.MarginBounds.Width / 2, Rect.Bottom - 45)
+            e.Graphics.DrawString(LunghezzaTavola + 4, FONT, Brushes.Black, e.MarginBounds.Width / 2, Rect.Bottom - 5)
 
         End Sub
         Private Sub Zoccolo(e As Printing.PrintPageEventArgs, X As Integer, Y As Integer)

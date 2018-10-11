@@ -42,10 +42,14 @@ Partial Class LST_Morali
         Me.PrintMorali = New System.Drawing.Printing.PrintDocument()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.LabelOrdini = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CB_Settimana = New System.Windows.Forms.ComboBox()
+        Me.Bt_Ok_Settimana = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGW_Morali, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -97,7 +101,7 @@ Partial Class LST_Morali
         Me.GroupBox1.Controls.Add(Me.Bt_Ok)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1048, 49)
+        Me.GroupBox1.Size = New System.Drawing.Size(326, 49)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ordine"
@@ -109,13 +113,13 @@ Partial Class LST_Morali
         Me.CB_OrdiniAperti.FormattingEnabled = True
         Me.CB_OrdiniAperti.Location = New System.Drawing.Point(6, 19)
         Me.CB_OrdiniAperti.Name = "CB_OrdiniAperti"
-        Me.CB_OrdiniAperti.Size = New System.Drawing.Size(955, 21)
+        Me.CB_OrdiniAperti.Size = New System.Drawing.Size(233, 21)
         Me.CB_OrdiniAperti.TabIndex = 1
         '
         'Bt_Ok
         '
         Me.Bt_Ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bt_Ok.Location = New System.Drawing.Point(967, 19)
+        Me.Bt_Ok.Location = New System.Drawing.Point(245, 19)
         Me.Bt_Ok.Name = "Bt_Ok"
         Me.Bt_Ok.Size = New System.Drawing.Size(75, 21)
         Me.Bt_Ok.TabIndex = 2
@@ -209,11 +213,45 @@ Partial Class LST_Morali
         Me.LabelOrdini.Size = New System.Drawing.Size(120, 17)
         Me.LabelOrdini.Text = "ToolStripStatusLabel1"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.CB_Settimana)
+        Me.GroupBox2.Controls.Add(Me.Bt_Ok_Settimana)
+        Me.GroupBox2.Location = New System.Drawing.Point(344, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(326, 49)
+        Me.GroupBox2.TabIndex = 10
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Settimana"
+        '
+        'CB_Settimana
+        '
+        Me.CB_Settimana.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CB_Settimana.FormattingEnabled = True
+        Me.CB_Settimana.Location = New System.Drawing.Point(6, 19)
+        Me.CB_Settimana.Name = "CB_Settimana"
+        Me.CB_Settimana.Size = New System.Drawing.Size(233, 21)
+        Me.CB_Settimana.TabIndex = 1
+        '
+        'Bt_Ok_Settimana
+        '
+        Me.Bt_Ok_Settimana.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bt_Ok_Settimana.Location = New System.Drawing.Point(245, 19)
+        Me.Bt_Ok_Settimana.Name = "Bt_Ok_Settimana"
+        Me.Bt_Ok_Settimana.Size = New System.Drawing.Size(75, 21)
+        Me.Bt_Ok_Settimana.TabIndex = 2
+        Me.Bt_Ok_Settimana.Text = "OK"
+        Me.Bt_Ok_Settimana.UseVisualStyleBackColor = True
+        '
         'LST_Morali
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1195, 395)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.GroupBox1)
@@ -227,6 +265,7 @@ Partial Class LST_Morali
         CType(Me.DGW_Morali, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -249,4 +288,7 @@ Partial Class LST_Morali
     Friend WithEvents PrintMorali As Printing.PrintDocument
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents LabelOrdini As ToolStripStatusLabel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents CB_Settimana As ComboBox
+    Friend WithEvents Bt_Ok_Settimana As Button
 End Class

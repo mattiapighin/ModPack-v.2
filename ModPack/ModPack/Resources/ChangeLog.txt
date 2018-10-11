@@ -1,8 +1,23 @@
+   
+   VERSIONE 3
+   Nuovo modulo Archivio
+   Invio rivestimenti a sezionatrice per settimana non più per ordine
+   Aggiunta dicitura "+ corredo" in conferma d'ordine
+   Aggiunto vista settimana in ordini aperti
+   Aggiunto tabella di riferimento per CO-Ordini e annessi e connessi
+   BUGFIX - Non disegna più il bancale delle casse senza gli zoccoli
+   BUGFIX - Corretto calcolo distanza telarini in GST
+
+   VERSIONE 2.1.5
+   Nuovo modulo Ordini Aperti
+   Nuovo Modulo Articoli
+   Controllo su inserimento nuovo imballo: se il codice esiste già passa al prossimo
+   Bugfix minori
+
    VERSIONE 2.1.3
    Modificato calcolo BTT Pallet
    Ingrandito scritta cliente sul bindello
-   
-   
+      
    VERSIONE 2.1.2
    Aggiunta funzione ricalcolo automatico tutti i prezzi
    Bugfix minori

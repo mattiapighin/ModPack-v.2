@@ -307,15 +307,22 @@
 
                 With DS.Tables(0).Rows(RigheStampate)
 
+                    Dim HT As Boolean = .Item(16)
+
+
+
                     Dim Descrizione As String = " Cm " & .Item(4) & " x " & .Item(5)
                     If Not .Item(6) = 0 Then Descrizione += " x " & .Item(6)
                     Descrizione += " " & .Item(3)
+                    If .Item(16) = True Then Descrizione += " HT"
                     If Not String.IsNullOrEmpty(.Item(9)) Then Descrizione += " (" & .Item(9) & ")"
                     Descrizione += vbCrLf & "Commessa: " & .Item(13).ToString.TrimEnd("-")
 
 
                     Dim prezzo As Decimal = .Item(10)
                     Dim PrezzoTot As Decimal = prezzo * .Item(2)
+
+
 
                     e.Graphics.DrawString(.Item(0), FontRighe, Brushes.Black, RectRiga, FMT)                                'RIGA
                     e.Graphics.DrawString(.Item(1), FontRighe, Brushes.Black, RectImballo, FMT)                             'IMBALLO

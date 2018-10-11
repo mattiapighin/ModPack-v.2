@@ -149,8 +149,11 @@
         Dim CodiceOK As Boolean = True
 
         If Codice.StartsWith("MC") Or Codice.StartsWith("MP") Or Codice.StartsWith("MG") Then
-            CodiceOK = False
-            MsgBox("Il nuovo codice non può iniziare con MC, MP o MG")
+            If MsgBox("ATTENZIONE, Nominare un codice con MC, MP, o MG può causare problemi nella creazione di nuovi codici. Continuare?", vbYesNo, "ATTENZIONE") = MsgBoxResult.Yes Then
+                CodiceOK = True
+            Else
+                CodiceOK = False
+            End If
         End If
 
         If String.IsNullOrEmpty(Codice) Then

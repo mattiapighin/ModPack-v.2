@@ -51,6 +51,7 @@ Partial Class Form_Preferenze
         Me.Ck_ColoraEvasi = New System.Windows.Forms.CheckBox()
         Me.Ck_CheckCaricamento = New System.Windows.Forms.CheckBox()
         Me.Ck_TreeView = New System.Windows.Forms.CheckBox()
+        Me.CkRivSettimana = New System.Windows.Forms.CheckBox()
         Me.Txt_LimiteStorico = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -100,7 +101,7 @@ Partial Class Form_Preferenze
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Txt_TipoCo = New System.Windows.Forms.TextBox()
         Me.Tx_Versione = New System.Windows.Forms.LinkLabel()
-        Me.CkRivSettimana = New System.Windows.Forms.CheckBox()
+        Me.Ck_Riv_XML = New System.Windows.Forms.CheckBox()
         Me.GB_etichette.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -327,7 +328,7 @@ Partial Class Form_Preferenze
         Me.Ck_Evaso.AutoSize = True
         Me.Ck_Evaso.Location = New System.Drawing.Point(3, 3)
         Me.Ck_Evaso.Name = "Ck_Evaso"
-        Me.Ck_Evaso.Size = New System.Drawing.Size(335, 22)
+        Me.Ck_Evaso.Size = New System.Drawing.Size(335, 20)
         Me.Ck_Evaso.TabIndex = 2
         Me.Ck_Evaso.Text = "Chiedi conferma prima di contrassegnare un imballo come EVASO"
         Me.Ck_Evaso.UseVisualStyleBackColor = True
@@ -337,9 +338,9 @@ Partial Class Form_Preferenze
         Me.Ck_ColoraScaduti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Ck_ColoraScaduti.AutoSize = True
-        Me.Ck_ColoraScaduti.Location = New System.Drawing.Point(3, 31)
+        Me.Ck_ColoraScaduti.Location = New System.Drawing.Point(3, 29)
         Me.Ck_ColoraScaduti.Name = "Ck_ColoraScaduti"
-        Me.Ck_ColoraScaduti.Size = New System.Drawing.Size(346, 22)
+        Me.Ck_ColoraScaduti.Size = New System.Drawing.Size(346, 20)
         Me.Ck_ColoraScaduti.TabIndex = 13
         Me.Ck_ColoraScaduti.Text = "Evidenzia gli imballi scaduti o in scadenza nel modulo ""Ordini Aperti"""
         Me.Ck_ColoraScaduti.UseVisualStyleBackColor = True
@@ -375,9 +376,10 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel3.Controls.Add(Me.Ck_CheckCaricamento, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Ck_TreeView, 0, 6)
         Me.TableLayoutPanel3.Controls.Add(Me.CkRivSettimana, 0, 8)
+        Me.TableLayoutPanel3.Controls.Add(Me.Ck_Riv_XML, 0, 9)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(9, 48)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 9
+        Me.TableLayoutPanel3.RowCount = 10
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
@@ -387,6 +389,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(425, 256)
         Me.TableLayoutPanel3.TabIndex = 31
         '
@@ -395,9 +398,9 @@ Partial Class Form_Preferenze
         Me.CK_DescrizioneClipboard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.CK_DescrizioneClipboard.AutoSize = True
-        Me.CK_DescrizioneClipboard.Location = New System.Drawing.Point(3, 199)
+        Me.CK_DescrizioneClipboard.Location = New System.Drawing.Point(3, 185)
         Me.CK_DescrizioneClipboard.Name = "CK_DescrizioneClipboard"
-        Me.CK_DescrizioneClipboard.Size = New System.Drawing.Size(250, 22)
+        Me.CK_DescrizioneClipboard.Size = New System.Drawing.Size(250, 20)
         Me.CK_DescrizioneClipboard.TabIndex = 33
         Me.CK_DescrizioneClipboard.Text = "Aggiungi numero ordine alla descrizione copiata"
         Me.CK_DescrizioneClipboard.UseVisualStyleBackColor = True
@@ -407,9 +410,9 @@ Partial Class Form_Preferenze
         Me.Ck_TextMain.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Ck_TextMain.AutoSize = True
-        Me.Ck_TextMain.Location = New System.Drawing.Point(3, 143)
+        Me.Ck_TextMain.Location = New System.Drawing.Point(3, 133)
         Me.Ck_TextMain.Name = "Ck_TextMain"
-        Me.Ck_TextMain.Size = New System.Drawing.Size(156, 22)
+        Me.Ck_TextMain.Size = New System.Drawing.Size(156, 20)
         Me.Ck_TextMain.TabIndex = 30
         Me.Ck_TextMain.Text = "Didascalia icone Main Form"
         Me.Ck_TextMain.UseVisualStyleBackColor = True
@@ -419,9 +422,9 @@ Partial Class Form_Preferenze
         Me.CkNoteDinamico.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.CkNoteDinamico.AutoSize = True
-        Me.CkNoteDinamico.Location = New System.Drawing.Point(3, 115)
+        Me.CkNoteDinamico.Location = New System.Drawing.Point(3, 107)
         Me.CkNoteDinamico.Name = "CkNoteDinamico"
-        Me.CkNoteDinamico.Size = New System.Drawing.Size(243, 22)
+        Me.CkNoteDinamico.Size = New System.Drawing.Size(243, 20)
         Me.CkNoteDinamico.TabIndex = 29
         Me.CkNoteDinamico.Text = "Button ""Note"" dinamico nel modulo ""Archivio"""
         Me.CkNoteDinamico.UseVisualStyleBackColor = True
@@ -431,9 +434,9 @@ Partial Class Form_Preferenze
         Me.Ck_ColoraEvasi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Ck_ColoraEvasi.AutoSize = True
-        Me.Ck_ColoraEvasi.Location = New System.Drawing.Point(3, 59)
+        Me.Ck_ColoraEvasi.Location = New System.Drawing.Point(3, 55)
         Me.Ck_ColoraEvasi.Name = "Ck_ColoraEvasi"
-        Me.Ck_ColoraEvasi.Size = New System.Drawing.Size(267, 22)
+        Me.Ck_ColoraEvasi.Size = New System.Drawing.Size(267, 20)
         Me.Ck_ColoraEvasi.TabIndex = 14
         Me.Ck_ColoraEvasi.Text = "Nascondi gli imballi evasi nel modulo ""Ordini Aperti"""
         Me.Ck_ColoraEvasi.UseVisualStyleBackColor = True
@@ -443,9 +446,9 @@ Partial Class Form_Preferenze
         Me.Ck_CheckCaricamento.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Ck_CheckCaricamento.AutoSize = True
-        Me.Ck_CheckCaricamento.Location = New System.Drawing.Point(3, 87)
+        Me.Ck_CheckCaricamento.Location = New System.Drawing.Point(3, 81)
         Me.Ck_CheckCaricamento.Name = "Ck_CheckCaricamento"
-        Me.Ck_CheckCaricamento.Size = New System.Drawing.Size(253, 22)
+        Me.Ck_CheckCaricamento.Size = New System.Drawing.Size(253, 20)
         Me.Ck_CheckCaricamento.TabIndex = 15
         Me.Ck_CheckCaricamento.Text = "Mostra dialog all'inserimento di un nuovo articolo"
         Me.Ck_CheckCaricamento.UseVisualStyleBackColor = True
@@ -455,12 +458,22 @@ Partial Class Form_Preferenze
         Me.Ck_TreeView.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Ck_TreeView.AutoSize = True
         Me.Ck_TreeView.Enabled = False
-        Me.Ck_TreeView.Location = New System.Drawing.Point(3, 173)
+        Me.Ck_TreeView.Location = New System.Drawing.Point(3, 160)
         Me.Ck_TreeView.Name = "Ck_TreeView"
         Me.Ck_TreeView.Size = New System.Drawing.Size(278, 17)
         Me.Ck_TreeView.TabIndex = 34
         Me.Ck_TreeView.Text = "Caricamento automatico della TreeView nel main form"
         Me.Ck_TreeView.UseVisualStyleBackColor = True
+        '
+        'CkRivSettimana
+        '
+        Me.CkRivSettimana.AutoSize = True
+        Me.CkRivSettimana.Location = New System.Drawing.Point(3, 211)
+        Me.CkRivSettimana.Name = "CkRivSettimana"
+        Me.CkRivSettimana.Size = New System.Drawing.Size(170, 17)
+        Me.CkRivSettimana.TabIndex = 35
+        Me.CkRivSettimana.Text = "Invia rivestimenti per settimana"
+        Me.CkRivSettimana.UseVisualStyleBackColor = True
         '
         'Txt_LimiteStorico
         '
@@ -499,7 +512,7 @@ Partial Class Form_Preferenze
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.76316!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.23684!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_FontDistinta, 3, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.CkCodiceQT, 1, 1)
         Me.TableLayoutPanel6.Controls.Add(Me.Nu_RigheDistinta, 3, 1)
@@ -518,9 +531,9 @@ Partial Class Form_Preferenze
         'Nu_FontDistinta
         '
         Me.Nu_FontDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_FontDistinta.Location = New System.Drawing.Point(293, 3)
+        Me.Nu_FontDistinta.Location = New System.Drawing.Point(292, 3)
         Me.Nu_FontDistinta.Name = "Nu_FontDistinta"
-        Me.Nu_FontDistinta.Size = New System.Drawing.Size(129, 20)
+        Me.Nu_FontDistinta.Size = New System.Drawing.Size(130, 20)
         Me.Nu_FontDistinta.TabIndex = 2
         '
         'CkCodiceQT
@@ -537,9 +550,9 @@ Partial Class Form_Preferenze
         'Nu_RigheDistinta
         '
         Me.Nu_RigheDistinta.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(293, 27)
+        Me.Nu_RigheDistinta.Location = New System.Drawing.Point(292, 27)
         Me.Nu_RigheDistinta.Name = "Nu_RigheDistinta"
-        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(129, 20)
+        Me.Nu_RigheDistinta.Size = New System.Drawing.Size(130, 20)
         Me.Nu_RigheDistinta.TabIndex = 3
         '
         'CkBarcodeSoloCodice
@@ -558,7 +571,7 @@ Partial Class Form_Preferenze
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(222, 0)
+        Me.Label5.Location = New System.Drawing.Point(221, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 24)
         Me.Label5.TabIndex = 4
@@ -579,7 +592,7 @@ Partial Class Form_Preferenze
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(216, 29)
+        Me.Label8.Location = New System.Drawing.Point(215, 29)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 13)
         Me.Label8.TabIndex = 5
@@ -1101,15 +1114,15 @@ Partial Class Form_Preferenze
         Me.Tx_Versione.TabIndex = 34
         Me.Tx_Versione.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'CkRivSettimana
+        'Ck_Riv_XML
         '
-        Me.CkRivSettimana.AutoSize = True
-        Me.CkRivSettimana.Location = New System.Drawing.Point(3, 227)
-        Me.CkRivSettimana.Name = "CkRivSettimana"
-        Me.CkRivSettimana.Size = New System.Drawing.Size(170, 17)
-        Me.CkRivSettimana.TabIndex = 35
-        Me.CkRivSettimana.Text = "Invia rivestimenti per settimana"
-        Me.CkRivSettimana.UseVisualStyleBackColor = True
+        Me.Ck_Riv_XML.AutoSize = True
+        Me.Ck_Riv_XML.Location = New System.Drawing.Point(3, 237)
+        Me.Ck_Riv_XML.Name = "Ck_Riv_XML"
+        Me.Ck_Riv_XML.Size = New System.Drawing.Size(159, 16)
+        Me.Ck_Riv_XML.TabIndex = 36
+        Me.Ck_Riv_XML.Text = "Invia rivestimenti XML (v3.0)"
+        Me.Ck_Riv_XML.UseVisualStyleBackColor = True
         '
         'Form_Preferenze
         '
@@ -1242,4 +1255,5 @@ Partial Class Form_Preferenze
     Friend WithEvents Txt_TipoCo As TextBox
     Friend WithEvents Tx_Versione As LinkLabel
     Friend WithEvents CkRivSettimana As CheckBox
+    Friend WithEvents Ck_Riv_XML As CheckBox
 End Class

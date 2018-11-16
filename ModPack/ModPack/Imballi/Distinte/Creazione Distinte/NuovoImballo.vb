@@ -187,7 +187,7 @@
             End If
 
             Dim IMG As Byte() = Nothing
-            If R_Type = "GDA" Then IMG = Immagine.ConvertToBytes(My.Resources.GDA)
+            If R_Type = "GDA" Then IMG = Immagine.ConvertToBytes(My.Resources.GDA2)
             If R_Type = "GST" Then IMG = Immagine.ConvertToBytes(My.Resources.GST)
             If R_Type = "GRO" Then IMG = Immagine.ConvertToBytes(My.Resources.ROV)
 
@@ -654,9 +654,9 @@
 
             '############ TESTE ############
 
-            '-- TODO -- Diagonali e gradi diagonali
 
-            Dim TTL As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = P, .N = FTL.N - 2, .Tag = "TTL", .Part = "T"}
+            'Modificato 24/10/2018 - N Tavole teste ora uguali a tavole fiancate
+            Dim TTL As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = P, .N = FTL.N, .Tag = "TTL", .Part = "T"}
             Dim TM As New Riga_Distinta With {.X = Ltav, .Y = 1.8, .Z = H + MontanteSottoT + 2, .N = Imballo.NumeroTavole(P, TIPO.SpazioMT, Ltav) * 2, .Tag = "TM", .Part = "T"}
 
             D.AddRange({TTL, TM})

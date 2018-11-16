@@ -84,6 +84,7 @@ Partial Class FRM_OrdiniApertiV2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.RB_Search_Evasi = New System.Windows.Forms.RadioButton()
+        Me.RB_Search_Tutti = New System.Windows.Forms.RadioButton()
         Me.Rb_Search_NonEvasi = New System.Windows.Forms.RadioButton()
         Me.Tx_Cerca_Imballo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -761,16 +762,18 @@ Partial Class FRM_OrdiniApertiV2
         '
         'TableLayoutPanel5
         '
-        Me.TableLayoutPanel5.ColumnCount = 2
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.RB_Search_Evasi, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.Rb_Search_NonEvasi, 1, 0)
+        Me.TableLayoutPanel5.ColumnCount = 3
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel5.Controls.Add(Me.RB_Search_Evasi, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.RB_Search_Tutti, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Rb_Search_NonEvasi, 2, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(102, 67)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(246, 28)
         Me.TableLayoutPanel5.TabIndex = 9
         '
@@ -778,20 +781,31 @@ Partial Class FRM_OrdiniApertiV2
         '
         Me.RB_Search_Evasi.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.RB_Search_Evasi.AutoSize = True
-        Me.RB_Search_Evasi.Checked = True
-        Me.RB_Search_Evasi.Location = New System.Drawing.Point(36, 5)
+        Me.RB_Search_Evasi.Location = New System.Drawing.Point(97, 5)
         Me.RB_Search_Evasi.Name = "RB_Search_Evasi"
         Me.RB_Search_Evasi.Size = New System.Drawing.Size(51, 17)
         Me.RB_Search_Evasi.TabIndex = 0
-        Me.RB_Search_Evasi.TabStop = True
         Me.RB_Search_Evasi.Text = "Evasi"
         Me.RB_Search_Evasi.UseVisualStyleBackColor = True
+        '
+        'RB_Search_Tutti
+        '
+        Me.RB_Search_Tutti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.RB_Search_Tutti.AutoSize = True
+        Me.RB_Search_Tutti.Checked = True
+        Me.RB_Search_Tutti.Location = New System.Drawing.Point(18, 3)
+        Me.RB_Search_Tutti.Name = "RB_Search_Tutti"
+        Me.RB_Search_Tutti.Size = New System.Drawing.Size(46, 22)
+        Me.RB_Search_Tutti.TabIndex = 2
+        Me.RB_Search_Tutti.TabStop = True
+        Me.RB_Search_Tutti.Text = "Tutti"
+        Me.RB_Search_Tutti.UseVisualStyleBackColor = True
         '
         'Rb_Search_NonEvasi
         '
         Me.Rb_Search_NonEvasi.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Rb_Search_NonEvasi.AutoSize = True
-        Me.Rb_Search_NonEvasi.Location = New System.Drawing.Point(147, 5)
+        Me.Rb_Search_NonEvasi.Location = New System.Drawing.Point(168, 5)
         Me.Rb_Search_NonEvasi.Name = "Rb_Search_NonEvasi"
         Me.Rb_Search_NonEvasi.Size = New System.Drawing.Size(74, 17)
         Me.Rb_Search_NonEvasi.TabIndex = 1
@@ -1022,4 +1036,5 @@ Partial Class FRM_OrdiniApertiV2
     Friend WithEvents BT_CaricaSett As Button
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents RB_Search_Tutti As RadioButton
 End Class

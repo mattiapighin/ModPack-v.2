@@ -41,6 +41,7 @@
         Ck_CoInvia.Checked = My.Settings.CO_Invia
         Ck_CoStampa.Checked = My.Settings.CO_Stampa
         CkRivSettimana.Checked = My.Settings.RivestimentiSettimana
+        Ck_Riv_XML.Checked = My.Settings.RivestimentiXML
 
     End Sub
     Private Sub SalvaSettingsCK()
@@ -57,6 +58,7 @@
         My.Settings.CO_Invia = Ck_CoInvia.Checked
         My.Settings.CO_Stampa = Ck_CoStampa.Checked
         My.Settings.RivestimentiSettimana = CkRivSettimana.Checked
+        My.Settings.RivestimentiXML = Ck_Riv_XML.Checked
     End Sub
 
     Private Sub CaricaSettingsDistinta()
@@ -125,6 +127,7 @@
         End Try
 
         Box_Developer.Visible = My.Settings.Developer
+        CkRivSettimana.Enabled = Not My.Settings.RivestimentiXML
 
     End Sub
     Private Sub Bt_Salva_Click(sender As Object, e As EventArgs) Handles Bt_Salva.Click
@@ -432,4 +435,7 @@ line2:
         DLG_Changelog.ShowDialog()
     End Sub
 
+    Private Sub Ck_Riv_XML_CheckedChanged(sender As Object, e As EventArgs) Handles Ck_Riv_XML.CheckedChanged
+        CkRivSettimana.Enabled = Not Ck_Riv_XML.Checked
+    End Sub
 End Class

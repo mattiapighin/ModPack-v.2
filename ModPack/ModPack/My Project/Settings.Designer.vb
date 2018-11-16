@@ -822,6 +822,30 @@ Namespace My
                 Me("RivestimentiSettimana") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property RivestimentiXML() As Boolean
+            Get
+                Return CType(Me("RivestimentiXML"),Boolean)
+            End Get
+            Set
+                Me("RivestimentiXML") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\\192.168.1.23\sezionatrice\SezionaXML\")>  _
+        Public Property RivestimentiPATH() As String
+            Get
+                Return CType(Me("RivestimentiPATH"),String)
+            End Get
+            Set
+                Me("RivestimentiPATH") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

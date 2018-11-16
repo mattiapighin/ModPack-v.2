@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\mattia.pighin\Desktop\Rella18\</PublishUrl>
+    <PublishUrl>C:\Users\mattia.pighin\Desktop\RellaV3\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>21</ApplicationRevision>
-    <ApplicationVersion>2.1.4.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -76,13 +76,13 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0516FE0D2FA9CFA33CB5E91C66B3461F80EFCA0A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6E62C358E220FC5B63EF364514D8C41E0CCAE75B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ModPack_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ModPack_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -149,22 +149,22 @@
     <Compile Include="Main\Imballi\Archivio\FRM_Archivio_V2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.Designer.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi_Colonne.Designer.vb">
       <DependentUpon>Form_Imballi_Colonne.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi_Colonne.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.Designer.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi_Filtro.Designer.vb">
       <DependentUpon>Form_Imballi_Filtro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi_Filtro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi.Designer.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi.Designer.vb">
       <DependentUpon>Form_Imballi.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main\Imballi\OLD_Imballi\Form_Imballi.vb">
+    <Compile Include="Trash\OLD_Imballi\Form_Imballi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Imballi\ModificaImballo\Form_ModificaImballo.Designer.vb">
@@ -233,6 +233,7 @@
     <Compile Include="Main\Imballi\Creazione Imballi\Form_Crea_Manuale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sezionatrice\NuovoRivestimenti\XML_Sezionatrice.vb" />
     <Compile Include="Varie\Dialogs\DLG_ProgressBar.Designer.vb">
       <DependentUpon>DLG_ProgressBar.vb</DependentUpon>
     </Compile>
@@ -443,6 +444,7 @@
     <Compile Include="Varie\Moduli Vari\ControlloMultiUtente.vb" />
     <Compile Include="Varie\Moduli Vari\Errore.vb" />
     <Compile Include="Varie\Magazzini\ModuleMagazzino.vb" />
+    <Compile Include="Varie\Moduli Vari\MDL_Dev.vb" />
     <Compile Include="Varie\Moduli Vari\Module_Barcode.vb" />
     <Compile Include="Varie\Controlli\Module_Controlli.vb" />
     <Compile Include="Varie\Moduli Vari\Module_GeneraFileCO.vb" />
@@ -480,13 +482,13 @@
     <EmbeddedResource Include="Main\Imballi\Archivio\FRM_Archivio_V2.resx">
       <DependentUpon>FRM_Archivio_V2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi_Colonne.resx">
+    <EmbeddedResource Include="Trash\OLD_Imballi\Form_Imballi_Colonne.resx">
       <DependentUpon>Form_Imballi_Colonne.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi_Filtro.resx">
+    <EmbeddedResource Include="Trash\OLD_Imballi\Form_Imballi_Filtro.resx">
       <DependentUpon>Form_Imballi_Filtro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\Imballi\OLD_Imballi\Form_Imballi.resx">
+    <EmbeddedResource Include="Trash\OLD_Imballi\Form_Imballi.resx">
       <DependentUpon>Form_Imballi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Imballi\ModificaImballo\Form_ModificaImballo.resx">
@@ -631,6 +633,7 @@
     <None Include="ModPackDBDataSet.xss">
       <DependentUpon>ModPackDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="ModPack_1_TemporaryKey.pfx" />
     <None Include="ModPack_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -656,6 +659,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icoBig.ico" />
+    <None Include="Resources\GDA2.jpg" />
     <None Include="Resources\Status_Working.png" />
     <None Include="Resources\Status_Wait.png" />
     <None Include="Resources\Status_Done.png" />
@@ -704,6 +708,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Varie\Analisi\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

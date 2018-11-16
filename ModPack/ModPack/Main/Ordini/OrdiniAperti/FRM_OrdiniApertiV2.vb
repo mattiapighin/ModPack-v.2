@@ -254,10 +254,19 @@
 
         If MsgBox("Inviare alla sezionatrice il file rivestimenti dell'ordine " & OrdineAperto & "?", MsgBoxStyle.YesNo, "Rivestimenti") = MsgBoxResult.Yes Then
 
-            If My.Settings.RivestimentiSettimana = True Then
-                Rivestimenti.InviaPerSettimana(OrdineAperto)
+            If My.Settings.RivestimentiXML = True Then
+
+                'Invio tramite xml
+                Rivestimenti.CreaRivestimenti(DS.Ordini.Where(Function(X) X.Ordine = DGW_OrdiniAperti.CurrentRow.Cells(0).Value).ToList)
+
             Else
-                Rivestimenti.Invia(OrdineAperto)
+
+                If My.Settings.RivestimentiSettimana = True Then
+                    Rivestimenti.InviaPerSettimana(OrdineAperto)
+                Else
+                    Rivestimenti.Invia(OrdineAperto)
+                End If
+
             End If
 
         End If
@@ -453,7 +462,19 @@
 
 
         Dim ListaOrdine As New List(Of ModPackDBDataSet.OrdiniRow)
-        ListaOrdine = DS.Ordini.Where(Function(X) X.Ordine.Contains(Tx_Cerca_Ordine.Text)).Where(Function(y) y.Codice.Contains(Tx_Cerca_Disegno.Text)).Where(Function(z) z.Commessa.Contains(Tx_Cerca_Commessa.Text)).Where(Function(r) r.Imballo.Contains(Tx_Cerca_Imballo.Text)).Where(Function(q) q.Evaso = RB_Search_Evasi.Checked).ToList
+
+        If RB_Search_Evasi.Checked = True Then
+            ListaOrdine = DS.Ordini.Where(Function(X) X.Ordine.Contains(Tx_Cerca_Ordine.Text.ToUpper)).Where(Function(y) y.Codice.Contains(Tx_Cerca_Disegno.Text.ToUpper)).Where(Function(z) z.Commessa.Contains(Tx_Cerca_Commessa.Text.ToUpper)).Where(Function(r) r.Imballo.Contains(Tx_Cerca_Imballo.Text.ToUpper)).Where(Function(q) q.Evaso = True).ToList
+        End If
+
+        If Rb_Search_NonEvasi.Checked = True Then
+            ListaOrdine = DS.Ordini.Where(Function(X) X.Ordine.Contains(Tx_Cerca_Ordine.Text.ToUpper)).Where(Function(y) y.Codice.Contains(Tx_Cerca_Disegno.Text.ToUpper)).Where(Function(z) z.Commessa.Contains(Tx_Cerca_Commessa.Text.ToUpper)).Where(Function(r) r.Imballo.Contains(Tx_Cerca_Imballo.Text.ToUpper)).Where(Function(q) q.Evaso = False).ToList
+        End If
+
+        If RB_Search_Tutti.Checked = True Then
+            ListaOrdine = DS.Ordini.Where(Function(X) X.Ordine.Contains(Tx_Cerca_Ordine.Text.ToUpper)).Where(Function(y) y.Codice.Contains(Tx_Cerca_Disegno.Text.ToUpper)).Where(Function(z) z.Commessa.Contains(Tx_Cerca_Commessa.Text.ToUpper)).Where(Function(r) r.Imballo.Contains(Tx_Cerca_Imballo.Text.ToUpper)).ToList
+        End If
+
 
         For Each Row As ModPackDBDataSet.OrdiniRow In ListaOrdine
 
@@ -507,4 +528,11 @@
     Private Sub BT_CaricaSett_Click(sender As Object, e As EventArgs) Handles BT_CaricaSett.Click
         Carica_Settimana(CB_ScegliSett.Text)
     End Sub
+
+    Private Sub Tx_Cerca_Ordine_KeyDown(sender As Object, e As KeyEventArgs) Handles Tx_Cerca_Ordine.KeyDown, Tx_Cerca_Disegno.KeyDown, Tx_Cerca_Imballo.KeyDown, Tx_Cerca_Ordine.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Bt_Search_Click(sender, e)
+        End If
+    End Sub
+
 End Class

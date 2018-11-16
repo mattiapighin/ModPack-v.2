@@ -199,5 +199,11 @@
     <Setting Name="RivestimentiSettimana" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="RivestimentiXML" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RivestimentiPATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\192.168.1.23\sezionatrice\SezionaXML\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

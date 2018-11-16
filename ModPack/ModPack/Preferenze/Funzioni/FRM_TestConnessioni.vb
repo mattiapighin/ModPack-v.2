@@ -15,6 +15,8 @@ Public Class FRM_TestConnessioni
 
     Private Sub FRM_TestConnessioni_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Tx_RivXMLpath.Text = My.Settings.RivestimentiPATH
+
         Dim IPaddress As System.Net.IPAddress = Nothing
 
         Dim xml = XDocument.Load(My.Settings.XMLpath)
@@ -67,5 +69,10 @@ Public Class FRM_TestConnessioni
             Lbl_Stato3.Text = "STATO: IP Non valido"
         End Try
 
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Tx_RivXMLpath.TextChanged
+        My.Settings.RivestimentiPATH = Tx_RivXMLpath.Text
+        My.Settings.Save()
     End Sub
 End Class

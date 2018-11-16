@@ -61,20 +61,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Cerca una stringa localizzata simile a    VERSIONE 2.1.3
-        '''   Modificato calcolo BTT Pallet
-        '''   Ingrandito scritta cliente sul bindello
-        '''   
-        '''   
-        '''   VERSIONE 2.1.2
-        '''   Aggiunta funzione ricalcolo automatico tutti i prezzi
-        '''   Bugfix minori
+        '''  Cerca una stringa localizzata simile a    
+        '''   VERSIONE 3
+        '''   Nuovo modulo Archivio
+        '''   Invio rivestimenti a sezionatrice per settimana non più per ordine
+        '''   Aggiunta dicitura &quot;+ corredo&quot; in conferma d&apos;ordine
+        '''   Aggiunto vista settimana in ordini aperti
+        '''   Aggiunto tabella di riferimento per CO-Ordini e annessi e connessi
+        '''   BUGFIX - Non disegna più il bancale delle casse senza gli zoccoli
+        '''   BUGFIX - Corretto calcolo distanza telarini in GST
         '''
-        '''   VERSIONE 2.1.1
-        '''   Aggiunto modulo creazione imballo plus
-        '''   Modificato invio file conferma d&apos;ordine, ora si può inviare anche senza salvare
-        '''   Aggiunto possibilità di segnare un imballo come evaso dalla finestra Ordini Aperti
-        '''   Modificato modalità di eliminazione ordine e indici (ora con lambda expr [stringa troncata]&quot;;.
+        '''   VERSIONE 2.1.5
+        '''   Nuovo modulo Ordini Aperti
+        '''   Nuovo Modulo Articoli
+        '''   Controllo su inse [stringa troncata]&quot;;.
         '''</summary>
         Friend ReadOnly Property ChangeLog() As String
             Get
@@ -88,6 +88,16 @@ Namespace My.Resources
         Friend ReadOnly Property GDA() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("GDA", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property GDA2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GDA2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -195,10 +195,10 @@
                         SetupRiv = DS.Setup_Rivest.Where(Function(X) X.Tipo = Row.Tipo).FirstOrDefault
 
                         With SetupRiv
-                            B = "B) " & Row.L + ._BX_ & " x " & Row.P + ._BY_ & " = " & Row.Qt
-                            C = "C) " & Row.L + ._CX_ & " x " & Row.P + ._CY_ & " = " & Row.Qt
-                            F = "F) " & Row.L + ._FX_ & " x " & Row.H + ._FY_ & " = " & Row.Qt * 2
-                            T = "T) " & Row.P + ._TX_ & " x " & Row.H + ._TY_ & " = " & Row.Qt * 2
+                            B = "B) " & Row.L + ._BX_ & " x " & Row.P + ._BY_ & " = " & .NB * Row.Qt
+                            C = "C) " & Row.L + ._CX_ & " x " & Row.P + ._CY_ & " = " & .NC * Row.Qt
+                            F = "F) " & Row.L + ._FX_ & " x " & Row.H + ._FY_ & " = " & .NF * Row.Qt
+                            T = "T) " & Row.P + ._TX_ & " x " & Row.H + ._TY_ & " = " & .NT * Row.Qt
                         End With
 
                         Note2 = Row.Note

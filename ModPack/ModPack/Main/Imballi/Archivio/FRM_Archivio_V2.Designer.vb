@@ -406,7 +406,7 @@ Partial Class FRM_Archivio_V2
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.33333!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.66667!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.CK_Diagonali, 2, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.CK_HT, 2, 0)
@@ -460,9 +460,9 @@ Partial Class FRM_Archivio_V2
         Me.CK_Diagonali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CK_Diagonali.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CK_Diagonali.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.CK_Diagonali.Location = New System.Drawing.Point(212, 138)
+        Me.CK_Diagonali.Location = New System.Drawing.Point(211, 138)
         Me.CK_Diagonali.Name = "CK_Diagonali"
-        Me.CK_Diagonali.Size = New System.Drawing.Size(100, 39)
+        Me.CK_Diagonali.Size = New System.Drawing.Size(101, 39)
         Me.CK_Diagonali.TabIndex = 1
         Me.CK_Diagonali.Text = "CON DIAGONALI"
         Me.CK_Diagonali.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -480,9 +480,9 @@ Partial Class FRM_Archivio_V2
         Me.CK_HT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CK_HT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CK_HT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.CK_HT.Location = New System.Drawing.Point(212, 3)
+        Me.CK_HT.Location = New System.Drawing.Point(211, 3)
         Me.CK_HT.Name = "CK_HT"
-        Me.CK_HT.Size = New System.Drawing.Size(100, 39)
+        Me.CK_HT.Size = New System.Drawing.Size(101, 39)
         Me.CK_HT.TabIndex = 1
         Me.CK_HT.Text = "HT"
         Me.CK_HT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -500,9 +500,9 @@ Partial Class FRM_Archivio_V2
         Me.CK_DT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CK_DT.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CK_DT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.CK_DT.Location = New System.Drawing.Point(212, 93)
+        Me.CK_DT.Location = New System.Drawing.Point(211, 93)
         Me.CK_DT.Name = "CK_DT"
-        Me.CK_DT.Size = New System.Drawing.Size(100, 39)
+        Me.CK_DT.Size = New System.Drawing.Size(101, 39)
         Me.CK_DT.TabIndex = 1
         Me.CK_DT.Text = "DOPPIA TAVOLA"
         Me.CK_DT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -532,9 +532,9 @@ Partial Class FRM_Archivio_V2
         Me.CK_BM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CK_BM.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CK_BM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.CK_BM.Location = New System.Drawing.Point(212, 48)
+        Me.CK_BM.Location = New System.Drawing.Point(211, 48)
         Me.CK_BM.Name = "CK_BM"
-        Me.CK_BM.Size = New System.Drawing.Size(100, 39)
+        Me.CK_BM.Size = New System.Drawing.Size(101, 39)
         Me.CK_BM.TabIndex = 1
         Me.CK_BM.Text = "BASE MORALI"
         Me.CK_BM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -595,7 +595,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Tipo.Location = New System.Drawing.Point(114, 5)
         Me.LB_Tipo.Name = "LB_Tipo"
-        Me.LB_Tipo.Size = New System.Drawing.Size(92, 34)
+        Me.LB_Tipo.Size = New System.Drawing.Size(91, 34)
         Me.LB_Tipo.TabIndex = 0
         Me.LB_Tipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -606,7 +606,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_Zoccoli.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Zoccoli.Location = New System.Drawing.Point(114, 50)
         Me.LB_Zoccoli.Name = "LB_Zoccoli"
-        Me.LB_Zoccoli.Size = New System.Drawing.Size(92, 34)
+        Me.LB_Zoccoli.Size = New System.Drawing.Size(91, 34)
         Me.LB_Zoccoli.TabIndex = 0
         Me.LB_Zoccoli.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -617,7 +617,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_Rivestimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Rivestimento.Location = New System.Drawing.Point(114, 95)
         Me.LB_Rivestimento.Name = "LB_Rivestimento"
-        Me.LB_Rivestimento.Size = New System.Drawing.Size(92, 34)
+        Me.LB_Rivestimento.Size = New System.Drawing.Size(91, 34)
         Me.LB_Rivestimento.TabIndex = 0
         Me.LB_Rivestimento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -628,7 +628,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_M2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_M2.Location = New System.Drawing.Point(114, 140)
         Me.LB_M2.Name = "LB_M2"
-        Me.LB_M2.Size = New System.Drawing.Size(92, 34)
+        Me.LB_M2.Size = New System.Drawing.Size(91, 34)
         Me.LB_M2.TabIndex = 0
         Me.LB_M2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -639,7 +639,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_M3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_M3.Location = New System.Drawing.Point(114, 185)
         Me.LB_M3.Name = "LB_M3"
-        Me.LB_M3.Size = New System.Drawing.Size(92, 34)
+        Me.LB_M3.Size = New System.Drawing.Size(91, 34)
         Me.LB_M3.TabIndex = 0
         Me.LB_M3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -650,7 +650,7 @@ Partial Class FRM_Archivio_V2
         Me.LB_Prezzo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Prezzo.Location = New System.Drawing.Point(114, 232)
         Me.LB_Prezzo.Name = "LB_Prezzo"
-        Me.LB_Prezzo.Size = New System.Drawing.Size(92, 34)
+        Me.LB_Prezzo.Size = New System.Drawing.Size(91, 34)
         Me.LB_Prezzo.TabIndex = 0
         Me.LB_Prezzo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -660,10 +660,10 @@ Partial Class FRM_Archivio_V2
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.LST_Codici)
-        Me.GroupBox2.Location = New System.Drawing.Point(212, 183)
+        Me.GroupBox2.Location = New System.Drawing.Point(211, 183)
         Me.GroupBox2.Name = "GroupBox2"
         Me.TableLayoutPanel1.SetRowSpan(Me.GroupBox2, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(100, 88)
+        Me.GroupBox2.Size = New System.Drawing.Size(101, 88)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Codici"
@@ -674,7 +674,7 @@ Partial Class FRM_Archivio_V2
         Me.LST_Codici.FormattingEnabled = True
         Me.LST_Codici.Location = New System.Drawing.Point(3, 16)
         Me.LST_Codici.Name = "LST_Codici"
-        Me.LST_Codici.Size = New System.Drawing.Size(94, 69)
+        Me.LST_Codici.Size = New System.Drawing.Size(95, 69)
         Me.LST_Codici.TabIndex = 0
         '
         'PB_Img

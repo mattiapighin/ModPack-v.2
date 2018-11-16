@@ -23,8 +23,8 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStrip = New System.Windows.Forms.ToolStripStatusLabel()
@@ -61,6 +61,7 @@ Partial Class Main
         Me.TS_Stampe = New System.Windows.Forms.ToolStripDropDownButton()
         Me.STAMPABINDELLOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.STAMPACOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSBT_Dev = New System.Windows.Forms.ToolStripDropDownButton()
         Me.Print_Distinta = New System.Drawing.Printing.PrintDocument()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BT_RefreshTree = New System.Windows.Forms.Button()
@@ -103,8 +104,8 @@ Partial Class Main
         '
         Me.DGW_Memo.AllowUserToAddRows = False
         Me.DGW_Memo.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
-        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent
+        Me.DGW_Memo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGW_Memo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DGW_Memo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -113,14 +114,14 @@ Partial Class Main
         Me.DGW_Memo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGW_Memo.ColumnHeadersVisible = False
         Me.DGW_Memo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Memo})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGW_Memo.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGW_Memo.Location = New System.Drawing.Point(3, 203)
         Me.DGW_Memo.Name = "DGW_Memo"
         Me.DGW_Memo.ReadOnly = True
@@ -179,7 +180,7 @@ Partial Class Main
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(10, 10)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Ordini, Me.TS_Imballi, Me.TS_Tools, Me.TS_Tabelle, Me.Ts_Preferenze, Me.TS_Memo, Me.TS_Stampe})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TS_Ordini, Me.TS_Imballi, Me.TS_Tools, Me.TS_Tabelle, Me.Ts_Preferenze, Me.TS_Memo, Me.TS_Stampe, Me.TSBT_Dev})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
@@ -366,6 +367,14 @@ Partial Class Main
         Me.STAMPACOToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.STAMPACOToolStripMenuItem.Text = "STAMPA CONFERMA ORDINE"
         '
+        'TSBT_Dev
+        '
+        Me.TSBT_Dev.Image = CType(resources.GetObject("TSBT_Dev.Image"), System.Drawing.Image)
+        Me.TSBT_Dev.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TSBT_Dev.Name = "TSBT_Dev"
+        Me.TSBT_Dev.Size = New System.Drawing.Size(51, 33)
+        Me.TSBT_Dev.Text = "DEV"
+        '
         'Print_Distinta
         '
         '
@@ -450,4 +459,5 @@ Partial Class Main
     Friend WithEvents STAMPACOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LISTAIMBALLINUOVIToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ASSOCIACOORDINEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSBT_Dev As ToolStripDropDownButton
 End Class

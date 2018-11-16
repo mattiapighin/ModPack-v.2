@@ -188,4 +188,9 @@ Public Class FRM_Archivio_V2
         MsgBox("Note", vbOKOnly, "Nota salvata!")
 
     End Sub
+
+
+    Private Sub Txt_Code_KeyDown(sender As Object, e As KeyEventArgs) Handles Txt_Code.KeyDown
+        BT_SearchCode_Click(sender, e)
+    End Sub
 End Class

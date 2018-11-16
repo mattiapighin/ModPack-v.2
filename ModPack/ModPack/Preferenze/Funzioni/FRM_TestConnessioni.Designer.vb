@@ -37,9 +37,12 @@ Partial Class FRM_TestConnessioni
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Lbl_Ip3 = New System.Windows.Forms.Label()
         Me.PN_s3 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Tx_RivXMLpath = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PN_s1
@@ -186,11 +189,29 @@ Partial Class FRM_TestConnessioni
         Me.PN_s3.Size = New System.Drawing.Size(23, 23)
         Me.PN_s3.TabIndex = 0
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Tx_RivXMLpath)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 291)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(256, 49)
+        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Directory XML rivestimenti"
+        '
+        'Tx_RivXMLpath
+        '
+        Me.Tx_RivXMLpath.Location = New System.Drawing.Point(7, 19)
+        Me.Tx_RivXMLpath.Name = "Tx_RivXMLpath"
+        Me.Tx_RivXMLpath.Size = New System.Drawing.Size(241, 20)
+        Me.Tx_RivXMLpath.TabIndex = 0
+        '
         'FRM_TestConnessioni
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(274, 293)
+        Me.ClientSize = New System.Drawing.Size(274, 345)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -200,6 +221,8 @@ Partial Class FRM_TestConnessioni
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -219,4 +242,6 @@ Partial Class FRM_TestConnessioni
     Friend WithEvents Label5 As Label
     Friend WithEvents Lbl_Ip3 As Label
     Friend WithEvents PN_s3 As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Tx_RivXMLpath As TextBox
 End Class

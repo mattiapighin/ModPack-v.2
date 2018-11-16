@@ -280,3 +280,8 @@ C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.DLG
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.Archivio_Filtro.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM_Archivio_V2.resources
 C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.FRM_Associa.resources
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\bin\Debug\ModPack.application
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.TrustInfo.xml
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.exe.manifest
+C:\Users\mattia.pighin\Desktop\ModPack-v.2\ModPack\ModPack\obj\Debug\ModPack.application

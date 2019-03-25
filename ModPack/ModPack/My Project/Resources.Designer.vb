@@ -85,16 +85,6 @@ Namespace My.Resources
         '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property GDA() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("GDA", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property GDA2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("GDA2", resourceCulture)

@@ -40,11 +40,6 @@ ModPack
    Controllo su inse [stringa troncata]&quot;;.
 </summary>
 </member>
-<member name="P:ModPack.My.Resources.Resources.GDA">
-<summary>
-  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:ModPack.My.Resources.Resources.GDA2">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.

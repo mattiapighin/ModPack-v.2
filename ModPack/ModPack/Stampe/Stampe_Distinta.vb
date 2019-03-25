@@ -810,6 +810,10 @@
                 e.Graphics.FillRectangle(Brushes.LightGray, Centro - 5, Rect.Y + 7, 10, 15)
 
                 e.Graphics.DrawString(LunghezzaTavola / 2, FONT, Brushes.Black, Rect, FMT)
+
+
+
+
             End If
 
             'Quota tavola

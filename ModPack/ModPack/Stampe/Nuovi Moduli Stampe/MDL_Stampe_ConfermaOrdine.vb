@@ -156,9 +156,8 @@
 
                     Imballo = DataSet.Imballi.Where(Function(X) X.Imballo = .Imballo).First
 
-                    'Se esiste una riga distinta con part:K (Corredo) aggiunge dicitura Corredo alla CO
-                    'Dim Corredo As Boolean = DataSet.Distinta.Where(Function(X) X.Imballo = Imballo.Imballo).Where(Function(X) X.Part = "K").Any
-
+                    'Controlla se l'imballo ha zoccoli interni
+                    Dim ZoccoliInterni As Boolean = DataSet.Distinta.Where(Function(X) X.Imballo = Imballo.Imballo).Where(Function(X) X.Part = "I").Any
 
                     Dim HT As Boolean = .HT
 
@@ -167,10 +166,8 @@
                     Descrizione += " " & Imballo.Tipo
                     If .HT = True Then Descrizione += " HT"
                     If Not String.IsNullOrEmpty(.Tipo_Rivestimento) Then Descrizione += " (" & .Tipo_Rivestimento & ")"
+                    If ZoccoliInterni = True Then Descrizione += " + ZOC.INT."
                     Descrizione += vbCrLf & "D " & .Codice.ToString.TrimEnd("-") & " C " & .Commessa.ToString.TrimEnd("-")
-
-                    'If Corredo = True Then Descrizione += " +CORREDO"
-
 
                     Dim prezzo As Decimal = Imballo.Prezzo
                     Dim PrezzoTot As Decimal = Imballo.Prezzo * .Qt

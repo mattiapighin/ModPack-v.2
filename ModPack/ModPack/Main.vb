@@ -277,6 +277,10 @@ Public Class Main
     End Sub
 
     '### TREEVIEW ###
+
+    Dim DSxTREE As New ModPackDBDataSet
+    Dim OrdiniTabxTree As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
+
     Private Sub BT_RefreshTree_Click(sender As Object, e As EventArgs) Handles BT_RefreshTree.Click
         CaricaOrdiniAperti()
     End Sub
@@ -369,38 +373,29 @@ Public Class Main
         Stampe.Stampa_Distinte(sender, e, RowOrdine.Item(0))
     End Sub
     Private Sub OrdiniTree_DoubleClick(sender As Object, e As EventArgs) Handles OrdiniTree.DoubleClick
+
         If Not OrdiniTree.SelectedNode Is Nothing Then
-            Using DS As New ModPackDBDataSet.OrdiniDataTable
-                Using Table As New ModPackDBDataSetTableAdapters.OrdiniTableAdapter
-
-                    Table.Fill(DS)
-
-                    If Not String.IsNullOrEmpty(OrdiniTree.SelectedNode.Name) Then
-                        If DS.Any(Function(X) X.Id = OrdiniTree.SelectedNode.Name) Then
-
-                            RowOrdine.Clear()
-
-                            Dim ListaMagazzini As New List(Of Magazzino)
-                            ListaMagazzini = SQL.GetMagazzini
+            If Not String.IsNullOrEmpty(OrdiniTree.SelectedNode.Name) Then
 
 
-                            Dim Row As ModPackDBDataSet.OrdiniRow = DS.Single(Function(x) x.Id = OrdiniTree.SelectedNode.Name)
-                            Dim Riga As New RigaOrdine With {.NumeroOrdine = Row.Ordine, .Riga = Row.Riga, .Imballo = Row.Imballo, .Indice = Row.Indice, .Qt = Row.Qt, .Cliente = Row.Cliente, .Codice = Row.Codice, .Commessa = Row.Commessa,
-                                           .L = Row.L, .P = Row.P, .H = Row.H, .Tipo = Row.Tipo, .Zoccoli = Row.Zoccoli, .Rivestimento = Row.Rivestimento, .TipoRivestimento = Row.Tipo_Rivestimento, .Note = Row.Note, .DataConsegna = Row.Data_Consegna,
-                                           .HT = Row.HT, .DT = Row.DT, .BM = Row.BM, .Rivest_Tot = Row.Rivest_Tot, .Magazzino = ModMagazzino.GetDescrizione(Row.Magazzino, ListaMagazzini), .Diagonali = Row.Diagonali, .Data_Ordine = Row.Data_Ordine, .Evaso = Row.Evaso, .Produzione = False, .Stampato = False, .ID_RigaOrdine = OrdiniTree.SelectedNode.Name}
+                OrdiniTabxTree.Fill(DSxTREE.Ordini)
 
-                            RowOrdine.Add(Riga)
+                Dim ListaDaStampare As New List(Of ModPackDBDataSet.OrdiniRow)
+                ListaDaStampare.Add(DSxTREE.Ordini.Where(Function(X) X.Id = OrdiniTree.SelectedNode.Name).First)
 
-                            Stampe.Set_Settings(Print_Distinta)
-                            Dim L As New PrintPreviewDialog With {.Document = Print_Distinta, .TopMost = False, .WindowState = FormWindowState.Normal}
-                            L.Show()
+                If ListaDaStampare.Count > 0 Then
+                    Distinta.Stampa(ListaDaStampare, True)
+                End If
 
-                        End If
-                    End If
 
-                End Using
-            End Using
+            End If
         End If
+
+
+
     End Sub
 
+    Private Sub GDAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GDAToolStripMenuItem.Click
+        DEV.Modifica_GDA_24102018()
+    End Sub
 End Class

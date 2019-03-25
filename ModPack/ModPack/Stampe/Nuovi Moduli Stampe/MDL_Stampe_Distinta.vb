@@ -717,12 +717,24 @@
                 Next
             End If
 
+            '############### ZOCCOLI INTERNI ###################
+            If ListaDistinta.Any(Function(x) x.Part = "I") Then
+                Riga_Descrizione_Part(e, Rect_Riga, "ZOCCOLI INTERNI")
+
+                For Each K As ModPackDBDataSet.DistintaRow In ListaDistinta.Where(Function(x) x.Part = "I")
+                    If Not K.N = 0 Then
+                        Riga_Distinta(e, Rect_Riga, K, riga, Imballo)
+                    End If
+                Next
+            End If
+
+
             '############### ALTRO ###################
             'Tutte le righe che non sono B C F T o K, tranne N che non viene stampata
-            If ListaDistinta.Any(Function(x) Not {"B", "C", "F", "T", "K", "N"}.Contains(x.Part)) Then
+            If ListaDistinta.Any(Function(x) Not {"B", "C", "F", "T", "K", "N", "I"}.Contains(x.Part)) Then
                 Riga_Descrizione_Part(e, Rect_Riga, "ALTRO")
 
-                For Each K As ModPackDBDataSet.DistintaRow In ListaDistinta.Where(Function(x) Not {"B", "C", "F", "T", "K", "N"}.Contains(x.Part))
+                For Each K As ModPackDBDataSet.DistintaRow In ListaDistinta.Where(Function(x) Not {"B", "C", "F", "T", "K", "N", "I"}.Contains(x.Part))
                     If Not K.N = 0 Then
                         Riga_Distinta(e, Rect_Riga, K, riga, Imballo)
                     End If
@@ -892,6 +904,10 @@
                     Quota(LunghezzaTavola, Centro.X, Centro.Y - 22, e)
 
                     Dim Interasse As Integer = Math.Round((LunghezzaTavola - (Imballo.Primo_Morale * 2)) / (N_Zoccoli - 1), 0)  ' Calcolo distantra tra il centro dei due morali
+
+                    'v.3.2 23/01/2019
+                    AvvisoTranspallet(N_Zoccoli, Interasse, e)
+
                     Dim QuotaMorale As Integer = Imballo.Primo_Morale
 
                     Dim ZoccoloSX As Single = Centro.X - (Scala / 2) + Primo
@@ -1014,6 +1030,10 @@
                     Quota(LunghezzaTavola, Centro.X, Centro.Y - 22, e)
 
                     Dim Interasse As Integer = Math.Round((LunghezzaTavola - (Imballo.Primo_Morale * 2)) / (N_Zoccoli - 1), 0)  ' Calcolo distantra tra il centro dei due morali
+
+                    'v.3.2 23/01/2019
+                    AvvisoTranspallet(N_Zoccoli, Interasse, e)
+
                     Dim QuotaMorale As Integer = Imballo.Primo_Morale
 
                     Dim ZoccoloSX As Single = Centro.X - (Scala / 2) + Primo
@@ -1128,6 +1148,10 @@
                     Quota(LunghezzaTavola, Centro.X, Centro.Y - 22, e)
 
                     Dim Interasse As Integer = Math.Round((LunghezzaTavola - (Imballo.Primo_Morale * 2)) / (N_Zoccoli - 1), 0)  ' Calcolo distantra tra il centro dei due morali
+
+                    'v.3.2 23/01/2019
+                    AvvisoTranspallet(N_Zoccoli, Interasse, e)
+
                     Dim QuotaMorale As Integer = Imballo.Primo_Morale
 
                     Dim ZoccoloSX As Single = Centro.X - (Scala / 2) + Primo
@@ -1230,6 +1254,10 @@
 
 
                     Dim Interasse As Decimal = ((LunghezzaTavola + 4 - 10) / (N_Zoccoli - 1)) ' Calcolo distantra tra il centro dei due morali
+
+                    'v.3.2 23/01/2019
+                    AvvisoTranspallet(N_Zoccoli, Interasse, e)
+
                     Dim QuotaMorale As Decimal = 0
 
                     Dim ZoccoloSX As Single = Centro.X - (Scala / 2)
@@ -1330,6 +1358,10 @@
                         Quota(LunghezzaBase, Centro.X, Centro.Y - 22, e)
 
                         Dim Interasse As Integer = Math.Round((LunghezzaBase - (Imballo.Primo_Morale * 2)) / (N_Zoccoli - 1), 0)  ' Calcolo distantra tra il centro dei due morali
+
+                        'v.3.2 23/01/2019
+                        AvvisoTranspallet(N_Zoccoli, Interasse, e)
+
                         Dim QuotaMorale As Integer = Imballo.Primo_Morale
 
                         Dim ZoccoloSX As Single = Centro.X - (Scala / 2) + Primo
@@ -1428,6 +1460,10 @@
                 Tavola(RectMonT.X, RectMonT.Y + 25 + Scala(Imballo.SopraMT, Imballo.H), 4, Scala(10, Imballo.H), e) 'Tavola sopra
                 Tavola(RectMonT.X, RectMonT.Y + 175 - Scala(10, Imballo.H) - Scala(Imballo.SottoMT, Imballo.H), 4, Scala(10, Imballo.H), e) 'Tavola sotto
 
+                Tavola(RectMonT.X, RectMonT.Y + 175 - Scala(20, Imballo.H) - Scala(Imballo.SottoMT, Imballo.H), 4, Scala(10, Imballo.H), e) 'Tavola sotto
+                Tavola(RectMonT.X, RectMonT.Y + 175 - Scala(30, Imballo.H) - Scala(Imballo.SottoMT, Imballo.H), 4, Scala(10, Imballo.H), e) 'Tavola sotto
+
+
                 'Tavole in mezzo fiancate
                 Dim SpazioF As Decimal = (150 + Scala(Imballo.SopraMF, Imballo.H) - Scala(Imballo.SottoMF, Imballo.H) - Scala(30, Imballo.H)) / (NTavoleF - 3)
                 Dim YTAVF As Single = SpazioF
@@ -1439,10 +1475,10 @@
 
                 Next
                 'Tavole in mezzo teste
-                Dim SpazioT As Decimal = (150 + Scala(Imballo.SopraMT, Imballo.H) - Scala(Imballo.SottoMT, Imballo.H) - Scala(10, Imballo.H)) / (NTavoleT - 1)
+                Dim SpazioT As Decimal = (150 + Scala(Imballo.SopraMT, Imballo.H) - Scala(Imballo.SottoMT, Imballo.H) - Scala(30, Imballo.H)) / (NTavoleT - 3)
                 Dim YTAVT As Single = SpazioF
 
-                For K = 3 To NTavoleT
+                For K = 3 To NTavoleT - 2
 
                     Tavola(RectMonT.X, RectMonT.Y + 25 - Scala(Imballo.SopraMT, Imballo.H) + YTAVT, 4, Scala(10, Imballo.H), e) 'Tavole in mezzo fiancate
                     YTAVT += SpazioT
@@ -1451,6 +1487,24 @@
             Catch ex As Exception
                 LOG.Write("Errore durante il disegno dei montanti" & vbCrLf & " ORDINE: " & riga.Ordine & " RIGA: " & riga.Riga & vbCrLf & ex.Message)
             End Try
+
+        End Sub
+
+        Private Sub AvvisoTranspallet(ByVal NMOR As Integer, ByVal Interasse As Single, ByVal e As Printing.PrintPageEventArgs)
+
+            Dim Font As New Font("Arial", 8, FontStyle.Bold Or FontStyle.Underline)
+
+            If NMOR Mod 2 = 0 Then
+                If Interasse <= 65 Then
+                    e.Graphics.DrawString("ATTENZIONE: Spazio per il transpallet almeno 60cm", Font, Brushes.Black, e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 120)
+                End If
+            Else
+                If Interasse * 2 <= 65 Then
+                    e.Graphics.DrawString("ATTENZIONE: Spazio per il transpallet almeno 60cm", Font, Brushes.Black, e.MarginBounds.Left + 5, e.MarginBounds.Bottom - 120)
+                End If
+
+            End If
+
 
         End Sub
 

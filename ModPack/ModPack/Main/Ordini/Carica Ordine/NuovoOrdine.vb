@@ -270,8 +270,6 @@
                     Dim IndiceRow As ModPackDBDataSet.IndiciRow = DS.Indici.Where(Function(x) x.Indice = PACK.Indice).FirstOrDefault
                     Dim IndiceEsiste As Boolean = Not IsNothing(IndiceRow)
 
-
-
                     If IndiceEsiste = True Then
                         ProgC += " 1"
                         '6.1 - Prima controlla che sia già stato caricato in passato uno uguale (in base al suo indice)
